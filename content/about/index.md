@@ -4,6 +4,7 @@ description: "A data nerd from Silicon Valley with a robust background in large-
 featured_image: '/images/redwoodBW.jpg'
 baseURL: 'https://salmancuso.com'
 ---
+
 ## About Me
 
 I'm Sal Mancuso, a Senior Business Intelligence Engineer and Senior Data Engineer thriving at the intersection of technical prowess and creative innovation. With a career rooted deeply in both business and academic technical solutions, I've transformed troves of data into actionable insights and spearheaded complex projects that drive decision-making. Beyond the world of numbers and algorithms, I am an avid explorer with a penchant for adventure and creativity.
