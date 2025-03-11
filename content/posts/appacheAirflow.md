@@ -1,6 +1,6 @@
 +++
 title = """Automating Data Workflows with Apache Airflow"""
-date = 2054-03-11T07:07:07+01:00
+date = 2025-03-11T07:07:07+01:00
 draft = false
 +++
 ![Air Traffice Screen](/images/airTraffic.jpg)

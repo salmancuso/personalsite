@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Automating Data Workflows with Apache Airflow | Sal Mancuso</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="
+In the realm of data engineering, the ability to automate workflows is a game changer. Imagine waking up every morning with the assurance that your data pipelines have been seamlessly executed, data has flowed flawlessly from one system to another, and your business insights are ready for you to act on. No more late-night database updates or cross-eyed mornings debugging cron jobs. Enter Apache Airflow, the Swiss Army knife for automating and orchestrating complex workflows.">
+    <meta name="generator" content="Hugo 0.145.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://salmancuso.com/posts/appacheairflow/">
+    
+
+    <meta property="og:url" content="https://salmancuso.com/posts/appacheairflow/">
+  <meta property="og:site_name" content="Sal Mancuso">
+  <meta property="og:title" content="Automating Data Workflows with Apache Airflow">
+  <meta property="og:description" content="In the realm of data engineering, the ability to automate workflows is a game changer. Imagine waking up every morning with the assurance that your data pipelines have been seamlessly executed, data has flowed flawlessly from one system to another, and your business insights are ready for you to act on. No more late-night database updates or cross-eyed mornings debugging cron jobs. Enter Apache Airflow, the Swiss Army knife for automating and orchestrating complex workflows.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-11T07:07:07+01:00">
+    <meta property="article:modified_time" content="2025-03-11T07:07:07+01:00">
+
+  <meta itemprop="name" content="Automating Data Workflows with Apache Airflow">
+  <meta itemprop="description" content="In the realm of data engineering, the ability to automate workflows is a game changer. Imagine waking up every morning with the assurance that your data pipelines have been seamlessly executed, data has flowed flawlessly from one system to another, and your business insights are ready for you to act on. No more late-night database updates or cross-eyed mornings debugging cron jobs. Enter Apache Airflow, the Swiss Army knife for automating and orchestrating complex workflows.">
+  <meta itemprop="datePublished" content="2025-03-11T07:07:07+01:00">
+  <meta itemprop="dateModified" content="2025-03-11T07:07:07+01:00">
+  <meta itemprop="wordCount" content="1112">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Automating Data Workflows with Apache Airflow">
+  <meta name="twitter:description" content="In the realm of data engineering, the ability to automate workflows is a game changer. Imagine waking up every morning with the assurance that your data pipelines have been seamlessly executed, data has flowed flawlessly from one system to another, and your business insights are ready for you to act on. No more late-night database updates or cross-eyed mornings debugging cron jobs. Enter Apache Airflow, the Swiss Army knife for automating and orchestrating complex workflows.">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Sal Mancuso
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/publications/" title="Publications page">
+              Publications
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Blog Posts page">
+              Blog Posts
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/contact/" title="Find Me page">
+              Find Me
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Automating Data Workflows with Apache Airflow</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-03-11T07:07:07+01:00">March 11, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p><img src="/images/airTraffic.jpg" alt="Air Traffice Screen"></p>
+<p>In the realm of data engineering, the ability to automate workflows is a game changer. Imagine waking up every morning with the assurance that your data pipelines have been seamlessly executed, data has flowed flawlessly from one system to another, and your business insights are ready for you to act on. No more late-night database updates or cross-eyed mornings debugging cron jobs. Enter Apache Airflow, the Swiss Army knife for automating and orchestrating complex workflows.</p>
+<p>Apache Airflow, an open-source platform to programmatically author, schedule, and monitor workflows, has become an indispensable tool in the modern data engineering toolkit. Originally developed by Airbnb, it swiftly gained traction for its ability to handle enterprise-level data pipeline automation with panache. In this verbose technical document, we&rsquo;re going to delve into the mechanics of Airflow, dissecting its components and presenting practical examples to show you how to wield this powerful tool.</p>
+<h2 id="architecture-overview">Architecture Overview</h2>
+<p>Let’s kick things off with some architecture. At the heart of Airflow is the concept of Directed Acyclic Graphs (DAGs). You can think of a DAG as an elaborate flowchart on steroids. Each DAG is made up of tasks that are interconnected by dependencies. When these tasks are completed, the DAG progresses to achieve a complete workflow.</p>
+<h3 id="core-components">Core Components</h3>
+<ol>
+<li><strong>Web Server</strong>: The Airflow web server provides a user interface where you can monitor and manage DAGs. It’s your mission control.</li>
+<li><strong>Scheduler</strong>: The scheduler is the unsung hero that triggers tasks based on the prescribed intervals. The scheduling can be as simple as a daily trigger or as complex as event-based scheduling.</li>
+<li><strong>Executor</strong>: The executor determines how and where tasks are executed. Airflow supports several types of executors, such as the LocalExecutor, CeleryExecutor, and KubernetesExecutor.</li>
+<li><strong>Metadata Database</strong>: All metadata related to DAGs, task instances, variables, connections, etc., are stored in a database. Airflow supports PostgreSQL and MySQL among others.</li>
+</ol>
+<h2 id="getting-started">Getting Started</h2>
+<p>Before we dive into the deep end, let&rsquo;s get you set up with Apache Airflow.</p>
+<h3 id="installation">Installation</h3>
+<p>You can install Airflow using pip, but a Docker-based approach offers a more isolated and reproducible environment.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install apache-airflow
+</span></span></code></pre></div><p>For a more production-ready setup, you might want to spin up Airflow using Docker Compose.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">webserver</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">apache/airflow:2.1.2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">AIRFLOW__CORE__EXECUTOR=LocalExecutor</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">AIRFLOW__CORE__FERNET_KEY=${FERNET_KEY}</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">AIRFLOW__CORE__LOAD_EXAMPLES=false</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;8080:8080&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./dags:/usr/local/airflow/dags</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">postgres</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">postgres:13</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">POSTGRES_USER=airflow</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">POSTGRES_PASSWORD=airflow</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">POSTGRES_DB=airflow</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./pg_data:/var/lib/postgresql/data</span>
+</span></span></code></pre></div><p>Don&rsquo;t forget to set up the FERNET_KEY for encrypting/decrypting relevant connections and variables.</p>
+<h2 id="authoring-your-first-dag">Authoring Your First DAG</h2>
+<p>A quick way to become friends with Airflow is to author your first DAG. Here’s a simple DAG written in Python to give you a flavor:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> airflow <span style="color:#f92672">import</span> DAG
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> airflow.operators.dummy_operator <span style="color:#f92672">import</span> DummyOperator
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> airflow.operators.python_operator <span style="color:#f92672">import</span> PythonOperator
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime, timedelta
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">print_hello</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;Hello world!&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>default_args <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;owner&#39;</span>: <span style="color:#e6db74">&#39;airflow&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;depends_on_past&#39;</span>: <span style="color:#66d9ef">False</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;start_date&#39;</span>: datetime(<span style="color:#ae81ff">2023</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;email_on_failure&#39;</span>: <span style="color:#66d9ef">False</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;email_on_retry&#39;</span>: <span style="color:#66d9ef">False</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;retries&#39;</span>: <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;retry_delay&#39;</span>: timedelta(minutes<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>),
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dag <span style="color:#f92672">=</span> DAG(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;hello_world_dag&#39;</span>,
+</span></span><span style="display:flex;"><span>    default_args<span style="color:#f92672">=</span>default_args,
+</span></span><span style="display:flex;"><span>    description<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;A simple hello world DAG&#39;</span>,
+</span></span><span style="display:flex;"><span>    schedule_interval<span style="color:#f92672">=</span>timedelta(days<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>start <span style="color:#f92672">=</span> DummyOperator(task_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;start&#39;</span>, dag<span style="color:#f92672">=</span>dag)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>hello_task <span style="color:#f92672">=</span> PythonOperator(task_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;print_hello&#39;</span>, python_callable<span style="color:#f92672">=</span>print_hello, dag<span style="color:#f92672">=</span>dag)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>end <span style="color:#f92672">=</span> DummyOperator(task_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;end&#39;</span>, dag<span style="color:#f92672">=</span>dag)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>start <span style="color:#f92672">&gt;&gt;</span> hello_task <span style="color:#f92672">&gt;&gt;</span> end
+</span></span></code></pre></div><p>This DAG contains three tasks: a start dummy task, a Python task to print &ldquo;Hello world!&rdquo;, and an end dummy task. The tasks are linked into a simple linear workflow.</p>
+<h2 id="complex-workflows">Complex Workflows</h2>
+<p>Let&rsquo;s step up our game with a more complex, real-world example. Imagine we have a workflow that extracts data from an API, performs ETL (Extract, Transform, Load) operations, and loads the transformed data into a data warehouse for analysis.</p>
+<h3 id="requirements">Requirements</h3>
+<ol>
+<li><strong>APICallOperator</strong>: To extract data.</li>
+<li><strong>PythonOperator</strong>: For the transformation part.</li>
+<li><strong>PostgresOperator</strong>: To load data into PostgreSQL.</li>
+</ol>
+<h3 id="writing-the-dag">Writing the DAG</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> airflow <span style="color:#f92672">import</span> DAG
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> airflow.operators.python_operator <span style="color:#f92672">import</span> PythonOperator
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> airflow.providers.postgres.operators.postgres <span style="color:#f92672">import</span> PostgresOperator
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime, timedelta
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>default_args <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;owner&#39;</span>: <span style="color:#e6db74">&#39;airflow&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;depends_on_past&#39;</span>: <span style="color:#66d9ef">False</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;start_date&#39;</span>: datetime(<span style="color:#ae81ff">2023</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;email_on_failure&#39;</span>: <span style="color:#66d9ef">False</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;email_on_retry&#39;</span>: <span style="color:#66d9ef">False</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;retries&#39;</span>: <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;retry_delay&#39;</span>: timedelta(minutes<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>),
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dag <span style="color:#f92672">=</span> DAG(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;etl_pipeline&#39;</span>,
+</span></span><span style="display:flex;"><span>    default_args<span style="color:#f92672">=</span>default_args,
+</span></span><span style="display:flex;"><span>    description<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;An ETL pipeline&#39;</span>,
+</span></span><span style="display:flex;"><span>    schedule_interval<span style="color:#f92672">=</span>timedelta(days<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">extract_data</span>():
+</span></span><span style="display:flex;"><span>    response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://api.example.com/data&#39;</span>)
+</span></span><span style="display:flex;"><span>    data <span style="color:#f92672">=</span> response<span style="color:#f92672">.</span>json()
+</span></span><span style="display:flex;"><span>    df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(data)
+</span></span><span style="display:flex;"><span>    df<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;/tmp/data.csv&#39;</span>, index<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">transform_data</span>():
+</span></span><span style="display:flex;"><span>    df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;/tmp/data.csv&#39;</span>)
+</span></span><span style="display:flex;"><span>    df[<span style="color:#e6db74">&#39;transformed_column&#39;</span>] <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;original_column&#39;</span>]<span style="color:#f92672">.</span>apply(<span style="color:#66d9ef">lambda</span> x: x <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>    df<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;/tmp/transformed_data.csv&#39;</span>, index<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">load_data</span>():
+</span></span><span style="display:flex;"><span>    df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;/tmp/transformed_data.csv&#39;</span>)
+</span></span><span style="display:flex;"><span>    df<span style="color:#f92672">.</span>to_sql(<span style="color:#e6db74">&#39;transformed_table&#39;</span>, con<span style="color:#f92672">=</span>engine, if_exists<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;replace&#39;</span>, index<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>extract_task <span style="color:#f92672">=</span> PythonOperator(
+</span></span><span style="display:flex;"><span>    task_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;extract_data&#39;</span>,
+</span></span><span style="display:flex;"><span>    python_callable<span style="color:#f92672">=</span>extract_data,
+</span></span><span style="display:flex;"><span>    dag<span style="color:#f92672">=</span>dag,
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>transform_task <span style="color:#f92672">=</span> PythonOperator(
+</span></span><span style="display:flex;"><span>    task_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;transform_data&#39;</span>,
+</span></span><span style="display:flex;"><span>    python_callable<span style="color:#f92672">=</span>transform_data,
+</span></span><span style="display:flex;"><span>    dag<span style="color:#f92672">=</span>dag,
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>load_task <span style="color:#f92672">=</span> PythonOperator(
+</span></span><span style="display:flex;"><span>    task_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;load_data&#39;</span>,
+</span></span><span style="display:flex;"><span>    python_callable<span style="color:#f92672">=</span>load_data,
+</span></span><span style="display:flex;"><span>    dag<span style="color:#f92672">=</span>dag,
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>extract_task <span style="color:#f92672">&gt;&gt;</span> transform_task <span style="color:#f92672">&gt;&gt;</span> load_task
+</span></span></code></pre></div><p>Here we define a more intricate pipeline:</p>
+<ol>
+<li><strong>Extract Task</strong>: Uses <code>requests</code> to fetch data from an API.</li>
+<li><strong>Transform Task</strong>: Utilizes <code>pandas</code> to manipulate the data.</li>
+<li><strong>Load Task</strong>: Responsible for loading the data into PostgreSQL.</li>
+</ol>
+<p>The beauty of Airflow is its flexibility. You&rsquo;re not confined to any particular technology stack; if you need to swap out PostgreSQL for BigQuery or want to switch Python for a Spark job, you can do that with minimal refactoring.</p>
+<h2 id="monitoring-and-maintenance">Monitoring and Maintenance</h2>
+<p>Now that we have our DAGs running, let’s talk about monitoring and maintenance. The Airflow UI is where all the magic happens. From the UI, you can inspect your DAG runs, retry failed tasks, and manually trigger DAGs when necessary.</p>
+<h3 id="dealing-with-failures">Dealing with Failures</h3>
+<p>Failures are part and parcel of any system, and handling them gracefully is crucial. You can set up email alerts, Slack notifications, or even custom alerting mechanisms to inform you when a DAG or task fails. Setting up retries and leveraging the <code>TriggerRule</code> parameter allows you to control the flow in failure scenarios.</p>
+<p>For example, you might use the <code>TriggerRule.ONE_FAILED</code> to proceed to the next task if any one task fails:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> airflow.utils.trigger_rule <span style="color:#f92672">import</span> TriggerRule
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>task1 <span style="color:#f92672">=</span> PythonOperator(
+</span></span><span style="display:flex;"><span>    task_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;task1&#39;</span>,
+</span></span><span style="display:flex;"><span>    python_callable<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span>: print(<span style="color:#e6db74">&#34;Task 1&#34;</span>),
+</span></span><span style="display:flex;"><span>    dag<span style="color:#f92672">=</span>dag,
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>task2 <span style="color:#f92672">=</span> PythonOperator(
+</span></span><span style="display:flex;"><span>    task_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;task2&#39;</span>,
+</span></span><span style="display:flex;"><span>    python_callable<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span>: print(<span style="color:#e6db74">&#34;Task 2&#34;</span>),
+</span></span><span style="display:flex;"><span>    dag<span style="color:#f92672">=</span>dag,
+</span></span><span style="display:flex;"><span>    trigger_rule<span style="color:#f92672">=</span>TriggerRule<span style="color:#f92672">.</span>ONE_FAILED
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="scalability-and-deployment">Scalability and Deployment</h2>
+<p>When it comes to scaling, Airflow gracefully adapts to both vertical and horizontal scaling strategies. The CeleryExecutor can distribute task execution across multiple workers, while the KubernetesExecutor dynamically scales to meet workload demands.</p>
+<p>In production environments, deploying Airflow can be fine-tuned with tools like Kubernetes, Helm, and managed services like Google Cloud Composer or Amazon Managed Workflows for Apache Airflow (MWAA).</p>
+<hr>
+<p>In a world where data drives decisions, and timely insights are the lifeblood of a business, automating data workflows is not just a convenience; it is a necessity. Apache Airflow brings a level of sophistication and control that allows you to build complex, dependable workflows without breaking a sweat—or at least, without breaking too many.</p>
+<p>With its robust scheduling capabilities, an extensive library of plugins, and a vibrant community that elevates it from an impressive tool to a magical wand for data engineers, Apache Airflow stands out as a transformative solution for automating data workflows.</p>
+<p>So grab your metaphorical surfboard, catch the data wave, and let Apache Airflow propel you to new heights—or at least to a stress-free morning coffee.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://salmancuso.com/" >
+    &copy;  Sal Mancuso 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
