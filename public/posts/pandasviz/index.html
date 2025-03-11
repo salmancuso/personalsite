@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Data Visualization with Pandas | Sal Mancuso</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="
+Python is one of the most popular programming languages for data analysis and visualization, and the Pandas library is one of the most widely used tools for manipulating and analyzing data in Python. In this blog post, we&rsquo;ll take a closer look at Pandas and how to use it to create visualizations in Matplotlib.
+Pandas is a powerful library that provides data structures for efficiently storing and manipulating large datasets. It provides a number of data structures, including Series (1-dimensional) and DataFrame (2-dimensional), that make it easy to handle and manipulate data in Python. Pandas also provides a variety of functions for cleaning, transforming, and analyzing data.">
+    <meta name="generator" content="Hugo 0.145.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://salmancuso.com/posts/pandasviz/">
+    
+
+    <meta property="og:url" content="https://salmancuso.com/posts/pandasviz/">
+  <meta property="og:site_name" content="Sal Mancuso">
+  <meta property="og:title" content="Data Visualization with Pandas">
+  <meta property="og:description" content="Python is one of the most popular programming languages for data analysis and visualization, and the Pandas library is one of the most widely used tools for manipulating and analyzing data in Python. In this blog post, we’ll take a closer look at Pandas and how to use it to create visualizations in Matplotlib.
+Pandas is a powerful library that provides data structures for efficiently storing and manipulating large datasets. It provides a number of data structures, including Series (1-dimensional) and DataFrame (2-dimensional), that make it easy to handle and manipulate data in Python. Pandas also provides a variety of functions for cleaning, transforming, and analyzing data.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-03-13T23:21:00+07:00">
+    <meta property="article:modified_time" content="2023-03-13T23:21:00+07:00">
+
+  <meta itemprop="name" content="Data Visualization with Pandas">
+  <meta itemprop="description" content="Python is one of the most popular programming languages for data analysis and visualization, and the Pandas library is one of the most widely used tools for manipulating and analyzing data in Python. In this blog post, we’ll take a closer look at Pandas and how to use it to create visualizations in Matplotlib.
+Pandas is a powerful library that provides data structures for efficiently storing and manipulating large datasets. It provides a number of data structures, including Series (1-dimensional) and DataFrame (2-dimensional), that make it easy to handle and manipulate data in Python. Pandas also provides a variety of functions for cleaning, transforming, and analyzing data.">
+  <meta itemprop="datePublished" content="2023-03-13T23:21:00+07:00">
+  <meta itemprop="dateModified" content="2023-03-13T23:21:00+07:00">
+  <meta itemprop="wordCount" content="466">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Data Visualization with Pandas">
+  <meta name="twitter:description" content="Python is one of the most popular programming languages for data analysis and visualization, and the Pandas library is one of the most widely used tools for manipulating and analyzing data in Python. In this blog post, we’ll take a closer look at Pandas and how to use it to create visualizations in Matplotlib.
+Pandas is a powerful library that provides data structures for efficiently storing and manipulating large datasets. It provides a number of data structures, including Series (1-dimensional) and DataFrame (2-dimensional), that make it easy to handle and manipulate data in Python. Pandas also provides a variety of functions for cleaning, transforming, and analyzing data.">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Sal Mancuso
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/publications/" title="Publications page">
+              Publications
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Blog Posts page">
+              Blog Posts
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/contact/" title="Find Me page">
+              Find Me
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Data Visualization with Pandas</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2023-03-13T23:21:00+07:00">March 13, 2023</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p><img src="/images/pandasViz.png" alt="Code"></p>
+<p>Python is one of the most popular programming languages for data analysis and visualization, and the Pandas library is one of the most widely used tools for manipulating and analyzing data in Python. In this blog post, we&rsquo;ll take a closer look at Pandas and how to use it to create visualizations in Matplotlib.</p>
+<p>Pandas is a powerful library that provides data structures for efficiently storing and manipulating large datasets. It provides a number of data structures, including Series (1-dimensional) and DataFrame (2-dimensional), that make it easy to handle and manipulate data in Python. Pandas also provides a variety of functions for cleaning, transforming, and analyzing data.</p>
+<p>To use Pandas, you first need to install it. You can do this by running the following command in your terminal or command prompt:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install pandas</span></span></code></pre></div>
+<p>Once you have Pandas installed, you can start working with data. You can load data from a variety of sources, including CSV files, Excel files, and SQL databases. Here&rsquo;s an example of how to load data from a CSV file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Load data from a CSV file</span>
+</span></span><span style="display:flex;"><span>data <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;data.csv&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Display the first few rows of the data</span>
+</span></span><span style="display:flex;"><span>print(data<span style="color:#f92672">.</span>head())</span></span></code></pre></div>
+<p>This code will load the data from the file &lsquo;data.csv&rsquo; into a Pandas DataFrame and display the first few rows of the data using the head() function.</p>
+<p>Once you have loaded your data into a Pandas DataFrame, you can start manipulating and analyzing it. For example, you can select specific columns, filter rows based on certain criteria, and calculate summary statistics.</p>
+<p>To create visualizations in Matplotlib, you can use the Pandas plot() function, which provides a simple interface for creating a variety of plots, including line plots, scatter plots, and bar charts. Here&rsquo;s an example of how to create a line plot using the plot() function:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Load data from a CSV file</span>
+</span></span><span style="display:flex;"><span>data <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;data.csv&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create a line plot of the data</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#f92672">.</span>plot(kind<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;line&#39;</span>, x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Year&#39;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Sales&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add a title and labels for the x and y axes</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Sales Over Time&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;Year&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;Sales in Millions $&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show the plot</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()</span></span></code></pre></div>
+<p>In this example, we first load the data from a CSV file using Pandas. We then create a line plot of the data using the plot() function, specifying the x and y columns we want to plot. Finally, we add a title and labels for the x and y axes using Matplotlib functions and show the plot using the show() function.</p>
+<p>Pandas is a powerful and flexible library for working with data in Python, and Matplotlib provides a wide range of options for creating visualizations from Pandas data. With these tools, you can easily analyze and visualize large datasets to gain insights and communicate your findings to others.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://salmancuso.com/" >
+    &copy;  Sal Mancuso 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

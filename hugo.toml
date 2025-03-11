@@ -1,0 +1,34 @@
+baseURL = 'https://salmancuso.com'
+languageCode = 'en-us'
+title = 'Sal Mancuso'
+AltTitle1 = 'Neurons & Notions: My Mental Playground'
+AltTitle2 = 'Idea Incubator: A Cranial Retreat'
+theme = 'ananke'
+
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 1
+
+[[menu.main]]
+identifier = "publications"
+name = "Publications"
+url = "/publications/"
+weight = 2
+
+[[menu.main]]
+identifier = "posts"
+name = "Blog Posts"
+url = "/posts/"
+weight = 3
+
+[[menu.main]]
+identifier = "contact"
+name = "Find Me"
+url = "/contact/"
+weight = 3
+
+[params]
+  commentoEnable = false
+  read_more_copy = "Read more about this entry"
