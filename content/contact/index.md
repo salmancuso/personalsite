@@ -2,6 +2,7 @@
 title: "Connect with me"
 description: "Technology alone is not enough. It’s technology married with liberal arts, married with the humanities, that yields us the result that makes our heart sing. ~ Steve Jobs"
 featured_image: '/images/redwoodBW.jpg'
+baseURL: 'https://salmancuso.com'
 ---
 
 ## Links

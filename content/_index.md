@@ -5,4 +5,5 @@ description: "Idea Incubator: My Mental Playground"
 theme_version: '2.8.2'
 cascade:
 featured_image: '/images/redwoodBW.jpg'
+baseURL: 'https://salmancuso.com'
 ---

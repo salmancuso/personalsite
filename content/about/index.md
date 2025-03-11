@@ -2,6 +2,7 @@
 title: "About"
 description: "A data nerd from Silicon Valley with a robust background in large-scale data management, advanced analytics, and cloud computing, blending technical expertise with a passion for innovative solutions."
 featured_image: '/images/redwoodBW.jpg'
+baseURL: 'https://salmancuso.com'
 ---
 ## About Me
 
