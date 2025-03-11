@@ -1,6 +1,6 @@
 +++
 title = """Job Search with Financial Information: Theory and Evidence"""
-date = 2023-08-01T07:07:07+01:00
+date = 2022-08-01T07:07:07+01:00
 draft = false
 +++
 

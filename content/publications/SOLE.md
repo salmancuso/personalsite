@@ -1,6 +1,6 @@
 +++
 title = """2017 State of Latino Entrepreneurship"""
-date = 2020-09-11T07:07:07+01:00
+date = 2016-09-11T07:07:07+01:00
 draft = false
 +++
 ![GSB Latino Logo](/images/latino.jpg)
