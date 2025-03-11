@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>SQLite: Lightweight, Fast and Local | Sal Mancuso</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="
+SQLite is a powerful relational database management system that is widely used for its simplicity, speed, reliability, and versatility; making it ideal for a wide range of applications and use cases. Some of the key reasons why SQLite is considered powerful are:
+
+Lightweight and easy to use: SQLite is a lightweight and self-contained database engine that requires minimal configuration and setup. It is also0 very easy to use and does not require a dedicated server or administrator.
+High performance: SQLite is designed to be fast and efficient, with a small memory footprint and minimal disk I/O. It is optimized for read-heavy workloads, making it ideal for applications that require fast data retrieval.
+ACID compliance: SQLite is fully ACID-compliant, which means that it provides atomicity, consistency, isolation, and durability guarantees for transactions. This makes it suitable for applications that require high data integrity and reliability.
+Cross-platform compatibility: SQLite is available on virtually all operating systems, including Windows, Mac OS, Linux, Android, and iOS. It also supports a wide range of programming languages, including C, C&#43;&#43;, Java, Python, and PHP.
+Wide range of features: Despite its small size, SQLite provides a wide range of features, including support for complex queries, indexing, triggers, and full-text search. It also supports encryption, which makes it suitable for storing sensitive data.
+
+In this tutorial, we will cover the basics of using SQLite for data storage.">
+    <meta name="generator" content="Hugo 0.145.0">
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://localhost:1313/posts/sqlite/">
+    
+
+    <meta property="og:url" content="http://localhost:1313/posts/sqlite/">
+  <meta property="og:site_name" content="Sal Mancuso">
+  <meta property="og:title" content="SQLite: Lightweight, Fast and Local">
+  <meta property="og:description" content="SQLite is a powerful relational database management system that is widely used for its simplicity, speed, reliability, and versatility; making it ideal for a wide range of applications and use cases. Some of the key reasons why SQLite is considered powerful are:
+Lightweight and easy to use: SQLite is a lightweight and self-contained database engine that requires minimal configuration and setup. It is also0 very easy to use and does not require a dedicated server or administrator. High performance: SQLite is designed to be fast and efficient, with a small memory footprint and minimal disk I/O. It is optimized for read-heavy workloads, making it ideal for applications that require fast data retrieval. ACID compliance: SQLite is fully ACID-compliant, which means that it provides atomicity, consistency, isolation, and durability guarantees for transactions. This makes it suitable for applications that require high data integrity and reliability. Cross-platform compatibility: SQLite is available on virtually all operating systems, including Windows, Mac OS, Linux, Android, and iOS. It also supports a wide range of programming languages, including C, C&#43;&#43;, Java, Python, and PHP. Wide range of features: Despite its small size, SQLite provides a wide range of features, including support for complex queries, indexing, triggers, and full-text search. It also supports encryption, which makes it suitable for storing sensitive data. In this tutorial, we will cover the basics of using SQLite for data storage.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-03-04T15:21:00+07:00">
+    <meta property="article:modified_time" content="2023-03-04T15:21:00+07:00">
+
+  <meta itemprop="name" content="SQLite: Lightweight, Fast and Local">
+  <meta itemprop="description" content="SQLite is a powerful relational database management system that is widely used for its simplicity, speed, reliability, and versatility; making it ideal for a wide range of applications and use cases. Some of the key reasons why SQLite is considered powerful are:
+Lightweight and easy to use: SQLite is a lightweight and self-contained database engine that requires minimal configuration and setup. It is also0 very easy to use and does not require a dedicated server or administrator. High performance: SQLite is designed to be fast and efficient, with a small memory footprint and minimal disk I/O. It is optimized for read-heavy workloads, making it ideal for applications that require fast data retrieval. ACID compliance: SQLite is fully ACID-compliant, which means that it provides atomicity, consistency, isolation, and durability guarantees for transactions. This makes it suitable for applications that require high data integrity and reliability. Cross-platform compatibility: SQLite is available on virtually all operating systems, including Windows, Mac OS, Linux, Android, and iOS. It also supports a wide range of programming languages, including C, C&#43;&#43;, Java, Python, and PHP. Wide range of features: Despite its small size, SQLite provides a wide range of features, including support for complex queries, indexing, triggers, and full-text search. It also supports encryption, which makes it suitable for storing sensitive data. In this tutorial, we will cover the basics of using SQLite for data storage.">
+  <meta itemprop="datePublished" content="2023-03-04T15:21:00+07:00">
+  <meta itemprop="dateModified" content="2023-03-04T15:21:00+07:00">
+  <meta itemprop="wordCount" content="718">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="SQLite: Lightweight, Fast and Local">
+  <meta name="twitter:description" content="SQLite is a powerful relational database management system that is widely used for its simplicity, speed, reliability, and versatility; making it ideal for a wide range of applications and use cases. Some of the key reasons why SQLite is considered powerful are:
+Lightweight and easy to use: SQLite is a lightweight and self-contained database engine that requires minimal configuration and setup. It is also0 very easy to use and does not require a dedicated server or administrator. High performance: SQLite is designed to be fast and efficient, with a small memory footprint and minimal disk I/O. It is optimized for read-heavy workloads, making it ideal for applications that require fast data retrieval. ACID compliance: SQLite is fully ACID-compliant, which means that it provides atomicity, consistency, isolation, and durability guarantees for transactions. This makes it suitable for applications that require high data integrity and reliability. Cross-platform compatibility: SQLite is available on virtually all operating systems, including Windows, Mac OS, Linux, Android, and iOS. It also supports a wide range of programming languages, including C, C&#43;&#43;, Java, Python, and PHP. Wide range of features: Despite its small size, SQLite provides a wide range of features, including support for complex queries, indexing, triggers, and full-text search. It also supports encryption, which makes it suitable for storing sensitive data. In this tutorial, we will cover the basics of using SQLite for data storage.">
+
+	
+  </head><body class="ma0 avenir bg-near-white development">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Sal Mancuso
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/publications/" title="Publications page">
+              Publications
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Blog Posts page">
+              Blog Posts
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/contact/" title="Find Me page">
+              Find Me
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">SQLite: Lightweight, Fast and Local</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2023-03-04T15:21:00+07:00">March 4, 2023</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p><img src="/images/sql.jpg" alt="SQL Code">
+SQLite is a powerful relational database management system that is widely used for its simplicity, speed, reliability, and versatility; making it ideal for a wide range of applications and use cases. Some of the key reasons why SQLite is considered powerful are:</p>
+<ol>
+<li>Lightweight and easy to use: SQLite is a lightweight and self-contained database engine that requires minimal configuration and setup. It is also0 very easy to use and does not require a dedicated server or administrator.</li>
+<li>High performance: SQLite is designed to be fast and efficient, with a small memory footprint and minimal disk I/O. It is optimized for read-heavy workloads, making it ideal for applications that require fast data retrieval.</li>
+<li>ACID compliance: SQLite is fully ACID-compliant, which means that it provides atomicity, consistency, isolation, and durability guarantees for transactions. This makes it suitable for applications that require high data integrity and reliability.</li>
+<li>Cross-platform compatibility: SQLite is available on virtually all operating systems, including Windows, Mac OS, Linux, Android, and iOS. It also supports a wide range of programming languages, including C, C++, Java, Python, and PHP.</li>
+<li>Wide range of features: Despite its small size, SQLite provides a wide range of features, including support for complex queries, indexing, triggers, and full-text search. It also supports encryption, which makes it suitable for storing sensitive data.</li>
+</ol>
+<p>In this tutorial, we will cover the basics of using SQLite for data storage.</p>
+<h1></h1>
+<hr>
+<h2 id="installing-sqlite">Installing SQLite</h2>
+<p>SQLite is pre-installed on most operating systems including Windows, Mac OS, and Linux. To check if SQLite is installed on your system, open the command prompt or terminal and type the following command:</p>
+<p><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sqlite3</span></span></code></pre></div>
+If SQLite is installed, you will see the SQLite command prompt:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in b:
+</span></span><span style="display:flex;"><span>    print<span style="color:#f92672">(</span>i<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>SQLite version 3.36.0 2021-06-18 18:36:39
+</span></span><span style="display:flex;"><span>Enter <span style="color:#e6db74">&#34;.help&#34;</span> <span style="color:#66d9ef">for</span> usage hints.
+</span></span><span style="display:flex;"><span>Connected to a transient in-memory database.
+</span></span><span style="display:flex;"><span>Use <span style="color:#e6db74">&#34;.open FILENAME&#34;</span> to reopen on a persistent database.</span></span></code></pre></div>
+If SQLite is not installed, you can download and install it from the official website: <a href="https://www.sqlite.org/download.html">https://www.sqlite.org/download.html</a></p>
+<h1></h1>
+<hr>
+<h2 id="creating-a-database">Creating a Database</h2>
+<p>To create a new database in SQLite, you need to use the sqlite3 command (in a termianl window on Macintosh or Linux) followed by the name of the database file. For example, to create a new database called mydatabase.db, type the following command:</p>
+<p><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sqlite3 mydatabase.db</span></span></code></pre></div>
+This will create a new database file in the current directory. You can verify that the database file has been created by typing the following command:</p>
+<p><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls</span></span></code></pre></div>
+This will list all the files in the current directory, including the newly created mydatabase.db file.</p>
+<h1></h1>
+<hr>
+<h2 id="creating-tables">Creating Tables</h2>
+<p>Once you have created a database, you can create tables to store data in the database. To create a table, you need to use the CREATE TABLE SQL command followed by the name of the table and the column definitions.</p>
+<p>For example, let&rsquo;s create a table called employees with the following columns: id, name, age, and salary.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> employees (
+</span></span><span style="display:flex;"><span>    id INTEGER <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
+</span></span><span style="display:flex;"><span>    name TEXT,
+</span></span><span style="display:flex;"><span>    age INTEGER,
+</span></span><span style="display:flex;"><span>    salary REAL
+</span></span><span style="display:flex;"><span>);</span></span></code></pre></div>
+In this example, we have defined four columns with different data types: id (INTEGER), name (TEXT), age (INTEGER), and salary (REAL). We have also specified that the id column is the primary key.</p>
+<h1></h1>
+<hr>
+<h2 id="inserting-data">Inserting Data</h2>
+<p>Once you have created a table, you can insert data into the table using the INSERT INTO SQL command.</p>
+<p>For example, let&rsquo;s insert a new employee record into the employees table:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> employees (name, age, salary) <span style="color:#66d9ef">VALUES</span> (<span style="color:#e6db74">&#39;John Doe&#39;</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">50000</span>);</span></span></code></pre></div>
+In this example, we have specified the column names and the corresponding values that we want to insert into the table.</p>
+<h1></h1>
+<hr>
+<h2 id="querying-data">Querying Data</h2>
+<p>You can retrieve data from the database using the SELECT SQL command.</p>
+<p>For example, let&rsquo;s retrieve all the records from the employees table:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> employees;</span></span></code></pre></div>
+This will retrieve all the records from the employees table and display them in the console.</p>
+<h1></h1>
+<hr>
+<h2 id="updating-data">Updating Data</h2>
+<p>You can update data in the database using the UPDATE SQL command.</p>
+<p>For example, let&rsquo;s update the salary of the employee with the id of 1:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">UPDATE</span> employees <span style="color:#66d9ef">SET</span> salary <span style="color:#f92672">=</span> <span style="color:#ae81ff">60000</span> <span style="color:#66d9ef">WHERE</span> id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;</span></span></code></pre></div>
+This will update the salary column of the employee record with the id of 1 to 60000.</p>
+<h1></h1>
+<hr>
+<h2 id="deleting-data">Deleting Data</h2>
+<p>You can delete data from the database using the DELETE SQL command.</p>
+<p>For example, let&rsquo;s delete the employee record with the id of 1:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">DELETE</span> <span style="color:#66d9ef">FROM</span> employees <span style="color:#66d9ef">WHERE</span> id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;</span></span></code></pre></div>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
+    &copy;  Sal Mancuso 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
