@@ -1,9 +1,9 @@
 +++
 title = """Why I Chose to Step Away from Scouting America: A Personal Reflection"""
-date = 2023-12-05T15:21:00+07:00
+date = 2024-12-05T15:21:00+07:00
 draft = false
 +++
-![Scouting Logo](/images/scouts.jpg)
+![Scouting Logo](/images/scouts.jpeg)
 
 I realize I didn’t offer you a clear explanation of why I chose to step away from Scouts. Between the holidays and some personal family health issues, I’ve been feeling pretty underwater lately and tardy in my explanation. Regardless, here is the synopsis at a 50,000-foot level.
 
