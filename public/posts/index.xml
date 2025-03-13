@@ -6,14 +6,21 @@
     <description>Recent content in Posts on Sal Mancuso</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Mar 2025 07:07:07 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 11 Mar 2025 13:21:00 +0700</lastBuildDate>
     <atom:link href="https://salmancuso.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Automating Data Workflows with Apache Airflow</title>
-      <link>https://salmancuso.com/posts/appacheairflow/</link>
+      <title>Charting a Path to Success: Guide for Aspiring Business Intelligence Analysts and Data Engineers</title>
+      <link>https://salmancuso.com/posts/dataengineer/</link>
+      <pubDate>Tue, 11 Mar 2025 13:21:00 +0700</pubDate>
+      <guid>https://salmancuso.com/posts/dataengineer/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://salmancuso.com/images/data-engineer.jpg&#34; alt=&#34;Data Engineer&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;As the digital economy continues to expand, driven by vast amounts of data, the roles of Business Intelligence (BI) Analysts and Data Engineers have become increasingly pivotal. For those looking to thrust themselves into these dynamic and rewarding careers, it requires a multidimensional approach encompassing skill acquisition, portfolio development, networking, and continuous learning.&lt;/p&gt;&#xA;&lt;p&gt;This comprehensive guide delves into the quintessential elements that will aid aspiring BI Analysts and Data Engineers in effectively navigating their career journey. Whether you’re a college graduate, a mid-career professional seeking to pivot, or a data enthusiast passionate about making impactful, data-driven decisions, these insights will be indispensable to your professional ascent.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Cult of Politics: Why Blind Allegiance is Dangerous</title>
+      <link>https://salmancuso.com/posts/cultpolitics/</link>
       <pubDate>Tue, 11 Mar 2025 07:07:07 +0100</pubDate>
-      <guid>https://salmancuso.com/posts/appacheairflow/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://salmancuso.com/images/airTraffic.jpg&#34; alt=&#34;Air Traffice Screen&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;In the realm of data engineering, the ability to automate workflows is a game changer. Imagine waking up every morning with the assurance that your data pipelines have been seamlessly executed, data has flowed flawlessly from one system to another, and your business insights are ready for you to act on. No more late-night database updates or cross-eyed mornings debugging cron jobs. Enter Apache Airflow, the Swiss Army knife for automating and orchestrating complex workflows.&lt;/p&gt;</description>
+      <guid>https://salmancuso.com/posts/cultpolitics/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://salmancuso.com/images/spyvspy.jpeg&#34; alt=&#34;Spy Vs Spy&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;In recent years, my political observations have led me to a rather disheartening conclusion: the leaders we elect, regardless of their political affiliation, often appear to crave power above all else. This desire for dominance manifests in a refusal to collaborate across party lines, breeding a culture of division and distrust. This blog post aims to explore the striking resemblance between blind political allegiance and cult-like behavior, as well as how this polarization has eroded our national discourse. Reflecting on historical periods of political division, we can also glean valuable lessons for healing and unity.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The Impact of Artificial Intelligence on Business Intelligence</title>
@@ -23,18 +30,18 @@
       <description>&lt;p&gt;&lt;img src=&#34;https://salmancuso.com/images/biHead.jpeg&#34; alt=&#34;BI Head Brain&#34;&gt;&#xA;In the rapidly evolving landscape of digital transformation, a phenomenon of profound significance has taken center stage: the integration of Artificial Intelligence (AI) into the realm of Business Intelligence (BI). This integration has emerged as a formidable force that not only propels strategic innovation but also fundamentally reshapes the very fabric of how organizations operate, particularly in the face of mounting complexities stemming from data proliferation. As companies grapple with the challenges of extracting meaningful insights from vast, diverse, and often disorganized datasets, AI stands out as a transformative agent. It enhances BI&amp;rsquo;s capabilities, fundamentally altering the ways in which organizations glean insights, make informed decisions, and strategically maintain competitive advantages in their respective markets. This document aims to provide an in-depth exploration of the profound impact that AI has on BI, drawing insights from a seasoned Silicon Valley perspective and highlighting noteworthy examples that underscore pivotal advancements along with their practical implications.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Automating Data Workflows with Apache Airflow</title>
+      <link>https://salmancuso.com/posts/appacheairflow/</link>
+      <pubDate>Mon, 10 Mar 2025 07:07:07 +0100</pubDate>
+      <guid>https://salmancuso.com/posts/appacheairflow/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://salmancuso.com/images/airTraffic.jpg&#34; alt=&#34;Air Traffice Screen&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;In the realm of data engineering, the ability to automate workflows is a game changer. Imagine waking up every morning with the assurance that your data pipelines have been seamlessly executed, data has flowed flawlessly from one system to another, and your business insights are ready for you to act on. No more late-night database updates or cross-eyed mornings debugging cron jobs. Enter Apache Airflow, the Swiss Army knife for automating and orchestrating complex workflows.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Repositories, what are they good for?</title>
       <link>https://salmancuso.com/posts/git/</link>
       <pubDate>Sun, 09 Feb 2025 07:07:07 +0100</pubDate>
       <guid>https://salmancuso.com/posts/git/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://salmancuso.com/images/git.png&#34; alt=&#34;Git Repo&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;In recent years, the importance of repositories like GitHub has become increasingly apparent in the tech industry. Platforms such as GitHub, GitLab, and BitBucket are web-based hosting services that provide version control and collaboration features for software development projects. These platforms allow developers to store and manage their code, track changes, collaborate with others, and contribute to open-source projects. In this expanded article, we&amp;rsquo;ll deeply discuss the significance of repositories like GitHub and provide comprehensive instructions on how to use a repository effectively.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Why I Chose to Step Away from Scouting America: A Personal Reflection</title>
-      <link>https://salmancuso.com/posts/scoutleft/</link>
-      <pubDate>Thu, 05 Dec 2024 15:21:00 +0700</pubDate>
-      <guid>https://salmancuso.com/posts/scoutleft/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://salmancuso.com/images/scouts.jpeg&#34; alt=&#34;Scouting Logo&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I realize I didn’t offer you a clear explanation of why I chose to step away from Scouts. Between the holidays and some personal family health issues, I’ve been feeling pretty underwater lately and tardy in my explanation. Regardless, here is the synopsis at a 50,000-foot level.&lt;/p&gt;&#xA;&lt;h3 id=&#34;background-of-troop-members&#34;&gt;Background of Troop Members:&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Scout Malleable:&lt;/strong&gt; She is a scout in a leadership position.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Parents Dogmatic and Meddler:&lt;/strong&gt; Parents to Scout Malleable. Both are very involved in Scouts and are on our committee.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;ASM Miscreant:&lt;/strong&gt; Assistant Scout Master and Woodbadge trained and active on the council with no scouts in our troop.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;ASM Disciplined:&lt;/strong&gt; Assistant Scout Master.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Scout Disengaged:&lt;/strong&gt; Scout has been in the troop for about a year but is disengaged.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Scout Follower:&lt;/strong&gt; Scout in the troop for about 6 months. She just wants to be the popular and liked.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;the-initial-incident&#34;&gt;The Initial Incident:&lt;/h3&gt;&#xA;&lt;p&gt;Scout Malleable recruited scouts Scout Disengaged and Scout Follower into the troop. Parent Dogmatic and Parent Meddler believe these new scouts should be good friends with Scout Malleable because she recruited these girls into the troop. In late September, Parent Meddler complained to ASM Disciplined that they felt their scout was being bullied, and it was a youth protection violation. Parent Meddler showed parts of the text message thread to ASM Disciplined; after ASM Disciplined had the opportunity to read some of the text, she determined that it wasn’t bullying; however, Scout Disengaged and Scout Follower were not being very kind. Messages included questions like what a field uniform includes or when the troop meeting starts. And while they could’ve been worded kinder, ASM Disciplined determined they were not bullying. ASM Disciplined told me that, at the most, it seemed like Scout Disengaged and Scout Follower were trying to trip up Scout Malleable in a reply. When I spoke with Parent Meddler and Parent Dogmatic, I learned that Scout Disengaged and Scout Follower were not inviting Scout Malleable to non-Scout-related activities like birthday parties. I have explained to Parent Dogmatic and Parent Meddler that this is not considered exclusionary since it is not scout-related.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Data Engineering: Big Data Transfer</title>

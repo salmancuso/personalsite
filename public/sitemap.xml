@@ -2,10 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://salmancuso.com/posts/appacheairflow/</loc>
-    <lastmod>2025-03-11T07:07:07+01:00</lastmod>
+    <loc>https://salmancuso.com/posts/dataengineer/</loc>
+    <lastmod>2025-03-11T13:21:00+07:00</lastmod>
   </url><url>
     <loc>https://salmancuso.com/</loc>
+    <lastmod>2025-03-11T13:21:00+07:00</lastmod>
+  </url><url>
+    <loc>https://salmancuso.com/posts/cultpolitics/</loc>
     <lastmod>2025-03-11T07:07:07+01:00</lastmod>
   </url><url>
     <loc>https://salmancuso.com/posts/biai/</loc>
@@ -17,11 +20,11 @@
     <loc>https://salmancuso.com/posts/</loc>
     <lastmod>2025-03-10T12:00:00-05:00</lastmod>
   </url><url>
+    <loc>https://salmancuso.com/posts/appacheairflow/</loc>
+    <lastmod>2025-03-10T07:07:07+01:00</lastmod>
+  </url><url>
     <loc>https://salmancuso.com/posts/git/</loc>
     <lastmod>2025-02-09T07:07:07+01:00</lastmod>
-  </url><url>
-    <loc>https://salmancuso.com/posts/scoutleft/</loc>
-    <lastmod>2024-12-05T15:21:00+07:00</lastmod>
   </url><url>
     <loc>https://salmancuso.com/posts/datatransfer/</loc>
     <lastmod>2024-09-11T07:07:07+01:00</lastmod>
