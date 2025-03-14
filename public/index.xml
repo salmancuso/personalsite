@@ -6,8 +6,15 @@
     <description>Recent content in I Am Sal on Sal Mancuso</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Mar 2025 13:21:00 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 14 Mar 2025 07:07:07 +0100</lastBuildDate>
     <atom:link href="https://salmancuso.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unleashing the Potential of Decentralized Communication: A Deep Dive into LoRa Meshtastic Networks</title>
+      <link>https://salmancuso.com/posts/loramesh/</link>
+      <pubDate>Fri, 14 Mar 2025 07:07:07 +0100</pubDate>
+      <guid>https://salmancuso.com/posts/loramesh/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://salmancuso.com/images/nodes.jpeg&#34; alt=&#34;LORA Mesh Nodes&#34;&gt;&#xA;In our increasingly interconnected digital world, networking has progressed far beyond conventional wired and centralized configurations. Leading this transformation are LoRa Meshtastic networks—a flexible, robust, and sustainable solution for long-distance communication. Let&amp;rsquo;s explore the intricacies of this network, its advantages, and the essential equipment needed to utilize its full potential.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-a-lora-meshtastic-network&#34;&gt;What is a LoRa Meshtastic Network?&lt;/h2&gt;&#xA;&lt;p&gt;LoRa (Long Range) is a spread-spectrum modulation technique derived from chirp spread spectrum (CSS) technology. It is known for its capability to deliver exceptionally long-range data transmission with low power consumption. Meshtastic, an open-source project, leverages LoRa technology to create a decentralized mesh network. This empowers users to exchange messages and relay data over extensive distances without relying on conventional telecommunication infrastructures.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Charting a Path to Success: Guide for Aspiring Business Intelligence Analysts and Data Engineers</title>
       <link>https://salmancuso.com/posts/dataengineer/</link>
@@ -154,6 +161,13 @@
       <pubDate>Sun, 11 Sep 2016 07:07:07 +0100</pubDate>
       <guid>https://salmancuso.com/publications/sole/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://salmancuso.com/images/latino.jpg&#34; alt=&#34;GSB Latino Logo&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;My contribution to this report/publication was the development of intuitive and concise data visualizations; visualizations that highlighted Latino entrepreneurs&amp;rsquo; narrative. I leveraged Tableau and Python to create the visualizations while utilizing various data sources, including the U.S. Census report and Qualtrics surveys. View the publication.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.gsb.stanford.edu/faculty-research/publications/state-latino-entrepreneurship-2017&#34;&gt;View the publication.&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://salmancuso.com/posts/cultpolitics-copy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://salmancuso.com/posts/cultpolitics-copy/</guid>
+      <description>&lt;p&gt;As of today, the Dean’s discretionary report production faces significant operational challenges due to existing data handling practices and access restrictions.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Current State Analysis:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Manual Data Query&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Data retrieval from the Finance team involves manual querying either through the bi.stanford.edu site or using SQLDeveloper.&lt;/li&gt;&#xA;&lt;li&gt;This manual process spans 3-5 hours and is conducted only once per month.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Manual ETL Processes&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Data is manually extracted, transformed, and loaded (ETL) into our development data warehouse.&lt;/li&gt;&#xA;&lt;li&gt;Subsequently, a ticket is raised with the DMR team within University IT to push this data to the production server.&lt;/li&gt;&#xA;&lt;li&gt;While data push to the production server typically takes a few hours, delays up to a week are not uncommon.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Informatica and Oracle Integration&lt;/strong&gt;:&lt;/p&gt;</description>
     </item>
     <item>
       <title>About</title>
