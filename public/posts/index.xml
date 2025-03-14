@@ -120,12 +120,5 @@
       <guid>https://salmancuso.com/posts/covidfamily/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://salmancuso.com/images/covidBanner.jpg&#34; alt=&#34;Virus Covid&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m a father of three exceptional children (ages 17, 10, and 7.5 years old) for those who don&amp;rsquo;t know me. In the &amp;ldquo;before times,&amp;rdquo; we often found ourselves carting children from one event to another, from Cub Scouts to Soccer to Football to Softball to Track and Feild. Three kids who had an extraordinary post-school life that often resulted in a lack of family time. Frequently, my wife would be taking one child in one direction while I would be driving another to a different objective; talk about a family of ships passing in the night.&lt;/p&gt;</description>
     </item>
-    <item>
-      <title></title>
-      <link>https://salmancuso.com/posts/cultpolitics-copy/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/posts/cultpolitics-copy/</guid>
-      <description>&lt;p&gt;As of today, the Dean’s discretionary report production faces significant operational challenges due to existing data handling practices and access restrictions.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Current State Analysis:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Manual Data Query&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Data retrieval from the Finance team involves manual querying either through the bi.stanford.edu site or using SQLDeveloper.&lt;/li&gt;&#xA;&lt;li&gt;This manual process spans 3-5 hours and is conducted only once per month.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Manual ETL Processes&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Data is manually extracted, transformed, and loaded (ETL) into our development data warehouse.&lt;/li&gt;&#xA;&lt;li&gt;Subsequently, a ticket is raised with the DMR team within University IT to push this data to the production server.&lt;/li&gt;&#xA;&lt;li&gt;While data push to the production server typically takes a few hours, delays up to a week are not uncommon.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Informatica and Oracle Integration&lt;/strong&gt;:&lt;/p&gt;</description>
-    </item>
   </channel>
 </rss>

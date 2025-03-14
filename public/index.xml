@@ -163,13 +163,6 @@
       <description>&lt;p&gt;&lt;img src=&#34;https://salmancuso.com/images/latino.jpg&#34; alt=&#34;GSB Latino Logo&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;My contribution to this report/publication was the development of intuitive and concise data visualizations; visualizations that highlighted Latino entrepreneurs&amp;rsquo; narrative. I leveraged Tableau and Python to create the visualizations while utilizing various data sources, including the U.S. Census report and Qualtrics surveys. View the publication.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.gsb.stanford.edu/faculty-research/publications/state-latino-entrepreneurship-2017&#34;&gt;View the publication.&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
-      <title></title>
-      <link>https://salmancuso.com/posts/cultpolitics-copy/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/posts/cultpolitics-copy/</guid>
-      <description>&lt;p&gt;As of today, the Dean’s discretionary report production faces significant operational challenges due to existing data handling practices and access restrictions.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Current State Analysis:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Manual Data Query&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Data retrieval from the Finance team involves manual querying either through the bi.stanford.edu site or using SQLDeveloper.&lt;/li&gt;&#xA;&lt;li&gt;This manual process spans 3-5 hours and is conducted only once per month.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Manual ETL Processes&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Data is manually extracted, transformed, and loaded (ETL) into our development data warehouse.&lt;/li&gt;&#xA;&lt;li&gt;Subsequently, a ticket is raised with the DMR team within University IT to push this data to the production server.&lt;/li&gt;&#xA;&lt;li&gt;While data push to the production server typically takes a few hours, delays up to a week are not uncommon.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Informatica and Oracle Integration&lt;/strong&gt;:&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>About</title>
       <link>https://salmancuso.com/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
