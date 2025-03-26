@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Sal Mancuso</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Mar 2025 07:07:07 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 25 Mar 2025 23:53:00 +0700</lastBuildDate>
     <atom:link href="https://salmancuso.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>he last of a dying species; political moderates</title>
+      <link>https://salmancuso.com/posts/middle/</link>
+      <pubDate>Tue, 25 Mar 2025 23:53:00 +0700</pubDate>
+      <guid>https://salmancuso.com/posts/middle/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://salmancuso.com/images/moderate.jpg&#34; alt=&#34;Heads blue and red&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;As a moderate, I prioritize balance and pragmatism in my political views, understanding that extreme positions on either end of the spectrum can lead to unintended consequences. While some may perceive my stance as indecisive, I believe that moderation is essential for achieving well-rounded governance that serves the diverse needs of our society.&lt;/p&gt;&#xA;&lt;p&gt;One of the fundamental reasons I identify as socially liberal and fiscally conservative is my appreciation for personal freedom and individual responsibility. I firmly believe in individuals having the autonomy to make personal life choices without undue interference from the government or other institutions. This includes supporting liberal social policies such as marriage equality, women’s rights, reproductive rights, and criminal justice reform.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Unleashing the Potential of Decentralized Communication: A Deep Dive into LoRa Meshtastic Networks</title>
       <link>https://salmancuso.com/posts/loramesh/</link>
@@ -98,13 +105,6 @@
       <pubDate>Sat, 04 Mar 2023 15:21:00 +0700</pubDate>
       <guid>https://salmancuso.com/posts/sqlite/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://salmancuso.com/images/sql.jpg&#34; alt=&#34;SQL Code&#34;&gt;&#xA;SQLite is a powerful relational database management system that is widely used for its simplicity, speed, reliability, and versatility; making it ideal for a wide range of applications and use cases. Some of the key reasons why SQLite is considered powerful are:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Lightweight and easy to use: SQLite is a lightweight and self-contained database engine that requires minimal configuration and setup. It is also0 very easy to use and does not require a dedicated server or administrator.&lt;/li&gt;&#xA;&lt;li&gt;High performance: SQLite is designed to be fast and efficient, with a small memory footprint and minimal disk I/O. It is optimized for read-heavy workloads, making it ideal for applications that require fast data retrieval.&lt;/li&gt;&#xA;&lt;li&gt;ACID compliance: SQLite is fully ACID-compliant, which means that it provides atomicity, consistency, isolation, and durability guarantees for transactions. This makes it suitable for applications that require high data integrity and reliability.&lt;/li&gt;&#xA;&lt;li&gt;Cross-platform compatibility: SQLite is available on virtually all operating systems, including Windows, Mac OS, Linux, Android, and iOS. It also supports a wide range of programming languages, including C, C++, Java, Python, and PHP.&lt;/li&gt;&#xA;&lt;li&gt;Wide range of features: Despite its small size, SQLite provides a wide range of features, including support for complex queries, indexing, triggers, and full-text search. It also supports encryption, which makes it suitable for storing sensitive data.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;In this tutorial, we will cover the basics of using SQLite for data storage.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>he last of a dying species; political moderates</title>
-      <link>https://salmancuso.com/posts/middle/</link>
-      <pubDate>Tue, 28 Feb 2023 23:53:00 +0700</pubDate>
-      <guid>https://salmancuso.com/posts/middle/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://salmancuso.com/images/moderate.jpg&#34; alt=&#34;Heads blue and red&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;As a moderate, I believe in the importance of balance and pragmatism in politics. While some may see my stance as indecisive or wishy-washy, I know that taking extreme positions on either end of the political spectrum can lead to unintended consequences.&lt;/p&gt;&#xA;&lt;p&gt;One of the key reasons I identify as socially liberal and fiscally conservative is that I recognize the importance of personal freedom and individual responsibility. Individuals should have the freedom to make their own choices about their personal lives without interference from the government or other institutions. This means supporting liberal social policies, such as marriage equality, women’s rights, LGBTQ+ rights, reproductive rights, and criminal justice reform.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Is Amateur Radio Dying?</title>
