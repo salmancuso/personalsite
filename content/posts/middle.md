@@ -1,5 +1,5 @@
 +++
-title = """he last of a dying species; political moderates"""
+title = """The Last of a Dying Species; Political Moderates"""
 date = 2025-03-25T23:53:00+07:00
 draft = false
 +++
