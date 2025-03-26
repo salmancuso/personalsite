@@ -6,15 +6,8 @@
     <description>Recent content in Posts on Sal Mancuso</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Mar 2025 23:53:00 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 14 Mar 2025 07:07:07 +0100</lastBuildDate>
     <atom:link href="https://salmancuso.com/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>The Last of a Dying Species; Political Moderates</title>
-      <link>https://salmancuso.com/posts/middle/</link>
-      <pubDate>Tue, 25 Mar 2025 23:53:00 +0700</pubDate>
-      <guid>https://salmancuso.com/posts/middle/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://salmancuso.com/images/moderate.jpg&#34; alt=&#34;Heads blue and red&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;As a moderate, I prioritize balance and pragmatism in my political views, understanding that extreme positions on either end of the spectrum can lead to unintended consequences. While some may perceive my stance as indecisive, I believe that moderation is essential for achieving well-rounded governance that serves the diverse needs of our society.&lt;/p&gt;&#xA;&lt;p&gt;One of the fundamental reasons I identify as socially liberal and fiscally conservative is my appreciation for personal freedom and individual responsibility. I firmly believe in individuals having the autonomy to make personal life choices without undue interference from the government or other institutions. This includes supporting liberal social policies such as marriage equality, women’s rights, reproductive rights, and criminal justice reform.&lt;/p&gt;</description>
-    </item>
     <item>
       <title>Unleashing the Potential of Decentralized Communication: A Deep Dive into LoRa Meshtastic Networks</title>
       <link>https://salmancuso.com/posts/loramesh/</link>
@@ -72,6 +65,13 @@
       <description>&lt;p&gt;&lt;img src=&#34;https://salmancuso.com/images/dataSec.jpeg&#34; alt=&#34;Data Security&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;In today&amp;rsquo;s digital age, data has become one of the most valuable commodities. From personal information to business secrets, data is essential for individuals and organizations to operate effectively. However, the growing dependence on data also poses significant risks, including cyber attacks, data breaches, and identity theft. Therefore, it is crucial to prioritize data security both on the corporate and personal levels.&lt;/p&gt;&#xA;&lt;p&gt;On the Corporate Level&lt;/p&gt;&#xA;&lt;p&gt;For businesses, data security is not an optional luxury but a necessity. Companies must protect their intellectual property, customer data, and financial information from cybercriminals who seek to exploit vulnerabilities in their systems. A data breach can have significant consequences, including financial loss, reputational damage, and legal repercussions. Therefore, it is essential for organizations to take proactive measures to ensure data security.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>The Last of a Dying Species; Political Moderates</title>
+      <link>https://salmancuso.com/posts/middle/</link>
+      <pubDate>Sun, 25 Aug 2024 23:53:00 +0700</pubDate>
+      <guid>https://salmancuso.com/posts/middle/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://salmancuso.com/images/moderate.jpg&#34; alt=&#34;Heads blue and red&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;As a moderate, I prioritize balance and pragmatism in my political views, understanding that extreme positions on either end of the spectrum can lead to unintended consequences. While some may perceive my stance as indecisive, I believe that moderation is essential for achieving well-rounded governance that serves the diverse needs of our society.&lt;/p&gt;&#xA;&lt;p&gt;One of the fundamental reasons I identify as socially liberal and fiscally conservative is my appreciation for personal freedom and individual responsibility. I firmly believe in individuals having the autonomy to make personal life choices without undue interference from the government or other institutions. This includes supporting liberal social policies such as marriage equality, women’s rights, reproductive rights, and criminal justice reform.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Cigars. One of My Life&#39;s Simple Pleasures</title>
       <link>https://salmancuso.com/posts/cigars/</link>
       <pubDate>Sun, 14 Jan 2024 07:07:07 +0100</pubDate>
@@ -84,13 +84,6 @@
       <pubDate>Wed, 23 Aug 2023 07:07:07 +0100</pubDate>
       <guid>https://salmancuso.com/posts/privategpt/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://salmancuso.com/images/gpt.jpg&#34; alt=&#34;GPT Logo&#34;&gt;&#xA;Deploying a private GPT instance offers significant advantages, such as enhanced data privacy, compliance with industry regulations, and the ability to tailor the model to specific needs. In this comprehensive guide, we will delve into the process of setting up a private GPT instance, complete with code examples and a detailed step-by-step walkthrough.&lt;/p&gt;&#xA;&lt;h2 id=&#34;benefits-of-a-private-gpt-instance&#34;&gt;Benefits of a Private GPT Instance&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Enhanced Data Privacy and Security:&lt;/strong&gt; Processing data locally ensures that sensitive information remains within your control.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Compliance with Industry Regulations:&lt;/strong&gt; Customizing the deployment to adhere to specific regulatory requirements.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Customization:&lt;/strong&gt; Fine-tuning the model for specific use cases and applications.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Low-Latency Responses:&lt;/strong&gt; Reduced dependency on external servers, making it ideal for real-time applications.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Offline Usage:&lt;/strong&gt; Capability to operate without an internet connection.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cost Control:&lt;/strong&gt; Eliminates dependence on external cloud services, offering a cost-effective solution.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Consistent Performance:&lt;/strong&gt; Dedicated resources ensure reliable performance and minimize third-party API dependencies.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Critical Data Scenarios:&lt;/strong&gt; Especially beneficial in contexts requiring data sensitivity, customizations, regulatory compliance, and resource allocation.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Setting up a private GPT instance necessitates technical expertise, particularly in areas such as deployment management, security, and ongoing maintenance.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>My Take on Gun Reform. Hint, It&#39;s Not Gun Confiscation.</title>
-      <link>https://salmancuso.com/posts/guns/</link>
-      <pubDate>Thu, 30 Mar 2023 07:07:07 +0100</pubDate>
-      <guid>https://salmancuso.com/posts/guns/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://salmancuso.com/images/shootMap.png&#34; alt=&#34;Shoot Map&#34;&gt;&#xA;I’m not saying you can&amp;rsquo;t have a gun; I’m saying let&amp;rsquo;s be more thoughtful about it.&lt;/p&gt;&#xA;&lt;p&gt;The United States has one of the highest rates of gun ownership in the world, with an estimated 393 million guns in circulation as of 2018. With this high number of guns comes a significant amount of gun-related deaths and injuries, including homicides, suicides, and accidental shootings. According to the Centers for Disease Control and Prevention (CDC), there were 39,740 gun-related deaths in the United States in 2018, which is an average of over 100 deaths per day.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Data Visualization with Pandas</title>
