@@ -5,44 +5,55 @@ featured_image: '/images/redwoodBW.jpg'
 baseURL: 'https://salmancuso.com'
 ---
 
-## About Me
+# I turn data into stories and mountains into memories.
 
-I'm Sal Mancuso, a Senior Business Intelligence Engineer and Senior Data Engineer thriving at the intersection of technical prowess and creative innovation. With a career rooted deeply in both business and academic technical solutions, I've transformed troves of data into actionable insights and spearheaded complex projects that drive decision-making. Beyond the world of numbers and algorithms, I am an avid explorer with a penchant for adventure and creativity.
+By day, I'm a Senior Business Intelligence Analyst at Stanford University's School of Humanities and Sciences, where I've spent over a decade transforming complex datasets into insights that drive real decisions. By weekend, you might find me on a remote mountain trail with a ham radio, exploring an abandoned mine shaft, or casting a line in the Sierra Nevada backcountry.
 
-### Professional Journey
+## The Data Journey
 
-With over a decade at Stanford University, I've worn numerous hats—from providing critical insights in the Finance organization to leading the data pillar with the Data, Analytics, and Research Computing (DARC) team at the Graduate School of Business. Today, I proudly bring my extensive expertise to the Humanities and Sciences Dean's office. My expertise spans a wide array of domains including big data management, data harvesting, visualization, cloud computing, and advanced analytics.
+My path through Stanford has been anything but linear. I've navigated the intricate world of university finance, led the data pillar for the Graduate School of Business DARC team, and now bring it all together at the Humanities and Sciences Dean's office. Before Stanford, I cut my teeth at places like Apple, Sun Microsystems, and TiVo—learning early that the best technology solutions come from understanding both the business and the people behind the data.
 
-I'm adept at navigating large-scale data solutions both on-premises and in the cloud, often dealing with datasets that reach into the hundreds of terabytes. Protecting sensitive data, adhering to rigorous HIPAA compliance, and developing sophisticated software solutions are all in a day's work for me.
+I've worked with datasets that would make your hard drive weep—we're talking hundreds of terabytes. I've wrestled with everything from HIPAA-compliant sensitive data to cloud infrastructure that spans AWS and GCP. I build systems that need to scale, visualizations that need to illuminate, and solutions that need to work yesterday.
 
-Here's a quick snapshot of my key skills:
-- **Data Science & Analytics:** Python, TensorFlow, SpaCy, NLTK
-- **Data Harvesting & ETL:** Web Scraping with BeautifulSoup and Selenium, Airflow
-- **Cloud Expertise:** AWS, GCP, DigitalOcean
-- **Data Visualization:** Tableau, D3.js, BusinessObjects
-- **Databases:** MySQL, PostgreSQL, MongoDB, BigQuery
+**My toolkit includes:**
+- **Data Science & Analytics**: Python, TensorFlow, SpaCy, NLTK
+- **Data Wrangling**: Web scraping (BeautifulSoup, Selenium), Airflow, ETL pipelines
+- **Cloud Platforms**: AWS, GCP, DigitalOcean
+- **Visualization**: Tableau, D3.js, BusinessObjects
+- **Databases**: PostgreSQL, MySQL, MongoDB, BigQuery
 
-### Personal Passions
+## When the Computer Sleeps
 
-When I’m not diving deep into datasets, you can find me engaging in numerous hobbies that keep me balanced and energized:
+### On Two Wheels (Or None)
 
-- **Road Cycling:** Escaping on my bike, even for a quick 15 to 20-mile ride, offers immense mental liberation.
-- **Motorcycling:** My 2005 Harley Davidson Fat Boy and I share exhilarating rides through the mountains.
-- **Woodworking:** I enjoy crafting functional items like charcuterie boards with float epoxy, as well as large projects such as exercise bike accessory cabinets and hammock stands.
-- **Ham Radio:** Actively operating on HF, VHF, and UHF bands, I’m a proud member of several radio associations and hold a General Class license.
-- **Hiking & Backpacking:** Exploring the Santa Cruz Mountains and beyond, I’ve developed a love for backpacking that began during my time as a Scout Master.
-- **Urban Exploration:** I have a distinct passion for unearthing forgotten historical sites such as abandoned mines and old train tunnels.
-- **Fishing:** Whether in the rivers of the Sierra Nevada or off the Santa Cruz Wharf, fishing is a serene escape for me. My favorite spot is Kennedy Meadows off Sonora Pass.
+There's something about the open road that clears the mind. Whether it's a quick 15-mile spin on my road bike or a longer journey on my 2005 Harley Davidson Fat Boy through winding mountain passes, cycling and motorcycling keep me grounded and free.
 
-### Family Life
+### The Workshop
 
-Family is my cornerstone. My involvement in my children’s lives brings me immense joy. My oldest is navigating college, my middle is thriving in high school, and my youngest is exploring the wonders of middle school. Coaching flag football, soccer, and softball, along with being the go-to scorekeeper, keeps me active and connected.
+My garage smells like sawdust and possibility. I build things—charcuterie boards with float epoxy that look like liquid glass, hammock stands sturdy enough to trust your afternoon nap to, and custom cabinets that turn unused space into solutions. There's a satisfaction in creating something tangible that no software deployment can quite match.
 
-### Sports Junkie
+### Amateur Radio: W6SAL
 
-I’m a passionate sports fan, always cheering fervently for my favorite teams:
-- **San Francisco 49ers:** Catch me sporting the red and gold, rooting for every touchdown and tackle.
-- **San Francisco Giants:** I’m a dedicated supporter through every inning, standing by the Giants in both victory and defeat.
-- **Oregon Ducks:** My enthusiasm for the Ducks runs deep, and I revel in every thrilling moment of their games.
+I've been a ham radio operator since 2003, inspired by watching emergency communications in action during the 1989 Loma Prieta earthquake as a kid. Today I hold a General Class license and operate across HF, VHF, and UHF bands as an active member of multiple radio clubs including the San Jose Simplex Group, Almaden Radio Club, and West Valley Amateur Radio Association. Whether it's a casual ragchew on the local repeater or emergency communications when cell towers fail, radio keeps me connected to a community that spans the globe—one frequency at a time.
 
-Feel free to reach out if you'd like to connect over a shared passion or discuss a project. I’m always excited to collaborate and innovate. 
+### Into the Wild
+
+The outdoors is where I recharge. Hiking and backpacking through the Santa Cruz Mountains taught me lessons I carry into every project: preparation matters, adaptability wins, and the best views require the hardest climbs. My favorite fishing spot—Kennedy Meadows off Sonora Pass—is where the world gets quiet enough to hear yourself think. And yes, I'm that person who gets excited about exploring abandoned mines and old train tunnels. There's history hidden in those forgotten places.
+
+## The Home Team
+
+Family comes first, always. My wife is a powerhouse in commercial real estate for a fortune 200 company, and together we're raising three amazing humans: one navigating college life, one conquering high school, and one discovering middle school. I'm the flag football coach, soccer sideline cheerleader, and softball scorekeeper who probably cares a little too much about the game.
+
+### Scouting
+
+I cut my teeth in Scouting as a kid myself, moving through Cub Scout Pack 204 and Troop 614 in Scotts Valley before football took over my high school years. Decades later, I came full circle—first as a Den Leader, then Scoutmaster, and now Assistant Scoutmaster for Troop 233. Teaching scouts to build fires, navigate by stars, and think critically isn't just volunteer work; it's investing in the next generation of problem-solvers.
+
+## Sports Allegiances
+
+Fair warning: I'm insufferable during football season. The **San Francisco 49ers** are my religion, the **San Francisco Giants** are my meditation, and the **Oregon Ducks** are my chaos. Every touchdown, strikeout, and fourth-quarter comeback matters more than it probably should.
+
+## Let's Connect
+
+Whether you want to talk about building scalable data pipelines, compare notes on the best backpacking routes in the Sierras, or debate the finer points of that last Giants game, I'm always up for a conversation. The best projects—and the best adventures—happen when passionate people collaborate.
+
+**Reach out. Let's build something interesting together.**
