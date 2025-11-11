@@ -1,6 +1,6 @@
 +++
 title = """MeshCore vs Meshtastic: Why One Actually Works When You NEED It To Work"""
-date = 2025-11-08T23:53:00+07:00
+date = 2025-10-21T23:53:00+07:00
 draft = false
 +++
 ![LORA Mesh Nodes](/images/meshNodes.jpeg)

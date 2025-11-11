@@ -2,11 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/posts/gptdataanalysis/</loc>
+    <lastmod>2025-11-09T23:53:00+07:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-11-08T23:53:00+07:00</lastmod>
+    <lastmod>2025-11-09T23:53:00+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/meshcorevmeshtastic/</loc>
-    <lastmod>2025-11-08T23:53:00+07:00</lastmod>
+    <lastmod>2025-10-21T23:53:00+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/loramesh/</loc>
     <lastmod>2025-03-14T07:07:07+01:00</lastmod>

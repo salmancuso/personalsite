@@ -6,12 +6,19 @@
     <description>Recent content in Posts on Sal Mancuso</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 08 Nov 2025 23:53:00 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 09 Nov 2025 23:53:00 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DataSage: The Proof-of-Concept That Took on a Life of it&#39;s Own</title>
+      <link>http://localhost:1313/posts/gptdataanalysis/</link>
+      <pubDate>Sun, 09 Nov 2025 23:53:00 +0700</pubDate>
+      <guid>http://localhost:1313/posts/gptdataanalysis/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/dataIntel.jpg&#34; alt=&#34;Data Intelligence&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-aha-moment-that-started-this-journey&#34;&gt;The &amp;ldquo;Aha!&amp;rdquo; Moment That Started This Journey&lt;/h2&gt;&#xA;&lt;p&gt;You know, I&amp;rsquo;ve spent my career believing that technology should empower everyone, not just the experts. That&amp;rsquo;s why, when I started working with data analytics at Stanford, I kept thinking about my days at Apple Computer, trying to understand a bill of materials in an Excel spreadsheet. Margins up, expenses down—but what did it all &lt;em&gt;mean&lt;/em&gt;? What was the story those numbers were trying to tell?&lt;/p&gt;</description>
+    </item>
     <item>
       <title>MeshCore vs Meshtastic: Why One Actually Works When You NEED It To Work</title>
       <link>http://localhost:1313/posts/meshcorevmeshtastic/</link>
-      <pubDate>Sat, 08 Nov 2025 23:53:00 +0700</pubDate>
+      <pubDate>Tue, 21 Oct 2025 23:53:00 +0700</pubDate>
       <guid>http://localhost:1313/posts/meshcorevmeshtastic/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/meshNodes.jpeg&#34; alt=&#34;LORA Mesh Nodes&#34;&gt;&#xA;You know what REALLY grinds my gears? And I mean REALLY makes me want to throw a radio into the ocean? It&amp;rsquo;s when people ask me, &amp;ldquo;Hey, what&amp;rsquo;s the difference between MeshCore and Meshtastic?&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;OH, WHERE DO I BEGIN?!&lt;/p&gt;&#xA;&lt;p&gt;It&amp;rsquo;s like asking what&amp;rsquo;s the difference between a surgeon and a guy with a chainsaw! Sure, they BOTH make cuts, but ONE of them knows when to STOP CUTTING!&lt;/p&gt;</description>
     </item>
