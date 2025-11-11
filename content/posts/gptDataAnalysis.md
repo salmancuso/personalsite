@@ -672,9 +672,9 @@ From understanding the past to predicting the future.
 
 ## The Philosophical Bit: Why This Matters
 
-I've been in tech since before personal computers were personal. I've seen a lot of technologies come and go. And I've learned that the ones that matter aren't necessarily the most technically impressive—they're the ones that empower people.
+I've been in tech since Buleiten Board Systems were every teenage boy's dream. More on the anicarst cookbook in another post.  I've seen a lot of technologies come and go. And I've learned that the ones that matter aren't necessarily the most technically impressive—they're the ones that empower people.
 
-The Apple II wasn't the most powerful computer. But it put computing in reach of regular people. The Macintosh wasn't the first computer with a GUI. But it made computers friendly and approachable.
+Being an Apple enthusiast, I think back to the Apple II; it wasn't the most powerful computer. But it brought computing to everyday people. The Macintosh wasn't the first computer with a GUI. But it made computers friendly and approachable.
 
 That's what I think is exciting about combining BI with AI. We're not replacing data analysts. We're not automating jobs. We're making data analysis accessible to people who aren't specialists. We're democratizing insight.
 
@@ -973,7 +973,7 @@ This is how I think AI should be integrated into tools. Not as a black box that 
 
 ---
 
-## Conclusion: The Beginning, Not the End
+## The Beginning, Not the End
 
 So that's Stanford DataSage. A proof of concept for merging business intelligence with artificial intelligence. A demonstration that we can make data analysis more accessible without dumbing it down. A tool that tells stories from numbers.
 
