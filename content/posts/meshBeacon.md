@@ -3,11 +3,11 @@ title = """MeshBeacon: Because Your Mesh Network Should Actually DO Something"""
 date = 2026-02-14T21:07:07+01:00
 draft = false
 +++
+
+![BI Head Brain](/images/muos.jpg)
 ## Take It. Make It Yours.
 
 MeshBeacon is open source. Every line of it.
-
-### **[github.com/salmancuso/MeshBeacon](https://github.com/salmancuso/MeshBeacon)**
 
 I didn't build this so it could run on one node in San Jose. I built it so it could run everywhere. Fork the repository. Change the coordinates to your city. Add your local weather stations. Point the earthquake monitor at your fault lines. Write a new broadcast module for something I haven't thought of yet.
 
@@ -18,6 +18,8 @@ And here's what I believe — genuinely believe — about this project: the best
 So take it. Adapt it. Make it yours. Make it *insanely* useful.
 
 And then put it on your mesh network and let it run.
+
+### **[github.com/salmancuso/MeshBeacon](https://github.com/salmancuso/MeshBeacon)**
 
 ---
 
@@ -57,18 +59,13 @@ That's what MeshBeacon is.
 ## What MeshBeacon Delivers
 
 ```
-╔══════════════════════════════════════════════════════════════╗
-║                                                              ║
-║   ☀️  Solar Propagation    — Is the band open? Now you know. ║
-║   🌤️  Weather Reports      — Hyper-local. Real-time. Useful. ║
-║   🔴  Earthquake Alerts    — When the ground moves, you know.║
-║   ⚠️  Skywarn Alerts       — NWS watches, warnings, advisories║
-║   📻  SOTA/POTA Spots      — Who's activating near you.      ║
-║   📅  Event Notifications  — Never miss a net again.         ║
-║                                                              ║
-║   All automated. All under 135 bytes. All over RF.           ║
-║                                                              ║
-╚══════════════════════════════════════════════════════════════╝
+☀️  Solar Propagation    — Is the band open? Now you know.
+🌤️  Weather Reports      — Hyper-local. Real-time. Useful.
+🔴  Earthquake Alerts    — When the ground moves, you know.
+⚠️  Skywarn Alerts       — NWS watches, warnings, advisories.
+📻  SOTA/POTA Spots      — Who's activating near you.
+📅  Event Notifications  — Never miss a net again.
+All automated. All under 135 bytes. All over RF.
 ```
 
 Seven scripts. Seven problems solved. One common foundation.
@@ -81,20 +78,20 @@ Every broadcast script follows the same elegant pattern:
 
 ```
     ┌─────────────────┐
-    │  Fetch data      │   ← Public APIs (free, no keys for most)
-    │  from the world  │
+    │  Fetch data     │   ← Public APIs (free, no keys for most)
+    │  from the world │
     └────────┬────────┘
              │
              ▼
     ┌─────────────────┐
-    │  Distill into    │   ← 135 bytes of meaning
-    │  what matters    │
+    │  Distill into   │   ← 135 bytes of meaning
+    │  what matters   │
     └────────┬────────┘
              │
              ▼
     ┌─────────────────┐
-    │  Deliver it      │   ← Over radio. No internet on receiving end.
-    │  over RF         │
+    │  Deliver it     │   ← Over radio. No internet on receiving end.
+    │  over RF        │
     └─────────────────┘
 ```
 
@@ -108,7 +105,7 @@ Configuration lives in simple `.keys` files. No databases. No YAML nested fourte
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    How It All Connects                       │
+│                    How It All Connects                      │
 │                                                             │
 │  weather.keys ──┐                                           │
 │  calendar.keys ─┤                                           │
@@ -117,8 +114,8 @@ Configuration lives in simple `.keys` files. No databases. No YAML nested fourte
 │  Public APIs ───┘            │                    │         │
 │                              │                    ▼         │
 │                         ┌────┴────┐        ┌────────────┐   │
-│                         │ 135-byte │        │ LoRa Mesh  │   │
-│                         │ messages │───────→│  Network   │   │
+│                         │ 135-byte│        │ LoRa Mesh  │   │
+│                         │ messages│───────→│  Network   │   │
 │                         └─────────┘        └────────────┘   │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -136,7 +133,7 @@ The weather matters. It matters if you're planning a field operation, coordinati
 │ Hi 63F Lo 44F           │
 │ Hum 65% Rain 20%        │
 │ Wind 5mph NW G10        │
-│ Partly Cloudy            │
+│ Partly Cloudy           │
 └─────────────────────────┘
 ```
 
@@ -151,8 +148,8 @@ We live in seismically active territory. The USGS monitors every tremor, and Mes
 ```
 ┌──────────────────────────────────────┐
 │ EARTHQUAKE                           │
-│ 🟡 M3.3 - 5 km SW of Ridgemark      │
-│ 46.5mi from SJC | Depth: 5.0mi      │
+│ 🟡 M3.3 - 5 km SW of Ridgemark       │
+│ 46.5mi from SJC | Depth: 5.0mi       │
 │ Feb 11 03:34 PST                     │
 └──────────────────────────────────────┘
 
@@ -177,7 +174,7 @@ The National Weather Service issues watches, warnings, and advisories every day 
 
 ```
 ┌──────────────────────────────┐
-│ ⚠️ SKYWARN                    │
+│ ⚠️ SKYWARN                   │
 │ 🟠 Svr T-Storm Wrn           │
 │ Santa Clara County, CA       │
 │ Until 3:45 PM PST            │
@@ -210,10 +207,10 @@ And when there's nothing to report:
 
 ```
 ┌──────────────────────────────┐
-│ ⚠️ SKYWARN                    │
-│ ✅ No active alerts           │
+│ ⚠️ SKYWARN                   │
+│ ✅ No active alerts          │
 │ San Jose, CA                 │
-│ Radius: 50mi                │
+│ Radius: 50mi                 │
 └──────────────────────────────┘
 ```
 
@@ -231,7 +228,7 @@ Solar flux index. Sunspot numbers. K-index. X-ray classification. HF band condit
 
 ```
 ┌───────────────────────┐     ┌───────────────────────┐
-│ ☀️ SOLAR:              │     │ 📡 BANDS D/N:         │
+│ ☀️ SOLAR:             │      │ 📡 BANDS D/N:         │
 │ SFI=185               │     │ 80 = ✅                │
 │ SN=85                 │     │ 40 = ✅                │
 │ A=5                   │     │ 30 = ✅                │
@@ -249,11 +246,11 @@ That ducting index — I'm particularly proud of this — uses temperature inver
 
 ```
 ┌───────────────────────┐     ┌───────────────────────┐
-│ 🔭 VHF:               │     │ 🌊 TROPO SJC:         │
+│ 🔭 VHF:               │      │ 🌊 TROPO SJC:         │
 │ Es=Band Closed        │     │ Idx=6/10              │
-│ Aurora=No Aurora       │     │ dT=+12F@925mb         │
+│ Aurora=No Aurora      │     │ dT=+12F@925mb         │
 │ Meteor=Perseids+14d ❌│     │ Pres=1022mb           │
-└───────────────────────┘     │ ✅ Likely              │
+└───────────────────────┘     │ ✅ Likely             │
                               └───────────────────────┘
 ```
 
@@ -279,7 +276,7 @@ Community coordination shouldn't require people to remember to check a website. 
 ┌──────────────────────────────┐
 │ EVENT TOMORROW:              │
 │ WVARA Net                    │
-│ Sat Feb 14 @ 7:00 PM        │
+│ Sat Feb 14 @ 7:00 PM         │
 │ Weekly 2m net on 146.76 MHz  │
 └──────────────────────────────┘
 
@@ -302,7 +299,7 @@ Summits on the Air. Parks on the Air. Real-time activator spots showing who is o
 ┌───────────────────────┐     ┌───────────────────────┐
 │ SOTA                  │     │ POTA                  │
 │ W6/SC-001             │     │ US-4701               │
-│ Call: KG6NBO          │     │ Call: KC1GGP           │
+│ Call: KG6NBO          │     │ Call: KC1GGP          │
 │ SSB 14.244            │     │ SSB 14.307            │
 │ 14:30 PST             │     │ 09:31 PST             │
 │ 978mi NW of SJC       │     │ 45mi SE of SJC        │
@@ -340,7 +337,7 @@ The earthquake monitor doesn't just dump USGS data. It calculates distance and b
 │  "This is the work that nobody sees.                 │
 │   And it's the most important work there is,         │
 │   because when you do it right, people don't         │
-│   notice the engineering. They just notice            │
+│   notice the engineering. They just notice           │
 │   that it works. Every time."                        │
 │                                                      │
 └──────────────────────────────────────────────────────┘
