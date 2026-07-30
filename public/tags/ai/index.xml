@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ai on Sal Mancuso</title>
-    <link>http://localhost:1313/tags/ai/</link>
+    <link>https://salmancuso.com/tags/ai/</link>
     <description>Recent content in Ai on Sal Mancuso</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 16 Nov 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://salmancuso.com/tags/ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Data Analysis with GPT Models</title>
-      <link>http://localhost:1313/posts/gptdataanalysis/</link>
+      <link>https://salmancuso.com/posts/gptdataanalysis/</link>
       <pubDate>Sun, 16 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/gptdataanalysis/</guid>
+      <guid>https://salmancuso.com/posts/gptdataanalysis/</guid>
       <description>&lt;h2 id=&#34;the-aha-moment-that-started-this-journey&#34;&gt;The &amp;ldquo;Aha!&amp;rdquo; Moment That Started This Journey&lt;/h2&gt;&#xA;&lt;p&gt;You know, I&amp;rsquo;ve spent my career believing that technology should empower everyone, not just the experts. That&amp;rsquo;s why, when I started working with data analytics at Stanford, I kept thinking about my days at Apple Computer, trying to understand a bill of materials in an Excel spreadsheet. Margins up, expenses down—but what did it all &lt;em&gt;mean&lt;/em&gt;? What was the story those numbers were trying to tell?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Business Intelligence and AI</title>
-      <link>http://localhost:1313/posts/biai/</link>
+      <link>https://salmancuso.com/posts/biai/</link>
       <pubDate>Sat, 15 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/biai/</guid>
+      <guid>https://salmancuso.com/posts/biai/</guid>
       <description>&lt;p&gt;In the rapidly evolving landscape of digital transformation, a phenomenon of profound significance has taken center stage: the integration of Artificial Intelligence (AI) into the realm of Business Intelligence (BI). This integration has emerged as a formidable force that not only propels strategic innovation but also fundamentally reshapes the very fabric of how organizations operate, particularly in the face of mounting complexities stemming from data proliferation. As companies grapple with the challenges of extracting meaningful insights from vast, diverse, and often disorganized datasets, AI stands out as a transformative agent. It enhances BI&amp;rsquo;s capabilities, fundamentally altering the ways in which organizations glean insights, make informed decisions, and strategically maintain competitive advantages in their respective markets. This document aims to provide an in-depth exploration of the profound impact that AI has on BI, drawing insights from a seasoned Silicon Valley perspective and highlighting noteworthy examples that underscore pivotal advancements along with their practical implications.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building Private GPT Systems</title>
-      <link>http://localhost:1313/posts/privategpt/</link>
+      <link>https://salmancuso.com/posts/privategpt/</link>
       <pubDate>Sat, 22 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/privategpt/</guid>
+      <guid>https://salmancuso.com/posts/privategpt/</guid>
       <description>&lt;p&gt;Deploying a private GPT instance offers significant advantages, such as enhanced data privacy, compliance with industry regulations, and the ability to tailor the model to specific needs. In this comprehensive guide, we will delve into the process of setting up a private GPT instance, complete with code examples and a detailed step-by-step walkthrough.&lt;/p&gt;&#xA;&lt;h2 id=&#34;benefits-of-a-private-gpt-instance&#34;&gt;Benefits of a Private GPT Instance&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Enhanced Data Privacy and Security:&lt;/strong&gt; Processing data locally ensures that sensitive information remains within your control.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Compliance with Industry Regulations:&lt;/strong&gt; Customizing the deployment to adhere to specific regulatory requirements.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Customization:&lt;/strong&gt; Fine-tuning the model for specific use cases and applications.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Low-Latency Responses:&lt;/strong&gt; Reduced dependency on external servers, making it ideal for real-time applications.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Offline Usage:&lt;/strong&gt; Capability to operate without an internet connection.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cost Control:&lt;/strong&gt; Eliminates dependence on external cloud services, offering a cost-effective solution.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Consistent Performance:&lt;/strong&gt; Dedicated resources ensure reliable performance and minimize third-party API dependencies.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Critical Data Scenarios:&lt;/strong&gt; Especially beneficial in contexts requiring data sensitivity, customizations, regulatory compliance, and resource allocation.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Setting up a private GPT instance necessitates technical expertise, particularly in areas such as deployment management, security, and ongoing maintenance.&lt;/p&gt;</description>
     </item>
   </channel>
