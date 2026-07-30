@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Heterogeneity on Sal Mancuso</title>
+    <link>http://localhost:1313/tags/heterogeneity/</link>
+    <description>Recent content in Heterogeneity on Sal Mancuso</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/heterogeneity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Visualization of Cultural Heterogeneity</title>
+      <link>http://localhost:1313/publications/visculturalhetro/</link>
+      <pubDate>Fri, 15 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/visculturalhetro/</guid>
+      <description>&lt;p&gt;I developed a tool for Professor Glenn Carroll, at Stanford University&amp;rsquo;s Graduate School of Business, that will allow him to evaluate organizational cultural heterogeneity. The Venn diagram tool I developed is a client-side tool written in Javascript, jQuery, AJAX, D3, HTML, and CSS. The tool ingests an excel file with unlimited columns (sets) and nearly instantaneously renders a Venn diagram based on the three sets with the highest means. The second section allows users to choose the three sets they wish to execute manually.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

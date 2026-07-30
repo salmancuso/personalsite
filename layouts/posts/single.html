@@ -1,0 +1,105 @@
+{{ define "main" }}
+
+<article class="post-single">
+    <div class="container">
+        <!-- Post Header -->
+        <header class="post-header">
+            <h1 class="post-title">{{ .Title }}</h1>
+            
+            <div class="post-meta">
+                {{ if .Date }}
+                <span class="meta-item">
+                    <i class="ti ti-calendar"></i>
+                    {{ .Date.Format "January 2, 2006" }}
+                </span>
+                {{ end }}
+                
+                {{ if .ReadingTime }}
+                <span class="meta-item">
+                    <i class="ti ti-clock"></i>
+                    {{ .ReadingTime }} min read
+                </span>
+                {{ end }}
+                
+                {{ if .Params.author }}
+                <span class="meta-item">
+                    <i class="ti ti-user"></i>
+                    {{ .Params.author }}
+                </span>
+                {{ end }}
+            </div>
+
+            {{ if .Params.image }}
+            <figure class="post-image">
+                <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+            </figure>
+            {{ end }}
+        </header>
+
+        <!-- Post Content -->
+        <div class="post-content">
+            {{ .Content }}
+        </div>
+
+        <!-- Post Tags -->
+        {{ if .Params.tags }}
+        <footer class="post-footer">
+            <div class="post-tags">
+                {{ range .Params.tags }}
+                <a href="{{ (site.GetPage (printf "tags/%s" . | urlize)).RelPermalink }}" class="tag">{{ . }}</a>
+                {{ end }}
+            </div>
+        </footer>
+        {{ end }}
+    </div>
+</article>
+
+<!-- Post Navigation -->
+<nav class="post-nav">
+    <div class="container">
+        <div class="nav-links">
+            {{ with .PrevInSection }}
+            <a href="{{ .Permalink }}" class="nav-prev">
+                <span class="nav-label">← Previous</span>
+                <span class="nav-title">{{ .Title }}</span>
+            </a>
+            {{ end }}
+            
+            {{ with .NextInSection }}
+            <a href="{{ .Permalink }}" class="nav-next">
+                <span class="nav-label">Next →</span>
+                <span class="nav-title">{{ .Title }}</span>
+            </a>
+            {{ end }}
+        </div>
+    </div>
+</nav>
+
+<!-- Related Posts -->
+{{ $related := (where .Site.RegularPages "Section" "posts") | complement (slice .) | first 3 }}
+{{ if $related }}
+<section class="related-posts">
+    <div class="container">
+        <h2>More Posts</h2>
+        <div class="posts-grid">
+            {{ range $related }}
+            <article class="post-card">
+                {{ if .Params.image }}
+                <div class="post-card-image">
+                    <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+                </div>
+                {{ end }}
+                <div class="post-card-content">
+                    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                    <p class="post-card-date">{{ .Date.Format "Jan 2, 2006" }}</p>
+                    <p class="post-card-summary">{{ .Summary }}</p>
+                    <a href="{{ .Permalink }}" class="read-more">Read more →</a>
+                </div>
+            </article>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}
+
+{{ end }}

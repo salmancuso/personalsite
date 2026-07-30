@@ -1,0 +1,70 @@
+{{ define "main" }}
+
+{{ partial "hero" . }}
+
+<!-- About Preview -->
+<section class="about-preview">
+    <div class="container">
+        <h2 class="section-title">About</h2>
+        <div class="about-content">
+            <p>Senior Business Intelligence Engineer at Stanford University's School of Humanities and Sciences. Over a decade of experience transforming complex datasets into insights that drive real decisions. By weekend, you'll find me on remote mountain trails with a ham radio, exploring backcountry, or casting a line in the Sierra Nevada.</p>
+            <a href="/about" class="btn btn-secondary">Full Story →</a>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Posts Section - Blog Posts (2 posts - 1 rows of 1) -->
+<section class="projects-section" id="posts">
+    <div class="container">
+        <h2 class="section-title">Featured Posts</h2>
+        <div class="projects-grid">
+            {{ range first 2 (where .Site.RegularPages "Section" "posts") }}
+            <div class="project-card">
+                {{ if .Params.image }}
+                <div class="project-image">
+                    <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+                </div>
+                {{ end }}
+                <div class="project-content">
+                    <h3 class="project-title">{{ .Title }}</h3>
+                    <p class="project-description">{{ .Description | default (truncate 80 .Summary) }}</p>
+                    <a href="{{ .Permalink }}" class="project-link">Read more →</a>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+        <div class="view-all">
+            <a href="/posts/" class="btn btn-primary">View All Posts →</a>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Publications Section -->
+<section class="projects-section" id="publications">
+    <div class="container">
+        <h2 class="section-title">Featured Publications</h2>
+        <div class="projects-grid">
+            {{ range first 2 (where .Site.RegularPages "Section" "publications") }}
+            <div class="project-card">
+                {{ if .Params.image }}
+                <div class="project-image">
+                    <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+                </div>
+                {{ end }}
+                <div class="project-content">
+                    <h3 class="project-title">{{ .Title }}</h3>
+                    <p class="project-description">{{ .Description | default (truncate 80 .Summary) }}</p>
+                    <a href="{{ .Permalink }}" class="project-link">Read more →</a>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+        <div class="view-all">
+            <a href="/publications/" class="btn btn-primary">View All Publications →</a>
+        </div>
+    </div>
+</section>
+
+
+
+{{ end }}

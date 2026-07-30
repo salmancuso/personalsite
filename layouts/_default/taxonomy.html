@@ -1,0 +1,35 @@
+{{ define "main" }}
+
+<div class="container">
+    <header class="page-header">
+        <h1 class="page-title">Posts tagged "{{ .Title }}"</h1>
+        <p class="page-subtitle">{{ len .Pages }} post{{ if ne (len .Pages) 1 }}s{{ end }} found</p>
+    </header>
+
+    {{ if .Pages }}
+    <div class="posts-list">
+        {{ range .Pages }}
+        <article class="post-card">
+            {{ if .Params.image }}
+            <div class="post-card-image">
+                <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+            </div>
+            {{ end }}
+            
+            <div class="post-card-content">
+                <h2 class="post-card-title">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </h2>
+                <p class="post-card-meta">{{ .Date.Format "Jan 2, 2006" }}</p>
+                <p class="post-card-summary">{{ .Description | default (truncate 100 .Summary) }}</p>
+                <a href="{{ .Permalink }}" class="read-more">Read more →</a>
+            </div>
+        </article>
+        {{ end }}
+    </div>
+    {{ else }}
+    <p>No posts found with this tag.</p>
+    {{ end }}
+</div>
+
+{{ end }}

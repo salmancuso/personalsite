@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data-Collection on Sal Mancuso</title>
+    <link>http://localhost:1313/tags/data-collection/</link>
+    <description>Recent content in Data-Collection on Sal Mancuso</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Aug 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/data-collection/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Job Search with Financial Information: Theory and Evidence</title>
+      <link>http://localhost:1313/publications/jobsearchtheory/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/jobsearchtheory/</guid>
+      <description>&lt;p&gt;Stanford GSB Professor Jung Ho Choi and Utah Professor Sara Malik approached my team, Data, Analytics, and Research Computing (DARC), to work with Glassdoor to acquire five data pillars for this research paper. It became abundantly clear that Glassdoor wasn&amp;rsquo;t willing to work with academia, so I built several webscrapes that collected employee reviews and salary compensation data at scale. Acknowledgment cited on the introductory page.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.gsb.stanford.edu/faculty-research/publications/not-just-investors-role-earnings-announcements-guiding-job-seekers&#34;&gt;View the publication.&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

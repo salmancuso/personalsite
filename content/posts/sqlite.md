@@ -1,9 +1,11 @@
-+++
-title = """SQLite: Lightweight, Fast and Local"""
-date = 2023-03-04T15:21:00+07:00
-draft = false
-+++
-![SQL Code](/images/sql.jpg)
+---
+title: "SQLite for Data Engineering"
+date: 2023-10-08
+description: "Leveraging SQLite for efficient local data storage and processing"
+image: "/images/sql.jpg"
+tags: ["sqlite", "database", "sql"]
+---
+
 SQLite is a powerful relational database management system that is widely used for its simplicity, speed, reliability, and versatility; making it ideal for a wide range of applications and use cases. Some of the key reasons why SQLite is considered powerful are:
 
 1. Lightweight and easy to use: SQLite is a lightweight and self-contained database engine that requires minimal configuration and setup. It is also0 very easy to use and does not require a dedicated server or administrator.

@@ -1,9 +1,10 @@
-+++
-title = """Repositories, what are they good for?"""
-date = 2025-02-09T07:07:07+01:00
-draft = false
-+++
-![Git Repo](/images/git.png)
+---
+title: "Git for Data Engineers"
+date: 2023-05-12
+description: "Using Git version control effectively in data engineering workflows"
+image: "/images/git.png"
+tags: ["git", "version-control", "tools"]
+---
 
 In recent years, the importance of repositories like GitHub has become increasingly apparent in the tech industry. Platforms such as GitHub, GitLab, and BitBucket are web-based hosting services that provide version control and collaboration features for software development projects. These platforms allow developers to store and manage their code, track changes, collaborate with others, and contribute to open-source projects. In this expanded article, we'll deeply discuss the significance of repositories like GitHub and provide comprehensive instructions on how to use a repository effectively.
 

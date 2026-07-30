@@ -1,9 +1,11 @@
-+++
-title = """Setting Up and Running a Private GPT Instance"""
-date = 2023-08-23T07:07:07+01:00
-draft = false
-+++
-![GPT Logo](/images/gpt.jpg)
+---
+title: "Building Private GPT Systems"
+date: 2025-03-22
+description: "Running large language models locally while maintaining privacy"
+image: "/images/aiBrain.jpg"
+tags: ["gpt", "privacy", "ai"]
+---
+
 Deploying a private GPT instance offers significant advantages, such as enhanced data privacy, compliance with industry regulations, and the ability to tailor the model to specific needs. In this comprehensive guide, we will delve into the process of setting up a private GPT instance, complete with code examples and a detailed step-by-step walkthrough.
 
 ## Benefits of a Private GPT Instance

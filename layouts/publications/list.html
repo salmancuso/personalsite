@@ -1,0 +1,60 @@
+{{ define "main" }}
+
+<div class="publications-archive">
+    <div class="container">
+        <!-- Page Header -->
+        <header class="page-header">
+            <h1 class="page-title">Publications</h1>
+            <p class="page-subtitle">Academic papers, research, and written work.</p>
+        </header>
+
+        <!-- Publications Grid -->
+        {{ $pubs := where .Site.RegularPages "Section" "publications" }}
+        
+        {{ if $pubs }}
+        <div class="publications-grid">
+            {{ range $pubs }}
+            <article class="publication-card">
+                {{ if .Params.image }}
+                <div class="pub-image">
+                    <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+                </div>
+                {{ end }}
+                
+                <div class="pub-content">
+                    <h2 class="pub-title">
+                        <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    </h2>
+                    
+                    {{ if .Params.author }}
+                    <p class="pub-author">by {{ .Params.author }}</p>
+                    {{ end }}
+                    
+                    {{ if .Date }}
+                    <p class="pub-date">{{ .Date.Format "2006" }}</p>
+                    {{ end }}
+                    
+                    <p class="pub-summary">{{ .Description | default (truncate 100 .Summary) }}</p>
+                    
+                    {{ if .Params.doi }}
+                    <p class="pub-doi">
+                        <strong>DOI:</strong> 
+                        <a href="https://doi.org/{{ .Params.doi }}" target="_blank">{{ .Params.doi }}</a>
+                    </p>
+                    {{ end }}
+                    
+                    <a href="{{ .Permalink }}" class="read-more">Read publication →</a>
+                </div>
+            </article>
+            {{ end }}
+        </div>
+
+        {{ else }}
+        <div class="empty-state">
+            <p>No publications yet.</p>
+        </div>
+        {{ end }}
+    </div>
+</div>
+
+{{ end }}

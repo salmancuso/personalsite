@@ -1,9 +1,12 @@
-+++
-title = """Unleashing the Potential of Decentralized Communication: A Deep Dive into LoRa Meshtastic Networks"""
-date = 2025-03-14T07:07:07+01:00
-draft = false
-+++
-![LORA Mesh Nodes](/images/nodes.jpeg)
+---
+title: "Building LoRa Mesh Networks"
+date: 2023-09-10
+description: "Creating long-range mesh networks using LoRa technology"
+image: "/images/meshNodes.jpeg"
+tags: ["lora", "mesh-networks", "hardware"]
+---
+
+
 In our increasingly interconnected digital world, networking has progressed far beyond conventional wired and centralized configurations. Leading this transformation are LoRa Meshtastic networks—a flexible, robust, and sustainable solution for long-distance communication. Let's explore the intricacies of this network, its advantages, and the essential equipment needed to utilize its full potential.
 
 ## What is a LoRa Meshtastic Network?

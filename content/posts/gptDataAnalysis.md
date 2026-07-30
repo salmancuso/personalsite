@@ -1,9 +1,12 @@
-+++
-title = """DataSage: The Proof-of-Concept That Took on a Life of it's Own"""
-date = 2025-11-09T23:53:00+07:00
-draft = false
-+++
-![Data Intelligence](/images/dataIntel.jpg)
+---
+title: "Data Analysis with GPT Models"
+date: 2025-11-16
+description: "Leveraging large language models for data analysis tasks"
+image: "/images/gpt.jpg"
+tags: ["gpt", "data-analysis", "ai"]
+---
+
+
 ## The "Aha!" Moment That Started This Journey
 
 You know, I've spent my career believing that technology should empower everyone, not just the experts. That's why, when I started working with data analytics at Stanford, I kept thinking about my days at Apple Computer, trying to understand a bill of materials in an Excel spreadsheet. Margins up, expenses down—but what did it all *mean*? What was the story those numbers were trying to tell?

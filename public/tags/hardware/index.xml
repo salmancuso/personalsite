@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hardware on Sal Mancuso</title>
+    <link>http://localhost:1313/tags/hardware/</link>
+    <description>Recent content in Hardware on Sal Mancuso</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/hardware/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MeshBeacon: Because Your Mesh Network Should Actually DO Something</title>
+      <link>http://localhost:1313/posts/meshbeacon/</link>
+      <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/meshbeacon/</guid>
+      <description>&lt;h2 id=&#34;take-it-make-it-yours&#34;&gt;Take It. Make It Yours.&lt;/h2&gt;&#xA;&lt;p&gt;MeshBeacon is open source. Every line of it.&lt;/p&gt;&#xA;&lt;p&gt;I didn&amp;rsquo;t build this so it could run on one node in San Jose. I built it so it could run everywhere. Fork the repository. Change the coordinates to your city. Add your local weather stations. Point the earthquake monitor at your fault lines. Write a new broadcast module for something I haven&amp;rsquo;t thought of yet.&lt;/p&gt;&#xA;&lt;p&gt;The APIs are free. The code is free. The spectrum is shared. The only thing required is the willingness to build something that matters.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Meshtastic: Core vs Firmware</title>
+      <link>http://localhost:1313/posts/meshcorevmeshtastic/</link>
+      <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/meshcorevmeshtastic/</guid>
+      <description>&lt;p&gt;You know what REALLY grinds my gears? And I mean REALLY makes me want to throw a radio into the ocean? It&amp;rsquo;s when people ask me, &amp;ldquo;Hey, what&amp;rsquo;s the difference between MeshCore and Meshtastic?&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;OH, WHERE DO I BEGIN?!&lt;/p&gt;&#xA;&lt;p&gt;It&amp;rsquo;s like asking what&amp;rsquo;s the difference between a surgeon and a guy with a chainsaw! Sure, they BOTH make cuts, but ONE of them knows when to STOP CUTTING!&lt;/p&gt;&#xA;&lt;p&gt;Let me paint you a picture. You&amp;rsquo;re in the middle of a disaster. Hurricane just took out every cell tower within 200 miles. Your neighbor&amp;rsquo;s house is on fire. You need to communicate. Do you want the mesh network that&amp;rsquo;s sitting there going &amp;ldquo;HELLO! HELLO! I&amp;rsquo;M HERE! DID YOU GET MY HELLO? HERE&amp;rsquo;S ANOTHER HELLO! AND ANOTHER! OH WAIT, LET ME TELL YOU MY POSITION AGAIN!&amp;rdquo; like some kind of radio-powered narcissist at a cocktail party?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Building LoRa Mesh Networks</title>
+      <link>http://localhost:1313/posts/loramesh/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/loramesh/</guid>
+      <description>&lt;p&gt;In our increasingly interconnected digital world, networking has progressed far beyond conventional wired and centralized configurations. Leading this transformation are LoRa Meshtastic networks—a flexible, robust, and sustainable solution for long-distance communication. Let&amp;rsquo;s explore the intricacies of this network, its advantages, and the essential equipment needed to utilize its full potential.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-a-lora-meshtastic-network&#34;&gt;What is a LoRa Meshtastic Network?&lt;/h2&gt;&#xA;&lt;p&gt;LoRa (Long Range) is a spread-spectrum modulation technique derived from chirp spread spectrum (CSS) technology. It is known for its capability to deliver exceptionally long-range data transmission with low power consumption. Meshtastic, an open-source project, leverages LoRa technology to create a decentralized mesh network. This empowers users to exchange messages and relay data over extensive distances without relying on conventional telecommunication infrastructures.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

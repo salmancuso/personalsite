@@ -1,9 +1,10 @@
-+++
-title = """The Last of a Dying Species; Political Moderates"""
-date = 2024-08-25T23:53:00+07:00
-draft = false
-+++
-![Heads blue and red](/images/moderate.jpg)
+---
+title: "Finding Middle Ground"
+date: 2024-10-20
+description: "Balancing polarizing perspectives and finding common ground"
+image: "/images/moderate.jpg"
+tags: ["perspective", "balance"]
+---
 
 As a moderate, I prioritize balance and pragmatism in my political views, understanding that extreme positions on either end of the spectrum can lead to unintended consequences. While some may perceive my stance as indecisive, I believe that moderation is essential for achieving well-rounded governance that serves the diverse needs of our society.
 

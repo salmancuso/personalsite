@@ -1,140 +1,331 @@
+
 <!DOCTYPE html>
-<html lang="en-us">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>Repositories, what are they good for? | Sal Mancuso</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="
-In recent years, the importance of repositories like GitHub has become increasingly apparent in the tech industry. Platforms such as GitHub, GitLab, and BitBucket are web-based hosting services that provide version control and collaboration features for software development projects. These platforms allow developers to store and manage their code, track changes, collaborate with others, and contribute to open-source projects. In this expanded article, we&rsquo;ll deeply discuss the significance of repositories like GitHub and provide comprehensive instructions on how to use a repository effectively.">
-    <meta name="generator" content="Hugo 0.145.0">
-    
-    
-    
-      <meta name="robots" content="noindex, nofollow">
-    
-    
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Building infrastructure. Living outside. Communicating worldwide.">
+    <meta name="author" content="Sal Mancuso">
+
+    <title>
+        
+        Git for Data Engineers | Sal Mancuso
+        
+    </title>
 
     
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
-
-
-
-
+    
+    
+    <link rel="stylesheet" href="/css/pages.css">
     
 
     
-      
-
+    
+    
+    <link rel="stylesheet" href="/css/hero.css">
     
 
     
+    
+    <link rel="stylesheet" href="/css/featured-projects.css">
+    
 
     
-      <link rel="canonical" href="http://localhost:1313/posts/git/">
+    
+    <link rel="stylesheet" href="/css/sections.css">
     
 
-    <meta property="og:url" content="http://localhost:1313/posts/git/">
-  <meta property="og:site_name" content="Sal Mancuso">
-  <meta property="og:title" content="Repositories, what are they good for?">
-  <meta property="og:description" content="In recent years, the importance of repositories like GitHub has become increasingly apparent in the tech industry. Platforms such as GitHub, GitLab, and BitBucket are web-based hosting services that provide version control and collaboration features for software development projects. These platforms allow developers to store and manage their code, track changes, collaborate with others, and contribute to open-source projects. In this expanded article, we’ll deeply discuss the significance of repositories like GitHub and provide comprehensive instructions on how to use a repository effectively.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-02-09T07:07:07+01:00">
-    <meta property="article:modified_time" content="2025-02-09T07:07:07+01:00">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <meta itemprop="name" content="Repositories, what are they good for?">
-  <meta itemprop="description" content="In recent years, the importance of repositories like GitHub has become increasingly apparent in the tech industry. Platforms such as GitHub, GitLab, and BitBucket are web-based hosting services that provide version control and collaboration features for software development projects. These platforms allow developers to store and manage their code, track changes, collaborate with others, and contribute to open-source projects. In this expanded article, we’ll deeply discuss the significance of repositories like GitHub and provide comprehensive instructions on how to use a repository effectively.">
-  <meta itemprop="datePublished" content="2025-02-09T07:07:07+01:00">
-  <meta itemprop="dateModified" content="2025-02-09T07:07:07+01:00">
-  <meta itemprop="wordCount" content="1050">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Repositories, what are they good for?">
-  <meta name="twitter:description" content="In recent years, the importance of repositories like GitHub has become increasingly apparent in the tech industry. Platforms such as GitHub, GitLab, and BitBucket are web-based hosting services that provide version control and collaboration features for software development projects. These platforms allow developers to store and manage their code, track changes, collaborate with others, and contribute to open-source projects. In this expanded article, we’ll deeply discuss the significance of repositories like GitHub and provide comprehensive instructions on how to use a repository effectively.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-	
-  </head><body class="ma0 avenir bg-near-white development">
+        :root {
+            --dark-bg: #1a1a18;
+            --dark-surface: #242420;
+            --text-light: #E8D5C4;
+            --text-muted: #A39A8F;
+            --accent: #B8860B;
+            --earth: #8B9D5D;
+            --border-color: #4a4a48;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #d4af37;
+        }
+
+         
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+         
+        nav {
+            background-color: var(--dark-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-light);
+            font-weight: 500;
+            margin: 0 1.5rem;
+        }
+
+        nav a:first-child {
+            font-family: Georgia, serif;
+            font-size: 1.25rem;
+            margin: 0;
+            margin-right: auto;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+         
+        footer {
+            background-color: #0f0f0d;
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        footer h3 {
+            font-family: Georgia, serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer ul li a {
+            color: var(--text-muted);
+        }
+
+        footer ul li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+         
+        main {
+            min-height: 50vh;
+        }
+
+        .page-content {
+            padding: 3rem 0;
+        }
+
+        .page-title {
+            font-family: Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--earth);
+            display: inline-block;
+        }
+
+         
+        main h2 {
+            font-family: Georgia, serif;
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        main h3 {
+            font-family: Georgia, serif;
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        main p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        main ul,
+        main ol {
+            color: var(--text-muted);
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        main li {
+            margin-bottom: 0.5rem;
+        }
+
+        main code {
+            background-color: var(--dark-surface);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        main pre {
+            background-color: var(--dark-surface);
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            padding: 1.5rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        main pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        main blockquote {
+            border-left: 4px solid var(--earth);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+         
+        @media (max-width: 768px) {
+            nav a {
+                margin: 0 1rem;
+            }
+
+            .page-title {
+                font-size: 1.8rem;
+            }
+
+            main h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-brand">Sal</a>
+            <div class="nav-menu">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/posts">Posts</a>
+                <a href="/publications">Work/Publications</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </nav>
 
     
-   
-  
+    <main>
+        
 
-  <header>
-    <div class="bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
-      
-        Sal Mancuso
-      
-    </a>
-    <div class="flex-l items-center">
-      
+<article class="post-single">
+    <div class="container">
+        
+        <header class="post-header">
+            <h1 class="post-title">Git for Data Engineers</h1>
+            
+            <div class="post-meta">
+                
+                <span class="meta-item">
+                    <i class="ti ti-calendar"></i>
+                    May 12, 2023
+                </span>
+                
+                
+                
+                <span class="meta-item">
+                    <i class="ti ti-clock"></i>
+                    5 min read
+                </span>
+                
+                
+                
+            </div>
 
-      
-        <ul class="pl0 mr3">
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/about/" title="About page">
-              About
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/publications/" title="Publications page">
-              Publications
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/posts/" title="Blog Posts page">
-              Blog Posts
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/contact/" title="Find Me page">
-              Find Me
-            </a>
-          </li>
-          
-        </ul>
-      
-      <div class="ananke-socials"></div>
+            
+            <figure class="post-image">
+                <img src="/images/git.png" alt="Git for Data Engineers" loading="lazy">
+            </figure>
+            
+        </header>
 
-    </div>
-  </div>
-</nav>
-
-    </div>
-  </header>
-
-
-
-    <main class="pb7" role="main">
-      
-  
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-    <header class="mt4 w-100">
-      <aside class="instapaper_ignoref b helvetica tracked ttu">
-          
-        Posts
-      </aside><div id="sharing" class="mt3 ananke-socials"></div>
-<h1 class="f1 athelas mt3 mb1">Repositories, what are they good for?</h1>
-      
-      
-      
-      <time class="f6 mv4 dib tracked" datetime="2025-02-09T07:07:07+01:00">February 9, 2025</time>
-      
-
-      
-      
-    </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p><img src="/images/git.png" alt="Git Repo"></p>
-<p>In recent years, the importance of repositories like GitHub has become increasingly apparent in the tech industry. Platforms such as GitHub, GitLab, and BitBucket are web-based hosting services that provide version control and collaboration features for software development projects. These platforms allow developers to store and manage their code, track changes, collaborate with others, and contribute to open-source projects. In this expanded article, we&rsquo;ll deeply discuss the significance of repositories like GitHub and provide comprehensive instructions on how to use a repository effectively.</p>
+        
+        <div class="post-content">
+            <p>In recent years, the importance of repositories like GitHub has become increasingly apparent in the tech industry. Platforms such as GitHub, GitLab, and BitBucket are web-based hosting services that provide version control and collaboration features for software development projects. These platforms allow developers to store and manage their code, track changes, collaborate with others, and contribute to open-source projects. In this expanded article, we&rsquo;ll deeply discuss the significance of repositories like GitHub and provide comprehensive instructions on how to use a repository effectively.</p>
 <h2 id="importance-of-repositories"><strong>Importance of Repositories:</strong></h2>
 <h3 id="collaboration"><strong>Collaboration:</strong></h3>
 <p>One of the main benefits of repositories like GitHub is the ability to collaborate with other developers seamlessly. On GitHub, multiple developers can work on the same project simultaneously. GitHub facilitates this by maintaining a history of all changes made to the code. Each developer can have their own branches to work independently on new features or fixes without interfering with others. This minimizes the risk of overwriting each other’s work. Additionally, GitHub supports team communication by allowing developers to leave comments on specific lines of code, create issues for tracking bugs and feature requests, and assign tasks to team members.</p>
@@ -159,83 +350,206 @@ In recent years, the importance of repositories like GitHub has become increasin
 <h3 id="step-by-step-instructions"><strong>Step-by-Step Instructions:</strong></h3>
 <h4 id="clone-a-repository"><strong>Clone a Repository:</strong></h4>
 <p>To clone a repository, you need to have the URL of the repository you want to clone. Open a terminal window and navigate to the directory where you want to store the repository. Then, execute the following command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/username/repo-name.git
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/username/repo-name.git
 </span></span></code></pre></div><p>Replace <code>username</code> with your GitHub username and <code>repo-name</code> with the name of the repository you want to clone. This will create a local copy of the repository on your computer.</p>
 <h4 id="make-changes"><strong>Make Changes:</strong></h4>
 <p>Once you have cloned the repository, you can make changes using any text editor or integrated development environment (IDE). Open the files you want to edit, make the necessary changes, and save the files.</p>
 <h4 id="commit-changes"><strong>Commit Changes:</strong></h4>
 <p>After making changes, you need to stage and commit those changes to your local repository. Navigate to the directory where the repository is stored. First, stage the changes using:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add .
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add .
 </span></span></code></pre></div><p>This command stages all changes made. You can also stage specific files by replacing the period with the path to the file, for example, <code>git add path/to/file</code>.</p>
 <p>Then, commit the changes with a descriptive message:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Commit message&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git commit -m <span style="color:#a5d6ff">&#34;Commit message&#34;</span>
 </span></span></code></pre></div><p>Replace <code>Commit message</code> with a brief description of what changes were made and why.</p>
 <h4 id="push-changes"><strong>Push Changes:</strong></h4>
 <p>To push your committed changes to the GitHub repository, use the following command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push origin main
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push origin main
 </span></span></code></pre></div><p>Assuming <code>main</code> is your branch name. Replace <code>main</code> with the appropriate branch name if you are working on a different branch.</p>
 <h4 id="pull-changes"><strong>Pull Changes:</strong></h4>
 <p>If other team members have made changes to the repository, you&rsquo;ll need to pull those changes to your local repository to stay up-to-date:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git pull origin main
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git pull origin main
 </span></span></code></pre></div><p>This command will fetch and merge the latest changes from the <code>main</code> branch of the GitHub repository to your local repository.</p>
 <h4 id="create-a-branch"><strong>Create a Branch:</strong></h4>
 <p>Creating a new branch allows you to work on a new feature or bug fix independently of the <code>main</code> branch. To create and switch to a new branch, use:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git checkout -b new-branch-name
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git checkout -b new-branch-name
 </span></span></code></pre></div><p>Replace <code>new-branch-name</code> with the desired name of your new branch.</p>
 <h4 id="merge-branches"><strong>Merge Branches:</strong></h4>
 <p>To merge changes from one branch into another, first switch to the branch you want to merge into:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git checkout target-branch
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git checkout target-branch
 </span></span></code></pre></div><p>Replace <code>target-branch</code> with the name of the branch you want to merge into, usually <code>main</code> or <code>develop</code>.</p>
 <p>Then, merge the branch with the changes:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git merge source-branch
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git merge source-branch
 </span></span></code></pre></div><p>Replace <code>source-branch</code> with the name of the branch you want to merge.</p>
 <h3 id="additional-tips"><strong>Additional Tips:</strong></h3>
 <ul>
 <li>
 <p><strong>View Branches:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git branch
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git branch
 </span></span></code></pre></div><p>This command lists all branches in your local repository. The currently active branch is highlighted with an asterisk <code>*</code>.</p>
 </li>
 <li>
 <p><strong>Delete a Branch:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git branch -d branch-name
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git branch -d branch-name
 </span></span></code></pre></div><p>Replace <code>branch-name</code> with the name of the branch you want to delete. Use <code>-D</code> instead of <code>-d</code> if the branch has unmerged changes you want to discard.</p>
 </li>
 <li>
 <p><strong>Check Status:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git status
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git status
 </span></span></code></pre></div><p>This command displays the state of the working directory and the staging area, showing changed files, files to be committed, etc.</p>
 </li>
 </ul>
 <p>By mastering these commands and understanding the importance of repositories, developers can efficiently manage their projects and collaborate with their teams. GitHub&rsquo;s combination of version control, collaboration tools, and support for open source makes it a cornerstone of modern software development.</p>
-<ul class="pa0">
-  
-</ul>
-<div class="mt6 instapaper_ignoref">
-      
-      
-      </div>
+
+        </div>
+
+        
+        
+        <footer class="post-footer">
+            <div class="post-tags">
+                
+                <a href="/tags/git/" class="tag">git</a>
+                
+                <a href="/tags/version-control/" class="tag">version-control</a>
+                
+                <a href="/tags/tools/" class="tag">tools</a>
+                
+            </div>
+        </footer>
+        
     </div>
-
-    <aside class="w-30-l mt6-l">
-
+</article>
 
 
+<nav class="post-nav">
+    <div class="container">
+        <div class="nav-links">
+            
+            <a href="http://localhost:1313/posts/ham/" class="nav-prev">
+                <span class="nav-label">← Previous</span>
+                <span class="nav-title">Is Amateur Radio Dying?</span>
+            </a>
+            
+            
+            
+            <a href="http://localhost:1313/posts/datatransfer/" class="nav-next">
+                <span class="nav-label">Next →</span>
+                <span class="nav-title">Data Transfer Techniques and Tools</span>
+            </a>
+            
+        </div>
+    </div>
+</nav>
 
-</aside>
 
-  </article>
+
+
+<section class="related-posts">
+    <div class="container">
+        <h2>More Posts</h2>
+        <div class="posts-grid">
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/dataSec.jpeg" alt="Data Security Best Practices" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="http://localhost:1313/posts/datasec/">Data Security Best Practices</a></h3>
+                    <p class="post-card-date">Jun 8, 2026</p>
+                    <p class="post-card-summary"><h2 id="introduction-the-strategic-imperative-of-data-security">Introduction: The Strategic Imperative of Data Security</h2>
+<p>In today&rsquo;s hyperconnected digital ecosystem, data has transcended beyond mere commodity status—it&rsquo;s become the operational lifeblood and competitive moat of modern enterprises. From personally identifiable information (PII) and healthcare records to intellectual property, trade secrets, and financial ledgers, data assets underpin organizational resilience and individual privacy alike. Yet this critical dependence on data infrastructure introduces a parallel complexity: the expanding attack surface and sophistication of threat actors. Cyber attacks, data exfiltration events, ransomware deployments, and identity theft schemes have evolved from theoretical risks into demonstrable existential threats. The stakes are real, the vulnerabilities are systemic, and frankly, reactive approaches no longer cut it. Prioritizing data security—both at the enterprise and personal level—isn&rsquo;t optional. It&rsquo;s the foundation of operational integrity.</p></p>
+                    <a href="http://localhost:1313/posts/datasec/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/muos.jpg" alt="MeshBeacon: Because Your Mesh Network Should Actually DO Something" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="http://localhost:1313/posts/meshbeacon/">MeshBeacon: Because Your Mesh Network Should Actually DO Something</a></h3>
+                    <p class="post-card-date">Jan 15, 2026</p>
+                    <p class="post-card-summary"><h2 id="take-it-make-it-yours">Take It. Make It Yours.</h2>
+<p>MeshBeacon is open source. Every line of it.</p>
+<p>I didn&rsquo;t build this so it could run on one node in San Jose. I built it so it could run everywhere. Fork the repository. Change the coordinates to your city. Add your local weather stations. Point the earthquake monitor at your fault lines. Write a new broadcast module for something I haven&rsquo;t thought of yet.</p>
+<p>The APIs are free. The code is free. The spectrum is shared. The only thing required is the willingness to build something that matters.</p></p>
+                    <a href="http://localhost:1313/posts/meshbeacon/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/meshNodes.jpeg" alt="Meshtastic: Core vs Firmware" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="http://localhost:1313/posts/meshcorevmeshtastic/">Meshtastic: Core vs Firmware</a></h3>
+                    <p class="post-card-date">Dec 20, 2025</p>
+                    <p class="post-card-summary"><p>You know what REALLY grinds my gears? And I mean REALLY makes me want to throw a radio into the ocean? It&rsquo;s when people ask me, &ldquo;Hey, what&rsquo;s the difference between MeshCore and Meshtastic?&rdquo;</p>
+<p>OH, WHERE DO I BEGIN?!</p>
+<p>It&rsquo;s like asking what&rsquo;s the difference between a surgeon and a guy with a chainsaw! Sure, they BOTH make cuts, but ONE of them knows when to STOP CUTTING!</p>
+<p>Let me paint you a picture. You&rsquo;re in the middle of a disaster. Hurricane just took out every cell tower within 200 miles. Your neighbor&rsquo;s house is on fire. You need to communicate. Do you want the mesh network that&rsquo;s sitting there going &ldquo;HELLO! HELLO! I&rsquo;M HERE! DID YOU GET MY HELLO? HERE&rsquo;S ANOTHER HELLO! AND ANOTHER! OH WAIT, LET ME TELL YOU MY POSITION AGAIN!&rdquo; like some kind of radio-powered narcissist at a cocktail party?</p></p>
+                    <a href="http://localhost:1313/posts/meshcorevmeshtastic/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+        </div>
+    </div>
+</section>
+
+
 
     </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
-    &copy;  Sal Mancuso 2026 
-  </a>
-    <div><div class="ananke-socials"></div>
-</div>
-  </div>
-</footer>
 
-  </body>
+    
+    <footer>
+        <div class="container">
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/posts">Posts</a></li>
+                    <li><a href="/publications">Work/Publications</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Interests</h3>
+                <ul>
+                    <li><a href="https://makerworld.com/" target="_blank">Maker World</a></li>
+                    <li><a href="https://www.adafruit.com/" target="_blank">Adafruit</a></li>
+                    <li><a href="https://sanjosesimplex.groups.io/g/main" target="_blank">K6SJS San Jose Simplex</a></li>
+                    <li><a href="https://www.kennedymeadows.com/" target="_blank">Kennedy Meadows Packstation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="https://it-humsci.stanford.edu/people/sal-mancuso" target="_blank">Stanford</a></li>
+                    <li><a href="https://github.com/salmancuso" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/salmancuso/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://www.qrz.com/db/W6SAL" target="_blank">QRZ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sal Mancuso. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+    
+    
+    <script src="/js/topo-animator.js"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>

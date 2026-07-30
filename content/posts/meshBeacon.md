@@ -1,10 +1,11 @@
-+++
-title = """MeshBeacon: Because Your Mesh Network Should Actually DO Something"""
-date = 2026-02-14T21:07:07+01:00
-draft = false
-+++
+---
+title: "MeshBeacon: Because Your Mesh Network Should Actually DO Something"
+date: 2026-01-15
+image: "/images/muos.jpg"
+description: "A mesh network communication system"
+tags: ["lora", "mesh-networks", "hardware"]
+---
 
-![BI Head Brain](/images/muos.jpg)
 ## Take It. Make It Yours.
 
 MeshBeacon is open source. Every line of it.

@@ -1,9 +1,11 @@
-+++
-title = """MeshCore vs Meshtastic: Why One Actually Works When You NEED It To Work"""
-date = 2025-10-21T23:53:00+07:00
-draft = false
-+++
-![LORA Mesh Nodes](/images/meshNodes.jpeg)
+---
+title: "Meshtastic: Core vs Firmware"
+date: 2025-12-20
+description: "Understanding Meshtastic core architecture and firmware variations"
+image: "/images/meshNodes.jpeg"
+tags: ["meshtastic", "mesh", "hardware"]
+---
+
 You know what REALLY grinds my gears? And I mean REALLY makes me want to throw a radio into the ocean? It's when people ask me, "Hey, what's the difference between MeshCore and Meshtastic?" 
 
 OH, WHERE DO I BEGIN?!

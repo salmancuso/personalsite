@@ -1,9 +1,10 @@
-+++
-title = """Is Amateur Radio Dying?"""
-date = 2021-10-17T15:21:00+07:00
-draft = false
-+++
-![Ham Radio](/images/ham2.jpg)
+---
+title: "Is Amateur Radio Dying?"
+date: 2021-10-17
+description: "The state of amateur radio and the need to welcome new operators"
+image: "/images/ham2.jpg"
+tags: ["amateur-radio", "community"]
+---
 
 When my dad gave me my first police scanner, I was ten years old. For me, it opened up the world of radio. I remember spending hours programming an analog police scanner to the frequencies of my local police, fire, and government municipalities. It didn't matter what I heard; just the enjoyment of the listening created this weird nerdy creature that I am today. I fondly remember listening to the astronauts cruising through the outer reaches of the atmosphere or conducting spacewalks to repair some damage to the international space station. I recall listening to the police action or the San Jose fire department braving a burning building. It gave me great pleasure to tune in to the local airports to hear the planes taking off or landing. For me, the radio was a thing that gave me simple pleasures.
 

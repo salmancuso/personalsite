@@ -1,0 +1,75 @@
+{{ define "main" }}
+
+<article class="publication-single">
+    <div class="container">
+        <!-- Publication Header -->
+        <header class="pub-header">
+            <h1 class="pub-title">{{ .Title }}</h1>
+            
+            <div class="pub-meta">
+                {{ if .Params.author }}
+                <div class="meta-item">
+                    <strong>Author:</strong> {{ .Params.author }}
+                </div>
+                {{ end }}
+                
+                {{ if .Date }}
+                <div class="meta-item">
+                    <strong>Published:</strong> {{ .Date.Format "January 2, 2006" }}
+                </div>
+                {{ end }}
+                
+                {{ if .Params.journal }}
+                <div class="meta-item">
+                    <strong>Journal:</strong> {{ .Params.journal }}
+                </div>
+                {{ end }}
+                
+                {{ if .Params.doi }}
+                <div class="meta-item">
+                    <strong>DOI:</strong> 
+                    <a href="https://doi.org/{{ .Params.doi }}" target="_blank">{{ .Params.doi }}</a>
+                </div>
+                {{ end }}
+                
+                {{ if .Params.pdf_link }}
+                <div class="meta-item">
+                    <a href="{{ .Params.pdf_link }}" target="_blank" class="btn btn-small">Download PDF</a>
+                </div>
+                {{ end }}
+            </div>
+
+            {{ if .Params.image }}
+            <figure class="pub-image">
+                <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+            </figure>
+            {{ end }}
+        </header>
+
+        <!-- Publication Content -->
+        <div class="pub-content">
+            {{ .Content }}
+        </div>
+
+        <!-- Publication Footer -->
+        {{ if .Params.tags }}
+        <footer class="pub-footer">
+            <div class="pub-tags">
+                <strong>Tags:</strong>
+                {{ range .Params.tags }}
+                <span class="tag">{{ . }}</span>
+                {{ end }}
+            </div>
+        </footer>
+        {{ end }}
+    </div>
+</article>
+
+<!-- Back to Publications -->
+<nav class="back-link">
+    <div class="container">
+        <a href="/publications/">← Back to Publications</a>
+    </div>
+</nav>
+
+{{ end }}

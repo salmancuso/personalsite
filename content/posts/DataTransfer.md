@@ -1,9 +1,10 @@
-+++
-title = """Data Engineering: Big Data Transfer"""
-date = 2024-09-11T07:07:07+01:00
-draft = false
-+++
-![Data Security](/images/bigDataPipe.jpg)
+---
+title: "Data Transfer Techniques and Tools"
+date: 2023-07-10
+description: "Efficient methods for transferring large datasets between systems"
+image: "/images/bigDataPipe.jpg"
+tags: ["data-engineering", "tools"]
+---
 
 Are you aspiring to be a Data Engineer or Data Scientist? Welcome to an exclusive club where the real journey begins with acquiring deep domain knowledge, particularly about one of the most critical facets of data management: the transfer of substantial datasets. This guide aims to introduce you to advanced data transfer techniques, integral tools, and best practices that make up a data engineer's arsenal.
 

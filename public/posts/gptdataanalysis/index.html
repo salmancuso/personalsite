@@ -1,141 +1,331 @@
+
 <!DOCTYPE html>
-<html lang="en-us">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>DataSage: The Proof-of-Concept That Took on a Life of it&#39;s Own | Sal Mancuso</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="
-The &ldquo;Aha!&rdquo; Moment That Started This Journey
-You know, I&rsquo;ve spent my career believing that technology should empower everyone, not just the experts. That&rsquo;s why, when I started working with data analytics at Stanford, I kept thinking about my days at Apple Computer, trying to understand a bill of materials in an Excel spreadsheet. Margins up, expenses down—but what did it all mean? What was the story those numbers were trying to tell?">
-    <meta name="generator" content="Hugo 0.145.0">
-    
-    
-    
-      <meta name="robots" content="noindex, nofollow">
-    
-    
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Building infrastructure. Living outside. Communicating worldwide.">
+    <meta name="author" content="Sal Mancuso">
+
+    <title>
+        
+        Data Analysis with GPT Models | Sal Mancuso
+        
+    </title>
 
     
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
-
-
-
-
+    
+    
+    <link rel="stylesheet" href="/css/pages.css">
     
 
     
-      
-
+    
+    
+    <link rel="stylesheet" href="/css/hero.css">
     
 
     
+    
+    <link rel="stylesheet" href="/css/featured-projects.css">
+    
 
     
-      <link rel="canonical" href="http://localhost:1313/posts/gptdataanalysis/">
+    
+    <link rel="stylesheet" href="/css/sections.css">
     
 
-    <meta property="og:url" content="http://localhost:1313/posts/gptdataanalysis/">
-  <meta property="og:site_name" content="Sal Mancuso">
-  <meta property="og:title" content="DataSage: The Proof-of-Concept That Took on a Life of it&#39;s Own">
-  <meta property="og:description" content="The “Aha!” Moment That Started This Journey You know, I’ve spent my career believing that technology should empower everyone, not just the experts. That’s why, when I started working with data analytics at Stanford, I kept thinking about my days at Apple Computer, trying to understand a bill of materials in an Excel spreadsheet. Margins up, expenses down—but what did it all mean? What was the story those numbers were trying to tell?">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-11-09T23:53:00+07:00">
-    <meta property="article:modified_time" content="2025-11-09T23:53:00+07:00">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <meta itemprop="name" content="DataSage: The Proof-of-Concept That Took on a Life of it&#39;s Own">
-  <meta itemprop="description" content="The “Aha!” Moment That Started This Journey You know, I’ve spent my career believing that technology should empower everyone, not just the experts. That’s why, when I started working with data analytics at Stanford, I kept thinking about my days at Apple Computer, trying to understand a bill of materials in an Excel spreadsheet. Margins up, expenses down—but what did it all mean? What was the story those numbers were trying to tell?">
-  <meta itemprop="datePublished" content="2025-11-09T23:53:00+07:00">
-  <meta itemprop="dateModified" content="2025-11-09T23:53:00+07:00">
-  <meta itemprop="wordCount" content="6044">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="DataSage: The Proof-of-Concept That Took on a Life of it&#39;s Own">
-  <meta name="twitter:description" content="The “Aha!” Moment That Started This Journey You know, I’ve spent my career believing that technology should empower everyone, not just the experts. That’s why, when I started working with data analytics at Stanford, I kept thinking about my days at Apple Computer, trying to understand a bill of materials in an Excel spreadsheet. Margins up, expenses down—but what did it all mean? What was the story those numbers were trying to tell?">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-	
-  </head><body class="ma0 avenir bg-near-white development">
+        :root {
+            --dark-bg: #1a1a18;
+            --dark-surface: #242420;
+            --text-light: #E8D5C4;
+            --text-muted: #A39A8F;
+            --accent: #B8860B;
+            --earth: #8B9D5D;
+            --border-color: #4a4a48;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #d4af37;
+        }
+
+         
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+         
+        nav {
+            background-color: var(--dark-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-light);
+            font-weight: 500;
+            margin: 0 1.5rem;
+        }
+
+        nav a:first-child {
+            font-family: Georgia, serif;
+            font-size: 1.25rem;
+            margin: 0;
+            margin-right: auto;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+         
+        footer {
+            background-color: #0f0f0d;
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        footer h3 {
+            font-family: Georgia, serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer ul li a {
+            color: var(--text-muted);
+        }
+
+        footer ul li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+         
+        main {
+            min-height: 50vh;
+        }
+
+        .page-content {
+            padding: 3rem 0;
+        }
+
+        .page-title {
+            font-family: Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--earth);
+            display: inline-block;
+        }
+
+         
+        main h2 {
+            font-family: Georgia, serif;
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        main h3 {
+            font-family: Georgia, serif;
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        main p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        main ul,
+        main ol {
+            color: var(--text-muted);
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        main li {
+            margin-bottom: 0.5rem;
+        }
+
+        main code {
+            background-color: var(--dark-surface);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        main pre {
+            background-color: var(--dark-surface);
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            padding: 1.5rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        main pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        main blockquote {
+            border-left: 4px solid var(--earth);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+         
+        @media (max-width: 768px) {
+            nav a {
+                margin: 0 1rem;
+            }
+
+            .page-title {
+                font-size: 1.8rem;
+            }
+
+            main h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-brand">Sal</a>
+            <div class="nav-menu">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/posts">Posts</a>
+                <a href="/publications">Work/Publications</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </nav>
 
     
-   
-  
+    <main>
+        
 
-  <header>
-    <div class="bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
-      
-        Sal Mancuso
-      
-    </a>
-    <div class="flex-l items-center">
-      
+<article class="post-single">
+    <div class="container">
+        
+        <header class="post-header">
+            <h1 class="post-title">Data Analysis with GPT Models</h1>
+            
+            <div class="post-meta">
+                
+                <span class="meta-item">
+                    <i class="ti ti-calendar"></i>
+                    November 16, 2025
+                </span>
+                
+                
+                
+                <span class="meta-item">
+                    <i class="ti ti-clock"></i>
+                    29 min read
+                </span>
+                
+                
+                
+            </div>
 
-      
-        <ul class="pl0 mr3">
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/about/" title="About page">
-              About
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/publications/" title="Publications page">
-              Publications
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/posts/" title="Blog Posts page">
-              Blog Posts
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/contact/" title="Find Me page">
-              Find Me
-            </a>
-          </li>
-          
-        </ul>
-      
-      <div class="ananke-socials"></div>
+            
+            <figure class="post-image">
+                <img src="/images/gpt.jpg" alt="Data Analysis with GPT Models" loading="lazy">
+            </figure>
+            
+        </header>
 
-    </div>
-  </div>
-</nav>
-
-    </div>
-  </header>
-
-
-
-    <main class="pb7" role="main">
-      
-  
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-    <header class="mt4 w-100">
-      <aside class="instapaper_ignoref b helvetica tracked ttu">
-          
-        Posts
-      </aside><div id="sharing" class="mt3 ananke-socials"></div>
-<h1 class="f1 athelas mt3 mb1">DataSage: The Proof-of-Concept That Took on a Life of it&#39;s Own</h1>
-      
-      
-      
-      <time class="f6 mv4 dib tracked" datetime="2025-11-09T23:53:00+07:00">November 9, 2025</time>
-      
-
-      
-      
-    </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p><img src="/images/dataIntel.jpg" alt="Data Intelligence"></p>
-<h2 id="the-aha-moment-that-started-this-journey">The &ldquo;Aha!&rdquo; Moment That Started This Journey</h2>
+        
+        <div class="post-content">
+            <h2 id="the-aha-moment-that-started-this-journey">The &ldquo;Aha!&rdquo; Moment That Started This Journey</h2>
 <p>You know, I&rsquo;ve spent my career believing that technology should empower everyone, not just the experts. That&rsquo;s why, when I started working with data analytics at Stanford, I kept thinking about my days at Apple Computer, trying to understand a bill of materials in an Excel spreadsheet. Margins up, expenses down—but what did it all <em>mean</em>? What was the story those numbers were trying to tell?</p>
 <p>That&rsquo;s when it hit me: we&rsquo;ve gotten really good at <em>showing</em> data, but we&rsquo;re still terrible at <em>explaining</em> it. We&rsquo;ve got these beautiful charts and graphs, sure, but they&rsquo;re like giving someone sheet music when they just want to hear the song. And that&rsquo;s where this whole adventure began.</p>
 <p>So I built something. Not a finished product—more like a proof of concept, the way we used to breadboard circuits back in the day. I wanted to see if we could take traditional business intelligence tools and marry them to artificial intelligence in a way that would create actual <em>narratives</em> from data. Real stories that your spouce, your boss, or your Board of Directors could understand immediately.</p>
@@ -166,132 +356,132 @@ Claude analyzes the finished chart and writes an executive summary—complete wi
 <p>This was the first &ldquo;aha!&rdquo; moment in building this system. Most data viz tools make <em>you</em> choose the chart type. Bar chart? Line chart? Scatter plot? But here&rsquo;s the thing—if you already knew enough about your data to pick the right visualization, you probably wouldn&rsquo;t need the tool in the first place!</p>
 <p>So I flipped it around. Let the AI look at your data and pick the chart type for you.</p>
 <p>Here&rsquo;s how it works under the hood:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_chart_recommendation</span>(df):
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Ask Claude to recommend the best chart type for the data&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>    client <span style="color:#f92672">=</span> anthropic<span style="color:#f92672">.</span>Anthropic(api_key<span style="color:#f92672">=</span>ANTHROPIC_API_KEY)
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">get_chart_recommendation</span>(df):
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#34;&#34;&#34;Ask Claude to recommend the best chart type for the data&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    client <span style="color:#ff7b72;font-weight:bold">=</span> anthropic<span style="color:#ff7b72;font-weight:bold">.</span>Anthropic(api_key<span style="color:#ff7b72;font-weight:bold">=</span>ANTHROPIC_API_KEY)
 </span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Gather intelligence about the dataset</span>
-</span></span><span style="display:flex;"><span>    num_rows <span style="color:#f92672">=</span> len(df)
-</span></span><span style="display:flex;"><span>    num_cols <span style="color:#f92672">=</span> len(df<span style="color:#f92672">.</span>columns)
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic"># Gather intelligence about the dataset</span>
+</span></span><span style="display:flex;"><span>    num_rows <span style="color:#ff7b72;font-weight:bold">=</span> len(df)
+</span></span><span style="display:flex;"><span>    num_cols <span style="color:#ff7b72;font-weight:bold">=</span> len(df<span style="color:#ff7b72;font-weight:bold">.</span>columns)
 </span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Figure out which columns are labels vs. data</span>
-</span></span><span style="display:flex;"><span>    id_columns <span style="color:#f92672">=</span> []
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> col <span style="color:#f92672">in</span> df<span style="color:#f92672">.</span>columns:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>            pd<span style="color:#f92672">.</span>to_numeric(df[col], errors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;raise&#39;</span>)
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>  <span style="color:#75715e"># Found the first data column</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> (<span style="color:#a6e22e">ValueError</span>, <span style="color:#a6e22e">TypeError</span>):
-</span></span><span style="display:flex;"><span>            id_columns<span style="color:#f92672">.</span>append(col)  <span style="color:#75715e"># This is a label</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic"># Figure out which columns are labels vs. data</span>
+</span></span><span style="display:flex;"><span>    id_columns <span style="color:#ff7b72;font-weight:bold">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">for</span> col <span style="color:#ff7b72;font-weight:bold">in</span> df<span style="color:#ff7b72;font-weight:bold">.</span>columns:
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">try</span>:
+</span></span><span style="display:flex;"><span>            pd<span style="color:#ff7b72;font-weight:bold">.</span>to_numeric(df[col], errors<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#39;raise&#39;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#ff7b72">break</span>  <span style="color:#8b949e;font-style:italic"># Found the first data column</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">except</span> (<span style="color:#f0883e;font-weight:bold">ValueError</span>, <span style="color:#f0883e;font-weight:bold">TypeError</span>):
+</span></span><span style="display:flex;"><span>            id_columns<span style="color:#ff7b72;font-weight:bold">.</span>append(col)  <span style="color:#8b949e;font-style:italic"># This is a label</span>
 </span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    data_columns <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>columns[len(id_columns):]<span style="color:#f92672">.</span>tolist()
-</span></span><span style="display:flex;"><span>    data_preview <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">5</span>)<span style="color:#f92672">.</span>to_string()
+</span></span><span style="display:flex;"><span>    data_columns <span style="color:#ff7b72;font-weight:bold">=</span> df<span style="color:#ff7b72;font-weight:bold">.</span>columns[len(id_columns):]<span style="color:#ff7b72;font-weight:bold">.</span>tolist()
+</span></span><span style="display:flex;"><span>    data_preview <span style="color:#ff7b72;font-weight:bold">=</span> df<span style="color:#ff7b72;font-weight:bold">.</span>head(<span style="color:#a5d6ff">5</span>)<span style="color:#ff7b72;font-weight:bold">.</span>to_string()
 </span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Ask Claude: &#34;What&#39;s the best way to show this?&#34;</span>
-</span></span><span style="display:flex;"><span>    message <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>messages<span style="color:#f92672">.</span>create(
-</span></span><span style="display:flex;"><span>        model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;claude-sonnet-4-5-20250929&#34;</span>,
-</span></span><span style="display:flex;"><span>        max_tokens<span style="color:#f92672">=</span><span style="color:#ae81ff">500</span>,
-</span></span><span style="display:flex;"><span>        messages<span style="color:#f92672">=</span>[{
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;user&#34;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;content&#34;</span>: <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&#34;&#34;Analyze this dataset and recommend the 
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            SINGLE best chart type.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            Dataset Info:
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            - </span><span style="color:#e6db74">{</span>num_rows<span style="color:#e6db74">}</span><span style="color:#e6db74"> series/categories
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            - </span><span style="color:#e6db74">{</span>len(data_columns)<span style="color:#e6db74">}</span><span style="color:#e6db74"> time periods/data points
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            - Identifier columns: </span><span style="color:#e6db74">{</span><span style="color:#e6db74">&#39;, &#39;</span><span style="color:#f92672">.</span>join(id_columns)<span style="color:#e6db74">}</span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            Data Preview:
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            </span><span style="color:#e6db74">{</span>data_preview<span style="color:#e6db74">}</span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            Choose ONE: LINE, BAR, SCATTER, or AREA
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            Respond with ONLY the chart type and a brief reason.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            Format: &#34;CHARTTYPE: reason&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic"># Ask Claude: &#34;What&#39;s the best way to show this?&#34;</span>
+</span></span><span style="display:flex;"><span>    message <span style="color:#ff7b72;font-weight:bold">=</span> client<span style="color:#ff7b72;font-weight:bold">.</span>messages<span style="color:#ff7b72;font-weight:bold">.</span>create(
+</span></span><span style="display:flex;"><span>        model<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;claude-sonnet-4-5-20250929&#34;</span>,
+</span></span><span style="display:flex;"><span>        max_tokens<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">500</span>,
+</span></span><span style="display:flex;"><span>        messages<span style="color:#ff7b72;font-weight:bold">=</span>[{
+</span></span><span style="display:flex;"><span>            <span style="color:#a5d6ff">&#34;role&#34;</span>: <span style="color:#a5d6ff">&#34;user&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a5d6ff">&#34;content&#34;</span>: <span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;&#34;&#34;Analyze this dataset and recommend the 
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">            SINGLE best chart type.
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">            Dataset Info:
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">            - </span><span style="color:#a5d6ff">{</span>num_rows<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff"> series/categories
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">            - </span><span style="color:#a5d6ff">{</span>len(data_columns)<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff"> time periods/data points
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">            - Identifier columns: </span><span style="color:#a5d6ff">{</span><span style="color:#a5d6ff">&#39;, &#39;</span><span style="color:#ff7b72;font-weight:bold">.</span>join(id_columns)<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">            
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">            Data Preview:
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">            </span><span style="color:#a5d6ff">{</span>data_preview<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">            
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">            Choose ONE: LINE, BAR, SCATTER, or AREA
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">            
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">            Respond with ONLY the chart type and a brief reason.
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">            Format: &#34;CHARTTYPE: reason&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">            &#34;&#34;&#34;</span>
 </span></span><span style="display:flex;"><span>        }]
 </span></span><span style="display:flex;"><span>    )
 </span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Parse Claude&#39;s response</span>
-</span></span><span style="display:flex;"><span>    response_text <span style="color:#f92672">=</span> message<span style="color:#f92672">.</span>content[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>text<span style="color:#f92672">.</span>strip()
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;LINE&#39;</span> <span style="color:#f92672">in</span> response_text<span style="color:#f92672">.</span>upper():
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;line&#39;</span>, response_text
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> <span style="color:#e6db74">&#39;BAR&#39;</span> <span style="color:#f92672">in</span> response_text<span style="color:#f92672">.</span>upper():
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;bar&#39;</span>, response_text
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># ... and so on</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic"># Parse Claude&#39;s response</span>
+</span></span><span style="display:flex;"><span>    response_text <span style="color:#ff7b72;font-weight:bold">=</span> message<span style="color:#ff7b72;font-weight:bold">.</span>content[<span style="color:#a5d6ff">0</span>]<span style="color:#ff7b72;font-weight:bold">.</span>text<span style="color:#ff7b72;font-weight:bold">.</span>strip()
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">if</span> <span style="color:#a5d6ff">&#39;LINE&#39;</span> <span style="color:#ff7b72;font-weight:bold">in</span> response_text<span style="color:#ff7b72;font-weight:bold">.</span>upper():
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> <span style="color:#a5d6ff">&#39;line&#39;</span>, response_text
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">elif</span> <span style="color:#a5d6ff">&#39;BAR&#39;</span> <span style="color:#ff7b72;font-weight:bold">in</span> response_text<span style="color:#ff7b72;font-weight:bold">.</span>upper():
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> <span style="color:#a5d6ff">&#39;bar&#39;</span>, response_text
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic"># ... and so on</span>
 </span></span></code></pre></div><p>What&rsquo;s happening here is beautiful in its simplicity. We&rsquo;re not trying to build a complex decision tree with rules like &ldquo;if rows &gt; 10 and columns &lt; 20, use line chart.&rdquo; Instead, we&rsquo;re leveraging Claude&rsquo;s training on thousands of data visualization examples. Claude has seen what works and what doesn&rsquo;t. It can make nuanced judgments that would take us months to encode as rules.</p>
 <p>When you upload that NFL data, Claude looks at it and says something like: &ldquo;LINE: Time series data showing trends across multiple years is best visualized with line charts.&rdquo; It&rsquo;s not just picking randomly—it&rsquo;s reasoning about your specific data.</p>
 <hr>
 <h2 id="act-two-dynamic-visualization">Act Two: Dynamic Visualization</h2>
 <p>Now here&rsquo;s where it gets fun. Once Claude has recommended a chart type, we need to actually create it. But remember—this has to work for <em>any</em> CSV file someone uploads. Could be car sales, could be NFL stats, could be your startup&rsquo;s monthly revenue.</p>
 <p>This is where good old-fashioned engineering comes in:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">generate_chart</span>(df, chart_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;line&#39;</span>):
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Generate a chart based on Claude&#39;s recommendation&#34;&#34;&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">generate_chart</span>(df, chart_type<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#39;line&#39;</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#34;&#34;&#34;Generate a chart based on Claude&#39;s recommendation&#34;&#34;&#34;</span>
 </span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Colorblind-friendly palette - because accessibility matters</span>
-</span></span><span style="display:flex;"><span>    colors <span style="color:#f92672">=</span> [
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;#0173B2&#39;</span>,  <span style="color:#75715e"># Bright Blue</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;#DE8F05&#39;</span>,  <span style="color:#75715e"># Vibrant Orange</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;#029E73&#39;</span>,  <span style="color:#75715e"># Teal/Green</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;#CC78BC&#39;</span>,  <span style="color:#75715e"># Pink/Magenta</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># ... 4 more colors</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic"># Colorblind-friendly palette - because accessibility matters</span>
+</span></span><span style="display:flex;"><span>    colors <span style="color:#ff7b72;font-weight:bold">=</span> [
+</span></span><span style="display:flex;"><span>        <span style="color:#a5d6ff">&#39;#0173B2&#39;</span>,  <span style="color:#8b949e;font-style:italic"># Bright Blue</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a5d6ff">&#39;#DE8F05&#39;</span>,  <span style="color:#8b949e;font-style:italic"># Vibrant Orange</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a5d6ff">&#39;#029E73&#39;</span>,  <span style="color:#8b949e;font-style:italic"># Teal/Green</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a5d6ff">&#39;#CC78BC&#39;</span>,  <span style="color:#8b949e;font-style:italic"># Pink/Magenta</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#8b949e;font-style:italic"># ... 4 more colors</span>
 </span></span><span style="display:flex;"><span>    ]
 </span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">14</span>, <span style="color:#ae81ff">8</span>))
+</span></span><span style="display:flex;"><span>    fig, ax <span style="color:#ff7b72;font-weight:bold">=</span> plt<span style="color:#ff7b72;font-weight:bold">.</span>subplots(figsize<span style="color:#ff7b72;font-weight:bold">=</span>(<span style="color:#a5d6ff">14</span>, <span style="color:#a5d6ff">8</span>))
 </span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Smart column detection - works with any CSV structure</span>
-</span></span><span style="display:flex;"><span>    id_columns <span style="color:#f92672">=</span> []
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> col <span style="color:#f92672">in</span> df<span style="color:#f92672">.</span>columns:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>            pd<span style="color:#f92672">.</span>to_numeric(df[col], errors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;raise&#39;</span>)
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> (<span style="color:#a6e22e">ValueError</span>, <span style="color:#a6e22e">TypeError</span>):
-</span></span><span style="display:flex;"><span>            id_columns<span style="color:#f92672">.</span>append(col)
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic"># Smart column detection - works with any CSV structure</span>
+</span></span><span style="display:flex;"><span>    id_columns <span style="color:#ff7b72;font-weight:bold">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">for</span> col <span style="color:#ff7b72;font-weight:bold">in</span> df<span style="color:#ff7b72;font-weight:bold">.</span>columns:
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">try</span>:
+</span></span><span style="display:flex;"><span>            pd<span style="color:#ff7b72;font-weight:bold">.</span>to_numeric(df[col], errors<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#39;raise&#39;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#ff7b72">break</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">except</span> (<span style="color:#f0883e;font-weight:bold">ValueError</span>, <span style="color:#f0883e;font-weight:bold">TypeError</span>):
+</span></span><span style="display:flex;"><span>            id_columns<span style="color:#ff7b72;font-weight:bold">.</span>append(col)
 </span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    year_columns <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>columns[len(id_columns):]<span style="color:#f92672">.</span>tolist()
-</span></span><span style="display:flex;"><span>    year_labels <span style="color:#f92672">=</span> [str(col) <span style="color:#66d9ef">for</span> col <span style="color:#f92672">in</span> year_columns]
+</span></span><span style="display:flex;"><span>    year_columns <span style="color:#ff7b72;font-weight:bold">=</span> df<span style="color:#ff7b72;font-weight:bold">.</span>columns[len(id_columns):]<span style="color:#ff7b72;font-weight:bold">.</span>tolist()
+</span></span><span style="display:flex;"><span>    year_labels <span style="color:#ff7b72;font-weight:bold">=</span> [str(col) <span style="color:#ff7b72">for</span> col <span style="color:#ff7b72;font-weight:bold">in</span> year_columns]
 </span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Plot each row with the appropriate chart type</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> idx, row <span style="color:#f92672">in</span> df<span style="color:#f92672">.</span>iterrows():
-</span></span><span style="display:flex;"><span>        label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#f92672">.</span>join([str(row[col]) <span style="color:#66d9ef">for</span> col <span style="color:#f92672">in</span> id_columns])
-</span></span><span style="display:flex;"><span>        values <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>to_numeric(row[year_columns], errors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;coerce&#39;</span>)<span style="color:#f92672">.</span>values
-</span></span><span style="display:flex;"><span>        color <span style="color:#f92672">=</span> colors[idx <span style="color:#f92672">%</span> len(colors)]
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic"># Plot each row with the appropriate chart type</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">for</span> idx, row <span style="color:#ff7b72;font-weight:bold">in</span> df<span style="color:#ff7b72;font-weight:bold">.</span>iterrows():
+</span></span><span style="display:flex;"><span>        label <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#39; &#39;</span><span style="color:#ff7b72;font-weight:bold">.</span>join([str(row[col]) <span style="color:#ff7b72">for</span> col <span style="color:#ff7b72;font-weight:bold">in</span> id_columns])
+</span></span><span style="display:flex;"><span>        values <span style="color:#ff7b72;font-weight:bold">=</span> pd<span style="color:#ff7b72;font-weight:bold">.</span>to_numeric(row[year_columns], errors<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#39;coerce&#39;</span>)<span style="color:#ff7b72;font-weight:bold">.</span>values
+</span></span><span style="display:flex;"><span>        color <span style="color:#ff7b72;font-weight:bold">=</span> colors[idx <span style="color:#ff7b72;font-weight:bold">%</span> len(colors)]
 </span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> chart_type <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;line&#39;</span>:
-</span></span><span style="display:flex;"><span>            ax<span style="color:#f92672">.</span>plot(year_labels, values, marker<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;o&#39;</span>, label<span style="color:#f92672">=</span>label,
-</span></span><span style="display:flex;"><span>                   linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, color<span style="color:#f92672">=</span>color, markersize<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">if</span> chart_type <span style="color:#ff7b72;font-weight:bold">==</span> <span style="color:#a5d6ff">&#39;line&#39;</span>:
+</span></span><span style="display:flex;"><span>            ax<span style="color:#ff7b72;font-weight:bold">.</span>plot(year_labels, values, marker<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#39;o&#39;</span>, label<span style="color:#ff7b72;font-weight:bold">=</span>label,
+</span></span><span style="display:flex;"><span>                   linewidth<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">3</span>, color<span style="color:#ff7b72;font-weight:bold">=</span>color, markersize<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">5</span>)
 </span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> chart_type <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;bar&#39;</span>:
-</span></span><span style="display:flex;"><span>            x_positions <span style="color:#f92672">=</span> range(len(year_labels))
-</span></span><span style="display:flex;"><span>            width <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.8</span> <span style="color:#f92672">/</span> len(df)
-</span></span><span style="display:flex;"><span>            offset <span style="color:#f92672">=</span> (idx <span style="color:#f92672">-</span> len(df)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>) <span style="color:#f92672">*</span> width <span style="color:#f92672">+</span> width<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>
-</span></span><span style="display:flex;"><span>            ax<span style="color:#f92672">.</span>bar([x <span style="color:#f92672">+</span> offset <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> x_positions], values, 
-</span></span><span style="display:flex;"><span>                   width, label<span style="color:#f92672">=</span>label, color<span style="color:#f92672">=</span>color)
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">elif</span> chart_type <span style="color:#ff7b72;font-weight:bold">==</span> <span style="color:#a5d6ff">&#39;bar&#39;</span>:
+</span></span><span style="display:flex;"><span>            x_positions <span style="color:#ff7b72;font-weight:bold">=</span> range(len(year_labels))
+</span></span><span style="display:flex;"><span>            width <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0.8</span> <span style="color:#ff7b72;font-weight:bold">/</span> len(df)
+</span></span><span style="display:flex;"><span>            offset <span style="color:#ff7b72;font-weight:bold">=</span> (idx <span style="color:#ff7b72;font-weight:bold">-</span> len(df)<span style="color:#ff7b72;font-weight:bold">/</span><span style="color:#a5d6ff">2</span>) <span style="color:#ff7b72;font-weight:bold">*</span> width <span style="color:#ff7b72;font-weight:bold">+</span> width<span style="color:#ff7b72;font-weight:bold">/</span><span style="color:#a5d6ff">2</span>
+</span></span><span style="display:flex;"><span>            ax<span style="color:#ff7b72;font-weight:bold">.</span>bar([x <span style="color:#ff7b72;font-weight:bold">+</span> offset <span style="color:#ff7b72">for</span> x <span style="color:#ff7b72;font-weight:bold">in</span> x_positions], values, 
+</span></span><span style="display:flex;"><span>                   width, label<span style="color:#ff7b72;font-weight:bold">=</span>label, color<span style="color:#ff7b72;font-weight:bold">=</span>color)
 </span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> chart_type <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;scatter&#39;</span>:
-</span></span><span style="display:flex;"><span>            x_numeric <span style="color:#f92672">=</span> range(len(year_labels))
-</span></span><span style="display:flex;"><span>            ax<span style="color:#f92672">.</span>scatter(x_numeric, values, label<span style="color:#f92672">=</span>label,
-</span></span><span style="display:flex;"><span>                      color<span style="color:#f92672">=</span>color, s<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">elif</span> chart_type <span style="color:#ff7b72;font-weight:bold">==</span> <span style="color:#a5d6ff">&#39;scatter&#39;</span>:
+</span></span><span style="display:flex;"><span>            x_numeric <span style="color:#ff7b72;font-weight:bold">=</span> range(len(year_labels))
+</span></span><span style="display:flex;"><span>            ax<span style="color:#ff7b72;font-weight:bold">.</span>scatter(x_numeric, values, label<span style="color:#ff7b72;font-weight:bold">=</span>label,
+</span></span><span style="display:flex;"><span>                      color<span style="color:#ff7b72;font-weight:bold">=</span>color, s<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">100</span>)
 </span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> chart_type <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;area&#39;</span>:
-</span></span><span style="display:flex;"><span>            ax<span style="color:#f92672">.</span>fill_between(range(len(year_labels)), values,
-</span></span><span style="display:flex;"><span>                           label<span style="color:#f92672">=</span>label, color<span style="color:#f92672">=</span>color, alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">0.6</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">elif</span> chart_type <span style="color:#ff7b72;font-weight:bold">==</span> <span style="color:#a5d6ff">&#39;area&#39;</span>:
+</span></span><span style="display:flex;"><span>            ax<span style="color:#ff7b72;font-weight:bold">.</span>fill_between(range(len(year_labels)), values,
+</span></span><span style="display:flex;"><span>                           label<span style="color:#ff7b72;font-weight:bold">=</span>label, color<span style="color:#ff7b72;font-weight:bold">=</span>color, alpha<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">0.6</span>)
 </span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Make it pretty and professional</span>
-</span></span><span style="display:flex;"><span>    ax<span style="color:#f92672">.</span>set_xlabel(<span style="color:#e6db74">&#39;Time Period&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">13</span>, fontweight<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;bold&#39;</span>)
-</span></span><span style="display:flex;"><span>    ax<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#39;Values&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">13</span>, fontweight<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;bold&#39;</span>)
-</span></span><span style="display:flex;"><span>    ax<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Data Trends - </span><span style="color:#e6db74">{</span>chart_type<span style="color:#f92672">.</span>title()<span style="color:#e6db74">}</span><span style="color:#e6db74"> Chart&#39;</span>,
-</span></span><span style="display:flex;"><span>                fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;#8C1515&#39;</span>)  <span style="color:#75715e"># Stanford Cardinal Red</span>
-</span></span><span style="display:flex;"><span>    ax<span style="color:#f92672">.</span>legend(loc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;best&#39;</span>)
-</span></span><span style="display:flex;"><span>    ax<span style="color:#f92672">.</span>grid(<span style="color:#66d9ef">True</span>, alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">0.2</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic"># Make it pretty and professional</span>
+</span></span><span style="display:flex;"><span>    ax<span style="color:#ff7b72;font-weight:bold">.</span>set_xlabel(<span style="color:#a5d6ff">&#39;Time Period&#39;</span>, fontsize<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">13</span>, fontweight<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#39;bold&#39;</span>)
+</span></span><span style="display:flex;"><span>    ax<span style="color:#ff7b72;font-weight:bold">.</span>set_ylabel(<span style="color:#a5d6ff">&#39;Values&#39;</span>, fontsize<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">13</span>, fontweight<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#39;bold&#39;</span>)
+</span></span><span style="display:flex;"><span>    ax<span style="color:#ff7b72;font-weight:bold">.</span>set_title(<span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#39;Data Trends - </span><span style="color:#a5d6ff">{</span>chart_type<span style="color:#ff7b72;font-weight:bold">.</span>title()<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff"> Chart&#39;</span>,
+</span></span><span style="display:flex;"><span>                fontsize<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">16</span>, color<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#39;#8C1515&#39;</span>)  <span style="color:#8b949e;font-style:italic"># Stanford Cardinal Red</span>
+</span></span><span style="display:flex;"><span>    ax<span style="color:#ff7b72;font-weight:bold">.</span>legend(loc<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#39;best&#39;</span>)
+</span></span><span style="display:flex;"><span>    ax<span style="color:#ff7b72;font-weight:bold">.</span>grid(<span style="color:#79c0ff">True</span>, alpha<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">0.2</span>)
 </span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Convert to base64 so we can send it over the web</span>
-</span></span><span style="display:flex;"><span>    buffer <span style="color:#f92672">=</span> BytesIO()
-</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>savefig(buffer, format<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;png&#39;</span>, dpi<span style="color:#f92672">=</span><span style="color:#ae81ff">150</span>)
-</span></span><span style="display:flex;"><span>    buffer<span style="color:#f92672">.</span>seek(<span style="color:#ae81ff">0</span>)
-</span></span><span style="display:flex;"><span>    image_base64 <span style="color:#f92672">=</span> base64<span style="color:#f92672">.</span>b64encode(buffer<span style="color:#f92672">.</span>read())<span style="color:#f92672">.</span>decode()
-</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic"># Convert to base64 so we can send it over the web</span>
+</span></span><span style="display:flex;"><span>    buffer <span style="color:#ff7b72;font-weight:bold">=</span> BytesIO()
+</span></span><span style="display:flex;"><span>    plt<span style="color:#ff7b72;font-weight:bold">.</span>savefig(buffer, format<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#39;png&#39;</span>, dpi<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">150</span>)
+</span></span><span style="display:flex;"><span>    buffer<span style="color:#ff7b72;font-weight:bold">.</span>seek(<span style="color:#a5d6ff">0</span>)
+</span></span><span style="display:flex;"><span>    image_base64 <span style="color:#ff7b72;font-weight:bold">=</span> base64<span style="color:#ff7b72;font-weight:bold">.</span>b64encode(buffer<span style="color:#ff7b72;font-weight:bold">.</span>read())<span style="color:#ff7b72;font-weight:bold">.</span>decode()
+</span></span><span style="display:flex;"><span>    plt<span style="color:#ff7b72;font-weight:bold">.</span>close()
 </span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> image_base64
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> image_base64
 </span></span></code></pre></div><p>The beauty of this code is in what it <em>doesn&rsquo;t</em> assume. We don&rsquo;t hard-code &ldquo;column 1 is Make, column 2 is Model.&rdquo; Instead, we dynamically detect where the labels end and the data begins. This means whether you upload a simple two-column dataset or a complex multi-identifier dataset like the NFL data, it just works.</p>
 <p>And those colors? They&rsquo;re not random. They&rsquo;re a carefully selected palette that works for people with various types of color blindness. About 8% of men have some form of color vision deficiency—that&rsquo;s 1 in 12 people. If we&rsquo;re going to democratize data analysis, we need to make sure everyone can actually see the data.</p>
 <hr>
@@ -299,72 +489,72 @@ Claude analyzes the finished chart and writes an executive summary—complete wi
 <p>Now we get to the really cool part. We&rsquo;ve got a beautiful chart. But a chart is still just a picture. We need words. We need context. We need a story.</p>
 <p>This is where Claude truly shines. We send the chart image (as base64 encoded data) along with some statistics about the dataset, and we ask Claude to write an executive summary. But not just any summary—a <em>structured</em>, <em>comprehensive</em> analysis that could go straight into a board presentation.</p>
 <p>Here&rsquo;s the prompt structure:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_claude_analysis</span>(chart_base64, df, chart_type, recommendation_reason):
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Get a comprehensive executive analysis from Claude&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>    client <span style="color:#f92672">=</span> anthropic<span style="color:#f92672">.</span>Anthropic(api_key<span style="color:#f92672">=</span>ANTHROPIC_API_KEY)
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">get_claude_analysis</span>(chart_base64, df, chart_type, recommendation_reason):
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#34;&#34;&#34;Get a comprehensive executive analysis from Claude&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    client <span style="color:#ff7b72;font-weight:bold">=</span> anthropic<span style="color:#ff7b72;font-weight:bold">.</span>Anthropic(api_key<span style="color:#ff7b72;font-weight:bold">=</span>ANTHROPIC_API_KEY)
 </span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Calculate summary statistics</span>
-</span></span><span style="display:flex;"><span>    data_summary <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Data Summary:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> idx, row <span style="color:#f92672">in</span> df<span style="color:#f92672">.</span>iterrows():
-</span></span><span style="display:flex;"><span>        label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#f92672">.</span>join([str(row[col]) <span style="color:#66d9ef">for</span> col <span style="color:#f92672">in</span> id_columns])
-</span></span><span style="display:flex;"><span>        numeric_values <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>to_numeric(row[year_columns], errors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;coerce&#39;</span>)
-</span></span><span style="display:flex;"><span>        total <span style="color:#f92672">=</span> numeric_values<span style="color:#f92672">.</span>sum()
-</span></span><span style="display:flex;"><span>        average <span style="color:#f92672">=</span> numeric_values<span style="color:#f92672">.</span>mean()
-</span></span><span style="display:flex;"><span>        data_summary <span style="color:#f92672">+=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;- </span><span style="color:#e6db74">{</span>label<span style="color:#e6db74">}</span><span style="color:#e6db74">: Total=</span><span style="color:#e6db74">{</span>total<span style="color:#e6db74">:</span><span style="color:#e6db74">,.0f</span><span style="color:#e6db74">}</span><span style="color:#e6db74">, Avg=</span><span style="color:#e6db74">{</span>average<span style="color:#e6db74">:</span><span style="color:#e6db74">,.0f</span><span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic"># Calculate summary statistics</span>
+</span></span><span style="display:flex;"><span>    data_summary <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;Data Summary:</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">for</span> idx, row <span style="color:#ff7b72;font-weight:bold">in</span> df<span style="color:#ff7b72;font-weight:bold">.</span>iterrows():
+</span></span><span style="display:flex;"><span>        label <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#39; &#39;</span><span style="color:#ff7b72;font-weight:bold">.</span>join([str(row[col]) <span style="color:#ff7b72">for</span> col <span style="color:#ff7b72;font-weight:bold">in</span> id_columns])
+</span></span><span style="display:flex;"><span>        numeric_values <span style="color:#ff7b72;font-weight:bold">=</span> pd<span style="color:#ff7b72;font-weight:bold">.</span>to_numeric(row[year_columns], errors<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#39;coerce&#39;</span>)
+</span></span><span style="display:flex;"><span>        total <span style="color:#ff7b72;font-weight:bold">=</span> numeric_values<span style="color:#ff7b72;font-weight:bold">.</span>sum()
+</span></span><span style="display:flex;"><span>        average <span style="color:#ff7b72;font-weight:bold">=</span> numeric_values<span style="color:#ff7b72;font-weight:bold">.</span>mean()
+</span></span><span style="display:flex;"><span>        data_summary <span style="color:#ff7b72;font-weight:bold">+=</span> <span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;- </span><span style="color:#a5d6ff">{</span>label<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">: Total=</span><span style="color:#a5d6ff">{</span>total<span style="color:#a5d6ff">:</span><span style="color:#a5d6ff">,.0f</span><span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">, Avg=</span><span style="color:#a5d6ff">{</span>average<span style="color:#a5d6ff">:</span><span style="color:#a5d6ff">,.0f</span><span style="color:#a5d6ff">}</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>
 </span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    message <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>messages<span style="color:#f92672">.</span>create(
-</span></span><span style="display:flex;"><span>        model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;claude-sonnet-4-5-20250929&#34;</span>,
-</span></span><span style="display:flex;"><span>        max_tokens<span style="color:#f92672">=</span><span style="color:#ae81ff">3500</span>,  <span style="color:#75715e"># Room for a detailed analysis</span>
-</span></span><span style="display:flex;"><span>        messages<span style="color:#f92672">=</span>[{
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;user&#34;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;content&#34;</span>: [
+</span></span><span style="display:flex;"><span>    message <span style="color:#ff7b72;font-weight:bold">=</span> client<span style="color:#ff7b72;font-weight:bold">.</span>messages<span style="color:#ff7b72;font-weight:bold">.</span>create(
+</span></span><span style="display:flex;"><span>        model<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;claude-sonnet-4-5-20250929&#34;</span>,
+</span></span><span style="display:flex;"><span>        max_tokens<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">3500</span>,  <span style="color:#8b949e;font-style:italic"># Room for a detailed analysis</span>
+</span></span><span style="display:flex;"><span>        messages<span style="color:#ff7b72;font-weight:bold">=</span>[{
+</span></span><span style="display:flex;"><span>            <span style="color:#a5d6ff">&#34;role&#34;</span>: <span style="color:#a5d6ff">&#34;user&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a5d6ff">&#34;content&#34;</span>: [
 </span></span><span style="display:flex;"><span>                {
-</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;image&#34;</span>,
-</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;source&#34;</span>: {
-</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;base64&#34;</span>,
-</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;media_type&#34;</span>: <span style="color:#e6db74">&#34;image/png&#34;</span>,
-</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;data&#34;</span>: chart_base64,
+</span></span><span style="display:flex;"><span>                    <span style="color:#a5d6ff">&#34;type&#34;</span>: <span style="color:#a5d6ff">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#a5d6ff">&#34;source&#34;</span>: {
+</span></span><span style="display:flex;"><span>                        <span style="color:#a5d6ff">&#34;type&#34;</span>: <span style="color:#a5d6ff">&#34;base64&#34;</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#a5d6ff">&#34;media_type&#34;</span>: <span style="color:#a5d6ff">&#34;image/png&#34;</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#a5d6ff">&#34;data&#34;</span>: chart_base64,
 </span></span><span style="display:flex;"><span>                    },
 </span></span><span style="display:flex;"><span>                },
 </span></span><span style="display:flex;"><span>                {
-</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;text&#34;</span>,
-</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;text&#34;</span>: <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&#34;&#34;Analyze this data visualization and provide 
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    an EXECUTIVE SUMMARY format.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    Chart Type: </span><span style="color:#e6db74">{</span>chart_type<span style="color:#f92672">.</span>upper()<span style="color:#e6db74">}</span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    Why: </span><span style="color:#e6db74">{</span>recommendation_reason<span style="color:#e6db74">}</span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    </span><span style="color:#e6db74">{</span>data_summary<span style="color:#e6db74">}</span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    REQUIRED FORMAT:
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    ## Executive Summary
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    [2-3 narrative paragraphs synthesizing critical insights]
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    ## Key Findings
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    [3-5 substantive insights as complete sentences]
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    ## Detailed Analysis
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    ### Trend Analysis
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    [2-3 paragraphs on patterns over time]
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    ### Comparative Insights
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    [2-3 paragraphs comparing categories]
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    ### Notable Observations
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    [1-2 paragraphs on anomalies]
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    ## Recommendations
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    [2-4 paragraphs with actionable advice]
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    Use narrative paragraphs, not bullets. Be specific 
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    with numbers. Write for senior leadership.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#a5d6ff">&#34;type&#34;</span>: <span style="color:#a5d6ff">&#34;text&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#a5d6ff">&#34;text&#34;</span>: <span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;&#34;&#34;Analyze this data visualization and provide 
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    an EXECUTIVE SUMMARY format.
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    Chart Type: </span><span style="color:#a5d6ff">{</span>chart_type<span style="color:#ff7b72;font-weight:bold">.</span>upper()<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    Why: </span><span style="color:#a5d6ff">{</span>recommendation_reason<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    </span><span style="color:#a5d6ff">{</span>data_summary<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    REQUIRED FORMAT:
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    ## Executive Summary
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    [2-3 narrative paragraphs synthesizing critical insights]
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    ## Key Findings
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    [3-5 substantive insights as complete sentences]
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    ## Detailed Analysis
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    ### Trend Analysis
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    [2-3 paragraphs on patterns over time]
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    ### Comparative Insights
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    [2-3 paragraphs comparing categories]
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    ### Notable Observations
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    [1-2 paragraphs on anomalies]
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    ## Recommendations
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    [2-4 paragraphs with actionable advice]
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    Use narrative paragraphs, not bullets. Be specific 
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">                    with numbers. Write for senior leadership.&#34;&#34;&#34;</span>
 </span></span><span style="display:flex;"><span>                }
 </span></span><span style="display:flex;"><span>            ],
 </span></span><span style="display:flex;"><span>        }]
 </span></span><span style="display:flex;"><span>    )
 </span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> message<span style="color:#f92672">.</span>content[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>text
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> message<span style="color:#ff7b72;font-weight:bold">.</span>content[<span style="color:#a5d6ff">0</span>]<span style="color:#ff7b72;font-weight:bold">.</span>text
 </span></span></code></pre></div><p>What we get back is remarkable. Claude doesn&rsquo;t just describe what it sees—it <em>interprets</em> it. For that NFL data, Claude might notice that the 2008 financial crisis caused a synchronized drop across all divisions (even though we never told it what happened in 2008!). It might observe that the AFC East has been unusually consistent compared to other divisions. It might recommend strategic approaches based on volatility patterns.</p>
 <p>This is the narrative we were looking for. The story behind the numbers.</p>
 <hr>
@@ -387,30 +577,30 @@ Physics,6.5M,6.3M,6.8M,...,8.1M
 <p>When you&rsquo;re presenting data analysis to university leadership, the Board of Trustees, or potential donors, the tool itself becomes part of your credibility. If your analysis looks like it came from a generic template, people unconsciously discount it. But when it&rsquo;s professionally branded, when it <em>looks</em> like it belongs at Stanford, suddenly your insights carry more weight.</p>
 <p>This is something I learned from my Apple days—design isn&rsquo;t just aesthetics, it&rsquo;s communication. The Cardinal Red bar at the top of the page, the professional typography, the clean layout—these things say &ldquo;this is serious work from a serious institution.&rdquo;</p>
 <p>Here&rsquo;s a snippet of the CSS that makes this happen:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">stanford-bar</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#8C1515</span>;  <span style="color:#75715e">/* Cardinal Red */</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">8</span><span style="color:#66d9ef">px</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#f0883e;font-weight:bold">stanford-bar</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">background</span>: <span style="color:#a5d6ff">#8C1515</span>;  <span style="color:#8b949e;font-style:italic">/* Cardinal Red */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">height</span>: <span style="color:#a5d6ff">8</span><span style="color:#ff7b72">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">width</span>: <span style="color:#a5d6ff">100</span><span style="color:#ff7b72">%</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">header</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">white</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">40</span><span style="color:#66d9ef">px</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border-top</span>: <span style="color:#ae81ff">4</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#8C1515</span>;
+</span></span><span style="display:flex;"><span>.<span style="color:#f0883e;font-weight:bold">header</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">background</span>: <span style="color:#79c0ff">white</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">padding</span>: <span style="color:#a5d6ff">40</span><span style="color:#ff7b72">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">border-top</span>: <span style="color:#a5d6ff">4</span><span style="color:#ff7b72">px</span> <span style="color:#79c0ff">solid</span> <span style="color:#a5d6ff">#8C1515</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">stanford-logo</span> <span style="color:#f92672">h1</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#8C1515</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">2.8</span><span style="color:#66d9ef">em</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-weight</span>: <span style="color:#ae81ff">600</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">letter-spacing</span>: <span style="color:#ae81ff">-0.5</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>.<span style="color:#f0883e;font-weight:bold">stanford-logo</span> <span style="color:#7ee787">h1</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">color</span>: <span style="color:#a5d6ff">#8C1515</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">font-size</span>: <span style="color:#a5d6ff">2.8</span><span style="color:#ff7b72">em</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">font-weight</span>: <span style="color:#a5d6ff">600</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">letter-spacing</span>: <span style="color:#a5d6ff">-0.5</span><span style="color:#ff7b72">px</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">btn</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#8C1515</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">white</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">text-transform</span>: <span style="color:#66d9ef">uppercase</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">letter-spacing</span>: <span style="color:#ae81ff">0.5</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>.<span style="color:#f0883e;font-weight:bold">btn</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">background</span>: <span style="color:#a5d6ff">#8C1515</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">color</span>: <span style="color:#79c0ff">white</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">text-transform</span>: <span style="color:#79c0ff">uppercase</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">letter-spacing</span>: <span style="color:#a5d6ff">0.5</span><span style="color:#ff7b72">px</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Simple CSS, but it transforms the entire feel of the application. It&rsquo;s the difference between &ldquo;some student project&rdquo; and &ldquo;Stanford&rsquo;s analytics platform.&rdquo;</p>
 <hr>
@@ -421,13 +611,13 @@ Physics,6.5M,6.3M,6.8M,...,8.1M
 <p>So how do we deal with this in Stanford DataSage?</p>
 <p><strong>Strategy #1: Ground the AI in Reality</strong></p>
 <p>We never ask Claude to recall facts from its training. Instead, we show it the actual data and the actual chart. Look at our prompt again:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>message <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>messages<span style="color:#f92672">.</span>create(
-</span></span><span style="display:flex;"><span>    model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;claude-sonnet-4-5-20250929&#34;</span>,
-</span></span><span style="display:flex;"><span>    messages<span style="color:#f92672">=</span>[{
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;user&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;content&#34;</span>: [
-</span></span><span style="display:flex;"><span>            {<span style="color:#e6db74">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;image&#34;</span>, <span style="color:#e6db74">&#34;source&#34;</span>: {<span style="color:#e6db74">&#34;data&#34;</span>: chart_base64}},  <span style="color:#75715e"># The actual chart</span>
-</span></span><span style="display:flex;"><span>            {<span style="color:#e6db74">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;text&#34;</span>, <span style="color:#e6db74">&#34;text&#34;</span>: <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>data_summary<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>}           <span style="color:#75715e"># The actual numbers</span>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>message <span style="color:#ff7b72;font-weight:bold">=</span> client<span style="color:#ff7b72;font-weight:bold">.</span>messages<span style="color:#ff7b72;font-weight:bold">.</span>create(
+</span></span><span style="display:flex;"><span>    model<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;claude-sonnet-4-5-20250929&#34;</span>,
+</span></span><span style="display:flex;"><span>    messages<span style="color:#ff7b72;font-weight:bold">=</span>[{
+</span></span><span style="display:flex;"><span>        <span style="color:#a5d6ff">&#34;role&#34;</span>: <span style="color:#a5d6ff">&#34;user&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a5d6ff">&#34;content&#34;</span>: [
+</span></span><span style="display:flex;"><span>            {<span style="color:#a5d6ff">&#34;type&#34;</span>: <span style="color:#a5d6ff">&#34;image&#34;</span>, <span style="color:#a5d6ff">&#34;source&#34;</span>: {<span style="color:#a5d6ff">&#34;data&#34;</span>: chart_base64}},  <span style="color:#8b949e;font-style:italic"># The actual chart</span>
+</span></span><span style="display:flex;"><span>            {<span style="color:#a5d6ff">&#34;type&#34;</span>: <span style="color:#a5d6ff">&#34;text&#34;</span>, <span style="color:#a5d6ff">&#34;text&#34;</span>: <span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;</span><span style="color:#a5d6ff">{</span>data_summary<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">&#34;</span>}           <span style="color:#8b949e;font-style:italic"># The actual numbers</span>
 </span></span><span style="display:flex;"><span>        ]
 </span></span><span style="display:flex;"><span>    }]
 </span></span><span style="display:flex;"><span>)
@@ -462,15 +652,15 @@ Good: &#34;Provide: 1) Executive Summary, 2) Key Findings, 3) Trend Analysis,
 <p>There&rsquo;s a lot of engineering underneath this that users never see, but it&rsquo;s worth talking about because it&rsquo;s where a lot of the &ldquo;just works&rdquo; magic happens.</p>
 <p><strong>Dynamic Data Handling</strong></p>
 <p>The biggest challenge was making this work with <em>any</em> CSV file. Not just car sales data or NFL data, but anything. That meant building smart column detection:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Figure out where labels end and data begins</span>
-</span></span><span style="display:flex;"><span>id_columns <span style="color:#f92672">=</span> []
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> col <span style="color:#f92672">in</span> df<span style="color:#f92672">.</span>columns:
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Try to convert to numbers</span>
-</span></span><span style="display:flex;"><span>        pd<span style="color:#f92672">.</span>to_numeric(df[col], errors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;raise&#39;</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>  <span style="color:#75715e"># Found the data!</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> (<span style="color:#a6e22e">ValueError</span>, <span style="color:#a6e22e">TypeError</span>):
-</span></span><span style="display:flex;"><span>        id_columns<span style="color:#f92672">.</span>append(col)  <span style="color:#75715e"># This is a label</span>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Figure out where labels end and data begins</span>
+</span></span><span style="display:flex;"><span>id_columns <span style="color:#ff7b72;font-weight:bold">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">for</span> col <span style="color:#ff7b72;font-weight:bold">in</span> df<span style="color:#ff7b72;font-weight:bold">.</span>columns:
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">try</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#8b949e;font-style:italic"># Try to convert to numbers</span>
+</span></span><span style="display:flex;"><span>        pd<span style="color:#ff7b72;font-weight:bold">.</span>to_numeric(df[col], errors<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#39;raise&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">break</span>  <span style="color:#8b949e;font-style:italic"># Found the data!</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">except</span> (<span style="color:#f0883e;font-weight:bold">ValueError</span>, <span style="color:#f0883e;font-weight:bold">TypeError</span>):
+</span></span><span style="display:flex;"><span>        id_columns<span style="color:#ff7b72;font-weight:bold">.</span>append(col)  <span style="color:#8b949e;font-style:italic"># This is a label</span>
 </span></span></code></pre></div><p>This little loop is doing a lot of work. It&rsquo;s walking through columns left-to-right, trying to convert each one to numbers. The first column that successfully converts? That&rsquo;s where the data starts. Everything before it? Labels.</p>
 <p>This means it works whether you have:</p>
 <ul>
@@ -481,23 +671,23 @@ Good: &#34;Provide: 1) Executive Summary, 2) Key Findings, 3) Trend Analysis,
 </ul>
 <p><strong>Type Juggling</strong></p>
 <p>CSV files are tricky. Sometimes numbers come in as strings. Sometimes you have quoted values. Sometimes column headers are integers, sometimes they&rsquo;re strings. We need to handle all of it:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Convert everything to the right types</span>
-</span></span><span style="display:flex;"><span>year_labels <span style="color:#f92672">=</span> [str(col) <span style="color:#66d9ef">for</span> col <span style="color:#f92672">in</span> year_columns]  <span style="color:#75715e"># Labels are strings</span>
-</span></span><span style="display:flex;"><span>values <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>to_numeric(row[year_columns], errors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;coerce&#39;</span>)<span style="color:#f92672">.</span>values  <span style="color:#75715e"># Data is numbers</span>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Convert everything to the right types</span>
+</span></span><span style="display:flex;"><span>year_labels <span style="color:#ff7b72;font-weight:bold">=</span> [str(col) <span style="color:#ff7b72">for</span> col <span style="color:#ff7b72;font-weight:bold">in</span> year_columns]  <span style="color:#8b949e;font-style:italic"># Labels are strings</span>
+</span></span><span style="display:flex;"><span>values <span style="color:#ff7b72;font-weight:bold">=</span> pd<span style="color:#ff7b72;font-weight:bold">.</span>to_numeric(row[year_columns], errors<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#39;coerce&#39;</span>)<span style="color:#ff7b72;font-weight:bold">.</span>values  <span style="color:#8b949e;font-style:italic"># Data is numbers</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># &#39;coerce&#39; means &#34;try your best, if it fails, use NaN&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># This handles bad data gracefully</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># &#39;coerce&#39; means &#34;try your best, if it fails, use NaN&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># This handles bad data gracefully</span>
 </span></span></code></pre></div><p>That <code>errors='coerce'</code> parameter is doing a lot of heavy lifting. It means &ldquo;convert to numbers if you can, but if you can&rsquo;t, just put NaN (not a number) and keep going.&rdquo; This graceful failure handling is what makes the system robust.</p>
 <p><strong>Base64 Image Encoding</strong></p>
 <p>Here&rsquo;s a neat trick: instead of saving the chart as a file on disk and then serving it up, we encode it directly as base64 and send it in the JSON response:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>buffer <span style="color:#f92672">=</span> BytesIO()  <span style="color:#75715e"># Memory buffer, not disk</span>
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>savefig(buffer, format<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;png&#39;</span>, dpi<span style="color:#f92672">=</span><span style="color:#ae81ff">150</span>)
-</span></span><span style="display:flex;"><span>buffer<span style="color:#f92672">.</span>seek(<span style="color:#ae81ff">0</span>)
-</span></span><span style="display:flex;"><span>image_base64 <span style="color:#f92672">=</span> base64<span style="color:#f92672">.</span>b64encode(buffer<span style="color:#f92672">.</span>read())<span style="color:#f92672">.</span>decode()
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>buffer <span style="color:#ff7b72;font-weight:bold">=</span> BytesIO()  <span style="color:#8b949e;font-style:italic"># Memory buffer, not disk</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#ff7b72;font-weight:bold">.</span>savefig(buffer, format<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#39;png&#39;</span>, dpi<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">150</span>)
+</span></span><span style="display:flex;"><span>buffer<span style="color:#ff7b72;font-weight:bold">.</span>seek(<span style="color:#a5d6ff">0</span>)
+</span></span><span style="display:flex;"><span>image_base64 <span style="color:#ff7b72;font-weight:bold">=</span> base64<span style="color:#ff7b72;font-weight:bold">.</span>b64encode(buffer<span style="color:#ff7b72;font-weight:bold">.</span>read())<span style="color:#ff7b72;font-weight:bold">.</span>decode()
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">return</span> jsonify({
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;chart&#39;</span>: image_base64,  <span style="color:#75715e"># Send it right in the response</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;analysis&#39;</span>: analysis
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">return</span> jsonify({
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#39;chart&#39;</span>: image_base64,  <span style="color:#8b949e;font-style:italic"># Send it right in the response</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#39;analysis&#39;</span>: analysis
 </span></span><span style="display:flex;"><span>})
 </span></span></code></pre></div><p>This means:</p>
 <ul>
@@ -507,26 +697,26 @@ Good: &#34;Provide: 1) Executive Summary, 2) Key Findings, 3) Trend Analysis,
 <li>Simpler architecture</li>
 </ul>
 <p>On the frontend, we just slap it into an img tag:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">chartImage</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;data:image/png;base64,&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">chart</span>;
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>chartImage.src <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#39;data:image/png;base64,&#39;</span> <span style="color:#ff7b72;font-weight:bold">+</span> data.chart;
 </span></span></code></pre></div><p>Boom. Chart appears. Magic.</p>
 <p><strong>Markdown to HTML</strong></p>
 <p>Claude returns its analysis in Markdown format (those ## headers, <strong>bold text</strong>, etc.). But browsers don&rsquo;t natively render Markdown. So we use the marked.js library to convert it on-the-fly:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Raw markdown from Claude
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">markdownText</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;## Executive Summary\n\nThe data shows...&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Raw markdown from Claude
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">const</span> markdownText <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;## Executive Summary\n\nThe data shows...&#34;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Convert to HTML
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">analysisText</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">marked</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">markdownText</span>);
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Convert to HTML
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>analysisText.innerHTML <span style="color:#ff7b72;font-weight:bold">=</span> marked.parse(markdownText);
 </span></span></code></pre></div><p>And then our CSS makes it look Stanford-professional:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">analysis-content</span> <span style="color:#f92672">h2</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#8C1515</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">1.5</span><span style="color:#66d9ef">em</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border-bottom</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#8C1515</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding-bottom</span>: <span style="color:#ae81ff">8</span><span style="color:#66d9ef">px</span>;
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#f0883e;font-weight:bold">analysis-content</span> <span style="color:#7ee787">h2</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">color</span>: <span style="color:#a5d6ff">#8C1515</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">font-size</span>: <span style="color:#a5d6ff">1.5</span><span style="color:#ff7b72">em</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">border-bottom</span>: <span style="color:#a5d6ff">2</span><span style="color:#ff7b72">px</span> <span style="color:#79c0ff">solid</span> <span style="color:#a5d6ff">#8C1515</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">padding-bottom</span>: <span style="color:#a5d6ff">8</span><span style="color:#ff7b72">px</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">analysis-content</span> <span style="color:#f92672">strong</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#8C1515</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-weight</span>: <span style="color:#ae81ff">700</span>;
+</span></span><span style="display:flex;"><span>.<span style="color:#f0883e;font-weight:bold">analysis-content</span> <span style="color:#7ee787">strong</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">color</span>: <span style="color:#a5d6ff">#8C1515</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">font-weight</span>: <span style="color:#a5d6ff">700</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>All the formatting happens automatically. Users just see a beautiful, professional report.</p>
 <hr>
@@ -673,15 +863,15 @@ Good: &#34;Provide: 1) Executive Summary, 2) Key Findings, 3) Trend Analysis,
 <h2 id="technical-deep-dive-the-complete-stack">Technical Deep Dive: The Complete Stack</h2>
 <p>For the engineers and developers reading this (hey, fellow nerds!), let&rsquo;s talk about the complete technical stack:</p>
 <p><strong>Backend:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Flask<span style="color:#f92672">==</span><span style="color:#ae81ff">3.0.0</span>          <span style="color:#75715e"># Web framework - simple, flexible, perfect for this</span>
-</span></span><span style="display:flex;"><span>pandas<span style="color:#f92672">==</span><span style="color:#ae81ff">2.1.3</span>         <span style="color:#75715e"># Data manipulation - the NumPy of dataframes</span>
-</span></span><span style="display:flex;"><span>matplotlib<span style="color:#f92672">==</span><span style="color:#ae81ff">3.8.2</span>     <span style="color:#75715e"># Visualization - old reliable</span>
-</span></span><span style="display:flex;"><span>anthropic<span style="color:#f92672">==</span><span style="color:#ae81ff">0.39.0</span>     <span style="color:#75715e"># Claude API - the AI brain</span>
-</span></span><span style="display:flex;"><span>numpy<span style="color:#f92672">==</span><span style="color:#ae81ff">1.24.3</span>         <span style="color:#75715e"># Numerical operations - pandas depends on it</span>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Flask<span style="color:#ff7b72;font-weight:bold">==</span><span style="color:#a5d6ff">3.0.0</span>          <span style="color:#8b949e;font-style:italic"># Web framework - simple, flexible, perfect for this</span>
+</span></span><span style="display:flex;"><span>pandas<span style="color:#ff7b72;font-weight:bold">==</span><span style="color:#a5d6ff">2.1.3</span>         <span style="color:#8b949e;font-style:italic"># Data manipulation - the NumPy of dataframes</span>
+</span></span><span style="display:flex;"><span>matplotlib<span style="color:#ff7b72;font-weight:bold">==</span><span style="color:#a5d6ff">3.8.2</span>     <span style="color:#8b949e;font-style:italic"># Visualization - old reliable</span>
+</span></span><span style="display:flex;"><span>anthropic<span style="color:#ff7b72;font-weight:bold">==</span><span style="color:#a5d6ff">0.39.0</span>     <span style="color:#8b949e;font-style:italic"># Claude API - the AI brain</span>
+</span></span><span style="display:flex;"><span>numpy<span style="color:#ff7b72;font-weight:bold">==</span><span style="color:#a5d6ff">1.24.3</span>         <span style="color:#8b949e;font-style:italic"># Numerical operations - pandas depends on it</span>
 </span></span></code></pre></div><p><strong>Frontend:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Pure vanilla JavaScript - no frameworks needed
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// marked.js for Markdown rendering
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// That&#39;s it. Keep it simple.
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Pure vanilla JavaScript - no frameworks needed
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// marked.js for Markdown rendering
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// That&#39;s it. Keep it simple.
 </span></span></span></code></pre></div><p><strong>Architecture Pattern:</strong></p>
 <pre tabindex="0"><code>User → Upload CSV → Flask Backend → {
     1. Pandas reads/processes data
@@ -731,65 +921,65 @@ Good: &#34;Provide: 1) Executive Summary, 2) Key Findings, 3) Trend Analysis,
 </li>
 </ol>
 <p><strong>The Complete Flask App Structure:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> Flask, render_template, request, jsonify
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib
-</span></span><span style="display:flex;"><span>matplotlib<span style="color:#f92672">.</span>use(<span style="color:#e6db74">&#39;Agg&#39;</span>)  <span style="color:#75715e"># No GUI backend needed</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> anthropic
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> base64
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> io <span style="color:#f92672">import</span> BytesIO
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">from</span> <span style="color:#ff7b72">flask</span> <span style="color:#ff7b72">import</span> Flask, render_template, request, jsonify
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">pandas</span> <span style="color:#ff7b72">as</span> <span style="color:#ff7b72">pd</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">matplotlib</span>
+</span></span><span style="display:flex;"><span>matplotlib<span style="color:#ff7b72;font-weight:bold">.</span>use(<span style="color:#a5d6ff">&#39;Agg&#39;</span>)  <span style="color:#8b949e;font-style:italic"># No GUI backend needed</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">matplotlib.pyplot</span> <span style="color:#ff7b72">as</span> <span style="color:#ff7b72">plt</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">anthropic</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">base64</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">from</span> <span style="color:#ff7b72">io</span> <span style="color:#ff7b72">import</span> BytesIO
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">os</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>app <span style="color:#f92672">=</span> Flask(__name__)
-</span></span><span style="display:flex;"><span>app<span style="color:#f92672">.</span>config[<span style="color:#e6db74">&#39;UPLOAD_FOLDER&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;uploads&#39;</span>
-</span></span><span style="display:flex;"><span>app<span style="color:#f92672">.</span>config[<span style="color:#e6db74">&#39;MAX_CONTENT_LENGTH&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1024</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1024</span>  <span style="color:#75715e"># 16MB max</span>
+</span></span><span style="display:flex;"><span>app <span style="color:#ff7b72;font-weight:bold">=</span> Flask(__name__)
+</span></span><span style="display:flex;"><span>app<span style="color:#ff7b72;font-weight:bold">.</span>config[<span style="color:#a5d6ff">&#39;UPLOAD_FOLDER&#39;</span>] <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#39;uploads&#39;</span>
+</span></span><span style="display:flex;"><span>app<span style="color:#ff7b72;font-weight:bold">.</span>config[<span style="color:#a5d6ff">&#39;MAX_CONTENT_LENGTH&#39;</span>] <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">16</span> <span style="color:#ff7b72;font-weight:bold">*</span> <span style="color:#a5d6ff">1024</span> <span style="color:#ff7b72;font-weight:bold">*</span> <span style="color:#a5d6ff">1024</span>  <span style="color:#8b949e;font-style:italic"># 16MB max</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>ANTHROPIC_API_KEY <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>environ<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;ANTHROPIC_API_KEY&#39;</span>)
+</span></span><span style="display:flex;"><span>ANTHROPIC_API_KEY <span style="color:#ff7b72;font-weight:bold">=</span> os<span style="color:#ff7b72;font-weight:bold">.</span>environ<span style="color:#ff7b72;font-weight:bold">.</span>get(<span style="color:#a5d6ff">&#39;ANTHROPIC_API_KEY&#39;</span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#39;/&#39;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">index</span>():
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Serve the main page&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#39;index.html&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">@app.route</span>(<span style="color:#a5d6ff">&#39;/&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">index</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#34;&#34;&#34;Serve the main page&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> render_template(<span style="color:#a5d6ff">&#39;index.html&#39;</span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#39;/upload&#39;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;POST&#39;</span>])
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">upload_file</span>():
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Handle file upload and orchestrate analysis&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Validate file</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;file&#39;</span> <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> request<span style="color:#f92672">.</span>files:
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> jsonify({<span style="color:#e6db74">&#39;error&#39;</span>: <span style="color:#e6db74">&#39;No file provided&#39;</span>}), <span style="color:#ae81ff">400</span>
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">@app.route</span>(<span style="color:#a5d6ff">&#39;/upload&#39;</span>, methods<span style="color:#ff7b72;font-weight:bold">=</span>[<span style="color:#a5d6ff">&#39;POST&#39;</span>])
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">upload_file</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#34;&#34;&#34;Handle file upload and orchestrate analysis&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">try</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#8b949e;font-style:italic"># Validate file</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">if</span> <span style="color:#a5d6ff">&#39;file&#39;</span> <span style="color:#ff7b72;font-weight:bold">not</span> <span style="color:#ff7b72;font-weight:bold">in</span> request<span style="color:#ff7b72;font-weight:bold">.</span>files:
+</span></span><span style="display:flex;"><span>            <span style="color:#ff7b72">return</span> jsonify({<span style="color:#a5d6ff">&#39;error&#39;</span>: <span style="color:#a5d6ff">&#39;No file provided&#39;</span>}), <span style="color:#a5d6ff">400</span>
 </span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        file <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>files[<span style="color:#e6db74">&#39;file&#39;</span>]
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> file<span style="color:#f92672">.</span>filename<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;.csv&#39;</span>):
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> jsonify({<span style="color:#e6db74">&#39;error&#39;</span>: <span style="color:#e6db74">&#39;Only CSV files allowed&#39;</span>}), <span style="color:#ae81ff">400</span>
+</span></span><span style="display:flex;"><span>        file <span style="color:#ff7b72;font-weight:bold">=</span> request<span style="color:#ff7b72;font-weight:bold">.</span>files[<span style="color:#a5d6ff">&#39;file&#39;</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">if</span> <span style="color:#ff7b72;font-weight:bold">not</span> file<span style="color:#ff7b72;font-weight:bold">.</span>filename<span style="color:#ff7b72;font-weight:bold">.</span>endswith(<span style="color:#a5d6ff">&#39;.csv&#39;</span>):
+</span></span><span style="display:flex;"><span>            <span style="color:#ff7b72">return</span> jsonify({<span style="color:#a5d6ff">&#39;error&#39;</span>: <span style="color:#a5d6ff">&#39;Only CSV files allowed&#39;</span>}), <span style="color:#a5d6ff">400</span>
 </span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Process data</span>
-</span></span><span style="display:flex;"><span>        df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(file)
+</span></span><span style="display:flex;"><span>        <span style="color:#8b949e;font-style:italic"># Process data</span>
+</span></span><span style="display:flex;"><span>        df <span style="color:#ff7b72;font-weight:bold">=</span> pd<span style="color:#ff7b72;font-weight:bold">.</span>read_csv(file)
 </span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Get AI recommendation</span>
-</span></span><span style="display:flex;"><span>        chart_type, reason <span style="color:#f92672">=</span> get_chart_recommendation(df)
+</span></span><span style="display:flex;"><span>        <span style="color:#8b949e;font-style:italic"># Get AI recommendation</span>
+</span></span><span style="display:flex;"><span>        chart_type, reason <span style="color:#ff7b72;font-weight:bold">=</span> get_chart_recommendation(df)
 </span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Generate visualization</span>
-</span></span><span style="display:flex;"><span>        chart_base64 <span style="color:#f92672">=</span> generate_chart(df, chart_type)
+</span></span><span style="display:flex;"><span>        <span style="color:#8b949e;font-style:italic"># Generate visualization</span>
+</span></span><span style="display:flex;"><span>        chart_base64 <span style="color:#ff7b72;font-weight:bold">=</span> generate_chart(df, chart_type)
 </span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Get AI analysis</span>
-</span></span><span style="display:flex;"><span>        analysis <span style="color:#f92672">=</span> get_claude_analysis(chart_base64, df, chart_type, reason)
+</span></span><span style="display:flex;"><span>        <span style="color:#8b949e;font-style:italic"># Get AI analysis</span>
+</span></span><span style="display:flex;"><span>        analysis <span style="color:#ff7b72;font-weight:bold">=</span> get_claude_analysis(chart_base64, df, chart_type, reason)
 </span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Return everything</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> jsonify({
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;success&#39;</span>: <span style="color:#66d9ef">True</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;chart&#39;</span>: chart_base64,
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;analysis&#39;</span>: analysis,
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;chart_type&#39;</span>: chart_type,
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;recommendation&#39;</span>: reason
+</span></span><span style="display:flex;"><span>        <span style="color:#8b949e;font-style:italic"># Return everything</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> jsonify({
+</span></span><span style="display:flex;"><span>            <span style="color:#a5d6ff">&#39;success&#39;</span>: <span style="color:#79c0ff">True</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a5d6ff">&#39;chart&#39;</span>: chart_base64,
+</span></span><span style="display:flex;"><span>            <span style="color:#a5d6ff">&#39;analysis&#39;</span>: analysis,
+</span></span><span style="display:flex;"><span>            <span style="color:#a5d6ff">&#39;chart_type&#39;</span>: chart_type,
+</span></span><span style="display:flex;"><span>            <span style="color:#a5d6ff">&#39;recommendation&#39;</span>: reason
 </span></span><span style="display:flex;"><span>        })
 </span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> jsonify({<span style="color:#e6db74">&#39;error&#39;</span>: str(e)}), <span style="color:#ae81ff">500</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">except</span> <span style="color:#f0883e;font-weight:bold">Exception</span> <span style="color:#ff7b72">as</span> e:
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> jsonify({<span style="color:#a5d6ff">&#39;error&#39;</span>: str(e)}), <span style="color:#a5d6ff">500</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-</span></span><span style="display:flex;"><span>    app<span style="color:#f92672">.</span>run(debug<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, host<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;0.0.0.0&#39;</span>, port<span style="color:#f92672">=</span><span style="color:#ae81ff">5000</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> __name__ <span style="color:#ff7b72;font-weight:bold">==</span> <span style="color:#a5d6ff">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    app<span style="color:#ff7b72;font-weight:bold">.</span>run(debug<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#79c0ff">True</span>, host<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#39;0.0.0.0&#39;</span>, port<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">5000</span>)
 </span></span></code></pre></div><p>Clean. Simple. Does one thing well.</p>
 <hr>
 <h2 id="lessons-learned-what-worked-and-what-didnt">Lessons Learned: What Worked and What Didn&rsquo;t</h2>
@@ -913,34 +1103,157 @@ Later columns: Data (numbers)</p>
 <p><strong>Acknowledgments</strong>: Thanks to the Anthropic team for Claude, the matplotlib community for making data visualization accessible, and Stanford University for being a place where proof-of-concepts are encouraged.</p>
 <hr>
 <p><em>&ldquo;The best way to predict the future is to invent it.&rdquo;</em> — Alan Kay (but Woz probably said something similar at some point)</p>
-<ul class="pa0">
-  
-</ul>
-<div class="mt6 instapaper_ignoref">
-      
-      
-      </div>
+
+        </div>
+
+        
+        
+        <footer class="post-footer">
+            <div class="post-tags">
+                
+                <a href="/tags/gpt/" class="tag">gpt</a>
+                
+                <a href="/tags/data-analysis/" class="tag">data-analysis</a>
+                
+                <a href="/tags/ai/" class="tag">ai</a>
+                
+            </div>
+        </footer>
+        
     </div>
-
-    <aside class="w-30-l mt6-l">
-
+</article>
 
 
+<nav class="post-nav">
+    <div class="container">
+        <div class="nav-links">
+            
+            <a href="http://localhost:1313/posts/biai/" class="nav-prev">
+                <span class="nav-label">← Previous</span>
+                <span class="nav-title">Business Intelligence and AI</span>
+            </a>
+            
+            
+            
+            <a href="http://localhost:1313/posts/meshcorevmeshtastic/" class="nav-next">
+                <span class="nav-label">Next →</span>
+                <span class="nav-title">Meshtastic: Core vs Firmware</span>
+            </a>
+            
+        </div>
+    </div>
+</nav>
 
-</aside>
 
-  </article>
+
+
+<section class="related-posts">
+    <div class="container">
+        <h2>More Posts</h2>
+        <div class="posts-grid">
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/dataSec.jpeg" alt="Data Security Best Practices" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="http://localhost:1313/posts/datasec/">Data Security Best Practices</a></h3>
+                    <p class="post-card-date">Jun 8, 2026</p>
+                    <p class="post-card-summary"><h2 id="introduction-the-strategic-imperative-of-data-security">Introduction: The Strategic Imperative of Data Security</h2>
+<p>In today&rsquo;s hyperconnected digital ecosystem, data has transcended beyond mere commodity status—it&rsquo;s become the operational lifeblood and competitive moat of modern enterprises. From personally identifiable information (PII) and healthcare records to intellectual property, trade secrets, and financial ledgers, data assets underpin organizational resilience and individual privacy alike. Yet this critical dependence on data infrastructure introduces a parallel complexity: the expanding attack surface and sophistication of threat actors. Cyber attacks, data exfiltration events, ransomware deployments, and identity theft schemes have evolved from theoretical risks into demonstrable existential threats. The stakes are real, the vulnerabilities are systemic, and frankly, reactive approaches no longer cut it. Prioritizing data security—both at the enterprise and personal level—isn&rsquo;t optional. It&rsquo;s the foundation of operational integrity.</p></p>
+                    <a href="http://localhost:1313/posts/datasec/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/muos.jpg" alt="MeshBeacon: Because Your Mesh Network Should Actually DO Something" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="http://localhost:1313/posts/meshbeacon/">MeshBeacon: Because Your Mesh Network Should Actually DO Something</a></h3>
+                    <p class="post-card-date">Jan 15, 2026</p>
+                    <p class="post-card-summary"><h2 id="take-it-make-it-yours">Take It. Make It Yours.</h2>
+<p>MeshBeacon is open source. Every line of it.</p>
+<p>I didn&rsquo;t build this so it could run on one node in San Jose. I built it so it could run everywhere. Fork the repository. Change the coordinates to your city. Add your local weather stations. Point the earthquake monitor at your fault lines. Write a new broadcast module for something I haven&rsquo;t thought of yet.</p>
+<p>The APIs are free. The code is free. The spectrum is shared. The only thing required is the willingness to build something that matters.</p></p>
+                    <a href="http://localhost:1313/posts/meshbeacon/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/meshNodes.jpeg" alt="Meshtastic: Core vs Firmware" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="http://localhost:1313/posts/meshcorevmeshtastic/">Meshtastic: Core vs Firmware</a></h3>
+                    <p class="post-card-date">Dec 20, 2025</p>
+                    <p class="post-card-summary"><p>You know what REALLY grinds my gears? And I mean REALLY makes me want to throw a radio into the ocean? It&rsquo;s when people ask me, &ldquo;Hey, what&rsquo;s the difference between MeshCore and Meshtastic?&rdquo;</p>
+<p>OH, WHERE DO I BEGIN?!</p>
+<p>It&rsquo;s like asking what&rsquo;s the difference between a surgeon and a guy with a chainsaw! Sure, they BOTH make cuts, but ONE of them knows when to STOP CUTTING!</p>
+<p>Let me paint you a picture. You&rsquo;re in the middle of a disaster. Hurricane just took out every cell tower within 200 miles. Your neighbor&rsquo;s house is on fire. You need to communicate. Do you want the mesh network that&rsquo;s sitting there going &ldquo;HELLO! HELLO! I&rsquo;M HERE! DID YOU GET MY HELLO? HERE&rsquo;S ANOTHER HELLO! AND ANOTHER! OH WAIT, LET ME TELL YOU MY POSITION AGAIN!&rdquo; like some kind of radio-powered narcissist at a cocktail party?</p></p>
+                    <a href="http://localhost:1313/posts/meshcorevmeshtastic/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+        </div>
+    </div>
+</section>
+
+
 
     </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
-    &copy;  Sal Mancuso 2026 
-  </a>
-    <div><div class="ananke-socials"></div>
-</div>
-  </div>
-</footer>
 
-  </body>
+    
+    <footer>
+        <div class="container">
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/posts">Posts</a></li>
+                    <li><a href="/publications">Work/Publications</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Interests</h3>
+                <ul>
+                    <li><a href="https://makerworld.com/" target="_blank">Maker World</a></li>
+                    <li><a href="https://www.adafruit.com/" target="_blank">Adafruit</a></li>
+                    <li><a href="https://sanjosesimplex.groups.io/g/main" target="_blank">K6SJS San Jose Simplex</a></li>
+                    <li><a href="https://www.kennedymeadows.com/" target="_blank">Kennedy Meadows Packstation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="https://it-humsci.stanford.edu/people/sal-mancuso" target="_blank">Stanford</a></li>
+                    <li><a href="https://github.com/salmancuso" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/salmancuso/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://www.qrz.com/db/W6SAL" target="_blank">QRZ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sal Mancuso. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+    
+    
+    <script src="/js/topo-animator.js"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>

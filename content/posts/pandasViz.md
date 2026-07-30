@@ -1,11 +1,12 @@
-+++
-title = """Data Visualization with Pandas"""
-date = 2023-03-13T23:21:00+07:00
-draft = false
-+++
-![Code](/images/pandasViz.png)
+---
+title: "Data Visualization with Pandas"
+date: 2025-04-15
+description: "Creating effective visualizations using pandas and matplotlib"
+image: "/images/pandasViz.png"
+tags: ["pandas", "visualization", "python"]
+---
 
-Python is one of the most popular programming languages for data analysis and visualization, and the Pandas library is one of the most widely used tools for manipulating and analyzing data in Python. In this blog post, we'll take a closer look at Pandas and how to use it to create visualizations in Matplotlib.
+Python is one of the most popular programming languages for data analysis and visualization, and the Pandas library is one of the most widely used tools for manipulating and analyzing data in Python. In this Posts post, we'll take a closer look at Pandas and how to use it to create visualizations in Matplotlib.
 
 Pandas is a powerful library that provides data structures for efficiently storing and manipulating large datasets. It provides a number of data structures, including Series (1-dimensional) and DataFrame (2-dimensional), that make it easy to handle and manipulate data in Python. Pandas also provides a variety of functions for cleaning, transforming, and analyzing data.
 

@@ -1,11 +1,12 @@
-+++
-title = """The Cult of Politics: Why Blind Allegiance is Dangerous"""
-date = 2025-03-11T07:07:07+01:00
-draft = false
-+++
-![Spy Vs Spy](/images/spyvspy.jpeg)
+---
+title: "Culture and Politics"
+date: 2024-11-15
+description: "Understanding the intersection of cultural identity and political discourse"
+image: "/images/politicsAnger.jpg"
+tags: ["culture", "politics"]
+---
 
-In recent years, my political observations have led me to a rather disheartening conclusion: the leaders we elect, regardless of their political affiliation, often appear to crave power above all else. This desire for dominance manifests in a refusal to collaborate across party lines, breeding a culture of division and distrust. This blog post aims to explore the striking resemblance between blind political allegiance and cult-like behavior, as well as how this polarization has eroded our national discourse. Reflecting on historical periods of political division, we can also glean valuable lessons for healing and unity.
+In recent years, my political observations have led me to a rather disheartening conclusion: the leaders we elect, regardless of their political affiliation, often appear to crave power above all else. This desire for dominance manifests in a refusal to collaborate across party lines, breeding a culture of division and distrust. This Posts post aims to explore the striking resemblance between blind political allegiance and cult-like behavior, as well as how this polarization has eroded our national discourse. Reflecting on historical periods of political division, we can also glean valuable lessons for healing and unity.
 
 #### The Allure of Power
 

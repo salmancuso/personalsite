@@ -1,9 +1,10 @@
-+++
-title = """Cigars. One of My Life's Simple Pleasures"""
-date = 2024-01-14T07:07:07+01:00
-draft = false
-+++
-![Stack of Cigars](/images/cigars.jpg)
+---
+title: "The Art of Enjoying Cigars"
+date: 2024-02-10
+description: "A personal journey into the world of premium cigars"
+image: "/images/cigars.jpg"
+tags: ["lifestyle", "personal"]
+---
 
 Here I am, early 40's, and I've transitioned from the uncultured beers of my 20's (ahem Mickeys and Budweiser) to drinking boutique craft IPAs and indulging with Scotchs that will hurt your wallet and make grown men wince from the aromatic earthiness. I've evolved from jankie boxed wines to submitting to Silver Oak, D.R. Stephens, and my personal favorite, Ridge Vineyards. One day, perhaps five years ago, woke up, and some semblance of sophistication took over my life. I've loved smoking pipes and cigars for the majority of my adult life, but it wasn't until five years ago that I had a truly magnificent cigar. The flavors were spice yet sweet, smooth and velvety; my first Cuban cigar was enjoyed over a campfire on a fishing trip in the Sierra Nevada Mountains, I haven't looked back since. But alas, buying Cuban cigars is difficult (still) and expensive; while helping a friend find decent cigars, I found myself curating a decent list of my goto smokes.
 

@@ -1,9 +1,20 @@
-baseURL = 'https://salmancuso.com'
-languageCode = 'en-us'
-title = 'Sal Mancuso'
-AltTitle1 = 'Neurons & Notions: My Mental Playground'
-AltTitle2 = 'Idea Incubator: A Cranial Retreat'
-theme = 'ananke'
+baseURL = "https://salmancuso.com"
+languageCode = "en-us"
+title = "Sal Mancuso"
+description = "Senior BI Engineer, mesh networks, data infrastructure"
+author = "Sal Mancuso"
+
+# Pagination - Updated for Hugo v0.128+
+[pagination]
+pagerSize = 10
+path = "page"
+
+# Menu
+[[menu.main]]
+identifier = "home"
+name = "Home"
+url = "/"
+weight = 0
 
 [[menu.main]]
 identifier = "about"
@@ -13,81 +24,36 @@ weight = 1
 
 [[menu.main]]
 identifier = "publications"
-name = "Publications"
+name = "Work/Publications"
 url = "/publications/"
 weight = 2
 
 [[menu.main]]
 identifier = "posts"
-name = "Blog Posts"
+name = "Posts"
 url = "/posts/"
 weight = 3
 
 [[menu.main]]
 identifier = "contact"
-name = "Find Me"
+name = "Contact"
 url = "/contact/"
-weight = 3
+weight = 4
 
+# Parameters
 [params]
-  commentoEnable = false
-  read_more_copy = "Read more about this entry"
+description = "Building infrastructure. Living outside. Communicating worldwide."
+author = "Sal Mancuso"
 
+# Markup settings
+[markup]
+[markup.highlight]
+style = "github-dark"
 
-##################################################
-# social media network setups
-[ananke.social.networks.bluesky]
-slug = "bluesky"
-label = "Bluesky"
-color = "#1185fe"
-profile = "https://bsky.app/profile/%s"
-icon = "bluesky" # font awesome brand icon name
-link = "https://bsky.app/intent/compose"
-[ananke.social.networks.bluesky.particles]
-text = "permalink"
+[markup.goldmark.renderer]
+unsafe = true
 
-[ananke.social.networks.email]
-slug = "email"
-label = "Email"
-profile = false
-icon = "envelope" # font awesome free icon name
-link = "mailto:spm71@mac.com"
-[ananke.social.networks.email.particles]
-body = "permalink"
-subject = "title"
-
-[ananke.social.networks.github]
-slug = "github"
-label = "GitHub"
-color = "#6cc644"
-profile = "https://github.com/salmancuso/"
-icon = "github" # font awesome brand icon name
-
-
-[ananke.social.networks.linkedin]
-slug = "linkedin"
-label = "LinkedIn"
-color = "#0077b5"
-profile = "http://linkedin.com/in/salmancuso"
-icon = "linkedin" # font awesome brand icon name
-link = "https://www.linkedin.com/shareArticle"
-[ananke.social.networks.linkedin.particles]
-url = "permalink"
-title = "title"
-summary = "description"
-source = "permalink"
-params = "mini=true"
-
-[ananke.social.networks.stackoverflow]
-slug = "stackoverflow"
-label = "Stack Overflow"
-color = "#f48024"
-profile = "https://stackoverflow.com/users/b8con"
-icon = "stack-overflow" # font awesome brand icon name
-
-[ananke.social.networks.youtube]
-slug = "youtube"
-label = "YouTube"
-color = "#cd201f"
-profile = "https://www.youtube.com/b8con"
-icon = "youtube" # font awesome brand icon name
+# Taxonomies
+[taxonomies]
+category = "categories"
+tag = "tags"

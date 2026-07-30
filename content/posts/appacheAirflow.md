@@ -1,9 +1,10 @@
-+++
-title = """Automating Data Workflows with Apache Airflow"""
-date = 2025-03-10T07:07:07+01:00
-draft = false
-+++
-![Air Traffice Screen](/images/airTraffic.jpg)
+---
+title: "Automating Data Workflows with Apache Airflow"
+date: 2025-03-10
+description: "Building scalable, automated data pipelines with Apache Airflow"
+image: "/images/airTraffic.jpg"
+tags: ["data-engineering", "airflow", "automation"]
+---
 
 In the realm of data engineering, the ability to automate workflows is a game changer. Imagine waking up every morning with the assurance that your data pipelines have been seamlessly executed, data has flowed flawlessly from one system to another, and your business insights are ready for you to act on. No more late-night database updates or cross-eyed mornings debugging cron jobs. Enter Apache Airflow, the Swiss Army knife for automating and orchestrating complex workflows.
 

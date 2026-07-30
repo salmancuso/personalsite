@@ -7,6 +7,9 @@ baseURL: 'https://salmancuso.com'
 
 ## Links
 
+- [GitHub](https://github.com/salmancuso)
+  My personal coding projects.
+
 - [QRZ - Ham Radio Contact Page](https://www.qrz.com/db/W6SAL)
   This is my ham radio contact page.
 

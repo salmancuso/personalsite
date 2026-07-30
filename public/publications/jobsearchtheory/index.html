@@ -1,173 +1,410 @@
+
 <!DOCTYPE html>
-<html lang="en-us">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>Job Search with Financial Information: Theory and Evidence | Sal Mancuso</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="
-Stanford GSB Professor Jung Ho Choi and Utah Professor Sara Malik approached my team, Data, Analytics, and Research Computing (DARC), to work with Glassdoor to acquire five data pillars for this research paper. It became abundantly clear that Glassdoor wasn&rsquo;t willing to work with academia, so I built several webscrapes that collected employee reviews and salary compensation data at scale. Acknowledgment cited on the introductory page.
-View the publication.">
-    <meta name="generator" content="Hugo 0.145.0">
-    
-    
-    
-      <meta name="robots" content="noindex, nofollow">
-    
-    
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Building infrastructure. Living outside. Communicating worldwide.">
+    <meta name="author" content="Sal Mancuso">
+
+    <title>
+        
+        Job Search with Financial Information: Theory and Evidence | Sal Mancuso
+        
+    </title>
 
     
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
-
-
-
-
+    
+    
+    <link rel="stylesheet" href="/css/pages.css">
     
 
     
-      
-
+    
+    
+    <link rel="stylesheet" href="/css/hero.css">
     
 
     
+    
+    <link rel="stylesheet" href="/css/featured-projects.css">
+    
 
     
-      <link rel="canonical" href="http://localhost:1313/publications/jobsearchtheory/">
+    
+    <link rel="stylesheet" href="/css/sections.css">
     
 
-    <meta property="og:url" content="http://localhost:1313/publications/jobsearchtheory/">
-  <meta property="og:site_name" content="Sal Mancuso">
-  <meta property="og:title" content="Job Search with Financial Information: Theory and Evidence">
-  <meta property="og:description" content="Stanford GSB Professor Jung Ho Choi and Utah Professor Sara Malik approached my team, Data, Analytics, and Research Computing (DARC), to work with Glassdoor to acquire five data pillars for this research paper. It became abundantly clear that Glassdoor wasn’t willing to work with academia, so I built several webscrapes that collected employee reviews and salary compensation data at scale. Acknowledgment cited on the introductory page.
-View the publication.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="publications">
-    <meta property="article:published_time" content="2022-08-01T07:07:07+01:00">
-    <meta property="article:modified_time" content="2022-08-01T07:07:07+01:00">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <meta itemprop="name" content="Job Search with Financial Information: Theory and Evidence">
-  <meta itemprop="description" content="Stanford GSB Professor Jung Ho Choi and Utah Professor Sara Malik approached my team, Data, Analytics, and Research Computing (DARC), to work with Glassdoor to acquire five data pillars for this research paper. It became abundantly clear that Glassdoor wasn’t willing to work with academia, so I built several webscrapes that collected employee reviews and salary compensation data at scale. Acknowledgment cited on the introductory page.
-View the publication.">
-  <meta itemprop="datePublished" content="2022-08-01T07:07:07+01:00">
-  <meta itemprop="dateModified" content="2022-08-01T07:07:07+01:00">
-  <meta itemprop="wordCount" content="69">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Job Search with Financial Information: Theory and Evidence">
-  <meta name="twitter:description" content="Stanford GSB Professor Jung Ho Choi and Utah Professor Sara Malik approached my team, Data, Analytics, and Research Computing (DARC), to work with Glassdoor to acquire five data pillars for this research paper. It became abundantly clear that Glassdoor wasn’t willing to work with academia, so I built several webscrapes that collected employee reviews and salary compensation data at scale. Acknowledgment cited on the introductory page.
-View the publication.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-	
-  </head><body class="ma0 avenir bg-near-white development">
+        :root {
+            --dark-bg: #1a1a18;
+            --dark-surface: #242420;
+            --text-light: #E8D5C4;
+            --text-muted: #A39A8F;
+            --accent: #B8860B;
+            --earth: #8B9D5D;
+            --border-color: #4a4a48;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #d4af37;
+        }
+
+         
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+         
+        nav {
+            background-color: var(--dark-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-light);
+            font-weight: 500;
+            margin: 0 1.5rem;
+        }
+
+        nav a:first-child {
+            font-family: Georgia, serif;
+            font-size: 1.25rem;
+            margin: 0;
+            margin-right: auto;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+         
+        footer {
+            background-color: #0f0f0d;
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        footer h3 {
+            font-family: Georgia, serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer ul li a {
+            color: var(--text-muted);
+        }
+
+        footer ul li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+         
+        main {
+            min-height: 50vh;
+        }
+
+        .page-content {
+            padding: 3rem 0;
+        }
+
+        .page-title {
+            font-family: Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--earth);
+            display: inline-block;
+        }
+
+         
+        main h2 {
+            font-family: Georgia, serif;
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        main h3 {
+            font-family: Georgia, serif;
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        main p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        main ul,
+        main ol {
+            color: var(--text-muted);
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        main li {
+            margin-bottom: 0.5rem;
+        }
+
+        main code {
+            background-color: var(--dark-surface);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        main pre {
+            background-color: var(--dark-surface);
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            padding: 1.5rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        main pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        main blockquote {
+            border-left: 4px solid var(--earth);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+         
+        @media (max-width: 768px) {
+            nav a {
+                margin: 0 1rem;
+            }
+
+            .page-title {
+                font-size: 1.8rem;
+            }
+
+            main h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-brand">Sal</a>
+            <div class="nav-menu">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/posts">Posts</a>
+                <a href="/publications">Work/Publications</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </nav>
 
     
-   
-  
+    <main>
+        
 
-  <header>
-    <div class="bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
-      
-        Sal Mancuso
-      
-    </a>
-    <div class="flex-l items-center">
-      
+<article class="publication-single">
+    <div class="container">
+        
+        <header class="pub-header">
+            <h1 class="pub-title">Job Search with Financial Information: Theory and Evidence</h1>
+            
+            <div class="pub-meta">
+                
+                <div class="meta-item">
+                    <strong>Author:</strong> Sal Mancuso (Data Engineering and Wrangling)
+                </div>
+                
+                
+                
+                <div class="meta-item">
+                    <strong>Published:</strong> August 1, 2022
+                </div>
+                
+                
+                
+                
+                
+                
+                
+            </div>
 
-      
-        <ul class="pl0 mr3">
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/about/" title="About page">
-              About
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/publications/" title="Publications page">
-              Publications
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/posts/" title="Blog Posts page">
-              Blog Posts
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/contact/" title="Find Me page">
-              Find Me
-            </a>
-          </li>
-          
-        </ul>
-      
-      <div class="ananke-socials"></div>
+            
+            <figure class="pub-image">
+                <img src="/images/jobSearch.jpg" alt="Job Search with Financial Information: Theory and Evidence" loading="lazy">
+            </figure>
+            
+        </header>
 
+        
+        <div class="pub-content">
+            <p>Stanford GSB Professor Jung Ho Choi and Utah Professor Sara Malik approached my team, Data, Analytics, and Research Computing (DARC), to work with Glassdoor to acquire five data pillars for this research paper. It became abundantly clear that Glassdoor wasn&rsquo;t willing to work with academia, so I built several webscrapes that collected employee reviews and salary compensation data at scale. Acknowledgment cited on the introductory page.</p>
+<p><a href="https://www.gsb.stanford.edu/faculty-research/publications/not-just-investors-role-earnings-announcements-guiding-job-seekers">View the publication.</a></p>
+
+        </div>
+
+        
+        
+        <footer class="pub-footer">
+            <div class="pub-tags">
+                <strong>Tags:</strong>
+                
+                <span class="tag">job-search</span>
+                
+                <span class="tag">data-collection</span>
+                
+                <span class="tag">economics</span>
+                
+            </div>
+        </footer>
+        
     </div>
-  </div>
+</article>
+
+
+<nav class="back-link">
+    <div class="container">
+        <a href="/publications/">← Back to Publications</a>
+    </div>
 </nav>
 
-    </div>
-  </header>
-
-
-
-    <main class="pb7" role="main">
-      
-  
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-    <header class="mt4 w-100">
-      <aside class="instapaper_ignoref b helvetica tracked ttu">
-          
-        My Work &amp; Publications
-      </aside><div id="sharing" class="mt3 ananke-socials"></div>
-<h1 class="f1 athelas mt3 mb1">Job Search with Financial Information: Theory and Evidence</h1>
-      
-      
-      
-      <time class="f6 mv4 dib tracked" datetime="2022-08-01T07:07:07+01:00">August 1, 2022</time>
-      
-
-      
-      
-    </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p><img src="/images/jobSearch.jpg" alt="Job Search"></p>
-<p>Stanford GSB Professor Jung Ho Choi and Utah Professor Sara Malik approached my team, Data, Analytics, and Research Computing (DARC), to work with Glassdoor to acquire five data pillars for this research paper. It became abundantly clear that Glassdoor wasn&rsquo;t willing to work with academia, so I built several webscrapes that collected employee reviews and salary compensation data at scale. Acknowledgment cited on the introductory page.</p>
-<p><a href="https://www.gsb.stanford.edu/faculty-research/publications/not-just-investors-role-earnings-announcements-guiding-job-seekers">View the publication.</a></p>
-<ul class="pa0">
-  
-</ul>
-<div class="mt6 instapaper_ignoref">
-      
-      
-      </div>
-    </div>
-
-    <aside class="w-30-l mt6-l">
-
-
-
-
-</aside>
-
-  </article>
 
     </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
-    &copy;  Sal Mancuso 2026 
-  </a>
-    <div><div class="ananke-socials"></div>
-</div>
-  </div>
-</footer>
 
-  </body>
+    
+    <footer>
+        <div class="container">
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/posts">Posts</a></li>
+                    <li><a href="/publications">Work/Publications</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Interests</h3>
+                <ul>
+                    <li><a href="https://makerworld.com/" target="_blank">Maker World</a></li>
+                    <li><a href="https://www.adafruit.com/" target="_blank">Adafruit</a></li>
+                    <li><a href="https://sanjosesimplex.groups.io/g/main" target="_blank">K6SJS San Jose Simplex</a></li>
+                    <li><a href="https://www.kennedymeadows.com/" target="_blank">Kennedy Meadows Packstation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="https://it-humsci.stanford.edu/people/sal-mancuso" target="_blank">Stanford</a></li>
+                    <li><a href="https://github.com/salmancuso" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/salmancuso/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://www.qrz.com/db/W6SAL" target="_blank">QRZ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sal Mancuso. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+    
+    
+    <script src="/js/topo-animator.js"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>

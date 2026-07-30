@@ -1,0 +1,80 @@
+{{ define "main" }}
+
+<div class="posts-archive">
+    <div class="container">
+        <!-- Page Header -->
+        <header class="page-header">
+            <h1 class="page-title">Posts</h1>
+            <p class="page-subtitle">Thoughts on data, infrastructure, radio, and the outdoors.</p>
+        </header>
+
+        <!-- Posts Grid -->
+        {{ $paginator := .Paginate (where .Site.RegularPages "Section" "posts") 10 }}
+        
+        {{ if $paginator.Pages }}
+        <div class="posts-grid">
+            {{ range $paginator.Pages }}
+            <article class="post-card">
+                {{ if .Params.image }}
+                <div class="post-card-image">
+                    <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+                    {{ if .Params.category }}
+                    <span class="post-category">{{ .Params.category }}</span>
+                    {{ end }}
+                </div>
+                {{ end }}
+                
+                <div class="post-card-content">
+                    <div class="post-card-meta">
+                        <span class="post-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+                        {{ if .ReadingTime }}
+                        <span class="post-reading-time">{{ .ReadingTime }} min</span>
+                        {{ end }}
+                    </div>
+                    
+                    <h2 class="post-card-title">
+                        <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    </h2>
+                    
+                    <p class="post-card-summary">{{ .Description | default (truncate 100 .Summary) }}</p>
+                    
+                    {{ if .Params.tags }}
+                    <div class="post-card-tags">
+                        {{ range first 3 .Params.tags }}
+                        <span class="tag">{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                    
+                    <a href="{{ .Permalink }}" class="read-more">Read more →</a>
+                </div>
+            </article>
+            {{ end }}
+        </div>
+
+        <!-- Pagination -->
+        {{ if or $paginator.HasPrev $paginator.HasNext }}
+        <nav class="pagination">
+            {{ if $paginator.HasPrev }}
+            <a href="{{ $paginator.Prev.URL }}" class="pagination-link pagination-prev">← Newer Posts</a>
+            {{ end }}
+            
+            <span class="pagination-info">
+                Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}
+            </span>
+            
+            {{ if $paginator.HasNext }}
+            <a href="{{ $paginator.Next.URL }}" class="pagination-link pagination-next">Older Posts →</a>
+            {{ end }}
+        </nav>
+        {{ end }}
+
+        {{ else }}
+        <div class="empty-state">
+            <p>No posts yet. Check back soon!</p>
+        </div>
+        {{ end }}
+    </div>
+</div>
+
+{{ end }}

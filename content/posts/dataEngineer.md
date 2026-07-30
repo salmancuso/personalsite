@@ -1,9 +1,10 @@
-+++
-title = """Charting a Path to Success: Guide for Aspiring Business Intelligence Analysts and Data Engineers"""
-date = 2025-03-11T13:21:00+07:00
-draft = false
-+++
-![Data Engineer](/images/data-engineer.jpg)
+---
+title: "The Modern Data Engineer"
+date: 2024-06-15
+description: "What it takes to be a successful data engineer in 2024"
+image: "/images/data-engineer.jpg"
+tags: ["data-engineering", "career"]
+---
 
 As the digital economy continues to expand, driven by vast amounts of data, the roles of Business Intelligence (BI) Analysts and Data Engineers have become increasingly pivotal. For those looking to thrust themselves into these dynamic and rewarding careers, it requires a multidimensional approach encompassing skill acquisition, portfolio development, networking, and continuous learning. 
 
@@ -83,8 +84,8 @@ A well-crafted portfolio is paramount in showcasing your expertise, projects, an
 **1. Kaggle:**
    - Engage with Kaggle competitions and datasets. This platform is replete with opportunities to showcase your analytical prowess and earn recognition within the community.
 
-**2. Medium/Personal Blog:**
-   - Write detailed articles or blog posts explaining your projects, methodologies, and findings. This highlights your thought leadership and ability to articulate complex concepts.
+**2. Medium/Personal Posts:**
+   - Write detailed articles or Posts posts explaining your projects, methodologies, and findings. This highlights your thought leadership and ability to articulate complex concepts.
 
 **3. LinkedIn and Professional Networks:**
    - Regularly share updates and insights from your projects on LinkedIn. Engage with other professionals and groups to amplify your visibility.
@@ -149,4 +150,4 @@ Earning certifications can significantly enhance your career prospects, showcasi
 ### Continuous Learning and Development
 
 **1. Stay Abreast of Industry Trends:**
-   - Regularly read industry blogs,
+   - Regularly read industry Postss,

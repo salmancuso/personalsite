@@ -1,184 +1,550 @@
+
 <!DOCTYPE html>
-<html lang="en-us">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>Data Security. Not Just For Corporations. | Sal Mancuso</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="
-In today&rsquo;s digital age, data has become one of the most valuable commodities. From personal information to business secrets, data is essential for individuals and organizations to operate effectively. However, the growing dependence on data also poses significant risks, including cyber attacks, data breaches, and identity theft. Therefore, it is crucial to prioritize data security both on the corporate and personal levels.
-On the Corporate Level
-For businesses, data security is not an optional luxury but a necessity. Companies must protect their intellectual property, customer data, and financial information from cybercriminals who seek to exploit vulnerabilities in their systems. A data breach can have significant consequences, including financial loss, reputational damage, and legal repercussions. Therefore, it is essential for organizations to take proactive measures to ensure data security.">
-    <meta name="generator" content="Hugo 0.145.0">
-    
-    
-    
-      <meta name="robots" content="noindex, nofollow">
-    
-    
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Building infrastructure. Living outside. Communicating worldwide.">
+    <meta name="author" content="Sal Mancuso">
+
+    <title>
+        
+        Data Security Best Practices | Sal Mancuso
+        
+    </title>
 
     
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
-
-
-
-
+    
+    
+    <link rel="stylesheet" href="/css/pages.css">
     
 
     
-      
-
+    
+    
+    <link rel="stylesheet" href="/css/hero.css">
     
 
     
+    
+    <link rel="stylesheet" href="/css/featured-projects.css">
+    
 
     
-      <link rel="canonical" href="http://localhost:1313/posts/datasec/">
+    
+    <link rel="stylesheet" href="/css/sections.css">
     
 
-    <meta property="og:url" content="http://localhost:1313/posts/datasec/">
-  <meta property="og:site_name" content="Sal Mancuso">
-  <meta property="og:title" content="Data Security. Not Just For Corporations.">
-  <meta property="og:description" content="In today’s digital age, data has become one of the most valuable commodities. From personal information to business secrets, data is essential for individuals and organizations to operate effectively. However, the growing dependence on data also poses significant risks, including cyber attacks, data breaches, and identity theft. Therefore, it is crucial to prioritize data security both on the corporate and personal levels.
-On the Corporate Level
-For businesses, data security is not an optional luxury but a necessity. Companies must protect their intellectual property, customer data, and financial information from cybercriminals who seek to exploit vulnerabilities in their systems. A data breach can have significant consequences, including financial loss, reputational damage, and legal repercussions. Therefore, it is essential for organizations to take proactive measures to ensure data security.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-09-11T07:07:07+01:00">
-    <meta property="article:modified_time" content="2024-09-11T07:07:07+01:00">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <meta itemprop="name" content="Data Security. Not Just For Corporations.">
-  <meta itemprop="description" content="In today’s digital age, data has become one of the most valuable commodities. From personal information to business secrets, data is essential for individuals and organizations to operate effectively. However, the growing dependence on data also poses significant risks, including cyber attacks, data breaches, and identity theft. Therefore, it is crucial to prioritize data security both on the corporate and personal levels.
-On the Corporate Level
-For businesses, data security is not an optional luxury but a necessity. Companies must protect their intellectual property, customer data, and financial information from cybercriminals who seek to exploit vulnerabilities in their systems. A data breach can have significant consequences, including financial loss, reputational damage, and legal repercussions. Therefore, it is essential for organizations to take proactive measures to ensure data security.">
-  <meta itemprop="datePublished" content="2024-09-11T07:07:07+01:00">
-  <meta itemprop="dateModified" content="2024-09-11T07:07:07+01:00">
-  <meta itemprop="wordCount" content="419">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Data Security. Not Just For Corporations.">
-  <meta name="twitter:description" content="In today’s digital age, data has become one of the most valuable commodities. From personal information to business secrets, data is essential for individuals and organizations to operate effectively. However, the growing dependence on data also poses significant risks, including cyber attacks, data breaches, and identity theft. Therefore, it is crucial to prioritize data security both on the corporate and personal levels.
-On the Corporate Level
-For businesses, data security is not an optional luxury but a necessity. Companies must protect their intellectual property, customer data, and financial information from cybercriminals who seek to exploit vulnerabilities in their systems. A data breach can have significant consequences, including financial loss, reputational damage, and legal repercussions. Therefore, it is essential for organizations to take proactive measures to ensure data security.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-	
-  </head><body class="ma0 avenir bg-near-white development">
+        :root {
+            --dark-bg: #1a1a18;
+            --dark-surface: #242420;
+            --text-light: #E8D5C4;
+            --text-muted: #A39A8F;
+            --accent: #B8860B;
+            --earth: #8B9D5D;
+            --border-color: #4a4a48;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #d4af37;
+        }
+
+         
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+         
+        nav {
+            background-color: var(--dark-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-light);
+            font-weight: 500;
+            margin: 0 1.5rem;
+        }
+
+        nav a:first-child {
+            font-family: Georgia, serif;
+            font-size: 1.25rem;
+            margin: 0;
+            margin-right: auto;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+         
+        footer {
+            background-color: #0f0f0d;
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        footer h3 {
+            font-family: Georgia, serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer ul li a {
+            color: var(--text-muted);
+        }
+
+        footer ul li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+         
+        main {
+            min-height: 50vh;
+        }
+
+        .page-content {
+            padding: 3rem 0;
+        }
+
+        .page-title {
+            font-family: Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--earth);
+            display: inline-block;
+        }
+
+         
+        main h2 {
+            font-family: Georgia, serif;
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        main h3 {
+            font-family: Georgia, serif;
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        main p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        main ul,
+        main ol {
+            color: var(--text-muted);
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        main li {
+            margin-bottom: 0.5rem;
+        }
+
+        main code {
+            background-color: var(--dark-surface);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        main pre {
+            background-color: var(--dark-surface);
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            padding: 1.5rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        main pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        main blockquote {
+            border-left: 4px solid var(--earth);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+         
+        @media (max-width: 768px) {
+            nav a {
+                margin: 0 1rem;
+            }
+
+            .page-title {
+                font-size: 1.8rem;
+            }
+
+            main h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-brand">Sal</a>
+            <div class="nav-menu">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/posts">Posts</a>
+                <a href="/publications">Work/Publications</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </nav>
 
     
-   
-  
+    <main>
+        
 
-  <header>
-    <div class="bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
-      
-        Sal Mancuso
-      
-    </a>
-    <div class="flex-l items-center">
-      
+<article class="post-single">
+    <div class="container">
+        
+        <header class="post-header">
+            <h1 class="post-title">Data Security Best Practices</h1>
+            
+            <div class="post-meta">
+                
+                <span class="meta-item">
+                    <i class="ti ti-calendar"></i>
+                    June 8, 2026
+                </span>
+                
+                
+                
+                <span class="meta-item">
+                    <i class="ti ti-clock"></i>
+                    6 min read
+                </span>
+                
+                
+                
+            </div>
 
-      
-        <ul class="pl0 mr3">
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/about/" title="About page">
-              About
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/publications/" title="Publications page">
-              Publications
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/posts/" title="Blog Posts page">
-              Blog Posts
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/contact/" title="Find Me page">
-              Find Me
-            </a>
-          </li>
-          
-        </ul>
-      
-      <div class="ananke-socials"></div>
+            
+            <figure class="post-image">
+                <img src="/images/dataSec.jpeg" alt="Data Security Best Practices" loading="lazy">
+            </figure>
+            
+        </header>
 
+        
+        <div class="post-content">
+            <h2 id="introduction-the-strategic-imperative-of-data-security">Introduction: The Strategic Imperative of Data Security</h2>
+<p>In today&rsquo;s hyperconnected digital ecosystem, data has transcended beyond mere commodity status—it&rsquo;s become the operational lifeblood and competitive moat of modern enterprises. From personally identifiable information (PII) and healthcare records to intellectual property, trade secrets, and financial ledgers, data assets underpin organizational resilience and individual privacy alike. Yet this critical dependence on data infrastructure introduces a parallel complexity: the expanding attack surface and sophistication of threat actors. Cyber attacks, data exfiltration events, ransomware deployments, and identity theft schemes have evolved from theoretical risks into demonstrable existential threats. The stakes are real, the vulnerabilities are systemic, and frankly, reactive approaches no longer cut it. Prioritizing data security—both at the enterprise and personal level—isn&rsquo;t optional. It&rsquo;s the foundation of operational integrity.</p>
+<hr>
+<h2 id="the-corporate-imperative-enterprise-grade-data-protection">The Corporate Imperative: Enterprise-Grade Data Protection</h2>
+<h3 id="why-data-security-isnt-a-cost-centerits-risk-management">Why Data Security Isn&rsquo;t a Cost Center—It&rsquo;s Risk Management</h3>
+<p>For organizations, data security represents far more than a compliance checkbox or IT departmental responsibility. It&rsquo;s a fundamental business function. Companies operate with three categories of high-value data assets requiring fortress-level protection: <strong>intellectual property</strong> (algorithms, proprietary processes, R&amp;D roadmaps), <strong>customer data</strong> (transaction history, preferences, authentication credentials), and <strong>financial records</strong> (revenue streams, investment positions, banking relationships).</p>
+<p>Cybercriminals don&rsquo;t operate on good faith. They actively scan for exploitable vulnerabilities—unpatched systems, misconfigured cloud storage, weak authentication protocols, insider threats—to breach perimeters and extract value. The consequences of a material data breach are catastrophic and multifaceted:</p>
+<ul>
+<li><strong>Financial hemorrhaging</strong>: Direct costs (forensic investigation, breach notification, legal defense) plus indirect costs (operational downtime, lost revenue from service interruption)</li>
+<li><strong>Reputational toxicity</strong>: Customer trust erosion, brand damage, market share attrition</li>
+<li><strong>Regulatory exposure</strong>: GDPR fines (up to €20M or 4% of global revenue), CCPA penalties, HIPAA violations, SOX compliance failures—pick your jurisdiction</li>
+</ul>
+<h3 id="architecting-a-robust-cybersecurity-strategy">Architecting a Robust Cybersecurity Strategy</h3>
+<p>Building effective data security requires systematic, layered defense-in-depth architecture:</p>
+<p><strong>Threat Modeling and Vulnerability Assessment</strong></p>
+<p>Organizations must proactively map their threat landscape—not guess. This means conducting structured threat modeling exercises (identifying attack vectors, threat actors, potential exploits), performing comprehensive vulnerability scans across infrastructure, and maintaining an up-to-date asset inventory. Regular penetration testing and red-team exercises simulate adversarial tactics to expose blind spots before malicious actors do. This isn&rsquo;t paranoia; it&rsquo;s disciplined risk management.</p>
+<p><strong>Security Controls Implementation</strong></p>
+<p>Effective protection relies on a tripartite control framework:</p>
+<ul>
+<li><strong>Preventive controls</strong>: Firewalls, intrusion prevention systems (IPS), data loss prevention (DLP) tools, encryption at rest and in transit, network segmentation, and access controls (least-privilege principle)</li>
+<li><strong>Detective controls</strong>: Security information and event management (SIEM) systems, behavioral analytics, anomaly detection, log aggregation and analysis</li>
+<li><strong>Corrective controls</strong>: Incident response playbooks, business continuity and disaster recovery (BC/DR) plans, automated remediation workflows</li>
+</ul>
+<p><strong>Continuous Monitoring and Threat Intelligence</strong></p>
+<p>Static defenses fail. Organizations must implement 24/7 monitoring with real-time alerting for suspicious activities—unauthorized access attempts, unusual data exfiltration patterns, lateral movement indicators, privilege escalation events. This requires staffing security operations centers (SOCs) or leveraging managed security service providers (MSSPs) to operationalize threat detection at scale.</p>
+<p><strong>Security Culture and Employee Enablement</strong></p>
+<p>The strongest firewall means nothing if employees click malicious links or share credentials over unencrypted channels. Organizations must:</p>
+<ul>
+<li>Conduct mandatory, role-specific security awareness training (not the checkbox variety—substantive, scenario-based education)</li>
+<li>Implement phishing simulation programs to measure behavioral change</li>
+<li>Establish clear security policies with consequences for violations</li>
+<li>Foster psychological safety so employees report security incidents rather than concealing them</li>
+</ul>
+<p><strong>Third-Party Validation and Continuous Improvement</strong></p>
+<p>Engage qualified cybersecurity firms to conduct independent security audits, vulnerability assessments, and architecture reviews. Regulatory frameworks (SOC 2 compliance, ISO 27001 certification) provide structured benchmarks. The goal is not compliance theater—it&rsquo;s genuine hardening of your security posture.</p>
+<hr>
+<h2 id="the-personal-imperative-individual-data-protection-strategies">The Personal Imperative: Individual Data Protection Strategies</h2>
+<h3 id="understanding-your-personal-attack-surface">Understanding Your Personal Attack Surface</h3>
+<p>While enterprises command larger targets, individuals face equally serious threats. Your personal data—financial credentials, medical histories, social security numbers, authentication factors, online behavioral patterns—is systematically harvested, traded, and weaponized by criminal enterprises. The economics are straightforward: compromised identity credentials sell for $15–$50 on dark web marketplaces. Compromised banking access fetches multiples of that.</p>
+<h3 id="authentication-hardening-and-access-control">Authentication Hardening and Access Control</h3>
+<p><strong>Strong Authentication Mechanisms</strong></p>
+<p>The traditional username-password model has collapsed under its own fragility. Single-factor authentication (SFA) is indefensible. Instead, implement:</p>
+<ul>
+<li><strong>Multi-factor authentication (MFA)</strong>: Require 2-3 authentication factors from distinct categories: something you know (complex, unique passwords), something you have (hardware security keys like YubiKey, authenticator apps), something you are (biometric verification)</li>
+<li><strong>Passkeys and hardware security keys</strong>: Replace password managers and SMS 2FA with public-key cryptography backed by hardware devices. FIDO2/WebAuthn standards eliminate phishing vectors entirely</li>
+<li><strong>Unique, complex passwords</strong>: Generate 16+ character passwords with entropy; leverage reputable password managers (Bitwarden, 1Password, KeePass) to eliminate password reuse across services</li>
+</ul>
+<p>The friction is real. But so is the protection.</p>
+<p><strong>Strategic Data Minimization</strong></p>
+<p>Reduce your attack surface by minimizing what&rsquo;s exposed online. Resist the impulse to populate every optional data field in online forms. Scrutinize privacy policies before providing personal information. Use alternate email addresses and phone numbers for low-trust services. This simple discipline dramatically reduces your value to data brokers and scammers.</p>
+<h3 id="operational-security-vigilance-and-hygiene">Operational Security: Vigilance and Hygiene</h3>
+<p><strong>Threat Detection at Personal Scale</strong></p>
+<ul>
+<li>Verify URLs before clicking—hovering over links reveals the actual destination</li>
+<li>Scrutinize sender addresses and request context before trusting email communications</li>
+<li>Avoid suspicious downloads and peer-to-peer file sharing protocols</li>
+<li>Use browser plugins (uBlock Origin, HTTPS Everywhere) to add defensive layers</li>
+<li>Monitor credit reports quarterly via authorized services to detect fraudulent accounts early</li>
+</ul>
+<h3 id="patch-management-and-software-currency">Patch Management and Software Currency</h3>
+<p>One of the highest-leverage, lowest-friction protections available is keeping your devices current. Software vulnerabilities—zero-days and known CVEs alike—are primary entry points for malware and unauthorized access.</p>
+<ul>
+<li><strong>Operating systems</strong>: Enable automatic security updates on Windows, macOS, and Linux systems</li>
+<li><strong>Applications</strong>: Keep browsers, productivity software, and communication tools patched</li>
+<li><strong>Firmware</strong>: Many users ignore firmware updates for routers and IoT devices—a critical oversight</li>
+<li><strong>End-of-life software</strong>: Decommission obsolete systems that no longer receive security patches</li>
+</ul>
+<p>Delayed patching is essentially leaving your front door unlocked.</p>
+<hr>
+<h2 id="synthesis-data-security-as-foundational-practice">Synthesis: Data Security as Foundational Practice</h2>
+<p>Data security operates across a spectrum—from enterprise architectural decisions to individual digital hygiene. The common thread is this: security requires <strong>proactive commitment</strong>, not reactive scrambling.</p>
+<p>For organizations, this means architecting defense-in-depth systems, conducting regular risk assessments, training personnel, and maintaining security vigilance as an organizational competency. For individuals, it means adopting strong authentication, practicing operational security discipline, and staying current with system patches.</p>
+<p>The threat landscape will continue evolving. New vulnerabilities emerge, threat tactics sophisticate, and social engineering refines itself. But the fundamentals remain constant: identify threats, implement layered controls, monitor continuously, and respond decisively.</p>
+<p>Data security isn&rsquo;t bureaucratic overhead or compliance theater. It&rsquo;s the difference between thriving and suffering significant harm. Approach it with the seriousness it deserves.</p>
+
+        </div>
+
+        
+        
+        <footer class="post-footer">
+            <div class="post-tags">
+                
+                <a href="/tags/security/" class="tag">security</a>
+                
+                <a href="/tags/data/" class="tag">data</a>
+                
+                <a href="/tags/best-practices/" class="tag">best-practices</a>
+                
+            </div>
+        </footer>
+        
     </div>
-  </div>
+</article>
+
+
+<nav class="post-nav">
+    <div class="container">
+        <div class="nav-links">
+            
+            <a href="http://localhost:1313/posts/meshbeacon/" class="nav-prev">
+                <span class="nav-label">← Previous</span>
+                <span class="nav-title">MeshBeacon: Because Your Mesh Network Should Actually DO Something</span>
+            </a>
+            
+            
+            
+        </div>
+    </div>
 </nav>
 
+
+
+
+<section class="related-posts">
+    <div class="container">
+        <h2>More Posts</h2>
+        <div class="posts-grid">
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/muos.jpg" alt="MeshBeacon: Because Your Mesh Network Should Actually DO Something" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="http://localhost:1313/posts/meshbeacon/">MeshBeacon: Because Your Mesh Network Should Actually DO Something</a></h3>
+                    <p class="post-card-date">Jan 15, 2026</p>
+                    <p class="post-card-summary"><h2 id="take-it-make-it-yours">Take It. Make It Yours.</h2>
+<p>MeshBeacon is open source. Every line of it.</p>
+<p>I didn&rsquo;t build this so it could run on one node in San Jose. I built it so it could run everywhere. Fork the repository. Change the coordinates to your city. Add your local weather stations. Point the earthquake monitor at your fault lines. Write a new broadcast module for something I haven&rsquo;t thought of yet.</p>
+<p>The APIs are free. The code is free. The spectrum is shared. The only thing required is the willingness to build something that matters.</p></p>
+                    <a href="http://localhost:1313/posts/meshbeacon/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/meshNodes.jpeg" alt="Meshtastic: Core vs Firmware" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="http://localhost:1313/posts/meshcorevmeshtastic/">Meshtastic: Core vs Firmware</a></h3>
+                    <p class="post-card-date">Dec 20, 2025</p>
+                    <p class="post-card-summary"><p>You know what REALLY grinds my gears? And I mean REALLY makes me want to throw a radio into the ocean? It&rsquo;s when people ask me, &ldquo;Hey, what&rsquo;s the difference between MeshCore and Meshtastic?&rdquo;</p>
+<p>OH, WHERE DO I BEGIN?!</p>
+<p>It&rsquo;s like asking what&rsquo;s the difference between a surgeon and a guy with a chainsaw! Sure, they BOTH make cuts, but ONE of them knows when to STOP CUTTING!</p>
+<p>Let me paint you a picture. You&rsquo;re in the middle of a disaster. Hurricane just took out every cell tower within 200 miles. Your neighbor&rsquo;s house is on fire. You need to communicate. Do you want the mesh network that&rsquo;s sitting there going &ldquo;HELLO! HELLO! I&rsquo;M HERE! DID YOU GET MY HELLO? HERE&rsquo;S ANOTHER HELLO! AND ANOTHER! OH WAIT, LET ME TELL YOU MY POSITION AGAIN!&rdquo; like some kind of radio-powered narcissist at a cocktail party?</p></p>
+                    <a href="http://localhost:1313/posts/meshcorevmeshtastic/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/gpt.jpg" alt="Data Analysis with GPT Models" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="http://localhost:1313/posts/gptdataanalysis/">Data Analysis with GPT Models</a></h3>
+                    <p class="post-card-date">Nov 16, 2025</p>
+                    <p class="post-card-summary"><h2 id="the-aha-moment-that-started-this-journey">The &ldquo;Aha!&rdquo; Moment That Started This Journey</h2>
+<p>You know, I&rsquo;ve spent my career believing that technology should empower everyone, not just the experts. That&rsquo;s why, when I started working with data analytics at Stanford, I kept thinking about my days at Apple Computer, trying to understand a bill of materials in an Excel spreadsheet. Margins up, expenses down—but what did it all <em>mean</em>? What was the story those numbers were trying to tell?</p></p>
+                    <a href="http://localhost:1313/posts/gptdataanalysis/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+        </div>
     </div>
-  </header>
+</section>
 
 
-
-    <main class="pb7" role="main">
-      
-  
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-    <header class="mt4 w-100">
-      <aside class="instapaper_ignoref b helvetica tracked ttu">
-          
-        Posts
-      </aside><div id="sharing" class="mt3 ananke-socials"></div>
-<h1 class="f1 athelas mt3 mb1">Data Security. Not Just For Corporations.</h1>
-      
-      
-      
-      <time class="f6 mv4 dib tracked" datetime="2024-09-11T07:07:07+01:00">September 11, 2024</time>
-      
-
-      
-      
-    </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p><img src="/images/dataSec.jpeg" alt="Data Security"></p>
-<p>In today&rsquo;s digital age, data has become one of the most valuable commodities. From personal information to business secrets, data is essential for individuals and organizations to operate effectively. However, the growing dependence on data also poses significant risks, including cyber attacks, data breaches, and identity theft. Therefore, it is crucial to prioritize data security both on the corporate and personal levels.</p>
-<p>On the Corporate Level</p>
-<p>For businesses, data security is not an optional luxury but a necessity. Companies must protect their intellectual property, customer data, and financial information from cybercriminals who seek to exploit vulnerabilities in their systems. A data breach can have significant consequences, including financial loss, reputational damage, and legal repercussions. Therefore, it is essential for organizations to take proactive measures to ensure data security.</p>
-<p>One of the most effective ways to enhance data security is to implement a robust cybersecurity strategy. This involves identifying potential threats and vulnerabilities, implementing appropriate security controls, and monitoring systems for suspicious activities. Companies should also provide regular training to employees to raise awareness of security threats and promote best practices for data protection. Additionally, companies can partner with cybersecurity experts to conduct regular audits and assessments to identify areas of weakness and improve their security posture.</p>
-<p>On the Personal Level</p>
-<p>Data security is not only a concern for businesses but also for individuals. Personal data, such as financial information, medical records, and online activities, are valuable targets for cybercriminals. Therefore, individuals must take steps to protect their data and safeguard their privacy.</p>
-<p>One of the most effective ways to enhance personal data security is to use strong passwords and two-factor authentication. This helps to prevent unauthorized access to online accounts and reduces the risk of identity theft. Additionally, individuals should be cautious about sharing personal information online and avoid clicking on suspicious links or downloading suspicious files.</p>
-<p>Another critical aspect of personal data security is to keep software and devices up to date with the latest security patches and updates. This helps to prevent security vulnerabilities from being exploited by hackers.</p>
-<p>Data security is essential both on the corporate and personal levels. Organizations and individuals must take proactive measures to protect their data from cybercriminals who seek to exploit vulnerabilities in their systems. By implementing effective security controls, providing regular training, and staying vigilant about potential threats, companies and individuals can reduce the risk of data breaches and safeguard their privacy. Ultimately, data security is not just a matter of compliance but a critical aspect of responsible data management.</p>
-<ul class="pa0">
-  
-</ul>
-<div class="mt6 instapaper_ignoref">
-      
-      
-      </div>
-    </div>
-
-    <aside class="w-30-l mt6-l">
-
-
-
-
-</aside>
-
-  </article>
 
     </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
-    &copy;  Sal Mancuso 2026 
-  </a>
-    <div><div class="ananke-socials"></div>
-</div>
-  </div>
-</footer>
 
-  </body>
+    
+    <footer>
+        <div class="container">
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/posts">Posts</a></li>
+                    <li><a href="/publications">Work/Publications</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Interests</h3>
+                <ul>
+                    <li><a href="https://makerworld.com/" target="_blank">Maker World</a></li>
+                    <li><a href="https://www.adafruit.com/" target="_blank">Adafruit</a></li>
+                    <li><a href="https://sanjosesimplex.groups.io/g/main" target="_blank">K6SJS San Jose Simplex</a></li>
+                    <li><a href="https://www.kennedymeadows.com/" target="_blank">Kennedy Meadows Packstation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="https://it-humsci.stanford.edu/people/sal-mancuso" target="_blank">Stanford</a></li>
+                    <li><a href="https://github.com/salmancuso" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/salmancuso/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://www.qrz.com/db/W6SAL" target="_blank">QRZ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sal Mancuso. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+    
+    
+    <script src="/js/topo-animator.js"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Entrepreneurship on Sal Mancuso</title>
+    <link>http://localhost:1313/tags/entrepreneurship/</link>
+    <description>Recent content in Entrepreneurship on Sal Mancuso</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Sep 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/entrepreneurship/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2017 State of Latino Entrepreneurship</title>
+      <link>http://localhost:1313/publications/sole/</link>
+      <pubDate>Sun, 11 Sep 2016 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/sole/</guid>
+      <description>&lt;p&gt;My contribution to this report/publication was the development of intuitive and concise data visualizations; visualizations that highlighted Latino entrepreneurs&amp;rsquo; narrative. I leveraged Tableau and Python to create the visualizations while utilizing various data sources, including the U.S. Census report and Qualtrics surveys. View the publication.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.gsb.stanford.edu/faculty-research/publications/state-latino-entrepreneurship-2017&#34;&gt;View the publication.&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

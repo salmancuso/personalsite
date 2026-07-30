@@ -1,9 +1,10 @@
-+++
-title = """COVID-19 and Family"""
-date = 2020-08-27T07:07:07+01:00
-draft = false
-+++
-![Virus Covid](/images/covidBanner.jpg)
+---
+title: "COVID-19's Impact on Family"
+date: 2021-03-20
+description: "Reflections on how the pandemic changed our family dynamics"
+image: "/images/covidBanner.jpg"
+tags: ["covid", "family", "personal"]
+---
 
 I'm a father of three exceptional children (ages 17, 10, and 7.5 years old) for those who don't know me. In the "before times," we often found ourselves carting children from one event to another, from Cub Scouts to Soccer to Football to Softball to Track and Feild. Three kids who had an extraordinary post-school life that often resulted in a lack of family time. Frequently, my wife would be taking one child in one direction while I would be driving another to a different objective; talk about a family of ships passing in the night.
 
