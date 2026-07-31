@@ -2,136 +2,136 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Sal Mancuso</title>
-    <link>https://salmancuso.com/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on Sal Mancuso</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 08 Jun 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://salmancuso.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Data Security Best Practices</title>
-      <link>https://salmancuso.com/posts/datasec/</link>
+      <link>http://localhost:1313/posts/datasec/</link>
       <pubDate>Mon, 08 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/posts/datasec/</guid>
+      <guid>http://localhost:1313/posts/datasec/</guid>
       <description>&lt;h2 id=&#34;introduction-the-strategic-imperative-of-data-security&#34;&gt;Introduction: The Strategic Imperative of Data Security&lt;/h2&gt;&#xA;&lt;p&gt;In today&amp;rsquo;s hyperconnected digital ecosystem, data has transcended beyond mere commodity status—it&amp;rsquo;s become the operational lifeblood and competitive moat of modern enterprises. From personally identifiable information (PII) and healthcare records to intellectual property, trade secrets, and financial ledgers, data assets underpin organizational resilience and individual privacy alike. Yet this critical dependence on data infrastructure introduces a parallel complexity: the expanding attack surface and sophistication of threat actors. Cyber attacks, data exfiltration events, ransomware deployments, and identity theft schemes have evolved from theoretical risks into demonstrable existential threats. The stakes are real, the vulnerabilities are systemic, and frankly, reactive approaches no longer cut it. Prioritizing data security—both at the enterprise and personal level—isn&amp;rsquo;t optional. It&amp;rsquo;s the foundation of operational integrity.&lt;/p&gt;</description>
     </item>
     <item>
       <title>MeshBeacon: Because Your Mesh Network Should Actually DO Something</title>
-      <link>https://salmancuso.com/posts/meshbeacon/</link>
+      <link>http://localhost:1313/posts/meshbeacon/</link>
       <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/posts/meshbeacon/</guid>
+      <guid>http://localhost:1313/posts/meshbeacon/</guid>
       <description>&lt;h2 id=&#34;take-it-make-it-yours&#34;&gt;Take It. Make It Yours.&lt;/h2&gt;&#xA;&lt;p&gt;MeshBeacon is open source. Every line of it.&lt;/p&gt;&#xA;&lt;p&gt;I didn&amp;rsquo;t build this so it could run on one node in San Jose. I built it so it could run everywhere. Fork the repository. Change the coordinates to your city. Add your local weather stations. Point the earthquake monitor at your fault lines. Write a new broadcast module for something I haven&amp;rsquo;t thought of yet.&lt;/p&gt;&#xA;&lt;p&gt;The APIs are free. The code is free. The spectrum is shared. The only thing required is the willingness to build something that matters.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Meshtastic: Core vs Firmware</title>
-      <link>https://salmancuso.com/posts/meshcorevmeshtastic/</link>
+      <link>http://localhost:1313/posts/meshcorevmeshtastic/</link>
       <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/posts/meshcorevmeshtastic/</guid>
+      <guid>http://localhost:1313/posts/meshcorevmeshtastic/</guid>
       <description>&lt;p&gt;You know what REALLY grinds my gears? And I mean REALLY makes me want to throw a radio into the ocean? It&amp;rsquo;s when people ask me, &amp;ldquo;Hey, what&amp;rsquo;s the difference between MeshCore and Meshtastic?&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;OH, WHERE DO I BEGIN?!&lt;/p&gt;&#xA;&lt;p&gt;It&amp;rsquo;s like asking what&amp;rsquo;s the difference between a surgeon and a guy with a chainsaw! Sure, they BOTH make cuts, but ONE of them knows when to STOP CUTTING!&lt;/p&gt;&#xA;&lt;p&gt;Let me paint you a picture. You&amp;rsquo;re in the middle of a disaster. Hurricane just took out every cell tower within 200 miles. Your neighbor&amp;rsquo;s house is on fire. You need to communicate. Do you want the mesh network that&amp;rsquo;s sitting there going &amp;ldquo;HELLO! HELLO! I&amp;rsquo;M HERE! DID YOU GET MY HELLO? HERE&amp;rsquo;S ANOTHER HELLO! AND ANOTHER! OH WAIT, LET ME TELL YOU MY POSITION AGAIN!&amp;rdquo; like some kind of radio-powered narcissist at a cocktail party?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Data Analysis with GPT Models</title>
-      <link>https://salmancuso.com/posts/gptdataanalysis/</link>
+      <link>http://localhost:1313/posts/gptdataanalysis/</link>
       <pubDate>Sun, 16 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/posts/gptdataanalysis/</guid>
+      <guid>http://localhost:1313/posts/gptdataanalysis/</guid>
       <description>&lt;h2 id=&#34;the-aha-moment-that-started-this-journey&#34;&gt;The &amp;ldquo;Aha!&amp;rdquo; Moment That Started This Journey&lt;/h2&gt;&#xA;&lt;p&gt;You know, I&amp;rsquo;ve spent my career believing that technology should empower everyone, not just the experts. That&amp;rsquo;s why, when I started working with data analytics at Stanford, I kept thinking about my days at Apple Computer, trying to understand a bill of materials in an Excel spreadsheet. Margins up, expenses down—but what did it all &lt;em&gt;mean&lt;/em&gt;? What was the story those numbers were trying to tell?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Business Intelligence and AI</title>
-      <link>https://salmancuso.com/posts/biai/</link>
+      <link>http://localhost:1313/posts/biai/</link>
       <pubDate>Sat, 15 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/posts/biai/</guid>
+      <guid>http://localhost:1313/posts/biai/</guid>
       <description>&lt;p&gt;In the rapidly evolving landscape of digital transformation, a phenomenon of profound significance has taken center stage: the integration of Artificial Intelligence (AI) into the realm of Business Intelligence (BI). This integration has emerged as a formidable force that not only propels strategic innovation but also fundamentally reshapes the very fabric of how organizations operate, particularly in the face of mounting complexities stemming from data proliferation. As companies grapple with the challenges of extracting meaningful insights from vast, diverse, and often disorganized datasets, AI stands out as a transformative agent. It enhances BI&amp;rsquo;s capabilities, fundamentally altering the ways in which organizations glean insights, make informed decisions, and strategically maintain competitive advantages in their respective markets. This document aims to provide an in-depth exploration of the profound impact that AI has on BI, drawing insights from a seasoned Silicon Valley perspective and highlighting noteworthy examples that underscore pivotal advancements along with their practical implications.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Data Visualization with Pandas</title>
-      <link>https://salmancuso.com/posts/pandasviz/</link>
+      <link>http://localhost:1313/posts/pandasviz/</link>
       <pubDate>Tue, 15 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/posts/pandasviz/</guid>
+      <guid>http://localhost:1313/posts/pandasviz/</guid>
       <description>&lt;p&gt;Python is one of the most popular programming languages for data analysis and visualization, and the Pandas library is one of the most widely used tools for manipulating and analyzing data in Python. In this Posts post, we&amp;rsquo;ll take a closer look at Pandas and how to use it to create visualizations in Matplotlib.&lt;/p&gt;&#xA;&lt;p&gt;Pandas is a powerful library that provides data structures for efficiently storing and manipulating large datasets. It provides a number of data structures, including Series (1-dimensional) and DataFrame (2-dimensional), that make it easy to handle and manipulate data in Python. Pandas also provides a variety of functions for cleaning, transforming, and analyzing data.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building Private GPT Systems</title>
-      <link>https://salmancuso.com/posts/privategpt/</link>
+      <link>http://localhost:1313/posts/privategpt/</link>
       <pubDate>Sat, 22 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/posts/privategpt/</guid>
+      <guid>http://localhost:1313/posts/privategpt/</guid>
       <description>&lt;p&gt;Deploying a private GPT instance offers significant advantages, such as enhanced data privacy, compliance with industry regulations, and the ability to tailor the model to specific needs. In this comprehensive guide, we will delve into the process of setting up a private GPT instance, complete with code examples and a detailed step-by-step walkthrough.&lt;/p&gt;&#xA;&lt;h2 id=&#34;benefits-of-a-private-gpt-instance&#34;&gt;Benefits of a Private GPT Instance&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Enhanced Data Privacy and Security:&lt;/strong&gt; Processing data locally ensures that sensitive information remains within your control.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Compliance with Industry Regulations:&lt;/strong&gt; Customizing the deployment to adhere to specific regulatory requirements.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Customization:&lt;/strong&gt; Fine-tuning the model for specific use cases and applications.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Low-Latency Responses:&lt;/strong&gt; Reduced dependency on external servers, making it ideal for real-time applications.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Offline Usage:&lt;/strong&gt; Capability to operate without an internet connection.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cost Control:&lt;/strong&gt; Eliminates dependence on external cloud services, offering a cost-effective solution.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Consistent Performance:&lt;/strong&gt; Dedicated resources ensure reliable performance and minimize third-party API dependencies.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Critical Data Scenarios:&lt;/strong&gt; Especially beneficial in contexts requiring data sensitivity, customizations, regulatory compliance, and resource allocation.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Setting up a private GPT instance necessitates technical expertise, particularly in areas such as deployment management, security, and ongoing maintenance.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Automating Data Workflows with Apache Airflow</title>
-      <link>https://salmancuso.com/posts/appacheairflow/</link>
+      <link>http://localhost:1313/posts/appacheairflow/</link>
       <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/posts/appacheairflow/</guid>
+      <guid>http://localhost:1313/posts/appacheairflow/</guid>
       <description>&lt;p&gt;In the realm of data engineering, the ability to automate workflows is a game changer. Imagine waking up every morning with the assurance that your data pipelines have been seamlessly executed, data has flowed flawlessly from one system to another, and your business insights are ready for you to act on. No more late-night database updates or cross-eyed mornings debugging cron jobs. Enter Apache Airflow, the Swiss Army knife for automating and orchestrating complex workflows.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Culture and Politics</title>
-      <link>https://salmancuso.com/posts/cultpolitics/</link>
+      <link>http://localhost:1313/posts/cultpolitics/</link>
       <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/posts/cultpolitics/</guid>
+      <guid>http://localhost:1313/posts/cultpolitics/</guid>
       <description>&lt;p&gt;In recent years, my political observations have led me to a rather disheartening conclusion: the leaders we elect, regardless of their political affiliation, often appear to crave power above all else. This desire for dominance manifests in a refusal to collaborate across party lines, breeding a culture of division and distrust. This Posts post aims to explore the striking resemblance between blind political allegiance and cult-like behavior, as well as how this polarization has eroded our national discourse. Reflecting on historical periods of political division, we can also glean valuable lessons for healing and unity.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Finding Middle Ground</title>
-      <link>https://salmancuso.com/posts/middle/</link>
+      <link>http://localhost:1313/posts/middle/</link>
       <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/posts/middle/</guid>
+      <guid>http://localhost:1313/posts/middle/</guid>
       <description>&lt;p&gt;As a moderate, I prioritize balance and pragmatism in my political views, understanding that extreme positions on either end of the spectrum can lead to unintended consequences. While some may perceive my stance as indecisive, I believe that moderation is essential for achieving well-rounded governance that serves the diverse needs of our society.&lt;/p&gt;&#xA;&lt;p&gt;One of the fundamental reasons I identify as socially liberal and fiscally conservative is my appreciation for personal freedom and individual responsibility. I firmly believe in individuals having the autonomy to make personal life choices without undue interference from the government or other institutions. This includes supporting liberal social policies such as marriage equality, women’s rights, reproductive rights, and criminal justice reform.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The Modern Data Engineer</title>
-      <link>https://salmancuso.com/posts/dataengineer/</link>
+      <link>http://localhost:1313/posts/dataengineer/</link>
       <pubDate>Sat, 15 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/posts/dataengineer/</guid>
+      <guid>http://localhost:1313/posts/dataengineer/</guid>
       <description>&lt;p&gt;As the digital economy continues to expand, driven by vast amounts of data, the roles of Business Intelligence (BI) Analysts and Data Engineers have become increasingly pivotal. For those looking to thrust themselves into these dynamic and rewarding careers, it requires a multidimensional approach encompassing skill acquisition, portfolio development, networking, and continuous learning.&lt;/p&gt;&#xA;&lt;p&gt;This comprehensive guide delves into the quintessential elements that will aid aspiring BI Analysts and Data Engineers in effectively navigating their career journey. Whether you’re a college graduate, a mid-career professional seeking to pivot, or a data enthusiast passionate about making impactful, data-driven decisions, these insights will be indispensable to your professional ascent.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The Art of Enjoying Cigars</title>
-      <link>https://salmancuso.com/posts/cigars/</link>
+      <link>http://localhost:1313/posts/cigars/</link>
       <pubDate>Sat, 10 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/posts/cigars/</guid>
+      <guid>http://localhost:1313/posts/cigars/</guid>
       <description>&lt;p&gt;Here I am, early 40&amp;rsquo;s, and I&amp;rsquo;ve transitioned from the uncultured beers of my 20&amp;rsquo;s (ahem Mickeys and Budweiser) to drinking boutique craft IPAs and indulging with Scotchs that will hurt your wallet and make grown men wince from the aromatic earthiness. I&amp;rsquo;ve evolved from jankie boxed wines to submitting to Silver Oak, D.R. Stephens, and my personal favorite, Ridge Vineyards. One day, perhaps five years ago, woke up, and some semblance of sophistication took over my life. I&amp;rsquo;ve loved smoking pipes and cigars for the majority of my adult life, but it wasn&amp;rsquo;t until five years ago that I had a truly magnificent cigar. The flavors were spice yet sweet, smooth and velvety; my first Cuban cigar was enjoyed over a campfire on a fishing trip in the Sierra Nevada Mountains, I haven&amp;rsquo;t looked back since. But alas, buying Cuban cigars is difficult (still) and expensive; while helping a friend find decent cigars, I found myself curating a decent list of my goto smokes.&lt;/p&gt;</description>
     </item>
     <item>
       <title>SQLite for Data Engineering</title>
-      <link>https://salmancuso.com/posts/sqlite/</link>
+      <link>http://localhost:1313/posts/sqlite/</link>
       <pubDate>Sun, 08 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/posts/sqlite/</guid>
+      <guid>http://localhost:1313/posts/sqlite/</guid>
       <description>&lt;p&gt;SQLite is a powerful relational database management system that is widely used for its simplicity, speed, reliability, and versatility; making it ideal for a wide range of applications and use cases. Some of the key reasons why SQLite is considered powerful are:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Lightweight and easy to use: SQLite is a lightweight and self-contained database engine that requires minimal configuration and setup. It is also0 very easy to use and does not require a dedicated server or administrator.&lt;/li&gt;&#xA;&lt;li&gt;High performance: SQLite is designed to be fast and efficient, with a small memory footprint and minimal disk I/O. It is optimized for read-heavy workloads, making it ideal for applications that require fast data retrieval.&lt;/li&gt;&#xA;&lt;li&gt;ACID compliance: SQLite is fully ACID-compliant, which means that it provides atomicity, consistency, isolation, and durability guarantees for transactions. This makes it suitable for applications that require high data integrity and reliability.&lt;/li&gt;&#xA;&lt;li&gt;Cross-platform compatibility: SQLite is available on virtually all operating systems, including Windows, Mac OS, Linux, Android, and iOS. It also supports a wide range of programming languages, including C, C++, Java, Python, and PHP.&lt;/li&gt;&#xA;&lt;li&gt;Wide range of features: Despite its small size, SQLite provides a wide range of features, including support for complex queries, indexing, triggers, and full-text search. It also supports encryption, which makes it suitable for storing sensitive data.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;In this tutorial, we will cover the basics of using SQLite for data storage.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building LoRa Mesh Networks</title>
-      <link>https://salmancuso.com/posts/loramesh/</link>
+      <link>http://localhost:1313/posts/loramesh/</link>
       <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/posts/loramesh/</guid>
+      <guid>http://localhost:1313/posts/loramesh/</guid>
       <description>&lt;p&gt;In our increasingly interconnected digital world, networking has progressed far beyond conventional wired and centralized configurations. Leading this transformation are LoRa Meshtastic networks—a flexible, robust, and sustainable solution for long-distance communication. Let&amp;rsquo;s explore the intricacies of this network, its advantages, and the essential equipment needed to utilize its full potential.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-a-lora-meshtastic-network&#34;&gt;What is a LoRa Meshtastic Network?&lt;/h2&gt;&#xA;&lt;p&gt;LoRa (Long Range) is a spread-spectrum modulation technique derived from chirp spread spectrum (CSS) technology. It is known for its capability to deliver exceptionally long-range data transmission with low power consumption. Meshtastic, an open-source project, leverages LoRa technology to create a decentralized mesh network. This empowers users to exchange messages and relay data over extensive distances without relying on conventional telecommunication infrastructures.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Data Transfer Techniques and Tools</title>
-      <link>https://salmancuso.com/posts/datatransfer/</link>
+      <link>http://localhost:1313/posts/datatransfer/</link>
       <pubDate>Mon, 10 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/posts/datatransfer/</guid>
+      <guid>http://localhost:1313/posts/datatransfer/</guid>
       <description>&lt;p&gt;Are you aspiring to be a Data Engineer or Data Scientist? Welcome to an exclusive club where the real journey begins with acquiring deep domain knowledge, particularly about one of the most critical facets of data management: the transfer of substantial datasets. This guide aims to introduce you to advanced data transfer techniques, integral tools, and best practices that make up a data engineer&amp;rsquo;s arsenal.&lt;/p&gt;&#xA;&lt;p&gt;We have all heard the tales of engineers manipulating massive datasets in today&amp;rsquo;s rapidly evolving technological landscape. Data Engineers (DEs), the unsung heroes in the data science ecosystem, form the backbone of robust research, analytics, and data science operations. Without the diligence and expertise of DEs, the field of data science would be virtually nonexistent. Analogically, data engineers can be thought of as the bass guitarists in a rock band, providing the foundational rhythm and melodic complexity that propels the band forward. Alternatively, they are akin to Dwight Schrute supporting Michael Scott in &amp;ldquo;The Office&amp;rdquo;. While many may aspire to be the lead singer (data scientist), they often overlook the crucial support roles like that of a data engineer. People frequently ask, &amp;ldquo;What is the first step in becoming a data engineer?&amp;rdquo; My answer invariably focuses on mastering data transfer techniques. With an array of options available, I will expound upon the methodologies I utilize in my professional practice.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Git for Data Engineers</title>
-      <link>https://salmancuso.com/posts/git/</link>
+      <link>http://localhost:1313/posts/git/</link>
       <pubDate>Fri, 12 May 2023 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/posts/git/</guid>
+      <guid>http://localhost:1313/posts/git/</guid>
       <description>&lt;p&gt;In recent years, the importance of repositories like GitHub has become increasingly apparent in the tech industry. Platforms such as GitHub, GitLab, and BitBucket are web-based hosting services that provide version control and collaboration features for software development projects. These platforms allow developers to store and manage their code, track changes, collaborate with others, and contribute to open-source projects. In this expanded article, we&amp;rsquo;ll deeply discuss the significance of repositories like GitHub and provide comprehensive instructions on how to use a repository effectively.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Is Amateur Radio Dying?</title>
-      <link>https://salmancuso.com/posts/ham/</link>
+      <link>http://localhost:1313/posts/ham/</link>
       <pubDate>Sun, 17 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/posts/ham/</guid>
+      <guid>http://localhost:1313/posts/ham/</guid>
       <description>&lt;p&gt;When my dad gave me my first police scanner, I was ten years old. For me, it opened up the world of radio. I remember spending hours programming an analog police scanner to the frequencies of my local police, fire, and government municipalities. It didn&amp;rsquo;t matter what I heard; just the enjoyment of the listening created this weird nerdy creature that I am today. I fondly remember listening to the astronauts cruising through the outer reaches of the atmosphere or conducting spacewalks to repair some damage to the international space station. I recall listening to the police action or the San Jose fire department braving a burning building. It gave me great pleasure to tune in to the local airports to hear the planes taking off or landing. For me, the radio was a thing that gave me simple pleasures.&lt;/p&gt;</description>
     </item>
     <item>
       <title>COVID-19&#39;s Impact on Family</title>
-      <link>https://salmancuso.com/posts/covidfamily/</link>
+      <link>http://localhost:1313/posts/covidfamily/</link>
       <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/posts/covidfamily/</guid>
+      <guid>http://localhost:1313/posts/covidfamily/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m a father of three exceptional children (ages 17, 10, and 7.5 years old) for those who don&amp;rsquo;t know me. In the &amp;ldquo;before times,&amp;rdquo; we often found ourselves carting children from one event to another, from Cub Scouts to Soccer to Football to Softball to Track and Feild. Three kids who had an extraordinary post-school life that often resulted in a lack of family time. Frequently, my wife would be taking one child in one direction while I would be driving another to a different objective; talk about a family of ships passing in the night.&lt;/p&gt;</description>
     </item>
   </channel>

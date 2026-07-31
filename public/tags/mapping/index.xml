@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mapping on Sal Mancuso</title>
-    <link>https://salmancuso.com/tags/mapping/</link>
+    <link>http://localhost:1313/tags/mapping/</link>
     <description>Recent content in Mapping on Sal Mancuso</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 11 Sep 2019 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://salmancuso.com/tags/mapping/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/mapping/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Discussion of Opportunity Zones</title>
-      <link>https://salmancuso.com/publications/oppzones/</link>
+      <link>http://localhost:1313/publications/oppzones/</link>
       <pubDate>Wed, 11 Sep 2019 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/publications/oppzones/</guid>
+      <guid>http://localhost:1313/publications/oppzones/</guid>
       <description>&lt;p&gt;I was asked by Stanford Univesity Professor Rebecca Lester to build a Tableau based tool that would aggregate Opportunity Zones, which were defined in the &amp;ldquo;Tax Cuts and Jobs Act&amp;rdquo; of 2017. Challenges with this project were mainly around the limitations of Tableau not supporting U.S. Census tract data. Using python, I developed a polygon shapefile of all U.S. Census Tracts, a shapefile representing nearly seven million data points. After getting Tableau to construct the track polygons, I easily overlay the Opportunity Zone information into an interactive map.&lt;/p&gt;</description>
     </item>
   </channel>

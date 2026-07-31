@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sqlite on Sal Mancuso</title>
-    <link>https://salmancuso.com/tags/sqlite/</link>
+    <link>http://localhost:1313/tags/sqlite/</link>
     <description>Recent content in Sqlite on Sal Mancuso</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 08 Oct 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://salmancuso.com/tags/sqlite/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/sqlite/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SQLite for Data Engineering</title>
-      <link>https://salmancuso.com/posts/sqlite/</link>
+      <link>http://localhost:1313/posts/sqlite/</link>
       <pubDate>Sun, 08 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/posts/sqlite/</guid>
+      <guid>http://localhost:1313/posts/sqlite/</guid>
       <description>&lt;p&gt;SQLite is a powerful relational database management system that is widely used for its simplicity, speed, reliability, and versatility; making it ideal for a wide range of applications and use cases. Some of the key reasons why SQLite is considered powerful are:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Lightweight and easy to use: SQLite is a lightweight and self-contained database engine that requires minimal configuration and setup. It is also0 very easy to use and does not require a dedicated server or administrator.&lt;/li&gt;&#xA;&lt;li&gt;High performance: SQLite is designed to be fast and efficient, with a small memory footprint and minimal disk I/O. It is optimized for read-heavy workloads, making it ideal for applications that require fast data retrieval.&lt;/li&gt;&#xA;&lt;li&gt;ACID compliance: SQLite is fully ACID-compliant, which means that it provides atomicity, consistency, isolation, and durability guarantees for transactions. This makes it suitable for applications that require high data integrity and reliability.&lt;/li&gt;&#xA;&lt;li&gt;Cross-platform compatibility: SQLite is available on virtually all operating systems, including Windows, Mac OS, Linux, Android, and iOS. It also supports a wide range of programming languages, including C, C++, Java, Python, and PHP.&lt;/li&gt;&#xA;&lt;li&gt;Wide range of features: Despite its small size, SQLite provides a wide range of features, including support for complex queries, indexing, triggers, and full-text search. It also supports encryption, which makes it suitable for storing sensitive data.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;In this tutorial, we will cover the basics of using SQLite for data storage.&lt;/p&gt;</description>
     </item>
   </channel>
