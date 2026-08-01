@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Version-Control on Sal Mancuso</title>
-    <link>http://localhost:1313/tags/version-control/</link>
+    <link>https://salmancuso.com/tags/version-control/</link>
     <description>Recent content in Version-Control on Sal Mancuso</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 12 May 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/version-control/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://salmancuso.com/tags/version-control/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git for Data Engineers</title>
-      <link>http://localhost:1313/posts/git/</link>
+      <link>https://salmancuso.com/posts/git/</link>
       <pubDate>Fri, 12 May 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/git/</guid>
+      <guid>https://salmancuso.com/posts/git/</guid>
       <description>&lt;p&gt;In recent years, the importance of repositories like GitHub has become increasingly apparent in the tech industry. Platforms such as GitHub, GitLab, and BitBucket are web-based hosting services that provide version control and collaboration features for software development projects. These platforms allow developers to store and manage their code, track changes, collaborate with others, and contribute to open-source projects. In this expanded article, we&amp;rsquo;ll deeply discuss the significance of repositories like GitHub and provide comprehensive instructions on how to use a repository effectively.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mesh-Networks on Sal Mancuso</title>
-    <link>http://localhost:1313/tags/mesh-networks/</link>
+    <link>https://salmancuso.com/tags/mesh-networks/</link>
     <description>Recent content in Mesh-Networks on Sal Mancuso</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 15 Jan 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/mesh-networks/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://salmancuso.com/tags/mesh-networks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MeshBeacon: Because Your Mesh Network Should Actually DO Something</title>
-      <link>http://localhost:1313/posts/meshbeacon/</link>
+      <link>https://salmancuso.com/posts/meshbeacon/</link>
       <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/meshbeacon/</guid>
+      <guid>https://salmancuso.com/posts/meshbeacon/</guid>
       <description>&lt;h2 id=&#34;take-it-make-it-yours&#34;&gt;Take It. Make It Yours.&lt;/h2&gt;&#xA;&lt;p&gt;MeshBeacon is open source. Every line of it.&lt;/p&gt;&#xA;&lt;p&gt;I didn&amp;rsquo;t build this so it could run on one node in San Jose. I built it so it could run everywhere. Fork the repository. Change the coordinates to your city. Add your local weather stations. Point the earthquake monitor at your fault lines. Write a new broadcast module for something I haven&amp;rsquo;t thought of yet.&lt;/p&gt;&#xA;&lt;p&gt;The APIs are free. The code is free. The spectrum is shared. The only thing required is the willingness to build something that matters.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building LoRa Mesh Networks</title>
-      <link>http://localhost:1313/posts/loramesh/</link>
+      <link>https://salmancuso.com/posts/loramesh/</link>
       <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/loramesh/</guid>
+      <guid>https://salmancuso.com/posts/loramesh/</guid>
       <description>&lt;p&gt;In our increasingly interconnected digital world, networking has progressed far beyond conventional wired and centralized configurations. Leading this transformation are LoRa Meshtastic networks—a flexible, robust, and sustainable solution for long-distance communication. Let&amp;rsquo;s explore the intricacies of this network, its advantages, and the essential equipment needed to utilize its full potential.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-a-lora-meshtastic-network&#34;&gt;What is a LoRa Meshtastic Network?&lt;/h2&gt;&#xA;&lt;p&gt;LoRa (Long Range) is a spread-spectrum modulation technique derived from chirp spread spectrum (CSS) technology. It is known for its capability to deliver exceptionally long-range data transmission with low power consumption. Meshtastic, an open-source project, leverages LoRa technology to create a decentralized mesh network. This empowers users to exchange messages and relay data over extensive distances without relying on conventional telecommunication infrastructures.&lt;/p&gt;</description>
     </item>
   </channel>

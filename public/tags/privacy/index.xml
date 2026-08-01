@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Privacy on Sal Mancuso</title>
-    <link>http://localhost:1313/tags/privacy/</link>
+    <link>https://salmancuso.com/tags/privacy/</link>
     <description>Recent content in Privacy on Sal Mancuso</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 22 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/privacy/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://salmancuso.com/tags/privacy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Building Private GPT Systems</title>
-      <link>http://localhost:1313/posts/privategpt/</link>
+      <link>https://salmancuso.com/posts/privategpt/</link>
       <pubDate>Sat, 22 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/privategpt/</guid>
+      <guid>https://salmancuso.com/posts/privategpt/</guid>
       <description>&lt;p&gt;Deploying a private GPT instance offers significant advantages, such as enhanced data privacy, compliance with industry regulations, and the ability to tailor the model to specific needs. In this comprehensive guide, we will delve into the process of setting up a private GPT instance, complete with code examples and a detailed step-by-step walkthrough.&lt;/p&gt;&#xA;&lt;h2 id=&#34;benefits-of-a-private-gpt-instance&#34;&gt;Benefits of a Private GPT Instance&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Enhanced Data Privacy and Security:&lt;/strong&gt; Processing data locally ensures that sensitive information remains within your control.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Compliance with Industry Regulations:&lt;/strong&gt; Customizing the deployment to adhere to specific regulatory requirements.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Customization:&lt;/strong&gt; Fine-tuning the model for specific use cases and applications.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Low-Latency Responses:&lt;/strong&gt; Reduced dependency on external servers, making it ideal for real-time applications.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Offline Usage:&lt;/strong&gt; Capability to operate without an internet connection.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cost Control:&lt;/strong&gt; Eliminates dependence on external cloud services, offering a cost-effective solution.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Consistent Performance:&lt;/strong&gt; Dedicated resources ensure reliable performance and minimize third-party API dependencies.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Critical Data Scenarios:&lt;/strong&gt; Especially beneficial in contexts requiring data sensitivity, customizations, regulatory compliance, and resource allocation.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Setting up a private GPT instance necessitates technical expertise, particularly in areas such as deployment management, security, and ongoing maintenance.&lt;/p&gt;</description>
     </item>
   </channel>
