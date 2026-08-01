@@ -2,6 +2,27 @@
    PAGE LAYOUTS - Posts, Publications, etc.
    ========================================== */
 
+/* ==========================================
+   GLOBAL TYPOGRAPHY
+   ========================================== */
+
+p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #C0B8B0;
+    margin-bottom: 1.5rem;
+}
+
+/* Small text for metadata/descriptions */
+.small-text,
+.text-muted {
+    font-size: 0.9rem;
+    color: #A39A8F;
+}
+
+
+
+
 /* Page Header */
 .page-header {
     text-align: center;
@@ -130,7 +151,7 @@
 
 .post-card-summary {
     color: #A39A8F;
-    font-size: 0.85rem;
+    font-size: 1rem;
     line-height: 1.4;
     margin-bottom: 0.8rem;
     flex-grow: 1;
@@ -499,7 +520,7 @@
 
 .pub-summary {
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.5;
     margin-bottom: 1rem;
     flex-grow: 1;
