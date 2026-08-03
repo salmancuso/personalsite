@@ -259,9 +259,28 @@
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
+@media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            /* Stack the brand name and the menu */
+            nav .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            /* Allow the links to wrap onto new lines if needed */
+            .nav-menu {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+
             nav a {
-                margin: 0 1rem;
+                margin: 0 0.5rem;
+                font-size: 0.95rem; /* Slightly smaller for mobile fitting */
             }
 
             .page-title {
