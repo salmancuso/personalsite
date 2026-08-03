@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Building infrastructure. Living outside. Communicating worldwide.">
@@ -104,23 +104,170 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: nowrap;
+        }
+
+        .nav-brand {
+            font-family: Georgia, serif;
+            font-size: 1.25rem;
+            margin: 0 !important;
+            flex-shrink: 0;
+            color: var(--text-light) !important;
+            font-weight: 500;
+        }
+
+        .nav-brand:hover {
+            color: var(--accent) !important;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 0;
+            align-items: center;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
         }
 
         nav a {
             color: var(--text-light);
             font-weight: 500;
             margin: 0 1.5rem;
-        }
-
-        nav a:first-child {
-            font-family: Georgia, serif;
-            font-size: 1.25rem;
-            margin: 0;
-            margin-right: auto;
+            white-space: nowrap;
+            display: inline-block;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
             color: var(--accent);
+        }
+
+         
+        @media (max-width: 900px) {
+            nav {
+                padding: 0.85rem 0;
+            }
+
+            .nav-menu {
+                gap: 0;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+            }
+
+            nav a {
+                margin: 0.5rem 1rem;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 0.75rem 0;
+            }
+
+            nav .container {
+                gap: 0.5rem;
+            }
+
+            .nav-brand {
+                font-size: 1.1rem;
+            }
+
+            nav a {
+                margin: 0.4rem 0.75rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 650px) {
+            nav {
+                padding: 0.65rem 0;
+            }
+
+            nav .container {
+                gap: 0.25rem;
+            }
+
+            .nav-menu {
+                justify-content: flex-end;
+                gap: 0;
+            }
+
+            .nav-brand {
+                font-size: 1rem;
+                margin-right: 0.5rem !important;
+            }
+
+            nav a {
+                margin: 0 0.4rem;
+                font-size: 0.85rem;
+                padding: 0 0.2rem;
+            }
+        }
+
+        @media (max-width: 550px) {
+            nav {
+                padding: 0.6rem 0;
+            }
+
+            nav .container {
+                gap: 0.15rem;
+            }
+
+            .nav-brand {
+                font-size: 0.95rem;
+                margin-right: 0.35rem !important;
+            }
+
+            .nav-menu {
+                gap: 0;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+            }
+
+            nav a {
+                margin: 0 0.3rem;
+                font-size: 0.8rem;
+                padding: 0.15rem 0.25rem;
+            }
+
+             
+            nav a:nth-child(4) {
+                 
+                flex-basis: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 0.5rem 0;
+            }
+
+            nav .container {
+                gap: 0.1rem;
+                padding: 0 1rem;
+            }
+
+            .nav-brand {
+                font-size: 0.9rem;
+                margin-right: 0.25rem !important;
+            }
+
+            .nav-menu {
+                gap: 0;
+                flex: 1;
+                justify-content: flex-end;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                margin: 0 0.2rem;
+                font-size: 0.75rem;
+                padding: 0.1rem 0.2rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
         }
 
          
@@ -257,36 +404,31 @@
         }
 
          
-@media (max-width: 768px) {
+        @media (max-width: 768px) {
             .container {
                 padding: 0 1.5rem;
             }
 
-             
-            nav .container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-             
-            .nav-menu {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 0.5rem;
-            }
-
-            nav a {
-                margin: 0 0.5rem;
-                font-size: 0.95rem;  
-            }
-
             .page-title {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             main h2 {
-                font-size: 1.4rem;
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .page-title {
+                font-size: 1.75rem;
+            }
+
+            main h2 {
+                font-size: 1.3rem;
             }
         }
     </style>
@@ -301,7 +443,7 @@
                 <a href="/">Home</a>
                 <a href="/about">About</a>
                 <a href="/posts">Posts</a>
-                <a href="/publications">Work/Publications</a>
+                <a href="/publications">Work</a>
                 <a href="/contact">Contact</a>
             </div>
         </div>
@@ -342,7 +484,7 @@
                     </div>
                     
                     <h2 class="post-card-title">
-                        <a href="http://localhost:1313/posts/bandplan/">Amateur Radio Band Plans: Understanding Frequency Allocations and Etiquette</a>
+                        <a href="https://salmancuso.com/posts/bandplan/">Amateur Radio Band Plans: Understanding Frequency Allocations and Etiquette</a>
                     </h2>
                     
                     <p class="post-card-summary">A practical guide to band plans, frequency allocations, and operating within your designated subbands</p>
@@ -359,7 +501,7 @@
                     </div>
                     
                     
-                    <a href="http://localhost:1313/posts/bandplan/" class="read-more">Read more →</a>
+                    <a href="https://salmancuso.com/posts/bandplan/" class="read-more">Read more →</a>
                 </div>
             </article>
             
@@ -380,7 +522,7 @@
                     </div>
                     
                     <h2 class="post-card-title">
-                        <a href="http://localhost:1313/posts/roomserversemergency/">Room Servers for Emergency Communications: Building Resilient Infrastructure</a>
+                        <a href="https://salmancuso.com/posts/roomserversemergency/">Room Servers for Emergency Communications: Building Resilient Infrastructure</a>
                     </h2>
                     
                     <p class="post-card-summary">How room servers enable reliable emergency communication when traditional infrastructure fails</p>
@@ -397,7 +539,7 @@
                     </div>
                     
                     
-                    <a href="http://localhost:1313/posts/roomserversemergency/" class="read-more">Read more →</a>
+                    <a href="https://salmancuso.com/posts/roomserversemergency/" class="read-more">Read more →</a>
                 </div>
             </article>
             
@@ -418,7 +560,7 @@
                     </div>
                     
                     <h2 class="post-card-title">
-                        <a href="http://localhost:1313/posts/roomservers/">MeshCore Room Servers: Store-and-Forward Messaging Infrastructure</a>
+                        <a href="https://salmancuso.com/posts/roomservers/">MeshCore Room Servers: Store-and-Forward Messaging Infrastructure</a>
                     </h2>
                     
                     <p class="post-card-summary">Understanding how MeshCore room servers enable asynchronous mesh communication</p>
@@ -435,7 +577,7 @@
                     </div>
                     
                     
-                    <a href="http://localhost:1313/posts/roomservers/" class="read-more">Read more →</a>
+                    <a href="https://salmancuso.com/posts/roomservers/" class="read-more">Read more →</a>
                 </div>
             </article>
             
@@ -456,7 +598,7 @@
                     </div>
                     
                     <h2 class="post-card-title">
-                        <a href="http://localhost:1313/posts/gptdataanalysis/">Data Analysis with GPT Models</a>
+                        <a href="https://salmancuso.com/posts/gptdataanalysis/">Data Analysis with GPT Models</a>
                     </h2>
                     
                     <p class="post-card-summary">Leveraging large language models for data analysis tasks</p>
@@ -473,7 +615,7 @@
                     </div>
                     
                     
-                    <a href="http://localhost:1313/posts/gptdataanalysis/" class="read-more">Read more →</a>
+                    <a href="https://salmancuso.com/posts/gptdataanalysis/" class="read-more">Read more →</a>
                 </div>
             </article>
             
@@ -494,7 +636,7 @@
                     </div>
                     
                     <h2 class="post-card-title">
-                        <a href="http://localhost:1313/posts/mqttserver/">Building an MQTT Bridge for MeshCore: Connecting Your Mesh to Home Automation</a>
+                        <a href="https://salmancuso.com/posts/mqttserver/">Building an MQTT Bridge for MeshCore: Connecting Your Mesh to Home Automation</a>
                     </h2>
                     
                     <p class="post-card-summary">How to set up MQTT message handling and integrate MeshCore data into Home Assistant or other IoT platforms</p>
@@ -511,7 +653,7 @@
                     </div>
                     
                     
-                    <a href="http://localhost:1313/posts/mqttserver/" class="read-more">Read more →</a>
+                    <a href="https://salmancuso.com/posts/mqttserver/" class="read-more">Read more →</a>
                 </div>
             </article>
             
@@ -532,7 +674,7 @@
                     </div>
                     
                     <h2 class="post-card-title">
-                        <a href="http://localhost:1313/posts/meshnodes/">MeshCore vs Meshtastic: Understanding the Differences</a>
+                        <a href="https://salmancuso.com/posts/meshnodes/">MeshCore vs Meshtastic: Understanding the Differences</a>
                     </h2>
                     
                     <p class="post-card-summary">A technical comparison of MeshCore and Meshtastic mesh networking platforms</p>
@@ -549,7 +691,7 @@
                     </div>
                     
                     
-                    <a href="http://localhost:1313/posts/meshnodes/" class="read-more">Read more →</a>
+                    <a href="https://salmancuso.com/posts/meshnodes/" class="read-more">Read more →</a>
                 </div>
             </article>
             
@@ -570,7 +712,7 @@
                     </div>
                     
                     <h2 class="post-card-title">
-                        <a href="http://localhost:1313/posts/pandasviz/">Data Visualization with Pandas</a>
+                        <a href="https://salmancuso.com/posts/pandasviz/">Data Visualization with Pandas</a>
                     </h2>
                     
                     <p class="post-card-summary">Creating effective visualizations using pandas and matplotlib</p>
@@ -587,7 +729,7 @@
                     </div>
                     
                     
-                    <a href="http://localhost:1313/posts/pandasviz/" class="read-more">Read more →</a>
+                    <a href="https://salmancuso.com/posts/pandasviz/" class="read-more">Read more →</a>
                 </div>
             </article>
             
@@ -608,7 +750,7 @@
                     </div>
                     
                     <h2 class="post-card-title">
-                        <a href="http://localhost:1313/posts/privategpt/">Building Private GPT Systems</a>
+                        <a href="https://salmancuso.com/posts/privategpt/">Building Private GPT Systems</a>
                     </h2>
                     
                     <p class="post-card-summary">Running large language models locally while maintaining privacy</p>
@@ -625,7 +767,7 @@
                     </div>
                     
                     
-                    <a href="http://localhost:1313/posts/privategpt/" class="read-more">Read more →</a>
+                    <a href="https://salmancuso.com/posts/privategpt/" class="read-more">Read more →</a>
                 </div>
             </article>
             
@@ -646,7 +788,7 @@
                     </div>
                     
                     <h2 class="post-card-title">
-                        <a href="http://localhost:1313/posts/appacheairflow/">Automating Data Workflows with Apache Airflow</a>
+                        <a href="https://salmancuso.com/posts/appacheairflow/">Automating Data Workflows with Apache Airflow</a>
                     </h2>
                     
                     <p class="post-card-summary">Building scalable, automated data pipelines with Apache Airflow</p>
@@ -663,7 +805,7 @@
                     </div>
                     
                     
-                    <a href="http://localhost:1313/posts/appacheairflow/" class="read-more">Read more →</a>
+                    <a href="https://salmancuso.com/posts/appacheairflow/" class="read-more">Read more →</a>
                 </div>
             </article>
             
@@ -684,7 +826,7 @@
                     </div>
                     
                     <h2 class="post-card-title">
-                        <a href="http://localhost:1313/posts/aprs/">The Complete Guide to APRS Messaging</a>
+                        <a href="https://salmancuso.com/posts/aprs/">The Complete Guide to APRS Messaging</a>
                     </h2>
                     
                     <p class="post-card-summary">Understanding APRS messaging protocols and how to reliably communicate when traditional infrastructure fails</p>
@@ -701,7 +843,7 @@
                     </div>
                     
                     
-                    <a href="http://localhost:1313/posts/aprs/" class="read-more">Read more →</a>
+                    <a href="https://salmancuso.com/posts/aprs/" class="read-more">Read more →</a>
                 </div>
             </article>
             

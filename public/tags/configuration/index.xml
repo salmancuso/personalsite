@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Configuration on Sal Mancuso</title>
-    <link>http://localhost:1313/tags/configuration/</link>
+    <link>https://salmancuso.com/tags/configuration/</link>
     <description>Recent content in Configuration on Sal Mancuso</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 20 Mar 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/configuration/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://salmancuso.com/tags/configuration/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Understanding Path Hash Configuration in MeshCore</title>
-      <link>http://localhost:1313/posts/hash/</link>
+      <link>https://salmancuso.com/posts/hash/</link>
       <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/hash/</guid>
+      <guid>https://salmancuso.com/posts/hash/</guid>
       <description>&lt;p&gt;There&amp;rsquo;s a parameter in MeshCore called &lt;code&gt;path.hash.mode&lt;/code&gt; that almost nobody understands. The firmware developers seem to have deliberately hidden it in the configuration docs with a note saying &amp;ldquo;DO NOT USE&amp;rdquo; and then no explanation whatsoever.&lt;/p&gt;&#xA;&lt;p&gt;Let me explain what it actually does, because it matters for how your network behaves.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-path-hash&#34;&gt;What Is Path Hash?&lt;/h2&gt;&#xA;&lt;p&gt;Every node in MeshCore periodically sends advertisement packets—basically saying &amp;ldquo;Hey, I&amp;rsquo;m here, I exist, talk to me.&amp;rdquo;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Troubleshooting Room Server Configuration Issues</title>
-      <link>http://localhost:1313/posts/brokenroomserverrooms/</link>
+      <link>https://salmancuso.com/posts/brokenroomserverrooms/</link>
       <pubDate>Mon, 29 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/brokenroomserverrooms/</guid>
+      <guid>https://salmancuso.com/posts/brokenroomserverrooms/</guid>
       <description>&lt;p&gt;Room servers are elegant once they&amp;rsquo;re working. They&amp;rsquo;re headaches when they&amp;rsquo;re not.&lt;/p&gt;&#xA;&lt;p&gt;If your room server isn&amp;rsquo;t storing messages, delivering them properly, or appearing on your mesh network, here&amp;rsquo;s how to systematically work through the problem.&lt;/p&gt;&#xA;&lt;h2 id=&#34;verify-basic-connectivity&#34;&gt;Verify Basic Connectivity&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Is the device powered and online?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Check:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Power LED is illuminated&lt;/li&gt;&#xA;&lt;li&gt;Device is drawing current&lt;/li&gt;&#xA;&lt;li&gt;If WiFi is needed for configuration, is it connected?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Can you communicate with the device?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Try:&lt;/p&gt;</description>
     </item>
   </channel>

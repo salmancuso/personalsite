@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Building infrastructure. Living outside. Communicating worldwide.">
@@ -104,23 +104,170 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: nowrap;
+        }
+
+        .nav-brand {
+            font-family: Georgia, serif;
+            font-size: 1.25rem;
+            margin: 0 !important;
+            flex-shrink: 0;
+            color: var(--text-light) !important;
+            font-weight: 500;
+        }
+
+        .nav-brand:hover {
+            color: var(--accent) !important;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 0;
+            align-items: center;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
         }
 
         nav a {
             color: var(--text-light);
             font-weight: 500;
             margin: 0 1.5rem;
-        }
-
-        nav a:first-child {
-            font-family: Georgia, serif;
-            font-size: 1.25rem;
-            margin: 0;
-            margin-right: auto;
+            white-space: nowrap;
+            display: inline-block;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
             color: var(--accent);
+        }
+
+         
+        @media (max-width: 900px) {
+            nav {
+                padding: 0.85rem 0;
+            }
+
+            .nav-menu {
+                gap: 0;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+            }
+
+            nav a {
+                margin: 0.5rem 1rem;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 0.75rem 0;
+            }
+
+            nav .container {
+                gap: 0.5rem;
+            }
+
+            .nav-brand {
+                font-size: 1.1rem;
+            }
+
+            nav a {
+                margin: 0.4rem 0.75rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 650px) {
+            nav {
+                padding: 0.65rem 0;
+            }
+
+            nav .container {
+                gap: 0.25rem;
+            }
+
+            .nav-menu {
+                justify-content: flex-end;
+                gap: 0;
+            }
+
+            .nav-brand {
+                font-size: 1rem;
+                margin-right: 0.5rem !important;
+            }
+
+            nav a {
+                margin: 0 0.4rem;
+                font-size: 0.85rem;
+                padding: 0 0.2rem;
+            }
+        }
+
+        @media (max-width: 550px) {
+            nav {
+                padding: 0.6rem 0;
+            }
+
+            nav .container {
+                gap: 0.15rem;
+            }
+
+            .nav-brand {
+                font-size: 0.95rem;
+                margin-right: 0.35rem !important;
+            }
+
+            .nav-menu {
+                gap: 0;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+            }
+
+            nav a {
+                margin: 0 0.3rem;
+                font-size: 0.8rem;
+                padding: 0.15rem 0.25rem;
+            }
+
+             
+            nav a:nth-child(4) {
+                 
+                flex-basis: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 0.5rem 0;
+            }
+
+            nav .container {
+                gap: 0.1rem;
+                padding: 0 1rem;
+            }
+
+            .nav-brand {
+                font-size: 0.9rem;
+                margin-right: 0.25rem !important;
+            }
+
+            .nav-menu {
+                gap: 0;
+                flex: 1;
+                justify-content: flex-end;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                margin: 0 0.2rem;
+                font-size: 0.75rem;
+                padding: 0.1rem 0.2rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
         }
 
          
@@ -257,36 +404,31 @@
         }
 
          
-@media (max-width: 768px) {
+        @media (max-width: 768px) {
             .container {
                 padding: 0 1.5rem;
             }
 
-             
-            nav .container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-             
-            .nav-menu {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 0.5rem;
-            }
-
-            nav a {
-                margin: 0 0.5rem;
-                font-size: 0.95rem;  
-            }
-
             .page-title {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             main h2 {
-                font-size: 1.4rem;
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .page-title {
+                font-size: 1.75rem;
+            }
+
+            main h2 {
+                font-size: 1.3rem;
             }
         }
     </style>
@@ -301,7 +443,7 @@
                 <a href="/">Home</a>
                 <a href="/about">About</a>
                 <a href="/posts">Posts</a>
-                <a href="/publications">Work/Publications</a>
+                <a href="/publications">Work</a>
                 <a href="/contact">Contact</a>
             </div>
         </div>
@@ -342,7 +484,7 @@
                     </div>
                     
                     <h2 class="post-card-title">
-                        <a href="http://localhost:1313/posts/repeatervssimplex-converted/">Repeaters vs. Simplex: Understanding Amateur Radio Communication Infrastructure</a>
+                        <a href="https://salmancuso.com/posts/repeatervssimplex-converted/">Repeaters vs. Simplex: Understanding Amateur Radio Communication Infrastructure</a>
                     </h2>
                     
                     <p class="post-card-summary">A technical exploration of simplex and repeater communications, when to use each, and how they compare in real-world scenarios</p>
@@ -359,7 +501,7 @@
                     </div>
                     
                     
-                    <a href="http://localhost:1313/posts/repeatervssimplex-converted/" class="read-more">Read more →</a>
+                    <a href="https://salmancuso.com/posts/repeatervssimplex-converted/" class="read-more">Read more →</a>
                 </div>
             </article>
             
@@ -380,7 +522,7 @@
                     </div>
                     
                     <h2 class="post-card-title">
-                        <a href="http://localhost:1313/posts/cultpolitics/">Culture and Politics</a>
+                        <a href="https://salmancuso.com/posts/cultpolitics/">Culture and Politics</a>
                     </h2>
                     
                     <p class="post-card-summary">Understanding the intersection of cultural identity and political discourse</p>
@@ -395,7 +537,7 @@
                     </div>
                     
                     
-                    <a href="http://localhost:1313/posts/cultpolitics/" class="read-more">Read more →</a>
+                    <a href="https://salmancuso.com/posts/cultpolitics/" class="read-more">Read more →</a>
                 </div>
             </article>
             
@@ -416,7 +558,7 @@
                     </div>
                     
                     <h2 class="post-card-title">
-                        <a href="http://localhost:1313/posts/middle/">Finding Middle Ground</a>
+                        <a href="https://salmancuso.com/posts/middle/">Finding Middle Ground</a>
                     </h2>
                     
                     <p class="post-card-summary">Balancing polarizing perspectives and finding common ground</p>
@@ -431,7 +573,7 @@
                     </div>
                     
                     
-                    <a href="http://localhost:1313/posts/middle/" class="read-more">Read more →</a>
+                    <a href="https://salmancuso.com/posts/middle/" class="read-more">Read more →</a>
                 </div>
             </article>
             
@@ -452,7 +594,7 @@
                     </div>
                     
                     <h2 class="post-card-title">
-                        <a href="http://localhost:1313/posts/dataengineer/">The Modern Data Engineer</a>
+                        <a href="https://salmancuso.com/posts/dataengineer/">The Modern Data Engineer</a>
                     </h2>
                     
                     <p class="post-card-summary">What it takes to be a successful data engineer in 2024</p>
@@ -467,7 +609,7 @@
                     </div>
                     
                     
-                    <a href="http://localhost:1313/posts/dataengineer/" class="read-more">Read more →</a>
+                    <a href="https://salmancuso.com/posts/dataengineer/" class="read-more">Read more →</a>
                 </div>
             </article>
             
@@ -488,7 +630,7 @@
                     </div>
                     
                     <h2 class="post-card-title">
-                        <a href="http://localhost:1313/posts/cigars/">The Art of Enjoying Cigars</a>
+                        <a href="https://salmancuso.com/posts/cigars/">The Art of Enjoying Cigars</a>
                     </h2>
                     
                     <p class="post-card-summary">A personal journey into the world of premium cigars</p>
@@ -503,7 +645,7 @@
                     </div>
                     
                     
-                    <a href="http://localhost:1313/posts/cigars/" class="read-more">Read more →</a>
+                    <a href="https://salmancuso.com/posts/cigars/" class="read-more">Read more →</a>
                 </div>
             </article>
             
@@ -524,7 +666,7 @@
                     </div>
                     
                     <h2 class="post-card-title">
-                        <a href="http://localhost:1313/posts/sqlite/">SQLite for Data Engineering</a>
+                        <a href="https://salmancuso.com/posts/sqlite/">SQLite for Data Engineering</a>
                     </h2>
                     
                     <p class="post-card-summary">Leveraging SQLite for efficient local data storage and processing</p>
@@ -541,7 +683,7 @@
                     </div>
                     
                     
-                    <a href="http://localhost:1313/posts/sqlite/" class="read-more">Read more →</a>
+                    <a href="https://salmancuso.com/posts/sqlite/" class="read-more">Read more →</a>
                 </div>
             </article>
             
@@ -562,7 +704,7 @@
                     </div>
                     
                     <h2 class="post-card-title">
-                        <a href="http://localhost:1313/posts/loramesh/">Building LoRa Mesh Networks</a>
+                        <a href="https://salmancuso.com/posts/loramesh/">Building LoRa Mesh Networks</a>
                     </h2>
                     
                     <p class="post-card-summary">Creating long-range mesh networks using LoRa technology</p>
@@ -579,7 +721,7 @@
                     </div>
                     
                     
-                    <a href="http://localhost:1313/posts/loramesh/" class="read-more">Read more →</a>
+                    <a href="https://salmancuso.com/posts/loramesh/" class="read-more">Read more →</a>
                 </div>
             </article>
             
@@ -600,7 +742,7 @@
                     </div>
                     
                     <h2 class="post-card-title">
-                        <a href="http://localhost:1313/posts/datatransfer/">Data Transfer Techniques and Tools</a>
+                        <a href="https://salmancuso.com/posts/datatransfer/">Data Transfer Techniques and Tools</a>
                     </h2>
                     
                     <p class="post-card-summary">Efficient methods for transferring large datasets between systems</p>
@@ -615,7 +757,7 @@
                     </div>
                     
                     
-                    <a href="http://localhost:1313/posts/datatransfer/" class="read-more">Read more →</a>
+                    <a href="https://salmancuso.com/posts/datatransfer/" class="read-more">Read more →</a>
                 </div>
             </article>
             
@@ -636,7 +778,7 @@
                     </div>
                     
                     <h2 class="post-card-title">
-                        <a href="http://localhost:1313/posts/git/">Git for Data Engineers</a>
+                        <a href="https://salmancuso.com/posts/git/">Git for Data Engineers</a>
                     </h2>
                     
                     <p class="post-card-summary">Using Git version control effectively in data engineering workflows</p>
@@ -653,7 +795,7 @@
                     </div>
                     
                     
-                    <a href="http://localhost:1313/posts/git/" class="read-more">Read more →</a>
+                    <a href="https://salmancuso.com/posts/git/" class="read-more">Read more →</a>
                 </div>
             </article>
             
@@ -674,7 +816,7 @@
                     </div>
                     
                     <h2 class="post-card-title">
-                        <a href="http://localhost:1313/posts/ham/">Is Amateur Radio Dying?</a>
+                        <a href="https://salmancuso.com/posts/ham/">Is Amateur Radio Dying?</a>
                     </h2>
                     
                     <p class="post-card-summary">The state of amateur radio and the need to welcome new operators</p>
@@ -689,7 +831,7 @@
                     </div>
                     
                     
-                    <a href="http://localhost:1313/posts/ham/" class="read-more">Read more →</a>
+                    <a href="https://salmancuso.com/posts/ham/" class="read-more">Read more →</a>
                 </div>
             </article>
             

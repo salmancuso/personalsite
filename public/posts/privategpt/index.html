@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Building infrastructure. Living outside. Communicating worldwide.">
@@ -104,23 +104,170 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: nowrap;
+        }
+
+        .nav-brand {
+            font-family: Georgia, serif;
+            font-size: 1.25rem;
+            margin: 0 !important;
+            flex-shrink: 0;
+            color: var(--text-light) !important;
+            font-weight: 500;
+        }
+
+        .nav-brand:hover {
+            color: var(--accent) !important;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 0;
+            align-items: center;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
         }
 
         nav a {
             color: var(--text-light);
             font-weight: 500;
             margin: 0 1.5rem;
-        }
-
-        nav a:first-child {
-            font-family: Georgia, serif;
-            font-size: 1.25rem;
-            margin: 0;
-            margin-right: auto;
+            white-space: nowrap;
+            display: inline-block;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
             color: var(--accent);
+        }
+
+         
+        @media (max-width: 900px) {
+            nav {
+                padding: 0.85rem 0;
+            }
+
+            .nav-menu {
+                gap: 0;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+            }
+
+            nav a {
+                margin: 0.5rem 1rem;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 0.75rem 0;
+            }
+
+            nav .container {
+                gap: 0.5rem;
+            }
+
+            .nav-brand {
+                font-size: 1.1rem;
+            }
+
+            nav a {
+                margin: 0.4rem 0.75rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 650px) {
+            nav {
+                padding: 0.65rem 0;
+            }
+
+            nav .container {
+                gap: 0.25rem;
+            }
+
+            .nav-menu {
+                justify-content: flex-end;
+                gap: 0;
+            }
+
+            .nav-brand {
+                font-size: 1rem;
+                margin-right: 0.5rem !important;
+            }
+
+            nav a {
+                margin: 0 0.4rem;
+                font-size: 0.85rem;
+                padding: 0 0.2rem;
+            }
+        }
+
+        @media (max-width: 550px) {
+            nav {
+                padding: 0.6rem 0;
+            }
+
+            nav .container {
+                gap: 0.15rem;
+            }
+
+            .nav-brand {
+                font-size: 0.95rem;
+                margin-right: 0.35rem !important;
+            }
+
+            .nav-menu {
+                gap: 0;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+            }
+
+            nav a {
+                margin: 0 0.3rem;
+                font-size: 0.8rem;
+                padding: 0.15rem 0.25rem;
+            }
+
+             
+            nav a:nth-child(4) {
+                 
+                flex-basis: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 0.5rem 0;
+            }
+
+            nav .container {
+                gap: 0.1rem;
+                padding: 0 1rem;
+            }
+
+            .nav-brand {
+                font-size: 0.9rem;
+                margin-right: 0.25rem !important;
+            }
+
+            .nav-menu {
+                gap: 0;
+                flex: 1;
+                justify-content: flex-end;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                margin: 0 0.2rem;
+                font-size: 0.75rem;
+                padding: 0.1rem 0.2rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
         }
 
          
@@ -257,36 +404,31 @@
         }
 
          
-@media (max-width: 768px) {
+        @media (max-width: 768px) {
             .container {
                 padding: 0 1.5rem;
             }
 
-             
-            nav .container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-             
-            .nav-menu {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 0.5rem;
-            }
-
-            nav a {
-                margin: 0 0.5rem;
-                font-size: 0.95rem;  
-            }
-
             .page-title {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             main h2 {
-                font-size: 1.4rem;
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .page-title {
+                font-size: 1.75rem;
+            }
+
+            main h2 {
+                font-size: 1.3rem;
             }
         }
     </style>
@@ -301,7 +443,7 @@
                 <a href="/">Home</a>
                 <a href="/about">About</a>
                 <a href="/posts">Posts</a>
-                <a href="/publications">Work/Publications</a>
+                <a href="/publications">Work</a>
                 <a href="/contact">Contact</a>
             </div>
         </div>
@@ -430,14 +572,14 @@
     <div class="container">
         <div class="nav-links">
             
-            <a href="http://localhost:1313/posts/appacheairflow/" class="nav-prev">
+            <a href="https://salmancuso.com/posts/appacheairflow/" class="nav-prev">
                 <span class="nav-label">← Previous</span>
                 <span class="nav-title">Automating Data Workflows with Apache Airflow</span>
             </a>
             
             
             
-            <a href="http://localhost:1313/posts/pandasviz/" class="nav-next">
+            <a href="https://salmancuso.com/posts/pandasviz/" class="nav-next">
                 <span class="nav-label">Next →</span>
                 <span class="nav-title">Data Visualization with Pandas</span>
             </a>
@@ -461,11 +603,11 @@
                 </div>
                 
                 <div class="post-card-content">
-                    <h3><a href="http://localhost:1313/posts/datasec/">Data Security Best Practices</a></h3>
+                    <h3><a href="https://salmancuso.com/posts/datasec/">Data Security Best Practices</a></h3>
                     <p class="post-card-date">Jun 8, 2026</p>
                     <p class="post-card-summary"><h2 id="introduction-the-strategic-imperative-of-data-security">Introduction: The Strategic Imperative of Data Security</h2>
 <p>In today&rsquo;s hyperconnected digital ecosystem, data has transcended beyond mere commodity status—it&rsquo;s become the operational lifeblood and competitive moat of modern enterprises. From personally identifiable information (PII) and healthcare records to intellectual property, trade secrets, and financial ledgers, data assets underpin organizational resilience and individual privacy alike. Yet this critical dependence on data infrastructure introduces a parallel complexity: the expanding attack surface and sophistication of threat actors. Cyber attacks, data exfiltration events, ransomware deployments, and identity theft schemes have evolved from theoretical risks into demonstrable existential threats. The stakes are real, the vulnerabilities are systemic, and frankly, reactive approaches no longer cut it. Prioritizing data security—both at the enterprise and personal level—isn&rsquo;t optional. It&rsquo;s the foundation of operational integrity.</p></p>
-                    <a href="http://localhost:1313/posts/datasec/" class="read-more">Read more →</a>
+                    <a href="https://salmancuso.com/posts/datasec/" class="read-more">Read more →</a>
                 </div>
             </article>
             
@@ -476,10 +618,10 @@
                 </div>
                 
                 <div class="post-card-content">
-                    <h3><a href="http://localhost:1313/posts/biai/">Business Intelligence and AI</a></h3>
+                    <h3><a href="https://salmancuso.com/posts/biai/">Business Intelligence and AI</a></h3>
                     <p class="post-card-date">Apr 15, 2026</p>
                     <p class="post-card-summary"><p>In the rapidly evolving landscape of digital transformation, a phenomenon of profound significance has taken center stage: the integration of Artificial Intelligence (AI) into the realm of Business Intelligence (BI). This integration has emerged as a formidable force that not only propels strategic innovation but also fundamentally reshapes the very fabric of how organizations operate, particularly in the face of mounting complexities stemming from data proliferation. As companies grapple with the challenges of extracting meaningful insights from vast, diverse, and often disorganized datasets, AI stands out as a transformative agent. It enhances BI&rsquo;s capabilities, fundamentally altering the ways in which organizations glean insights, make informed decisions, and strategically maintain competitive advantages in their respective markets. This document aims to provide an in-depth exploration of the profound impact that AI has on BI, drawing insights from a seasoned Silicon Valley perspective and highlighting noteworthy examples that underscore pivotal advancements along with their practical implications.</p></p>
-                    <a href="http://localhost:1313/posts/biai/" class="read-more">Read more →</a>
+                    <a href="https://salmancuso.com/posts/biai/" class="read-more">Read more →</a>
                 </div>
             </article>
             
@@ -490,11 +632,11 @@
                 </div>
                 
                 <div class="post-card-content">
-                    <h3><a href="http://localhost:1313/posts/gpssettings/">GPS on MeshCore: Solving the Timestamp Problem</a></h3>
+                    <h3><a href="https://salmancuso.com/posts/gpssettings/">GPS on MeshCore: Solving the Timestamp Problem</a></h3>
                     <p class="post-card-date">Mar 23, 2026</p>
                     <p class="post-card-summary"><p>Here&rsquo;s something that doesn&rsquo;t get talked about nearly enough: your mesh repeater probably doesn&rsquo;t know what time it is.</p>
 <p>Think about that for a moment. You&rsquo;ve spent hours—maybe days—setting up this node. You&rsquo;ve installed it on a mountaintop or bolted it to a tower somewhere. You&rsquo;ve carefully tuned the antenna, verified the coverage, tested the mesh routing. Everything&rsquo;s working great. And meanwhile, internally, your repeater thinks it&rsquo;s January 1st, 1970. Unix Epoch. The dawn of time, as far as computer systems are concerned.</p></p>
-                    <a href="http://localhost:1313/posts/gpssettings/" class="read-more">Read more →</a>
+                    <a href="https://salmancuso.com/posts/gpssettings/" class="read-more">Read more →</a>
                 </div>
             </article>
             

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Career on Sal Mancuso</title>
-    <link>http://localhost:1313/tags/career/</link>
+    <link>https://salmancuso.com/tags/career/</link>
     <description>Recent content in Career on Sal Mancuso</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 15 Jun 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/career/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://salmancuso.com/tags/career/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Modern Data Engineer</title>
-      <link>http://localhost:1313/posts/dataengineer/</link>
+      <link>https://salmancuso.com/posts/dataengineer/</link>
       <pubDate>Sat, 15 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/dataengineer/</guid>
+      <guid>https://salmancuso.com/posts/dataengineer/</guid>
       <description>&lt;p&gt;As the digital economy continues to expand, driven by vast amounts of data, the roles of Business Intelligence (BI) Analysts and Data Engineers have become increasingly pivotal. For those looking to thrust themselves into these dynamic and rewarding careers, it requires a multidimensional approach encompassing skill acquisition, portfolio development, networking, and continuous learning.&lt;/p&gt;&#xA;&lt;p&gt;This comprehensive guide delves into the quintessential elements that will aid aspiring BI Analysts and Data Engineers in effectively navigating their career journey. Whether you’re a college graduate, a mid-career professional seeking to pivot, or a data enthusiast passionate about making impactful, data-driven decisions, these insights will be indispensable to your professional ascent.&lt;/p&gt;</description>
     </item>
   </channel>

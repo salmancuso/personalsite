@@ -2,598 +2,598 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Sal Mancuso</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://salmancuso.com/tags/</link>
     <description>Recent content in Tags on Sal Mancuso</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 08 Jun 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://salmancuso.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Best-Practices</title>
-      <link>http://localhost:1313/tags/best-practices/</link>
+      <link>https://salmancuso.com/tags/best-practices/</link>
       <pubDate>Mon, 08 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/best-practices/</guid>
+      <guid>https://salmancuso.com/tags/best-practices/</guid>
       <description></description>
     </item>
     <item>
       <title>Data</title>
-      <link>http://localhost:1313/tags/data/</link>
+      <link>https://salmancuso.com/tags/data/</link>
       <pubDate>Mon, 08 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/data/</guid>
+      <guid>https://salmancuso.com/tags/data/</guid>
       <description></description>
     </item>
     <item>
       <title>Security</title>
-      <link>http://localhost:1313/tags/security/</link>
+      <link>https://salmancuso.com/tags/security/</link>
       <pubDate>Mon, 08 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/security/</guid>
+      <guid>https://salmancuso.com/tags/security/</guid>
       <description></description>
     </item>
     <item>
       <title>Ai</title>
-      <link>http://localhost:1313/tags/ai/</link>
+      <link>https://salmancuso.com/tags/ai/</link>
       <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ai/</guid>
+      <guid>https://salmancuso.com/tags/ai/</guid>
       <description></description>
     </item>
     <item>
       <title>Business-Intelligence</title>
-      <link>http://localhost:1313/tags/business-intelligence/</link>
+      <link>https://salmancuso.com/tags/business-intelligence/</link>
       <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/business-intelligence/</guid>
+      <guid>https://salmancuso.com/tags/business-intelligence/</guid>
       <description></description>
     </item>
     <item>
       <title>Gps</title>
-      <link>http://localhost:1313/tags/gps/</link>
+      <link>https://salmancuso.com/tags/gps/</link>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/gps/</guid>
+      <guid>https://salmancuso.com/tags/gps/</guid>
       <description></description>
     </item>
     <item>
       <title>Meshcore</title>
-      <link>http://localhost:1313/tags/meshcore/</link>
+      <link>https://salmancuso.com/tags/meshcore/</link>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/meshcore/</guid>
+      <guid>https://salmancuso.com/tags/meshcore/</guid>
       <description></description>
     </item>
     <item>
       <title>Repeater</title>
-      <link>http://localhost:1313/tags/repeater/</link>
+      <link>https://salmancuso.com/tags/repeater/</link>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/repeater/</guid>
+      <guid>https://salmancuso.com/tags/repeater/</guid>
       <description></description>
     </item>
     <item>
       <title>Time-Synchronization</title>
-      <link>http://localhost:1313/tags/time-synchronization/</link>
+      <link>https://salmancuso.com/tags/time-synchronization/</link>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/time-synchronization/</guid>
+      <guid>https://salmancuso.com/tags/time-synchronization/</guid>
       <description></description>
     </item>
     <item>
       <title>Configuration</title>
-      <link>http://localhost:1313/tags/configuration/</link>
+      <link>https://salmancuso.com/tags/configuration/</link>
       <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/configuration/</guid>
+      <guid>https://salmancuso.com/tags/configuration/</guid>
       <description></description>
     </item>
     <item>
       <title>Networking</title>
-      <link>http://localhost:1313/tags/networking/</link>
+      <link>https://salmancuso.com/tags/networking/</link>
       <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/networking/</guid>
+      <guid>https://salmancuso.com/tags/networking/</guid>
       <description></description>
     </item>
     <item>
       <title>Technical</title>
-      <link>http://localhost:1313/tags/technical/</link>
+      <link>https://salmancuso.com/tags/technical/</link>
       <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/technical/</guid>
+      <guid>https://salmancuso.com/tags/technical/</guid>
       <description></description>
     </item>
     <item>
       <title>Antenna</title>
-      <link>http://localhost:1313/tags/antenna/</link>
+      <link>https://salmancuso.com/tags/antenna/</link>
       <pubDate>Mon, 23 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/antenna/</guid>
+      <guid>https://salmancuso.com/tags/antenna/</guid>
       <description></description>
     </item>
     <item>
       <title>Hardware</title>
-      <link>http://localhost:1313/tags/hardware/</link>
+      <link>https://salmancuso.com/tags/hardware/</link>
       <pubDate>Mon, 23 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/hardware/</guid>
+      <guid>https://salmancuso.com/tags/hardware/</guid>
       <description></description>
     </item>
     <item>
       <title>Review</title>
-      <link>http://localhost:1313/tags/review/</link>
+      <link>https://salmancuso.com/tags/review/</link>
       <pubDate>Mon, 23 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/review/</guid>
+      <guid>https://salmancuso.com/tags/review/</guid>
       <description></description>
     </item>
     <item>
       <title>Automation</title>
-      <link>http://localhost:1313/tags/automation/</link>
+      <link>https://salmancuso.com/tags/automation/</link>
       <pubDate>Sun, 15 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/automation/</guid>
+      <guid>https://salmancuso.com/tags/automation/</guid>
       <description></description>
     </item>
     <item>
       <title>Data-Broadcast</title>
-      <link>http://localhost:1313/tags/data-broadcast/</link>
+      <link>https://salmancuso.com/tags/data-broadcast/</link>
       <pubDate>Sun, 15 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/data-broadcast/</guid>
+      <guid>https://salmancuso.com/tags/data-broadcast/</guid>
       <description></description>
     </item>
     <item>
       <title>Project</title>
-      <link>http://localhost:1313/tags/project/</link>
+      <link>https://salmancuso.com/tags/project/</link>
       <pubDate>Sun, 15 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/project/</guid>
+      <guid>https://salmancuso.com/tags/project/</guid>
       <description></description>
     </item>
     <item>
       <title>Deployment</title>
-      <link>http://localhost:1313/tags/deployment/</link>
+      <link>https://salmancuso.com/tags/deployment/</link>
       <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/deployment/</guid>
+      <guid>https://salmancuso.com/tags/deployment/</guid>
       <description></description>
     </item>
     <item>
       <title>Firmware</title>
-      <link>http://localhost:1313/tags/firmware/</link>
+      <link>https://salmancuso.com/tags/firmware/</link>
       <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/firmware/</guid>
+      <guid>https://salmancuso.com/tags/firmware/</guid>
       <description></description>
     </item>
     <item>
       <title>Ota</title>
-      <link>http://localhost:1313/tags/ota/</link>
+      <link>https://salmancuso.com/tags/ota/</link>
       <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ota/</guid>
+      <guid>https://salmancuso.com/tags/ota/</guid>
       <description></description>
     </item>
     <item>
       <title>Bluetooth</title>
-      <link>http://localhost:1313/tags/bluetooth/</link>
+      <link>https://salmancuso.com/tags/bluetooth/</link>
       <pubDate>Thu, 22 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/bluetooth/</guid>
+      <guid>https://salmancuso.com/tags/bluetooth/</guid>
       <description></description>
     </item>
     <item>
       <title>Troubleshooting</title>
-      <link>http://localhost:1313/tags/troubleshooting/</link>
+      <link>https://salmancuso.com/tags/troubleshooting/</link>
       <pubDate>Thu, 22 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/troubleshooting/</guid>
+      <guid>https://salmancuso.com/tags/troubleshooting/</guid>
       <description></description>
     </item>
     <item>
       <title>Room-Server</title>
-      <link>http://localhost:1313/tags/room-server/</link>
+      <link>https://salmancuso.com/tags/room-server/</link>
       <pubDate>Mon, 29 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/room-server/</guid>
+      <guid>https://salmancuso.com/tags/room-server/</guid>
       <description></description>
     </item>
     <item>
       <title>Mesh</title>
-      <link>http://localhost:1313/tags/mesh/</link>
+      <link>https://salmancuso.com/tags/mesh/</link>
       <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/mesh/</guid>
+      <guid>https://salmancuso.com/tags/mesh/</guid>
       <description></description>
     </item>
     <item>
       <title>Meshtastic</title>
-      <link>http://localhost:1313/tags/meshtastic/</link>
+      <link>https://salmancuso.com/tags/meshtastic/</link>
       <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/meshtastic/</guid>
+      <guid>https://salmancuso.com/tags/meshtastic/</guid>
       <description></description>
     </item>
     <item>
       <title>Amateur-Radio</title>
-      <link>http://localhost:1313/tags/amateur-radio/</link>
+      <link>https://salmancuso.com/tags/amateur-radio/</link>
       <pubDate>Wed, 17 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/amateur-radio/</guid>
+      <guid>https://salmancuso.com/tags/amateur-radio/</guid>
       <description></description>
     </item>
     <item>
       <title>Band-Plan</title>
-      <link>http://localhost:1313/tags/band-plan/</link>
+      <link>https://salmancuso.com/tags/band-plan/</link>
       <pubDate>Wed, 17 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/band-plan/</guid>
+      <guid>https://salmancuso.com/tags/band-plan/</guid>
       <description></description>
     </item>
     <item>
       <title>Etiquette</title>
-      <link>http://localhost:1313/tags/etiquette/</link>
+      <link>https://salmancuso.com/tags/etiquette/</link>
       <pubDate>Wed, 17 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/etiquette/</guid>
+      <guid>https://salmancuso.com/tags/etiquette/</guid>
       <description></description>
     </item>
     <item>
       <title>Frequencies</title>
-      <link>http://localhost:1313/tags/frequencies/</link>
+      <link>https://salmancuso.com/tags/frequencies/</link>
       <pubDate>Wed, 17 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/frequencies/</guid>
+      <guid>https://salmancuso.com/tags/frequencies/</guid>
       <description></description>
     </item>
     <item>
       <title>Emergency-Communications</title>
-      <link>http://localhost:1313/tags/emergency-communications/</link>
+      <link>https://salmancuso.com/tags/emergency-communications/</link>
       <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/emergency-communications/</guid>
+      <guid>https://salmancuso.com/tags/emergency-communications/</guid>
       <description></description>
     </item>
     <item>
       <title>Resilience</title>
-      <link>http://localhost:1313/tags/resilience/</link>
+      <link>https://salmancuso.com/tags/resilience/</link>
       <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/resilience/</guid>
+      <guid>https://salmancuso.com/tags/resilience/</guid>
       <description></description>
     </item>
     <item>
       <title>Infrastructure</title>
-      <link>http://localhost:1313/tags/infrastructure/</link>
+      <link>https://salmancuso.com/tags/infrastructure/</link>
       <pubDate>Wed, 19 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/infrastructure/</guid>
+      <guid>https://salmancuso.com/tags/infrastructure/</guid>
       <description></description>
     </item>
     <item>
       <title>Message-Storage</title>
-      <link>http://localhost:1313/tags/message-storage/</link>
+      <link>https://salmancuso.com/tags/message-storage/</link>
       <pubDate>Wed, 19 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/message-storage/</guid>
+      <guid>https://salmancuso.com/tags/message-storage/</guid>
       <description></description>
     </item>
     <item>
       <title>Data-Analysis</title>
-      <link>http://localhost:1313/tags/data-analysis/</link>
+      <link>https://salmancuso.com/tags/data-analysis/</link>
       <pubDate>Sun, 16 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/data-analysis/</guid>
+      <guid>https://salmancuso.com/tags/data-analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>Gpt</title>
-      <link>http://localhost:1313/tags/gpt/</link>
+      <link>https://salmancuso.com/tags/gpt/</link>
       <pubDate>Sun, 16 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/gpt/</guid>
+      <guid>https://salmancuso.com/tags/gpt/</guid>
       <description></description>
     </item>
     <item>
       <title>Home-Automation</title>
-      <link>http://localhost:1313/tags/home-automation/</link>
+      <link>https://salmancuso.com/tags/home-automation/</link>
       <pubDate>Wed, 12 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/home-automation/</guid>
+      <guid>https://salmancuso.com/tags/home-automation/</guid>
       <description></description>
     </item>
     <item>
       <title>Mqtt</title>
-      <link>http://localhost:1313/tags/mqtt/</link>
+      <link>https://salmancuso.com/tags/mqtt/</link>
       <pubDate>Wed, 12 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/mqtt/</guid>
+      <guid>https://salmancuso.com/tags/mqtt/</guid>
       <description></description>
     </item>
     <item>
       <title>Comparison</title>
-      <link>http://localhost:1313/tags/comparison/</link>
+      <link>https://salmancuso.com/tags/comparison/</link>
       <pubDate>Mon, 03 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/comparison/</guid>
+      <guid>https://salmancuso.com/tags/comparison/</guid>
       <description></description>
     </item>
     <item>
       <title>Mesh-Networking</title>
-      <link>http://localhost:1313/tags/mesh-networking/</link>
+      <link>https://salmancuso.com/tags/mesh-networking/</link>
       <pubDate>Mon, 03 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/mesh-networking/</guid>
+      <guid>https://salmancuso.com/tags/mesh-networking/</guid>
       <description></description>
     </item>
     <item>
       <title>Pandas</title>
-      <link>http://localhost:1313/tags/pandas/</link>
+      <link>https://salmancuso.com/tags/pandas/</link>
       <pubDate>Tue, 15 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/pandas/</guid>
+      <guid>https://salmancuso.com/tags/pandas/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>http://localhost:1313/tags/python/</link>
+      <link>https://salmancuso.com/tags/python/</link>
       <pubDate>Tue, 15 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/python/</guid>
+      <guid>https://salmancuso.com/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Visualization</title>
-      <link>http://localhost:1313/tags/visualization/</link>
+      <link>https://salmancuso.com/tags/visualization/</link>
       <pubDate>Tue, 15 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/visualization/</guid>
+      <guid>https://salmancuso.com/tags/visualization/</guid>
       <description></description>
     </item>
     <item>
       <title>Privacy</title>
-      <link>http://localhost:1313/tags/privacy/</link>
+      <link>https://salmancuso.com/tags/privacy/</link>
       <pubDate>Sat, 22 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/privacy/</guid>
+      <guid>https://salmancuso.com/tags/privacy/</guid>
       <description></description>
     </item>
     <item>
       <title>Airflow</title>
-      <link>http://localhost:1313/tags/airflow/</link>
+      <link>https://salmancuso.com/tags/airflow/</link>
       <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/airflow/</guid>
+      <guid>https://salmancuso.com/tags/airflow/</guid>
       <description></description>
     </item>
     <item>
       <title>Data-Engineering</title>
-      <link>http://localhost:1313/tags/data-engineering/</link>
+      <link>https://salmancuso.com/tags/data-engineering/</link>
       <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/data-engineering/</guid>
+      <guid>https://salmancuso.com/tags/data-engineering/</guid>
       <description></description>
     </item>
     <item>
       <title>Aprs</title>
-      <link>http://localhost:1313/tags/aprs/</link>
+      <link>https://salmancuso.com/tags/aprs/</link>
       <pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/aprs/</guid>
+      <guid>https://salmancuso.com/tags/aprs/</guid>
       <description></description>
     </item>
     <item>
       <title>Messaging</title>
-      <link>http://localhost:1313/tags/messaging/</link>
+      <link>https://salmancuso.com/tags/messaging/</link>
       <pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/messaging/</guid>
+      <guid>https://salmancuso.com/tags/messaging/</guid>
       <description></description>
     </item>
     <item>
       <title>Propagation</title>
-      <link>http://localhost:1313/tags/propagation/</link>
+      <link>https://salmancuso.com/tags/propagation/</link>
       <pubDate>Sun, 08 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/propagation/</guid>
+      <guid>https://salmancuso.com/tags/propagation/</guid>
       <description></description>
     </item>
     <item>
       <title>Simplex</title>
-      <link>http://localhost:1313/tags/simplex/</link>
+      <link>https://salmancuso.com/tags/simplex/</link>
       <pubDate>Sun, 08 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/simplex/</guid>
+      <guid>https://salmancuso.com/tags/simplex/</guid>
       <description></description>
     </item>
     <item>
       <title>Culture</title>
-      <link>http://localhost:1313/tags/culture/</link>
+      <link>https://salmancuso.com/tags/culture/</link>
       <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/culture/</guid>
+      <guid>https://salmancuso.com/tags/culture/</guid>
       <description></description>
     </item>
     <item>
       <title>Politics</title>
-      <link>http://localhost:1313/tags/politics/</link>
+      <link>https://salmancuso.com/tags/politics/</link>
       <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/politics/</guid>
+      <guid>https://salmancuso.com/tags/politics/</guid>
       <description></description>
     </item>
     <item>
       <title>Balance</title>
-      <link>http://localhost:1313/tags/balance/</link>
+      <link>https://salmancuso.com/tags/balance/</link>
       <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/balance/</guid>
+      <guid>https://salmancuso.com/tags/balance/</guid>
       <description></description>
     </item>
     <item>
       <title>Perspective</title>
-      <link>http://localhost:1313/tags/perspective/</link>
+      <link>https://salmancuso.com/tags/perspective/</link>
       <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/perspective/</guid>
+      <guid>https://salmancuso.com/tags/perspective/</guid>
       <description></description>
     </item>
     <item>
       <title>Career</title>
-      <link>http://localhost:1313/tags/career/</link>
+      <link>https://salmancuso.com/tags/career/</link>
       <pubDate>Sat, 15 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/career/</guid>
+      <guid>https://salmancuso.com/tags/career/</guid>
       <description></description>
     </item>
     <item>
       <title>Lifestyle</title>
-      <link>http://localhost:1313/tags/lifestyle/</link>
+      <link>https://salmancuso.com/tags/lifestyle/</link>
       <pubDate>Sat, 10 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/lifestyle/</guid>
+      <guid>https://salmancuso.com/tags/lifestyle/</guid>
       <description></description>
     </item>
     <item>
       <title>Personal</title>
-      <link>http://localhost:1313/tags/personal/</link>
+      <link>https://salmancuso.com/tags/personal/</link>
       <pubDate>Sat, 10 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/personal/</guid>
+      <guid>https://salmancuso.com/tags/personal/</guid>
       <description></description>
     </item>
     <item>
       <title>Covid</title>
-      <link>http://localhost:1313/tags/covid/</link>
+      <link>https://salmancuso.com/tags/covid/</link>
       <pubDate>Tue, 19 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/covid/</guid>
+      <guid>https://salmancuso.com/tags/covid/</guid>
       <description></description>
     </item>
     <item>
       <title>Genetics</title>
-      <link>http://localhost:1313/tags/genetics/</link>
+      <link>https://salmancuso.com/tags/genetics/</link>
       <pubDate>Tue, 19 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/genetics/</guid>
+      <guid>https://salmancuso.com/tags/genetics/</guid>
       <description></description>
     </item>
     <item>
       <title>Healthcare</title>
-      <link>http://localhost:1313/tags/healthcare/</link>
+      <link>https://salmancuso.com/tags/healthcare/</link>
       <pubDate>Tue, 19 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/healthcare/</guid>
+      <guid>https://salmancuso.com/tags/healthcare/</guid>
       <description></description>
     </item>
     <item>
       <title>Machine-Learning</title>
-      <link>http://localhost:1313/tags/machine-learning/</link>
+      <link>https://salmancuso.com/tags/machine-learning/</link>
       <pubDate>Tue, 19 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/machine-learning/</guid>
+      <guid>https://salmancuso.com/tags/machine-learning/</guid>
       <description></description>
     </item>
     <item>
       <title>Database</title>
-      <link>http://localhost:1313/tags/database/</link>
+      <link>https://salmancuso.com/tags/database/</link>
       <pubDate>Sun, 08 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/database/</guid>
+      <guid>https://salmancuso.com/tags/database/</guid>
       <description></description>
     </item>
     <item>
       <title>Sql</title>
-      <link>http://localhost:1313/tags/sql/</link>
+      <link>https://salmancuso.com/tags/sql/</link>
       <pubDate>Sun, 08 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/sql/</guid>
+      <guid>https://salmancuso.com/tags/sql/</guid>
       <description></description>
     </item>
     <item>
       <title>Sqlite</title>
-      <link>http://localhost:1313/tags/sqlite/</link>
+      <link>https://salmancuso.com/tags/sqlite/</link>
       <pubDate>Sun, 08 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/sqlite/</guid>
+      <guid>https://salmancuso.com/tags/sqlite/</guid>
       <description></description>
     </item>
     <item>
       <title>Lora</title>
-      <link>http://localhost:1313/tags/lora/</link>
+      <link>https://salmancuso.com/tags/lora/</link>
       <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/lora/</guid>
+      <guid>https://salmancuso.com/tags/lora/</guid>
       <description></description>
     </item>
     <item>
       <title>Mesh-Networks</title>
-      <link>http://localhost:1313/tags/mesh-networks/</link>
+      <link>https://salmancuso.com/tags/mesh-networks/</link>
       <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/mesh-networks/</guid>
+      <guid>https://salmancuso.com/tags/mesh-networks/</guid>
       <description></description>
     </item>
     <item>
       <title>Tools</title>
-      <link>http://localhost:1313/tags/tools/</link>
+      <link>https://salmancuso.com/tags/tools/</link>
       <pubDate>Mon, 10 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/tools/</guid>
+      <guid>https://salmancuso.com/tags/tools/</guid>
       <description></description>
     </item>
     <item>
       <title>Git</title>
-      <link>http://localhost:1313/tags/git/</link>
+      <link>https://salmancuso.com/tags/git/</link>
       <pubDate>Fri, 12 May 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/git/</guid>
+      <guid>https://salmancuso.com/tags/git/</guid>
       <description></description>
     </item>
     <item>
       <title>Version-Control</title>
-      <link>http://localhost:1313/tags/version-control/</link>
+      <link>https://salmancuso.com/tags/version-control/</link>
       <pubDate>Fri, 12 May 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/version-control/</guid>
+      <guid>https://salmancuso.com/tags/version-control/</guid>
       <description></description>
     </item>
     <item>
       <title>Data-Collection</title>
-      <link>http://localhost:1313/tags/data-collection/</link>
+      <link>https://salmancuso.com/tags/data-collection/</link>
       <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/data-collection/</guid>
+      <guid>https://salmancuso.com/tags/data-collection/</guid>
       <description></description>
     </item>
     <item>
       <title>Economics</title>
-      <link>http://localhost:1313/tags/economics/</link>
+      <link>https://salmancuso.com/tags/economics/</link>
       <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/economics/</guid>
+      <guid>https://salmancuso.com/tags/economics/</guid>
       <description></description>
     </item>
     <item>
       <title>Job-Search</title>
-      <link>http://localhost:1313/tags/job-search/</link>
+      <link>https://salmancuso.com/tags/job-search/</link>
       <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/job-search/</guid>
+      <guid>https://salmancuso.com/tags/job-search/</guid>
       <description></description>
     </item>
     <item>
       <title>Community</title>
-      <link>http://localhost:1313/tags/community/</link>
+      <link>https://salmancuso.com/tags/community/</link>
       <pubDate>Sun, 17 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/community/</guid>
+      <guid>https://salmancuso.com/tags/community/</guid>
       <description></description>
     </item>
     <item>
       <title>Family</title>
-      <link>http://localhost:1313/tags/family/</link>
+      <link>https://salmancuso.com/tags/family/</link>
       <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/family/</guid>
+      <guid>https://salmancuso.com/tags/family/</guid>
       <description></description>
     </item>
     <item>
       <title>Cultural</title>
-      <link>http://localhost:1313/tags/cultural/</link>
+      <link>https://salmancuso.com/tags/cultural/</link>
       <pubDate>Fri, 15 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cultural/</guid>
+      <guid>https://salmancuso.com/tags/cultural/</guid>
       <description></description>
     </item>
     <item>
       <title>Heterogeneity</title>
-      <link>http://localhost:1313/tags/heterogeneity/</link>
+      <link>https://salmancuso.com/tags/heterogeneity/</link>
       <pubDate>Fri, 15 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/heterogeneity/</guid>
+      <guid>https://salmancuso.com/tags/heterogeneity/</guid>
       <description></description>
     </item>
     <item>
       <title>Mapping</title>
-      <link>http://localhost:1313/tags/mapping/</link>
+      <link>https://salmancuso.com/tags/mapping/</link>
       <pubDate>Wed, 11 Sep 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/mapping/</guid>
+      <guid>https://salmancuso.com/tags/mapping/</guid>
       <description></description>
     </item>
     <item>
       <title>Taxation</title>
-      <link>http://localhost:1313/tags/taxation/</link>
+      <link>https://salmancuso.com/tags/taxation/</link>
       <pubDate>Wed, 11 Sep 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/taxation/</guid>
+      <guid>https://salmancuso.com/tags/taxation/</guid>
       <description></description>
     </item>
     <item>
       <title>Energy</title>
-      <link>http://localhost:1313/tags/energy/</link>
+      <link>https://salmancuso.com/tags/energy/</link>
       <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/energy/</guid>
+      <guid>https://salmancuso.com/tags/energy/</guid>
       <description></description>
     </item>
     <item>
       <title>Sustainability</title>
-      <link>http://localhost:1313/tags/sustainability/</link>
+      <link>https://salmancuso.com/tags/sustainability/</link>
       <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/sustainability/</guid>
+      <guid>https://salmancuso.com/tags/sustainability/</guid>
       <description></description>
     </item>
     <item>
       <title>Web-Development</title>
-      <link>http://localhost:1313/tags/web-development/</link>
+      <link>https://salmancuso.com/tags/web-development/</link>
       <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/web-development/</guid>
+      <guid>https://salmancuso.com/tags/web-development/</guid>
       <description></description>
     </item>
     <item>
       <title>Investment</title>
-      <link>http://localhost:1313/tags/investment/</link>
+      <link>https://salmancuso.com/tags/investment/</link>
       <pubDate>Wed, 31 May 2017 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/investment/</guid>
+      <guid>https://salmancuso.com/tags/investment/</guid>
       <description></description>
     </item>
     <item>
       <title>Entrepreneurship</title>
-      <link>http://localhost:1313/tags/entrepreneurship/</link>
+      <link>https://salmancuso.com/tags/entrepreneurship/</link>
       <pubDate>Sun, 11 Sep 2016 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/entrepreneurship/</guid>
+      <guid>https://salmancuso.com/tags/entrepreneurship/</guid>
       <description></description>
     </item>
     <item>
       <title>Latino</title>
-      <link>http://localhost:1313/tags/latino/</link>
+      <link>https://salmancuso.com/tags/latino/</link>
       <pubDate>Sun, 11 Sep 2016 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/latino/</guid>
+      <guid>https://salmancuso.com/tags/latino/</guid>
       <description></description>
     </item>
   </channel>
