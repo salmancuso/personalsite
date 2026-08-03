@@ -1,4 +1,15 @@
 /* ==========================================
+   GLOBAL TYPOGRAPHY
+   ========================================== */
+
+p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #C0B8B0;
+    margin-bottom: 1.5rem;
+}
+
+/* ==========================================
    PAGE LAYOUTS - Posts, Publications, etc.
    ========================================== */
 
@@ -700,10 +711,16 @@
     }
 
     .post-content {
-        font-size: 0.95rem;
+        font-size: 1.05rem;    /* ← INCREASED */
     }
 
     .post-content h2 {
         font-size: 1.4rem;
+    }
+    
+    /* Add this new rule */
+    p {
+        font-size: 1.05rem;
+        line-height: 1.9;
     }
 }

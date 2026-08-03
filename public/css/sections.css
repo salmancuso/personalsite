@@ -194,6 +194,12 @@
         padding: 0.6rem 1.25rem;
         font-size: 0.85rem;
     }
+    
+    /* ADD THIS */
+    .about-content p {
+        font-size: 1.05rem;
+        line-height: 1.9;
+    }
 }
 
 .view-all {
