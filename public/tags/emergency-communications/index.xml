@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Emergency-Communications on Sal Mancuso</title>
+    <link>http://localhost:1313/tags/emergency-communications/</link>
+    <description>Recent content in Emergency-Communications on Sal Mancuso</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 08 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/emergency-communications/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Room Servers for Emergency Communications: Building Resilient Infrastructure</title>
+      <link>http://localhost:1313/posts/roomserversemergency/</link>
+      <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/roomserversemergency/</guid>
+      <description>&lt;p&gt;When the cell towers go down—and they will, eventually—most people lose their ability to communicate. No 911. No texting family. No calling for help. Just silence.&lt;/p&gt;&#xA;&lt;p&gt;But if you&amp;rsquo;ve built mesh infrastructure with room servers, you have something that works regardless of cellular, internet, or power grid status. That&amp;rsquo;s not theoretical capability. That&amp;rsquo;s actual resilience.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-room-servers-matter-for-emergency-response&#34;&gt;Why Room Servers Matter for Emergency Response&lt;/h2&gt;&#xA;&lt;p&gt;In a disaster scenario:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Cellular infrastructure is first to fail.&lt;/strong&gt; Cell towers have backup power measured in hours. Data centers have days. Your mesh network with room server infrastructure has as much uptime as you engineered it to have.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

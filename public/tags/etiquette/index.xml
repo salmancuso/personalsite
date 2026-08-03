@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Etiquette on Sal Mancuso</title>
+    <link>http://localhost:1313/tags/etiquette/</link>
+    <description>Recent content in Etiquette on Sal Mancuso</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/etiquette/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Amateur Radio Band Plans: Understanding Frequency Allocations and Etiquette</title>
+      <link>http://localhost:1313/posts/bandplan/</link>
+      <pubDate>Wed, 17 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/bandplan/</guid>
+      <description>&lt;p&gt;One of the first things you learn as a new ham is that you can&amp;rsquo;t just use any frequency you want. The amateur radio spectrum is divided into bands, and within each band, there are designated sub-bands for specific modes and purposes. This structure is called a band plan, and understanding it separates competent operators from people who accidentally wreck everyone&amp;rsquo;s weekend.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-a-band-plan&#34;&gt;What Is a Band Plan?&lt;/h2&gt;&#xA;&lt;p&gt;A band plan is a frequency allocation guide that shows you exactly which parts of each band are designated for what activities. It&amp;rsquo;s maintained by the ARRL (American Radio Relay League) in North America, with similar organizations in other countries maintaining their own versions.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

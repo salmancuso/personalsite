@@ -1,0 +1,535 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Building infrastructure. Living outside. Communicating worldwide.">
+    <meta name="author" content="Sal Mancuso">
+
+    <title>
+        
+        GPS on MeshCore: Solving the Timestamp Problem | Sal Mancuso
+        
+    </title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/pages.css">
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/hero.css">
+    
+
+    
+    
+    <link rel="stylesheet" href="/css/featured-projects.css">
+    
+
+    
+    
+    <link rel="stylesheet" href="/css/sections.css">
+    
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-bg: #1a1a18;
+            --dark-surface: #242420;
+            --text-light: #E8D5C4;
+            --text-muted: #A39A8F;
+            --accent: #B8860B;
+            --earth: #8B9D5D;
+            --border-color: #4a4a48;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #d4af37;
+        }
+
+         
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+         
+        nav {
+            background-color: var(--dark-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-light);
+            font-weight: 500;
+            margin: 0 1.5rem;
+        }
+
+        nav a:first-child {
+            font-family: Georgia, serif;
+            font-size: 1.25rem;
+            margin: 0;
+            margin-right: auto;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+         
+        footer {
+            background-color: #0f0f0d;
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        footer h3 {
+            font-family: Georgia, serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer ul li a {
+            color: var(--text-muted);
+        }
+
+        footer ul li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+         
+        main {
+            min-height: 50vh;
+        }
+
+        .page-content {
+            padding: 3rem 0;
+        }
+
+        .page-title {
+            font-family: Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--earth);
+            display: inline-block;
+        }
+
+         
+        main h2 {
+            font-family: Georgia, serif;
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        main h3 {
+            font-family: Georgia, serif;
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        main p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        main ul,
+        main ol {
+            color: var(--text-muted);
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        main li {
+            margin-bottom: 0.5rem;
+        }
+
+        main code {
+            background-color: var(--dark-surface);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        main pre {
+            background-color: var(--dark-surface);
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            padding: 1.5rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        main pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        main blockquote {
+            border-left: 4px solid var(--earth);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+         
+        @media (max-width: 768px) {
+            nav a {
+                margin: 0 1rem;
+            }
+
+            .page-title {
+                font-size: 1.8rem;
+            }
+
+            main h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-brand">Sal</a>
+            <div class="nav-menu">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/posts">Posts</a>
+                <a href="/publications">Work/Publications</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    
+    <main>
+        
+
+<article class="post-single">
+    <div class="container">
+        
+        <header class="post-header">
+            <h1 class="post-title">GPS on MeshCore: Solving the Timestamp Problem</h1>
+            
+            <div class="post-meta">
+                
+                <span class="meta-item">
+                    <i class="ti ti-calendar"></i>
+                    March 23, 2026
+                </span>
+                
+                
+                
+                <span class="meta-item">
+                    <i class="ti ti-clock"></i>
+                    4 min read
+                </span>
+                
+                
+                
+            </div>
+
+            
+            <figure class="post-image">
+                <img src="/images/posts/gpsSettings/GPS.jpg" alt="GPS on MeshCore: Solving the Timestamp Problem" loading="lazy">
+            </figure>
+            
+        </header>
+
+        
+        <div class="post-content">
+            <p>Here&rsquo;s something that doesn&rsquo;t get talked about nearly enough: your mesh repeater probably doesn&rsquo;t know what time it is.</p>
+<p>Think about that for a moment. You&rsquo;ve spent hours—maybe days—setting up this node. You&rsquo;ve installed it on a mountaintop or bolted it to a tower somewhere. You&rsquo;ve carefully tuned the antenna, verified the coverage, tested the mesh routing. Everything&rsquo;s working great. And meanwhile, internally, your repeater thinks it&rsquo;s January 1st, 1970. Unix Epoch. The dawn of time, as far as computer systems are concerned.</p>
+<p>When a repeater boots up—whether from a power failure, a firmware update, or because a squirrel did something it shouldn&rsquo;t have—it has zero awareness of what time it actually is. No WiFi to sync with NTP servers. No cellular connection. No little guy inside with a watch yelling out the seconds. Just an empty clock that defaults to 1970 and starts counting forward from there.</p>
+<p>This sounds like a minor inconvenience. It&rsquo;s not.</p>
+<h2 id="why-time-actually-matters">Why Time Actually Matters</h2>
+<p>Timestamps on messages. Logs. Coordinating between nodes across your mesh network. The entire infrastructure of reliable systems depends on synchronized time. When your repeater thinks it&rsquo;s 1970 and every other node thinks it&rsquo;s 2026, you end up with messages that appear to have been sent before they were received. Logs that make no chronological sense. Debugging becomes a nightmare because the timeline itself is corrupted.</p>
+<p>For mesh networks specifically, accurate time enables:</p>
+<p><strong>Message Ordering</strong>: Nodes need to understand the sequence of events. When did this message arrive relative to that one? Without synchronized time, causality breaks down.</p>
+<p><strong>Log Correlation</strong>: If you&rsquo;re troubleshooting network issues, timestamps let you correlate events across multiple nodes. Useless timestamps make that impossible.</p>
+<p><strong>Scheduled Operations</strong>: Want to schedule something to happen at a specific time across your mesh network? You need all nodes agreeing on what time it is.</p>
+<p><strong>Security and Authentication</strong>: Some cryptographic systems depend on time-based validation. Incorrect time can break authentication schemes.</p>
+<h2 id="the-gps-solution">The GPS Solution</h2>
+<p>A GPS module solves this elegantly. Not for location (though that&rsquo;s a nice side effect)—for time. GPS satellites broadcast incredibly precise time information continuously. Any GPS receiver can extract that time within microseconds of accuracy, regardless of whether it&rsquo;s connected to the internet or has any other external reference.</p>
+<p>When you add a GPS module to your MeshCore repeater, that repeater automatically:</p>
+<ol>
+<li>Acquires a GPS signal (assuming reasonable antenna placement and sky view)</li>
+<li>Extracts the precise time from that signal</li>
+<li>Sets its internal clock to accurate UTC</li>
+<li>Maintains that accurate time even if GPS signal is briefly lost</li>
+<li>Shares time with other mesh nodes for network-wide synchronization</li>
+</ol>
+<p>The GPS receiver doesn&rsquo;t need configuration files or internet access. It just works. Receive satellites, extract time, set clock. Simple and elegant.</p>
+<h2 id="gps-module-selection">GPS Module Selection</h2>
+<p>For MeshCore, you want a GPS module that:</p>
+<ul>
+<li>Outputs NMEA sentences (standard GPS output format)</li>
+<li>Connects via serial interface (typically 9600 baud)</li>
+<li>Provides reasonable accuracy (better than a second is fine)</li>
+<li>Has a built-in antenna or can accept an external antenna</li>
+</ul>
+<p>Common options include:</p>
+<ul>
+<li>Neo-6M modules (inexpensive, reliable, widely available)</li>
+<li>Neo-8 series (better accuracy, faster acquisition)</li>
+<li>u-blox MAX-M8 series (industrial grade, excellent performance)</li>
+</ul>
+<p>For most repeater applications, a Neo-6M module is more than adequate and costs $15-30. The difference between a $20 GPS receiver and a $200 one is negligible for timekeeping purposes.</p>
+<h2 id="antenna-placement-matters">Antenna Placement Matters</h2>
+<p>GPS needs a relatively clear view of the sky. Mount your antenna where it has at least 90 degrees of sky visibility (ideally more). If your repeater is in a box on a tower, the antenna should be on top of that box or on an external mount. GPS won&rsquo;t work inside a building or metal enclosure without an external antenna.</p>
+<p>For mobile installations, a small magnetic-mount antenna on the roof works fine. For permanent installations, consider a small weatherproof antenna bracket on the pole or structure where the repeater sits.</p>
+<h2 id="configuration">Configuration</h2>
+<p>This depends on your specific MeshCore hardware, but generally:</p>
+<ol>
+<li>Connect the GPS module&rsquo;s serial output to your device&rsquo;s serial input</li>
+<li>Set the serial connection to 9600 baud (standard for NMEA output)</li>
+<li>Configure MeshCore to read GPS time on startup</li>
+<li>Verify time is syncing by checking the system logs</li>
+</ol>
+<p>Most modern mesh firmware handles this automatically once GPS is connected. The device detects the GPS module and starts using its time immediately.</p>
+<h2 id="the-practical-difference">The Practical Difference</h2>
+<p>Before GPS: Your repeater&rsquo;s logs are dated 1970. Network troubleshooting requires manually calculating time offsets. Message ordering is ambiguous.</p>
+<p>After GPS: Your repeater&rsquo;s time matches your phone, your laptop, and every other node in your mesh network. Logs are chronologically accurate. Debugging is straightforward.</p>
+<p>It&rsquo;s a small investment—both in money (&lt; $50 for a complete GPS receiver and antenna) and installation time (maybe 30 minutes). The improvement in system reliability and debuggability is worth it immediately.</p>
+<hr>
+<p><strong>73</strong></p>
+
+        </div>
+
+        
+        
+        <footer class="post-footer">
+            <div class="post-tags">
+                
+                <a href="/tags/meshcore/" class="tag">meshcore</a>
+                
+                <a href="/tags/gps/" class="tag">gps</a>
+                
+                <a href="/tags/repeater/" class="tag">repeater</a>
+                
+                <a href="/tags/time-synchronization/" class="tag">time-synchronization</a>
+                
+            </div>
+        </footer>
+        
+    </div>
+</article>
+
+
+<nav class="post-nav">
+    <div class="container">
+        <div class="nav-links">
+            
+            <a href="http://localhost:1313/posts/hash/" class="nav-prev">
+                <span class="nav-label">← Previous</span>
+                <span class="nav-title">Understanding Path Hash Configuration in MeshCore</span>
+            </a>
+            
+            
+            
+            <a href="http://localhost:1313/posts/biai/" class="nav-next">
+                <span class="nav-label">Next →</span>
+                <span class="nav-title">Business Intelligence and AI</span>
+            </a>
+            
+        </div>
+    </div>
+</nav>
+
+
+
+
+<section class="related-posts">
+    <div class="container">
+        <h2>More Posts</h2>
+        <div class="posts-grid">
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/dataSec.jpeg" alt="Data Security Best Practices" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="http://localhost:1313/posts/datasec/">Data Security Best Practices</a></h3>
+                    <p class="post-card-date">Jun 8, 2026</p>
+                    <p class="post-card-summary"><h2 id="introduction-the-strategic-imperative-of-data-security">Introduction: The Strategic Imperative of Data Security</h2>
+<p>In today&rsquo;s hyperconnected digital ecosystem, data has transcended beyond mere commodity status—it&rsquo;s become the operational lifeblood and competitive moat of modern enterprises. From personally identifiable information (PII) and healthcare records to intellectual property, trade secrets, and financial ledgers, data assets underpin organizational resilience and individual privacy alike. Yet this critical dependence on data infrastructure introduces a parallel complexity: the expanding attack surface and sophistication of threat actors. Cyber attacks, data exfiltration events, ransomware deployments, and identity theft schemes have evolved from theoretical risks into demonstrable existential threats. The stakes are real, the vulnerabilities are systemic, and frankly, reactive approaches no longer cut it. Prioritizing data security—both at the enterprise and personal level—isn&rsquo;t optional. It&rsquo;s the foundation of operational integrity.</p></p>
+                    <a href="http://localhost:1313/posts/datasec/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/BI.png" alt="Business Intelligence and AI" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="http://localhost:1313/posts/biai/">Business Intelligence and AI</a></h3>
+                    <p class="post-card-date">Apr 15, 2026</p>
+                    <p class="post-card-summary"><p>In the rapidly evolving landscape of digital transformation, a phenomenon of profound significance has taken center stage: the integration of Artificial Intelligence (AI) into the realm of Business Intelligence (BI). This integration has emerged as a formidable force that not only propels strategic innovation but also fundamentally reshapes the very fabric of how organizations operate, particularly in the face of mounting complexities stemming from data proliferation. As companies grapple with the challenges of extracting meaningful insights from vast, diverse, and often disorganized datasets, AI stands out as a transformative agent. It enhances BI&rsquo;s capabilities, fundamentally altering the ways in which organizations glean insights, make informed decisions, and strategically maintain competitive advantages in their respective markets. This document aims to provide an in-depth exploration of the profound impact that AI has on BI, drawing insights from a seasoned Silicon Valley perspective and highlighting noteworthy examples that underscore pivotal advancements along with their practical implications.</p></p>
+                    <a href="http://localhost:1313/posts/biai/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/posts/hash/hashbrowns.jpg" alt="Understanding Path Hash Configuration in MeshCore" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="http://localhost:1313/posts/hash/">Understanding Path Hash Configuration in MeshCore</a></h3>
+                    <p class="post-card-date">Mar 20, 2026</p>
+                    <p class="post-card-summary"><p>There&rsquo;s a parameter in MeshCore called <code>path.hash.mode</code> that almost nobody understands. The firmware developers seem to have deliberately hidden it in the configuration docs with a note saying &ldquo;DO NOT USE&rdquo; and then no explanation whatsoever.</p>
+<p>Let me explain what it actually does, because it matters for how your network behaves.</p>
+<h2 id="what-is-path-hash">What Is Path Hash?</h2>
+<p>Every node in MeshCore periodically sends advertisement packets—basically saying &ldquo;Hey, I&rsquo;m here, I exist, talk to me.&rdquo;</p></p>
+                    <a href="http://localhost:1313/posts/hash/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+        </div>
+    </div>
+</section>
+
+
+
+    </main>
+
+    
+    <footer>
+        <div class="container">
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/posts">Posts</a></li>
+                    <li><a href="/publications">Work/Publications</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Interests</h3>
+                <ul>
+                    <li><a href="https://makerworld.com/" target="_blank">Maker World</a></li>
+                    <li><a href="https://www.adafruit.com/" target="_blank">Adafruit</a></li>
+                    <li><a href="https://sanjosesimplex.groups.io/g/main" target="_blank">K6SJS San Jose Simplex</a></li>
+                    <li><a href="https://www.kennedymeadows.com/" target="_blank">Kennedy Meadows Packstation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="https://it-humsci.stanford.edu/people/sal-mancuso" target="_blank">Stanford</a></li>
+                    <li><a href="https://github.com/salmancuso" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/salmancuso/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://www.qrz.com/db/W6SAL" target="_blank">QRZ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sal Mancuso. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+    
+    
+    <script src="/js/topo-animator.js"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

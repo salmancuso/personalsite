@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Repeater on Sal Mancuso</title>
+    <link>http://localhost:1313/tags/repeater/</link>
+    <description>Recent content in Repeater on Sal Mancuso</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/repeater/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GPS on MeshCore: Solving the Timestamp Problem</title>
+      <link>http://localhost:1313/posts/gpssettings/</link>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/gpssettings/</guid>
+      <description>&lt;p&gt;Here&amp;rsquo;s something that doesn&amp;rsquo;t get talked about nearly enough: your mesh repeater probably doesn&amp;rsquo;t know what time it is.&lt;/p&gt;&#xA;&lt;p&gt;Think about that for a moment. You&amp;rsquo;ve spent hours—maybe days—setting up this node. You&amp;rsquo;ve installed it on a mountaintop or bolted it to a tower somewhere. You&amp;rsquo;ve carefully tuned the antenna, verified the coverage, tested the mesh routing. Everything&amp;rsquo;s working great. And meanwhile, internally, your repeater thinks it&amp;rsquo;s January 1st, 1970. Unix Epoch. The dawn of time, as far as computer systems are concerned.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Repeaters vs. Simplex: Understanding Amateur Radio Communication Infrastructure</title>
+      <link>http://localhost:1313/posts/repeatervssimplex-converted/</link>
+      <pubDate>Sun, 08 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/repeatervssimplex-converted/</guid>
+      <description>&lt;p&gt;There&amp;rsquo;s something fascinating about amateur radio operators and how we think about communication infrastructure. We genuinely debate whether to bounce our signals off a repeater sitting on a mountaintop or just talk directly to each other. And there&amp;rsquo;s actually real substance to that debate—understanding the tradeoffs between these two approaches is the difference between reliable communication and standing there with an expensive radio wondering why nobody&amp;rsquo;s responding.&lt;/p&gt;&#xA;&lt;p&gt;Let me walk through both methods so you understand not just how they work, but when each one makes sense.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

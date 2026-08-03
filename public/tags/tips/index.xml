@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tips on Sal Mancuso</title>
+    <link>http://localhost:1313/tags/tips/</link>
+    <description>Recent content in Tips on Sal Mancuso</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/tips/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MeshCore Q&amp;A: Tips and Practical Insights from the Community</title>
+      <link>http://localhost:1313/posts/2026-01-13-videomeshcoretips/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2026-01-13-videomeshcoretips/</guid>
+      <description>&lt;p&gt;There&amp;rsquo;s a lot to learn when you&amp;rsquo;re getting started with MeshCore. Theory is useful, but practical experience from people running actual mesh networks is invaluable.&lt;/p&gt;&#xA;&lt;p&gt;Here are the consistent themes and takeaways from operators actually deploying MeshCore infrastructure.&lt;/p&gt;&#xA;&lt;h2 id=&#34;antenna-placement-trumps-everything-else&#34;&gt;Antenna Placement Trumps Everything Else&lt;/h2&gt;&#xA;&lt;p&gt;This comes up constantly. People spend money on higher-power nodes, elaborate enclosures, professional equipment. Then they mount the antenna poorly.&lt;/p&gt;&#xA;&lt;p&gt;Reality: A mediocre node with excellent antenna placement will outperform an excellent node with mediocre antenna placement. Every single time.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

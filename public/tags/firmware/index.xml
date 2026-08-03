@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Firmware on Sal Mancuso</title>
+    <link>http://localhost:1313/tags/firmware/</link>
+    <description>Recent content in Firmware on Sal Mancuso</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/firmware/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Over-The-Air (OTA) Firmware Updates: Updating Your Remote Mesh Nodes</title>
+      <link>http://localhost:1313/posts/ota/</link>
+      <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/ota/</guid>
+      <description>&lt;p&gt;The moment you install a repeater in the most inconvenient location possible—top of a tree, your roof peak, a cell tower—is the exact moment a firmware update becomes necessary. That&amp;rsquo;s just how Murphy&amp;rsquo;s Law works with communication equipment.&lt;/p&gt;&#xA;&lt;p&gt;But here&amp;rsquo;s the beautiful thing: you don&amp;rsquo;t need to climb that tree again. OTA (Over-The-Air) updates let you push new firmware wirelessly. You just need to be within reasonable WiFi or Bluetooth range, and your node handles the rest.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MeshCore Bluetooth Connectivity: Troubleshooting Pairing Issues</title>
+      <link>http://localhost:1313/posts/bluetooth/</link>
+      <pubDate>Thu, 22 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/bluetooth/</guid>
+      <description>&lt;p&gt;If you&amp;rsquo;ve flashed firmware to your MeshCore node and suddenly the Bluetooth connection won&amp;rsquo;t work, you&amp;rsquo;re not alone. This is one of the more aggravating gotchas in the MeshCore ecosystem, and it happens often enough that it deserves a straightforward troubleshooting guide.&lt;/p&gt;&#xA;&lt;p&gt;Let me walk through what&amp;rsquo;s happening and how to fix it.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-problem&#34;&gt;The Problem&lt;/h2&gt;&#xA;&lt;p&gt;You&amp;rsquo;ve got a node running fine. You decide to repurpose it—maybe you&amp;rsquo;re converting it from a standard repeater to a room server, or you&amp;rsquo;re updating the firmware. So you flash new firmware, reprogram the device, and then you try to connect via Bluetooth with your phone or laptop.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

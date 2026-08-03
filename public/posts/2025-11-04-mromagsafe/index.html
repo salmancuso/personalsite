@@ -1,0 +1,501 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Building infrastructure. Living outside. Communicating worldwide.">
+    <meta name="author" content="Sal Mancuso">
+
+    <title>
+        
+        MagSafe Node Antenna Mount: Elegant Engineering | Sal Mancuso
+        
+    </title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/pages.css">
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/hero.css">
+    
+
+    
+    
+    <link rel="stylesheet" href="/css/featured-projects.css">
+    
+
+    
+    
+    <link rel="stylesheet" href="/css/sections.css">
+    
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-bg: #1a1a18;
+            --dark-surface: #242420;
+            --text-light: #E8D5C4;
+            --text-muted: #A39A8F;
+            --accent: #B8860B;
+            --earth: #8B9D5D;
+            --border-color: #4a4a48;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #d4af37;
+        }
+
+         
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+         
+        nav {
+            background-color: var(--dark-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-light);
+            font-weight: 500;
+            margin: 0 1.5rem;
+        }
+
+        nav a:first-child {
+            font-family: Georgia, serif;
+            font-size: 1.25rem;
+            margin: 0;
+            margin-right: auto;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+         
+        footer {
+            background-color: #0f0f0d;
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        footer h3 {
+            font-family: Georgia, serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer ul li a {
+            color: var(--text-muted);
+        }
+
+        footer ul li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+         
+        main {
+            min-height: 50vh;
+        }
+
+        .page-content {
+            padding: 3rem 0;
+        }
+
+        .page-title {
+            font-family: Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--earth);
+            display: inline-block;
+        }
+
+         
+        main h2 {
+            font-family: Georgia, serif;
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        main h3 {
+            font-family: Georgia, serif;
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        main p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        main ul,
+        main ol {
+            color: var(--text-muted);
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        main li {
+            margin-bottom: 0.5rem;
+        }
+
+        main code {
+            background-color: var(--dark-surface);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        main pre {
+            background-color: var(--dark-surface);
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            padding: 1.5rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        main pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        main blockquote {
+            border-left: 4px solid var(--earth);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+         
+        @media (max-width: 768px) {
+            nav a {
+                margin: 0 1rem;
+            }
+
+            .page-title {
+                font-size: 1.8rem;
+            }
+
+            main h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-brand">Sal</a>
+            <div class="nav-menu">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/posts">Posts</a>
+                <a href="/publications">Work/Publications</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    
+    <main>
+        
+
+<article class="post-single">
+    <div class="container">
+        
+        <header class="post-header">
+            <h1 class="post-title">MagSafe Node Antenna Mount: Elegant Engineering</h1>
+            
+            <div class="post-meta">
+                
+                <span class="meta-item">
+                    <i class="ti ti-calendar"></i>
+                    November 4, 2025
+                </span>
+                
+                
+                
+                <span class="meta-item">
+                    <i class="ti ti-clock"></i>
+                    2 min read
+                </span>
+                
+                
+                
+            </div>
+
+            
+            <figure class="post-image">
+                <img src="/images/posts/MagSafe/magPhone.jpeg" alt="MagSafe Node Antenna Mount: Elegant Engineering" loading="lazy">
+            </figure>
+            
+        </header>
+
+        
+        <div class="post-content">
+            <p>Robert, callsign N6MRO, solved a problem I didn&rsquo;t know existed, and the solution is so elegant that I had to document it.</p>
+<p>The problem: Standard mesh node antennas are either permanently mounted (which means uninstalling the whole antenna to adjust orientation) or loosely attached (which means they fall off). There&rsquo;s no elegant middle ground.</p>
+<p>Robert&rsquo;s solution: Steal Apple&rsquo;s MagSafe concept and apply it to LoRa antennas. Magnetic quick-disconnect antenna mounts.</p>
+<h2 id="the-design">The Design</h2>
+<p>He 3D-printed an enclosure with precision magnetic mounts built into the structure. The antenna uses corresponding magnetic connectors. This gives you:</p>
+<p><strong>Quick-Disconnect Capability</strong>: You can swap antennas or adjust orientation in seconds without tools.</p>
+<p><strong>Reliable Connection</strong>: Magnets hold the antenna firmly in place. It won&rsquo;t rattle loose or fall off if the node moves.</p>
+<p><strong>Elegant Simplicity</strong>: No connectors to corrode. No N-type fittings to strip. Just magnets and printed plastic.</p>
+<p><strong>Repeatability</strong>: Multiple nodes use identical mounts. Antenna swaps between nodes are straightforward.</p>
+<h2 id="practical-benefits">Practical Benefits</h2>
+<p>For field deployments, this matters. If your antenna gets damaged, you swap it in 10 seconds instead of unscrewing connectors and troubleshooting why you lost continuity. If you need to test different antenna orientations, you can adjust without powering down the node.</p>
+<p>For mobile installations, the quick-disconnect means you can remove the antenna when you park the vehicle (theft prevention) and reinstall it in seconds when you leave.</p>
+<h2 id="the-engineering">The Engineering</h2>
+<p>3D-printed enclosures get a bad reputation in RF applications—and sometimes deservedly so. But Robert&rsquo;s design accounts for RF performance. The plastic doesn&rsquo;t create any impedance issues. The magnetic connectors are shielded to prevent RF leakage. This isn&rsquo;t a pretty solution that compromises performance; it&rsquo;s a solution that performs well and looks clean.</p>
+<p>The magnetic force is calibrated—strong enough to hold the antenna firmly but not so strong that removal requires excessive force.</p>
+<h2 id="lessons-here">Lessons Here</h2>
+<p>What I appreciate about this design is that it solves a real problem with elegant simplicity. No over-engineering. No unnecessary complexity. Just a practical improvement to something that needed improving.</p>
+<p>If you&rsquo;re building mesh infrastructure, whether it&rsquo;s nodes or repeaters, this kind of thinking matters. The small details—quick-disconnect antennas, reliable connectors, sensible mounting—separate deployments that are a pleasure to maintain from deployments that generate headaches.</p>
+<hr>
+<p><strong>73</strong></p>
+
+        </div>
+
+        
+        
+        <footer class="post-footer">
+            <div class="post-tags">
+                
+                <a href="/tags/antenna/" class="tag">antenna</a>
+                
+                <a href="/tags/hardware-design/" class="tag">hardware-design</a>
+                
+                <a href="/tags/meshcore/" class="tag">meshcore</a>
+                
+                <a href="/tags/engineering/" class="tag">engineering</a>
+                
+            </div>
+        </footer>
+        
+    </div>
+</article>
+
+
+<nav class="post-nav">
+    <div class="container">
+        <div class="nav-links">
+            
+            <a href="http://localhost:1313/posts/meshnodes/" class="nav-prev">
+                <span class="nav-label">← Previous</span>
+                <span class="nav-title">MeshCore vs Meshtastic: Understanding the Differences</span>
+            </a>
+            
+            
+            
+            <a href="http://localhost:1313/posts/2025-11-12-mqttserver/" class="nav-next">
+                <span class="nav-label">Next →</span>
+                <span class="nav-title">Building an MQTT Bridge for MeshCore: Connecting Your Mesh to Home Automation</span>
+            </a>
+            
+        </div>
+    </div>
+</nav>
+
+
+
+
+<section class="related-posts">
+    <div class="container">
+        <h2>More Posts</h2>
+        <div class="posts-grid">
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/dataSec.jpeg" alt="Data Security Best Practices" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="http://localhost:1313/posts/datasec/">Data Security Best Practices</a></h3>
+                    <p class="post-card-date">Jun 8, 2026</p>
+                    <p class="post-card-summary"><h2 id="introduction-the-strategic-imperative-of-data-security">Introduction: The Strategic Imperative of Data Security</h2>
+<p>In today&rsquo;s hyperconnected digital ecosystem, data has transcended beyond mere commodity status—it&rsquo;s become the operational lifeblood and competitive moat of modern enterprises. From personally identifiable information (PII) and healthcare records to intellectual property, trade secrets, and financial ledgers, data assets underpin organizational resilience and individual privacy alike. Yet this critical dependence on data infrastructure introduces a parallel complexity: the expanding attack surface and sophistication of threat actors. Cyber attacks, data exfiltration events, ransomware deployments, and identity theft schemes have evolved from theoretical risks into demonstrable existential threats. The stakes are real, the vulnerabilities are systemic, and frankly, reactive approaches no longer cut it. Prioritizing data security—both at the enterprise and personal level—isn&rsquo;t optional. It&rsquo;s the foundation of operational integrity.</p></p>
+                    <a href="http://localhost:1313/posts/datasec/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/posts/gpsSettings/GPS.jpg" alt="GPS on MeshCore: Solving the Timestamp Problem" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="http://localhost:1313/posts/2026-03-23-gpssettings/">GPS on MeshCore: Solving the Timestamp Problem</a></h3>
+                    <p class="post-card-date">Mar 23, 2026</p>
+                    <p class="post-card-summary"><p>Here&rsquo;s something that doesn&rsquo;t get talked about nearly enough: your mesh repeater probably doesn&rsquo;t know what time it is.</p>
+<p>Think about that for a moment. You&rsquo;ve spent hours—maybe days—setting up this node. You&rsquo;ve installed it on a mountaintop or bolted it to a tower somewhere. You&rsquo;ve carefully tuned the antenna, verified the coverage, tested the mesh routing. Everything&rsquo;s working great. And meanwhile, internally, your repeater thinks it&rsquo;s January 1st, 1970. Unix Epoch. The dawn of time, as far as computer systems are concerned.</p></p>
+                    <a href="http://localhost:1313/posts/2026-03-23-gpssettings/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/posts/hash/hashbrowns.jpg" alt="Understanding Path Hash Configuration in MeshCore" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="http://localhost:1313/posts/2026-03-20-hash/">Understanding Path Hash Configuration in MeshCore</a></h3>
+                    <p class="post-card-date">Mar 20, 2026</p>
+                    <p class="post-card-summary"><p>There&rsquo;s a parameter in MeshCore called <code>path.hash.mode</code> that almost nobody understands. The firmware developers seem to have deliberately hidden it in the configuration docs with a note saying &ldquo;DO NOT USE&rdquo; and then no explanation whatsoever.</p>
+<p>Let me explain what it actually does, because it matters for how your network behaves.</p>
+<h2 id="what-is-path-hash">What Is Path Hash?</h2>
+<p>Every node in MeshCore periodically sends advertisement packets—basically saying &ldquo;Hey, I&rsquo;m here, I exist, talk to me.&rdquo;</p></p>
+                    <a href="http://localhost:1313/posts/2026-03-20-hash/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+        </div>
+    </div>
+</section>
+
+
+
+    </main>
+
+    
+    <footer>
+        <div class="container">
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/posts">Posts</a></li>
+                    <li><a href="/publications">Work/Publications</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Interests</h3>
+                <ul>
+                    <li><a href="https://makerworld.com/" target="_blank">Maker World</a></li>
+                    <li><a href="https://www.adafruit.com/" target="_blank">Adafruit</a></li>
+                    <li><a href="https://sanjosesimplex.groups.io/g/main" target="_blank">K6SJS San Jose Simplex</a></li>
+                    <li><a href="https://www.kennedymeadows.com/" target="_blank">Kennedy Meadows Packstation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="https://it-humsci.stanford.edu/people/sal-mancuso" target="_blank">Stanford</a></li>
+                    <li><a href="https://github.com/salmancuso" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/salmancuso/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://www.qrz.com/db/W6SAL" target="_blank">QRZ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sal Mancuso. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+    
+    
+    <script src="/js/topo-animator.js"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

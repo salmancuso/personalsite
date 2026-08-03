@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hf on Sal Mancuso</title>
+    <link>http://localhost:1313/tags/hf/</link>
+    <description>Recent content in Hf on Sal Mancuso</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/hf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Elegant Antenna Design: The Four-Band Octagon Dipole</title>
+      <link>http://localhost:1313/posts/2025-11-24-hamsticks/</link>
+      <pubDate>Mon, 24 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2025-11-24-hamsticks/</guid>
+      <description>&lt;p&gt;You know what I appreciate? When someone takes a complex problem and solves it with elegant engineering instead of brute-force complexity.&lt;/p&gt;&#xA;&lt;p&gt;Robert, N6MRO, designed a four-band ham-stick dipole that does exactly that. It&amp;rsquo;s a multi-band antenna that works efficiently on 10, 20, 40, and 80 meters without the complexity usually required for such performance.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-challenge&#34;&gt;The Challenge&lt;/h2&gt;&#xA;&lt;p&gt;Multi-band antennas always present interesting tradeoffs. You want one physical antenna that works well on multiple frequencies, but each band has different resonant characteristics. Most solutions involve:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

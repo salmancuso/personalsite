@@ -1,6 +1,6 @@
 ---
 title: "Business Intelligence and AI"
-date: 2025-11-15
+date: 2026-04-15
 description: "Exploring the intersection of business intelligence and artificial intelligence"
 image: "/images/BI.png"
 tags: ["ai", "business-intelligence", "data"]

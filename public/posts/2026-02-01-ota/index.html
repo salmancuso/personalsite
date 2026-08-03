@@ -1,0 +1,537 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Building infrastructure. Living outside. Communicating worldwide.">
+    <meta name="author" content="Sal Mancuso">
+
+    <title>
+        
+        Over-The-Air (OTA) Firmware Updates: Updating Your Remote Mesh Nodes | Sal Mancuso
+        
+    </title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/pages.css">
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/hero.css">
+    
+
+    
+    
+    <link rel="stylesheet" href="/css/featured-projects.css">
+    
+
+    
+    
+    <link rel="stylesheet" href="/css/sections.css">
+    
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-bg: #1a1a18;
+            --dark-surface: #242420;
+            --text-light: #E8D5C4;
+            --text-muted: #A39A8F;
+            --accent: #B8860B;
+            --earth: #8B9D5D;
+            --border-color: #4a4a48;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #d4af37;
+        }
+
+         
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+         
+        nav {
+            background-color: var(--dark-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-light);
+            font-weight: 500;
+            margin: 0 1.5rem;
+        }
+
+        nav a:first-child {
+            font-family: Georgia, serif;
+            font-size: 1.25rem;
+            margin: 0;
+            margin-right: auto;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+         
+        footer {
+            background-color: #0f0f0d;
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        footer h3 {
+            font-family: Georgia, serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer ul li a {
+            color: var(--text-muted);
+        }
+
+        footer ul li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+         
+        main {
+            min-height: 50vh;
+        }
+
+        .page-content {
+            padding: 3rem 0;
+        }
+
+        .page-title {
+            font-family: Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--earth);
+            display: inline-block;
+        }
+
+         
+        main h2 {
+            font-family: Georgia, serif;
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        main h3 {
+            font-family: Georgia, serif;
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        main p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        main ul,
+        main ol {
+            color: var(--text-muted);
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        main li {
+            margin-bottom: 0.5rem;
+        }
+
+        main code {
+            background-color: var(--dark-surface);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        main pre {
+            background-color: var(--dark-surface);
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            padding: 1.5rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        main pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        main blockquote {
+            border-left: 4px solid var(--earth);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+         
+        @media (max-width: 768px) {
+            nav a {
+                margin: 0 1rem;
+            }
+
+            .page-title {
+                font-size: 1.8rem;
+            }
+
+            main h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-brand">Sal</a>
+            <div class="nav-menu">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/posts">Posts</a>
+                <a href="/publications">Work/Publications</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    
+    <main>
+        
+
+<article class="post-single">
+    <div class="container">
+        
+        <header class="post-header">
+            <h1 class="post-title">Over-The-Air (OTA) Firmware Updates: Updating Your Remote Mesh Nodes</h1>
+            
+            <div class="post-meta">
+                
+                <span class="meta-item">
+                    <i class="ti ti-calendar"></i>
+                    February 1, 2026
+                </span>
+                
+                
+                
+                <span class="meta-item">
+                    <i class="ti ti-clock"></i>
+                    3 min read
+                </span>
+                
+                
+                
+            </div>
+
+            
+            <figure class="post-image">
+                <img src="/images/posts/OTA/windTurbine.jpg" alt="Over-The-Air (OTA) Firmware Updates: Updating Your Remote Mesh Nodes" loading="lazy">
+            </figure>
+            
+        </header>
+
+        
+        <div class="post-content">
+            <p>The moment you install a repeater in the most inconvenient location possible—top of a tree, your roof peak, a cell tower—is the exact moment a firmware update becomes necessary. That&rsquo;s just how Murphy&rsquo;s Law works with communication equipment.</p>
+<p>But here&rsquo;s the beautiful thing: you don&rsquo;t need to climb that tree again. OTA (Over-The-Air) updates let you push new firmware wirelessly. You just need to be within reasonable WiFi or Bluetooth range, and your node handles the rest.</p>
+<h2 id="before-you-start">Before You Start</h2>
+<p>Download the firmware from the official source: <a href="https://flasher.meshcore.co.uk/">https://flasher.meshcore.co.uk/</a></p>
+<p>Select whether you&rsquo;re updating a Room Server/Repeater or just a standard Repeater. They&rsquo;re different—pick the right one.</p>
+<p><strong>Critical</strong>: Download the <strong>non-merged</strong> <code>.bin</code> file, not the merged one. I don&rsquo;t know why there are two options or what &ldquo;merged&rdquo; technically means, but I know that picking the wrong one results in 20 minutes of frustration wondering why nothing works.</p>
+<h2 id="the-ota-update-process">The OTA Update Process</h2>
+<p><strong>Step 1: Connect to Your Node</strong></p>
+<p>Get within reasonable range of your node&rsquo;s WiFi or Bluetooth connection. &ldquo;Reasonable&rdquo; varies, but if you can see the device or the antenna, you&rsquo;re probably close enough. You need a stable connection to avoid corruption during the update.</p>
+<p><strong>Step 2: Access the Configuration Interface</strong></p>
+<p>Open your browser to your node&rsquo;s configuration page. This is usually <code>meshtastic.local</code> or the node&rsquo;s IP address if you know it. The web interface is pretty straightforward—you&rsquo;ll see a settings/configuration menu.</p>
+<p><strong>Step 3: Locate the Firmware Update Section</strong></p>
+<p>Look for an &ldquo;Upgrade&rdquo; or &ldquo;Firmware Update&rdquo; button/link. Most interfaces make this pretty obvious.</p>
+<p><strong>Step 4: Select Your Downloaded Firmware File</strong></p>
+<p>Browse to the non-merged <code>.bin</code> file you downloaded. Select it and confirm.</p>
+<p><strong>Step 5: Wait for the Update to Complete</strong></p>
+<p>This typically takes 2-5 minutes. Don&rsquo;t interrupt the process, don&rsquo;t move out of range, don&rsquo;t power cycle the device. Just wait. The node will show a progress indicator (usually).</p>
+<p><strong>Step 6: Verify the Update</strong></p>
+<p>Once the update completes, the node will reboot automatically. Check the firmware version to confirm you&rsquo;re running the new version.</p>
+<h2 id="potential-issues">Potential Issues</h2>
+<p><strong>Connection Drops During Update</strong></p>
+<p>If WiFi/Bluetooth drops mid-update, the firmware upload fails and the node keeps its old firmware. No permanent damage, just failed attempt. You can retry immediately.</p>
+<p><strong>Node Won&rsquo;t Connect After Update</strong></p>
+<p>If a node becomes unresponsive after an OTA update, you have two options:</p>
+<ol>
+<li>Wait 5-10 minutes for it to fully boot (some updates take longer)</li>
+<li>Perform a USB-based firmware reflash to recover</li>
+</ol>
+<p>USB recovery always works as a fallback, so OTA updates are relatively low-risk.</p>
+<p><strong>Slow Upload Speeds</strong></p>
+<p>If your node&rsquo;s WiFi signal is weak, upload speeds can be glacial. This increases the risk of connection dropout. If possible, get closer to the node or use Bluetooth (usually more reliable for short distances).</p>
+<h2 id="best-practices">Best Practices</h2>
+<p><strong>Before updating any critical node:</strong></p>
+<ul>
+<li>Make sure you have USB connectivity available as a fallback</li>
+<li>Test the update on a non-critical node first</li>
+<li>Schedule updates for low-traffic times</li>
+<li>Have a recovery plan if the update goes sideways</li>
+</ul>
+<p><strong>Timing matters:</strong></p>
+<ul>
+<li>Don&rsquo;t update during active emergency operations</li>
+<li>Update during predictable, quiet periods</li>
+<li>Give yourself time to verify the node is working correctly after the update</li>
+</ul>
+<p><strong>Network considerations:</strong></p>
+<ul>
+<li>If updating a critical repeater, warn users of brief downtime</li>
+<li>Batch update multiple nodes if possible (still individually, but plan them together)</li>
+<li>Monitor the node after update to ensure it&rsquo;s functioning normally</li>
+</ul>
+<h2 id="why-ota-updates-matter">Why OTA Updates Matter</h2>
+<p>Manual firmware updates via USB are tedious. They require physical access to the device—which might mean climbing that tree, accessing that remote tower, or driving to the site. OTA updates eliminate that requirement. You can push updates from home, from the office, or from anywhere within WiFi range.</p>
+<p>For a growing mesh network with repeaters spread across multiple locations, OTA capability is invaluable. It transforms firmware maintenance from a physical site-visit problem into a wireless management task.</p>
+<hr>
+<p><strong>73</strong></p>
+
+        </div>
+
+        
+        
+        <footer class="post-footer">
+            <div class="post-tags">
+                
+                <a href="/tags/meshcore/" class="tag">meshcore</a>
+                
+                <a href="/tags/firmware/" class="tag">firmware</a>
+                
+                <a href="/tags/ota/" class="tag">ota</a>
+                
+                <a href="/tags/deployment/" class="tag">deployment</a>
+                
+            </div>
+        </footer>
+        
+    </div>
+</article>
+
+
+<nav class="post-nav">
+    <div class="container">
+        <div class="nav-links">
+            
+            <a href="http://localhost:1313/posts/bluetooth/" class="nav-prev">
+                <span class="nav-label">← Previous</span>
+                <span class="nav-title">MeshCore Bluetooth Connectivity: Troubleshooting Pairing Issues</span>
+            </a>
+            
+            
+            
+            <a href="http://localhost:1313/posts/2026-02-15-meshbeacon/" class="nav-next">
+                <span class="nav-label">Next →</span>
+                <span class="nav-title">MeshBeacon: Turning Your Mesh Node Into an Information Broadcaster</span>
+            </a>
+            
+        </div>
+    </div>
+</nav>
+
+
+
+
+<section class="related-posts">
+    <div class="container">
+        <h2>More Posts</h2>
+        <div class="posts-grid">
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/dataSec.jpeg" alt="Data Security Best Practices" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="http://localhost:1313/posts/datasec/">Data Security Best Practices</a></h3>
+                    <p class="post-card-date">Jun 8, 2026</p>
+                    <p class="post-card-summary"><h2 id="introduction-the-strategic-imperative-of-data-security">Introduction: The Strategic Imperative of Data Security</h2>
+<p>In today&rsquo;s hyperconnected digital ecosystem, data has transcended beyond mere commodity status—it&rsquo;s become the operational lifeblood and competitive moat of modern enterprises. From personally identifiable information (PII) and healthcare records to intellectual property, trade secrets, and financial ledgers, data assets underpin organizational resilience and individual privacy alike. Yet this critical dependence on data infrastructure introduces a parallel complexity: the expanding attack surface and sophistication of threat actors. Cyber attacks, data exfiltration events, ransomware deployments, and identity theft schemes have evolved from theoretical risks into demonstrable existential threats. The stakes are real, the vulnerabilities are systemic, and frankly, reactive approaches no longer cut it. Prioritizing data security—both at the enterprise and personal level—isn&rsquo;t optional. It&rsquo;s the foundation of operational integrity.</p></p>
+                    <a href="http://localhost:1313/posts/datasec/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/posts/gpsSettings/GPS.jpg" alt="GPS on MeshCore: Solving the Timestamp Problem" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="http://localhost:1313/posts/2026-03-23-gpssettings/">GPS on MeshCore: Solving the Timestamp Problem</a></h3>
+                    <p class="post-card-date">Mar 23, 2026</p>
+                    <p class="post-card-summary"><p>Here&rsquo;s something that doesn&rsquo;t get talked about nearly enough: your mesh repeater probably doesn&rsquo;t know what time it is.</p>
+<p>Think about that for a moment. You&rsquo;ve spent hours—maybe days—setting up this node. You&rsquo;ve installed it on a mountaintop or bolted it to a tower somewhere. You&rsquo;ve carefully tuned the antenna, verified the coverage, tested the mesh routing. Everything&rsquo;s working great. And meanwhile, internally, your repeater thinks it&rsquo;s January 1st, 1970. Unix Epoch. The dawn of time, as far as computer systems are concerned.</p></p>
+                    <a href="http://localhost:1313/posts/2026-03-23-gpssettings/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/posts/hash/hashbrowns.jpg" alt="Understanding Path Hash Configuration in MeshCore" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="http://localhost:1313/posts/2026-03-20-hash/">Understanding Path Hash Configuration in MeshCore</a></h3>
+                    <p class="post-card-date">Mar 20, 2026</p>
+                    <p class="post-card-summary"><p>There&rsquo;s a parameter in MeshCore called <code>path.hash.mode</code> that almost nobody understands. The firmware developers seem to have deliberately hidden it in the configuration docs with a note saying &ldquo;DO NOT USE&rdquo; and then no explanation whatsoever.</p>
+<p>Let me explain what it actually does, because it matters for how your network behaves.</p>
+<h2 id="what-is-path-hash">What Is Path Hash?</h2>
+<p>Every node in MeshCore periodically sends advertisement packets—basically saying &ldquo;Hey, I&rsquo;m here, I exist, talk to me.&rdquo;</p></p>
+                    <a href="http://localhost:1313/posts/2026-03-20-hash/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+        </div>
+    </div>
+</section>
+
+
+
+    </main>
+
+    
+    <footer>
+        <div class="container">
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/posts">Posts</a></li>
+                    <li><a href="/publications">Work/Publications</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Interests</h3>
+                <ul>
+                    <li><a href="https://makerworld.com/" target="_blank">Maker World</a></li>
+                    <li><a href="https://www.adafruit.com/" target="_blank">Adafruit</a></li>
+                    <li><a href="https://sanjosesimplex.groups.io/g/main" target="_blank">K6SJS San Jose Simplex</a></li>
+                    <li><a href="https://www.kennedymeadows.com/" target="_blank">Kennedy Meadows Packstation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="https://it-humsci.stanford.edu/people/sal-mancuso" target="_blank">Stanford</a></li>
+                    <li><a href="https://github.com/salmancuso" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/salmancuso/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://www.qrz.com/db/W6SAL" target="_blank">QRZ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sal Mancuso. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+    
+    
+    <script src="/js/topo-animator.js"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

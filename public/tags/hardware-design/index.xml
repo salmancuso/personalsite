@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hardware-Design on Sal Mancuso</title>
+    <link>http://localhost:1313/tags/hardware-design/</link>
+    <description>Recent content in Hardware-Design on Sal Mancuso</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/hardware-design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Elegant Antenna Design: The Four-Band Octagon Dipole</title>
+      <link>http://localhost:1313/posts/2025-11-24-hamsticks/</link>
+      <pubDate>Mon, 24 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2025-11-24-hamsticks/</guid>
+      <description>&lt;p&gt;You know what I appreciate? When someone takes a complex problem and solves it with elegant engineering instead of brute-force complexity.&lt;/p&gt;&#xA;&lt;p&gt;Robert, N6MRO, designed a four-band ham-stick dipole that does exactly that. It&amp;rsquo;s a multi-band antenna that works efficiently on 10, 20, 40, and 80 meters without the complexity usually required for such performance.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-challenge&#34;&gt;The Challenge&lt;/h2&gt;&#xA;&lt;p&gt;Multi-band antennas always present interesting tradeoffs. You want one physical antenna that works well on multiple frequencies, but each band has different resonant characteristics. Most solutions involve:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MagSafe Node Antenna Mount: Elegant Engineering</title>
+      <link>http://localhost:1313/posts/2025-11-04-mromagsafe/</link>
+      <pubDate>Tue, 04 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2025-11-04-mromagsafe/</guid>
+      <description>&lt;p&gt;Robert, callsign N6MRO, solved a problem I didn&amp;rsquo;t know existed, and the solution is so elegant that I had to document it.&lt;/p&gt;&#xA;&lt;p&gt;The problem: Standard mesh node antennas are either permanently mounted (which means uninstalling the whole antenna to adjust orientation) or loosely attached (which means they fall off). There&amp;rsquo;s no elegant middle ground.&lt;/p&gt;&#xA;&lt;p&gt;Robert&amp;rsquo;s solution: Steal Apple&amp;rsquo;s MagSafe concept and apply it to LoRa antennas. Magnetic quick-disconnect antenna mounts.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

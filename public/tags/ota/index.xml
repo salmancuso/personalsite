@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ota on Sal Mancuso</title>
+    <link>http://localhost:1313/tags/ota/</link>
+    <description>Recent content in Ota on Sal Mancuso</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ota/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Over-The-Air (OTA) Firmware Updates: Updating Your Remote Mesh Nodes</title>
+      <link>http://localhost:1313/posts/ota/</link>
+      <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/ota/</guid>
+      <description>&lt;p&gt;The moment you install a repeater in the most inconvenient location possible—top of a tree, your roof peak, a cell tower—is the exact moment a firmware update becomes necessary. That&amp;rsquo;s just how Murphy&amp;rsquo;s Law works with communication equipment.&lt;/p&gt;&#xA;&lt;p&gt;But here&amp;rsquo;s the beautiful thing: you don&amp;rsquo;t need to climb that tree again. OTA (Over-The-Air) updates let you push new firmware wirelessly. You just need to be within reasonable WiFi or Bluetooth range, and your node handles the rest.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

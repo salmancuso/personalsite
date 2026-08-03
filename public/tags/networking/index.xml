@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Networking on Sal Mancuso</title>
+    <link>http://localhost:1313/tags/networking/</link>
+    <description>Recent content in Networking on Sal Mancuso</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/networking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding Path Hash Configuration in MeshCore</title>
+      <link>http://localhost:1313/posts/hash/</link>
+      <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/hash/</guid>
+      <description>&lt;p&gt;There&amp;rsquo;s a parameter in MeshCore called &lt;code&gt;path.hash.mode&lt;/code&gt; that almost nobody understands. The firmware developers seem to have deliberately hidden it in the configuration docs with a note saying &amp;ldquo;DO NOT USE&amp;rdquo; and then no explanation whatsoever.&lt;/p&gt;&#xA;&lt;p&gt;Let me explain what it actually does, because it matters for how your network behaves.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-path-hash&#34;&gt;What Is Path Hash?&lt;/h2&gt;&#xA;&lt;p&gt;Every node in MeshCore periodically sends advertisement packets—basically saying &amp;ldquo;Hey, I&amp;rsquo;m here, I exist, talk to me.&amp;rdquo;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Building an MQTT Bridge for MeshCore: Connecting Your Mesh to Home Automation</title>
+      <link>http://localhost:1313/posts/mqttserver/</link>
+      <pubDate>Wed, 12 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/mqttserver/</guid>
+      <description>&lt;p&gt;So you&amp;rsquo;ve got your MeshCore mesh network humming along nicely. Nodes are relaying messages. Data is flowing. Life is good. Now you want to take the next step: pipe that mesh data into your home automation system or a database where you can actually do something with it.&lt;/p&gt;&#xA;&lt;p&gt;This is where an MQTT bridge comes in handy. MQTT (Message Queuing Telemetry Transport) is a lightweight publish-subscribe protocol perfect for IoT systems. It lets your mesh network talk to Home Assistant, Grafana, or any other system that speaks MQTT.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

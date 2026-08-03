@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Building infrastructure. Living outside. Communicating worldwide.">
@@ -10,7 +10,7 @@
 
     <title>
         
-        MeshBeacon: Because Your Mesh Network Should Actually DO Something | Sal Mancuso
+        MeshBeacon: Turning Your Mesh Node Into an Information Broadcaster | Sal Mancuso
         
     </title>
 
@@ -296,20 +296,20 @@
     <div class="container">
         
         <header class="post-header">
-            <h1 class="post-title">MeshBeacon: Because Your Mesh Network Should Actually DO Something</h1>
+            <h1 class="post-title">MeshBeacon: Turning Your Mesh Node Into an Information Broadcaster</h1>
             
             <div class="post-meta">
                 
                 <span class="meta-item">
                     <i class="ti ti-calendar"></i>
-                    January 15, 2026
+                    February 15, 2026
                 </span>
                 
                 
                 
                 <span class="meta-item">
                     <i class="ti ti-clock"></i>
-                    12 min read
+                    2 min read
                 </span>
                 
                 
@@ -318,262 +318,46 @@
 
             
             <figure class="post-image">
-                <img src="/images/muos.jpg" alt="MeshBeacon: Because Your Mesh Network Should Actually DO Something" loading="lazy">
+                <img src="/images/posts/meshbeacon/muos.jpg" alt="MeshBeacon: Turning Your Mesh Node Into an Information Broadcaster" loading="lazy">
             </figure>
             
         </header>
 
         
         <div class="post-content">
-            <h2 id="take-it-make-it-yours">Take It. Make It Yours.</h2>
-<p>MeshBeacon is open source. Every line of it.</p>
-<p>I didn&rsquo;t build this so it could run on one node in San Jose. I built it so it could run everywhere. Fork the repository. Change the coordinates to your city. Add your local weather stations. Point the earthquake monitor at your fault lines. Write a new broadcast module for something I haven&rsquo;t thought of yet.</p>
-<p>The APIs are free. The code is free. The spectrum is shared. The only thing required is the willingness to build something that matters.</p>
-<p>And here&rsquo;s what I believe — genuinely believe — about this project: the best version of MeshBeacon hasn&rsquo;t been written yet. It&rsquo;s going to be written by someone I&rsquo;ve never met, in a city I&rsquo;ve never visited, solving a problem I&rsquo;ve never encountered. That&rsquo;s how good software works. You put it into the world, and the world makes it better than you ever could alone.</p>
-<p>So take it. Adapt it. Make it yours. Make it <em>insanely</em> useful.</p>
-<p>And then put it on your mesh network and let it run.</p>
-<h3 id="githubcomsalmancusomeshbeacon"><strong><a href="https://github.com/salmancuso/MeshBeacon">github.com/salmancuso/MeshBeacon</a></strong></h3>
-<hr>
-<h2 id="the-moment">The Moment</h2>
-<p>There&rsquo;s a moment — and if you&rsquo;ve ever built anything that matters, you know exactly what I&rsquo;m talking about — there&rsquo;s a moment where you look at a piece of technology and you see not what it is, but what it <em>could</em> be.</p>
-<p>Most people looked at MeshCore and saw a messaging tool. A way to send text over radio. And that&rsquo;s fine. That&rsquo;s what it does on the surface. But that&rsquo;s like looking at a piano and seeing a piece of furniture.</p>
-<p>I looked at MeshCore and saw an information network waiting to happen.</p>
-<hr>
-<h2 id="the-problem-nobody-was-solving">The Problem Nobody Was Solving</h2>
-<p>We have this incredible mesh radio technology — LoRa devices that can communicate miles apart, no cell towers, no internet, no infrastructure dependency. And what are people doing with it? Sending &ldquo;hello&rdquo; messages. Testing range. Arguing about channel etiquette.</p>
-<p>That&rsquo;s not a network. That&rsquo;s a toy.</p>
-<p>A real network delivers information that matters. A real network makes your life better every single time you turn it on. A real network doesn&rsquo;t wait for you to ask — it anticipates what you need and puts it in front of you.</p>
-<p>That&rsquo;s what MeshBeacon is.</p>
-<pre tabindex="0"><code>┌──────────────────────────────────────────────────────┐
-│                                                      │
-│   &#34;You turn on your radio,                           │
-│    and the information is there.&#34;                    │
-│                                                      │
-│   That&#39;s not a feature. That&#39;s a philosophy.         │
-│                                                      │
-└──────────────────────────────────────────────────────┘
-</code></pre><hr>
-<h2 id="what-meshbeacon-delivers">What MeshBeacon Delivers</h2>
-<pre tabindex="0"><code>☀️  Solar Propagation    — Is the band open? Now you know.
-🌤️  Weather Reports      — Hyper-local. Real-time. Useful.
-🔴  Earthquake Alerts    — When the ground moves, you know.
-⚠️  Skywarn Alerts       — NWS watches, warnings, advisories.
-📻  SOTA/POTA Spots      — Who&#39;s activating near you.
-📅  Event Notifications  — Never miss a net again.
-All automated. All under 135 bytes. All over RF.
-</code></pre><p>Seven scripts. Seven problems solved. One common foundation.</p>
-<hr>
-<h2 id="the-architecture-of-simplicity">The Architecture of Simplicity</h2>
-<p>Every broadcast script follows the same elegant pattern:</p>
-<pre tabindex="0"><code>    ┌─────────────────┐
-    │  Fetch data     │   ← Public APIs (free, no keys for most)
-    │  from the world │
-    └────────┬────────┘
-             │
-             ▼
-    ┌─────────────────┐
-    │  Distill into   │   ← 135 bytes of meaning
-    │  what matters   │
-    └────────┬────────┘
-             │
-             ▼
-    ┌─────────────────┐
-    │  Deliver it     │   ← Over radio. No internet on receiving end.
-    │  over RF        │
-    └─────────────────┘
-</code></pre><p>That constraint — 135 bytes — is not a limitation. It&rsquo;s a gift. It forces clarity. It demands that every single character earn its place. When you only have 135 bytes, you can&rsquo;t be lazy. You can&rsquo;t dump raw data on someone and call it a feature. You have to <em>think</em> about what matters.</p>
-<p>And when you think about what matters, you build something beautiful.</p>
-<p>The foundation — <code>meshcore_send.py</code> — handles device connections and channel resolution. Channels are matched by cryptographic secret, not by slot index. This is a small detail, but small details are what separate things that work from things that work <em>every single time</em>. Slot indices change. Secrets don&rsquo;t. So the system is reliable by design, not by luck.</p>
-<p>Configuration lives in simple <code>.keys</code> files. No databases. No YAML nested fourteen levels deep. No configuration framework that requires its own configuration. Just plain text, key-value pairs, human-readable. You open the file, you understand it, you edit it, you&rsquo;re done.</p>
-<pre tabindex="0"><code>┌─────────────────────────────────────────────────────────────┐
-│                    How It All Connects                      │
-│                                                             │
-│  weather.keys ──┐                                           │
-│  calendar.keys ─┤                                           │
-│  meshcore.keys ─┤──→  Broadcast Scripts ──→  MeshCore Radio │
-│                 │      (7 Python files)       (BLE/Serial)  │
-│  Public APIs ───┘            │                    │         │
-│                              │                    ▼         │
-│                         ┌────┴────┐        ┌────────────┐   │
-│                         │ 135-byte│        │ LoRa Mesh  │   │
-│                         │ messages│───────→│  Network   │   │
-│                         └─────────┘        └────────────┘   │
-└─────────────────────────────────────────────────────────────┘
-</code></pre><hr>
-<h2 id="weather--weather_broadcastpy">Weather — <code>weather_broadcast.py</code></h2>
-<p>The weather matters. It matters if you&rsquo;re planning a field operation, coordinating emergency response, or deciding whether to put up an antenna. MeshBeacon pulls real-time observations from Personal Weather Stations and forecasts from Weather Underground and delivers a clean, consistent six-line report:</p>
-<pre tabindex="0"><code>┌─────────────────────────┐
-│ WX San Jose             │
-│ Temp 58F Feels 56F      │
-│ Hi 63F Lo 44F           │
-│ Hum 65% Rain 20%        │
-│ Wind 5mph NW G10        │
-│ Partly Cloudy           │
-└─────────────────────────┘
-</code></pre><p>Hyper-local data. Multiple stations. Twice a day. Your mesh network becomes a weather service.</p>
-<hr>
-<h2 id="earthquakes--earthquake_broadcastpy">Earthquakes — <code>earthquake_broadcast.py</code></h2>
-<p>We live in seismically active territory. The USGS monitors every tremor, and MeshBeacon puts that data on your radio within minutes. Magnitude 2.5 and above, within 100 miles, color-coded by severity.</p>
-<pre tabindex="0"><code>┌──────────────────────────────────────┐
-│ EARTHQUAKE                           │
-│ 🟡 M3.3 - 5 km SW of Ridgemark       │
-│ 46.5mi from SJC | Depth: 5.0mi       │
-│ Feb 11 03:34 PST                     │
-└──────────────────────────────────────┘
-
-   Severity Scale:
-   🟢 Minor    (M2.5–2.9)
-   🟡 Light    (M3.0–3.9)
-   🟠 Moderate (M4.0–4.9)
-   🔴 Major    (M5.0+)
-</code></pre><p>No cell network required. No internet required. When the infrastructure that everyone depends on goes down — and in an earthquake, it will — this still works. That&rsquo;s not a theoretical benefit. That&rsquo;s the entire reason mesh networks exist.</p>
-<hr>
-<h2 id="skywarn-severe-weather--skywarn_broadcastpy">Skywarn Severe Weather — <code>skywarn_broadcast.py</code></h2>
-<p>Earthquakes are dramatic. Weather is deadly.</p>
-<p>The National Weather Service issues watches, warnings, and advisories every day across the country. Skywarn — the NWS volunteer spotter network — has been the backbone of severe weather reporting since 1972. MeshBeacon brings that institutional knowledge directly to your mesh radio.</p>
-<p><code>skywarn_broadcast.py</code> pulls active NWS alerts and broadcasts them, filtered by your location and the severity you care about. Give it a zip code. Give it coordinates. Give it a state. It finds what matters and delivers it in one clean message.</p>
-<pre tabindex="0"><code>┌──────────────────────────────┐
-│ ⚠️ SKYWARN                   │
-│ 🟠 Svr T-Storm Wrn           │
-│ Santa Clara County, CA       │
-│ Until 3:45 PM PST            │
-│ 23mi                         │
-└──────────────────────────────┘
-
-   Severity Scale:
-   🔴 Extreme  — Extraordinary threat
-   🟠 Severe   — Significant threat
-   🟡 Moderate — Possible threat
-   🟢 Minor    — Minimal threat
-   ⚪ Unknown  — Not yet determined
-</code></pre><p>The engineering underneath is careful. It combines two separate NWS API queries — point-based and area-based — to ensure comprehensive coverage. It deduplicates by alert ID. It computes distance from your center point to each alert polygon&rsquo;s centroid. It abbreviates event names intelligently to stay under 135 bytes. Every decision in the formatting pipeline exists because the constraint demanded it.</p>
-<pre tabindex="0"><code>  How the NWS queries merge:
-
-  Point Query ──→ ┐
-  (your exact     │──→  Deduplicate ──→  Radius Filter ──→  Severity Sort
-   location)      │      by Alert ID      by Centroid         Most severe
-  State Query ──→ ┘                       Distance            first
-  (broader area)
-</code></pre><p>The <code>--skywarn-only</code> flag is a lesson in restraint. It limits output to the events that matter in a Skywarn context — tornadoes, severe thunderstorms, flash floods — filtering out the frost advisories and wind chill warnings that would dilute the signal. Sometimes the best feature is knowing what to leave out.</p>
-<p>And when there&rsquo;s nothing to report:</p>
-<pre tabindex="0"><code>┌──────────────────────────────┐
-│ ⚠️ SKYWARN                   │
-│ ✅ No active alerts          │
-│ San Jose, CA                 │
-│ Radius: 50mi                 │
-└──────────────────────────────┘
-</code></pre><p>In emergency communications, silence is data too. The <code>--send-clear</code> flag makes that explicit.</p>
-<p>No API keys. No accounts. Just the National Weather Service — one of the most important public services in America — feeding your mesh network directly.</p>
-<hr>
-<h2 id="solar-propagation--solar_broadcastpy">Solar Propagation — <code>solar_broadcast.py</code></h2>
-<p>This one is for the radio operators who actually understand what propagation means and why it determines whether you make contacts today or talk to yourself.</p>
-<p>Solar flux index. Sunspot numbers. K-index. X-ray classification. HF band conditions for every band from 80 meters through 10 meters. Automatic NOAA-scale alerts when geomagnetic storms, solar flares, or radiation events are in progress.</p>
-<pre tabindex="0"><code>┌───────────────────────┐     ┌───────────────────────┐
-│ ☀️ SOLAR:             │      │ 📡 BANDS D/N:         │
-│ SFI=185               │     │ 80 = ✅                │
-│ SN=85                 │     │ 40 = ✅                │
-│ A=5                   │     │ 30 = ✅                │
-│ K=2                   │     │ 20 = 🟡                │
-│ Xray=A1.2             │     │ 17 = 🟡                │
-│ Wind=425km/s          │     │ 15 = ❌                │
-│ Bt=-3nT               │     │ 12 = ❌                │
-│ [10 Feb 1800z] ✅     │     │ 10 = ❌                │
-└───────────────────────┘     └───────────────────────┘
-</code></pre><p>Add VHF mode and you get two more messages: sporadic-E status, aurora conditions, meteor shower proximity, and a tropospheric ducting index computed from real atmospheric pressure-level data.</p>
-<p>That ducting index — I&rsquo;m particularly proud of this — uses temperature inversions at 925 and 850 hectopascals to calculate whether the marine layer is creating conditions for VHF/UHF signal enhancement. It&rsquo;s actual atmospheric science, distilled into a single number on a ten-point scale.</p>
-<pre tabindex="0"><code>┌───────────────────────┐     ┌───────────────────────┐
-│ 🔭 VHF:               │      │ 🌊 TROPO SJC:         │
-│ Es=Band Closed        │     │ Idx=6/10              │
-│ Aurora=No Aurora      │     │ dT=+12F@925mb         │
-│ Meteor=Perseids+14d ❌│     │ Pres=1022mb           │
-└───────────────────────┘     │ ✅ Likely             │
-                              └───────────────────────┘
-</code></pre><p>One glance. You know everything you need to know.</p>
-<p>When conditions warrant, the system fires automatically:</p>
-<pre tabindex="0"><code>┌──────────────────────────────────────────────────────────┐
-│ 💥🔆💫 ALERT: Geomag=G2(K=6+) Flare=M5.1(R2) Wind=650km/s │
-└──────────────────────────────────────────────────────────┘
-</code></pre><p>You don&rsquo;t have to check anything. The script does the analysis.</p>
-<hr>
-<h2 id="calendar-events--calendar_broadcastpy">Calendar Events — <code>calendar_broadcast.py</code></h2>
-<p>Community coordination shouldn&rsquo;t require people to remember to check a website. MeshBeacon connects to a Google Sheet, reads your event calendar, and sends reminders 24 hours and 2 hours before each event.</p>
-<pre tabindex="0"><code>┌──────────────────────────────┐
-│ EVENT TOMORROW:              │
-│ WVARA Net                    │
-│ Sat Feb 14 @ 7:00 PM         │
-│ Weekly 2m net on 146.76 MHz  │
-└──────────────────────────────┘
-
-  Notification Timeline:
-  ─────────────────────────────────────────────────►
-  │                        │                    │
-  T-24hr                T-2hr               Event
-  &#34;TOMORROW&#34;          &#34;IN 2 HOURS&#34;          Start
-</code></pre><p>Nets, field days, VE sessions, club meetings — the information finds the people, not the other way around. State tracking prevents duplicates. Events route to appropriate channels automatically. You set it up once and it runs forever.</p>
-<hr>
-<h2 id="sotapota-spots--sotapota_broadcastpy">SOTA/POTA Spots — <code>sotapota_broadcast.py</code></h2>
-<p>Summits on the Air. Parks on the Air. Real-time activator spots showing who is out there right now, on what frequency, at what distance from you.</p>
-<pre tabindex="0"><code>┌───────────────────────┐     ┌───────────────────────┐
-│ SOTA                  │     │ POTA                  │
-│ W6/SC-001             │     │ US-4701               │
-│ Call: KG6NBO          │     │ Call: KC1GGP          │
-│ SSB 14.244            │     │ SSB 14.307            │
-│ 14:30 PST             │     │ 09:31 PST             │
-│ 978mi NW of SJC       │     │ 45mi SE of SJC        │
-└───────────────────────┘     └───────────────────────┘
-</code></pre><p>Intelligent filtering by band and distance — separate radius rings for HF and VHF because the physics are different and the software should be smart enough to know that.</p>
-<pre tabindex="0"><code>  Distance Filtering:
-
-  HF  (1–30 MHz):    ◄──────────────────────────────► 1000 mi
-  VHF (≥ 30 MHz):    ◄───────► 100 mi
-
-  Donut queries supported:
-  HF example:              ◄━━━━━━━━━━━━━━━━━► 300–1000 mi
-                     ╳╳╳╳╳╳  (skip nearby HF — work them on VHF)
-</code></pre><p>Deduplication by callsign. Automatic exclusion of operators who&rsquo;ve signed off. Pre-filtering by geographic association to minimize API calls. Every 15 minutes during daytime hours, your mesh network tells you where the action is.</p>
-<hr>
-<h2 id="the-invisible-work">The Invisible Work</h2>
-<p>People sometimes ask me what took so long, or why the scripts are so detailed for something that &ldquo;just sends messages.&rdquo; And the answer is the same answer it always is when someone builds something that feels simple: the simplicity is the hard part.</p>
-<p>Making a message fit in 135 bytes while remaining instantly readable — that took dozens of iterations. Getting channel resolution to work by cryptographic secret instead of brittle slot indices — that required understanding the MeshCore protocol at a level most people never bother with. Computing a tropospheric ducting index from raw atmospheric pressure data — that meant learning the actual physics of temperature inversions and signal propagation through the boundary layer. Merging point-based and area-based NWS alert queries, deduplicating by ID, and computing distances to polygon centroids — that meant understanding how the National Weather Service actually models alert geometry.</p>
-<p>The earthquake monitor doesn&rsquo;t just dump USGS data. It calculates distance and bearing from a reference point, converts depth from kilometers to miles, selects an appropriate severity indicator, formats the time in local timezone, and truncates gracefully if the place name is too long — all while staying under 135 bytes. Every edge case handled. Every message consistent.</p>
-<pre tabindex="0"><code>┌──────────────────────────────────────────────────────┐
-│                                                      │
-│  &#34;This is the work that nobody sees.                 │
-│   And it&#39;s the most important work there is,         │
-│   because when you do it right, people don&#39;t         │
-│   notice the engineering. They just notice           │
-│   that it works. Every time.&#34;                        │
-│                                                      │
-└──────────────────────────────────────────────────────┘
-</code></pre><hr>
+            <p>Here&rsquo;s what I&rsquo;ve been working on: turning mesh nodes from passive relay stations into active information broadcasters.</p>
+<p>MeshBeacon is a Python-based system that fetches data from public APIs and broadcasts formatted messages across your LoRa mesh network. No internet required on the receiving end. You set it up once, schedule it with cron, and your mesh network starts delivering useful information to operators.</p>
+<h2 id="the-concept">The Concept</h2>
+<p>Imagine your mesh network automatically broadcasting:</p>
+<ul>
+<li>Current weather conditions</li>
+<li>Earthquake alerts</li>
+<li>Fire/emergency alerts for your area</li>
+<li>Traffic conditions on major routes</li>
+<li>Sunset/sunrise times for navigation planning</li>
+</ul>
+<p>All of this can be automated. A Python script fetches the data, formats it, and sends it to your mesh network periodically. Operators in range automatically receive the broadcast.</p>
+<h2 id="technical-architecture">Technical Architecture</h2>
+<p>MeshBeacon consists of multiple Python scripts:</p>
+<p><strong>meshcore_send.py</strong>: Core module that handles sending messages to the mesh network</p>
+<p><strong>Weather broadcaster</strong>: Fetches current conditions from public weather APIs, formats them, broadcasts them</p>
+<p><strong>Alert systems</strong>: Monitors USGS earthquake feeds, local fire department alerts, etc.</p>
+<p><strong>Navigation data</strong>: Sunrise/sunset times, moon phase, useful information for field operations</p>
+<p>Each script can be scheduled independently with cron. Run weather updates every hour. Check earthquakes every 10 minutes. Update sunrise/sunset once daily.</p>
 <h2 id="why-this-matters">Why This Matters</h2>
-<p>We are building something important here. Not important in the way that people use that word when they&rsquo;re trying to sell you something. Important in the way that matters when the power goes out, when the cell towers go dark, when the internet stops being something you can take for granted.</p>
-<p>Mesh networks are infrastructure. Real infrastructure. The kind that doesn&rsquo;t depend on a company keeping its servers running, or a government keeping the lights on, or a cable staying uncut at the bottom of the ocean. A mesh network works because the people in it make it work.</p>
-<pre tabindex="0"><code>  Traditional Infrastructure          Mesh Infrastructure
-
-  📱 → 🗼 → ☁️ → 🗼 → 📱              📻 ←→ 📻 ←→ 📻 ←→ 📻
-       │                                    ↕       ↕
-  (Single points of failure)           📻 ←→ 📻 ←→ 📻
-                                  
-  Cell tower down? Done.           Node down? Route around it.
-  Internet out? Done.              No internet needed. Ever.
-  Power grid fails? Done.         Solar + battery = indefinite.
-</code></pre><p>MeshBeacon makes it work <em>better</em> — by ensuring that the network isn&rsquo;t just a communication channel, but an information service.</p>
-<p>Weather data that helps people make decisions. Earthquake alerts that provide situational awareness when it matters most. Severe weather warnings that reach people when cell networks can&rsquo;t. Propagation data that helps operators use the radio spectrum effectively. Event coordination that keeps communities connected.</p>
-<p>This is what the technology was always meant to do. We just had to build the software to make it happen.</p>
+<p>Traditional mesh networks are reactive—nodes only communicate when someone explicitly sends a message. MeshBeacon makes mesh networks proactive—automatically delivering information that people need.</p>
+<p>For emergency response: First responders have immediate access to relevant alerts and conditions without digging through separate systems.</p>
+<p>For ongoing operations: Field teams automatically receive weather updates without having to ask for them.</p>
+<p>For community resilience: Mesh network becomes an information backbone, not just a communication channel.</p>
+<h2 id="implementation">Implementation</h2>
+<p>MeshBeacon scripts connect to your local MeshCore node via USB serial or Bluetooth, then queue messages for broadcasting. The node handles mesh routing and delivery.</p>
+<p>Configuration is flexible. Which data sources? What frequency? What formats? All customizable based on your needs.</p>
+<h2 id="the-bigger-picture">The Bigger Picture</h2>
+<p>This is what infrastructure looks like when you take it seriously. Not just connectivity—information delivery. Not just emergency backup—useful operational capability that provides value in normal times and critical capability when systems fail.</p>
+<p>This is mesh networking done right.</p>
 <hr>
-<h2 id="get-started-in-five-minutes">Get Started in Five Minutes</h2>
-<pre tabindex="0"><code>  Step 1    git clone https://github.com/salmancuso/MeshBeacon.git
-  Step 2    pip install -r requirements.txt
-  Step 3    cp meshcore.keys.example meshcore.keys &amp;&amp; edit
-  Step 4    python meshcore_send.py --list-channels
-  Step 5    python weather_broadcast.py --dry-run
-
-  That&#39;s it. You&#39;re in.
-</code></pre><hr>
-<p>73 (That&rsquo;s radio speak for regards)</p>
-<p>Sal</p>
-<p>W6SAL</p>
+<p><strong>73</strong></p>
+<p>For more details: <a href="https://github.com/salmancuso/MeshBeacon">MeshBeacon on GitHub</a></p>
 
         </div>
 
@@ -582,11 +366,13 @@ All automated. All under 135 bytes. All over RF.
         <footer class="post-footer">
             <div class="post-tags">
                 
-                <a href="/tags/lora/" class="tag">lora</a>
+                <a href="/tags/meshcore/" class="tag">meshcore</a>
                 
-                <a href="/tags/mesh-networks/" class="tag">mesh-networks</a>
+                <a href="/tags/automation/" class="tag">automation</a>
                 
-                <a href="/tags/hardware/" class="tag">hardware</a>
+                <a href="/tags/data-broadcast/" class="tag">data-broadcast</a>
+                
+                <a href="/tags/project/" class="tag">project</a>
                 
             </div>
         </footer>
@@ -599,16 +385,16 @@ All automated. All under 135 bytes. All over RF.
     <div class="container">
         <div class="nav-links">
             
-            <a href="https://salmancuso.com/posts/meshcorevmeshtastic/" class="nav-prev">
+            <a href="http://localhost:1313/posts/ota/" class="nav-prev">
                 <span class="nav-label">← Previous</span>
-                <span class="nav-title">Meshtastic: Core vs Firmware</span>
+                <span class="nav-title">Over-The-Air (OTA) Firmware Updates: Updating Your Remote Mesh Nodes</span>
             </a>
             
             
             
-            <a href="https://salmancuso.com/posts/datasec/" class="nav-next">
+            <a href="http://localhost:1313/posts/radioreview/" class="nav-next">
                 <span class="nav-label">Next →</span>
-                <span class="nav-title">Data Security Best Practices</span>
+                <span class="nav-title">LoRa Radios and Antennas for MeshCore: A Practical Review</span>
             </a>
             
         </div>
@@ -630,43 +416,40 @@ All automated. All under 135 bytes. All over RF.
                 </div>
                 
                 <div class="post-card-content">
-                    <h3><a href="https://salmancuso.com/posts/datasec/">Data Security Best Practices</a></h3>
+                    <h3><a href="http://localhost:1313/posts/datasec/">Data Security Best Practices</a></h3>
                     <p class="post-card-date">Jun 8, 2026</p>
                     <p class="post-card-summary"><h2 id="introduction-the-strategic-imperative-of-data-security">Introduction: The Strategic Imperative of Data Security</h2>
 <p>In today&rsquo;s hyperconnected digital ecosystem, data has transcended beyond mere commodity status—it&rsquo;s become the operational lifeblood and competitive moat of modern enterprises. From personally identifiable information (PII) and healthcare records to intellectual property, trade secrets, and financial ledgers, data assets underpin organizational resilience and individual privacy alike. Yet this critical dependence on data infrastructure introduces a parallel complexity: the expanding attack surface and sophistication of threat actors. Cyber attacks, data exfiltration events, ransomware deployments, and identity theft schemes have evolved from theoretical risks into demonstrable existential threats. The stakes are real, the vulnerabilities are systemic, and frankly, reactive approaches no longer cut it. Prioritizing data security—both at the enterprise and personal level—isn&rsquo;t optional. It&rsquo;s the foundation of operational integrity.</p></p>
-                    <a href="https://salmancuso.com/posts/datasec/" class="read-more">Read more →</a>
+                    <a href="http://localhost:1313/posts/datasec/" class="read-more">Read more →</a>
                 </div>
             </article>
             
             <article class="post-card">
                 
                 <div class="post-card-image">
-                    <img src="/images/meshNodes.jpeg" alt="Meshtastic: Core vs Firmware" loading="lazy">
+                    <img src="/images/BI.png" alt="Business Intelligence and AI" loading="lazy">
                 </div>
                 
                 <div class="post-card-content">
-                    <h3><a href="https://salmancuso.com/posts/meshcorevmeshtastic/">Meshtastic: Core vs Firmware</a></h3>
-                    <p class="post-card-date">Dec 20, 2025</p>
-                    <p class="post-card-summary"><p>You know what REALLY grinds my gears? And I mean REALLY makes me want to throw a radio into the ocean? It&rsquo;s when people ask me, &ldquo;Hey, what&rsquo;s the difference between MeshCore and Meshtastic?&rdquo;</p>
-<p>OH, WHERE DO I BEGIN?!</p>
-<p>It&rsquo;s like asking what&rsquo;s the difference between a surgeon and a guy with a chainsaw! Sure, they BOTH make cuts, but ONE of them knows when to STOP CUTTING!</p>
-<p>Let me paint you a picture. You&rsquo;re in the middle of a disaster. Hurricane just took out every cell tower within 200 miles. Your neighbor&rsquo;s house is on fire. You need to communicate. Do you want the mesh network that&rsquo;s sitting there going &ldquo;HELLO! HELLO! I&rsquo;M HERE! DID YOU GET MY HELLO? HERE&rsquo;S ANOTHER HELLO! AND ANOTHER! OH WAIT, LET ME TELL YOU MY POSITION AGAIN!&rdquo; like some kind of radio-powered narcissist at a cocktail party?</p></p>
-                    <a href="https://salmancuso.com/posts/meshcorevmeshtastic/" class="read-more">Read more →</a>
+                    <h3><a href="http://localhost:1313/posts/biai/">Business Intelligence and AI</a></h3>
+                    <p class="post-card-date">Apr 15, 2026</p>
+                    <p class="post-card-summary"><p>In the rapidly evolving landscape of digital transformation, a phenomenon of profound significance has taken center stage: the integration of Artificial Intelligence (AI) into the realm of Business Intelligence (BI). This integration has emerged as a formidable force that not only propels strategic innovation but also fundamentally reshapes the very fabric of how organizations operate, particularly in the face of mounting complexities stemming from data proliferation. As companies grapple with the challenges of extracting meaningful insights from vast, diverse, and often disorganized datasets, AI stands out as a transformative agent. It enhances BI&rsquo;s capabilities, fundamentally altering the ways in which organizations glean insights, make informed decisions, and strategically maintain competitive advantages in their respective markets. This document aims to provide an in-depth exploration of the profound impact that AI has on BI, drawing insights from a seasoned Silicon Valley perspective and highlighting noteworthy examples that underscore pivotal advancements along with their practical implications.</p></p>
+                    <a href="http://localhost:1313/posts/biai/" class="read-more">Read more →</a>
                 </div>
             </article>
             
             <article class="post-card">
                 
                 <div class="post-card-image">
-                    <img src="/images/gpt.jpg" alt="Data Analysis with GPT Models" loading="lazy">
+                    <img src="/images/posts/gpsSettings/GPS.jpg" alt="GPS on MeshCore: Solving the Timestamp Problem" loading="lazy">
                 </div>
                 
                 <div class="post-card-content">
-                    <h3><a href="https://salmancuso.com/posts/gptdataanalysis/">Data Analysis with GPT Models</a></h3>
-                    <p class="post-card-date">Nov 16, 2025</p>
-                    <p class="post-card-summary"><h2 id="the-aha-moment-that-started-this-journey">The &ldquo;Aha!&rdquo; Moment That Started This Journey</h2>
-<p>You know, I&rsquo;ve spent my career believing that technology should empower everyone, not just the experts. That&rsquo;s why, when I started working with data analytics at Stanford, I kept thinking about my days at Apple Computer, trying to understand a bill of materials in an Excel spreadsheet. Margins up, expenses down—but what did it all <em>mean</em>? What was the story those numbers were trying to tell?</p></p>
-                    <a href="https://salmancuso.com/posts/gptdataanalysis/" class="read-more">Read more →</a>
+                    <h3><a href="http://localhost:1313/posts/gpssettings/">GPS on MeshCore: Solving the Timestamp Problem</a></h3>
+                    <p class="post-card-date">Mar 23, 2026</p>
+                    <p class="post-card-summary"><p>Here&rsquo;s something that doesn&rsquo;t get talked about nearly enough: your mesh repeater probably doesn&rsquo;t know what time it is.</p>
+<p>Think about that for a moment. You&rsquo;ve spent hours—maybe days—setting up this node. You&rsquo;ve installed it on a mountaintop or bolted it to a tower somewhere. You&rsquo;ve carefully tuned the antenna, verified the coverage, tested the mesh routing. Everything&rsquo;s working great. And meanwhile, internally, your repeater thinks it&rsquo;s January 1st, 1970. Unix Epoch. The dawn of time, as far as computer systems are concerned.</p></p>
+                    <a href="http://localhost:1313/posts/gpssettings/" class="read-more">Read more →</a>
                 </div>
             </article>
             
