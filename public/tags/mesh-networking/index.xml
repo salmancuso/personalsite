@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mesh-Networking on Sal Mancuso</title>
-    <link>https://salmancuso.com/tags/mesh-networking/</link>
+    <link>http://localhost:1313/tags/mesh-networking/</link>
     <description>Recent content in Mesh-Networking on Sal Mancuso</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 03 Nov 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://salmancuso.com/tags/mesh-networking/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/mesh-networking/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MeshCore vs Meshtastic: Understanding the Differences</title>
-      <link>https://salmancuso.com/posts/meshnodes/</link>
+      <link>http://localhost:1313/posts/meshnodes/</link>
       <pubDate>Mon, 03 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/posts/meshnodes/</guid>
+      <guid>http://localhost:1313/posts/meshnodes/</guid>
       <description>&lt;p&gt;People ask me constantly: &amp;ldquo;What&amp;rsquo;s the difference between MeshCore and Meshtastic?&amp;rdquo; It&amp;rsquo;s a legitimate question because on the surface, they look similar—both are LoRa-based mesh networks for amateur radio. But dig deeper and you find meaningful architectural differences that matter for real-world deployments.&lt;/p&gt;&#xA;&lt;p&gt;Let me walk through what actually distinguishes them.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-fundamental-architecture&#34;&gt;The Fundamental Architecture&lt;/h2&gt;&#xA;&lt;p&gt;Meshtastic is a peer-to-peer mesh network. Every node is equal. Every node broadcasts its position continuously. Every node tries to relay messages for every other node. It&amp;rsquo;s democratic in spirit—flat hierarchy, distributed decision-making.&lt;/p&gt;</description>
     </item>
   </channel>

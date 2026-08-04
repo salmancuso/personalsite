@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Project on Sal Mancuso</title>
-    <link>https://salmancuso.com/tags/project/</link>
+    <link>http://localhost:1313/tags/project/</link>
     <description>Recent content in Project on Sal Mancuso</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 15 Feb 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://salmancuso.com/tags/project/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/project/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MeshBeacon: Turning Your Mesh Node Into an Information Broadcaster</title>
-      <link>https://salmancuso.com/posts/meshbeacon/</link>
+      <link>http://localhost:1313/posts/meshbeacon/</link>
       <pubDate>Sun, 15 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/posts/meshbeacon/</guid>
+      <guid>http://localhost:1313/posts/meshbeacon/</guid>
       <description>&lt;p&gt;Here&amp;rsquo;s what I&amp;rsquo;ve been working on: turning mesh nodes from passive relay stations into active information broadcasters.&lt;/p&gt;&#xA;&lt;p&gt;MeshBeacon is a Python-based system that fetches data from public APIs and broadcasts formatted messages across your LoRa mesh network. No internet required on the receiving end. You set it up once, schedule it with cron, and your mesh network starts delivering useful information to operators.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-concept&#34;&gt;The Concept&lt;/h2&gt;&#xA;&lt;p&gt;Imagine your mesh network automatically broadcasting:&lt;/p&gt;</description>
     </item>
   </channel>
