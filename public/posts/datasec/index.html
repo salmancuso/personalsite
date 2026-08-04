@@ -1,0 +1,853 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Building infrastructure. Living outside. Communicating worldwide.">
+    <meta name="author" content="Sal Mancuso">
+
+    <title>
+        
+        Data Security Best Practices | Sal Mancuso
+        
+    </title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/pages.css">
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/hero.css">
+    
+
+    
+    
+    <link rel="stylesheet" href="/css/featured-projects.css">
+    
+
+    
+    
+    <link rel="stylesheet" href="/css/sections.css">
+    
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-bg: #1a1a18;
+            --dark-surface: #242420;
+            --text-light: #E8D5C4;
+            --text-muted: #A39A8F;
+            --accent: #B8860B;
+            --earth: #8B9D5D;
+            --border-color: #4a4a48;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #d4af37;
+        }
+
+         
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+         
+        nav {
+            background-color: var(--dark-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--text-light) !important;
+            margin: 0 !important;
+            flex-shrink: 0;
+        }
+
+        .nav-brand:hover {
+            color: var(--accent) !important;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 0;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-light);
+            font-weight: 500;
+            margin: 0 1.5rem;
+            white-space: nowrap;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+         
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            background: none;
+            border: none;
+            padding: 0;
+            margin-left: 1rem;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-light);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+         
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav .container {
+                flex-wrap: wrap;
+            }
+
+            .nav-menu {
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                margin-top: 1rem;
+                padding-top: 1rem;
+                border-top: 1px solid var(--border-color);
+            }
+
+            .nav-menu.active {
+                max-height: 300px;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.75rem 0;
+                padding: 0.5rem 0;
+                font-size: 0.95rem;
+            }
+
+            nav a:hover {
+                padding-left: 0.5rem;
+            }
+
+            .nav-brand {
+                font-size: 1.15rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-brand {
+                font-size: 1rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            .hamburger span {
+                width: 22px;
+                height: 2.5px;
+            }
+        }
+
+         
+        footer {
+            background-color: #0f0f0d;
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        footer h3 {
+            font-family: Georgia, serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer ul li a {
+            color: var(--text-muted);
+        }
+
+        footer ul li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+         
+        main {
+            min-height: 50vh;
+        }
+
+        .page-content {
+            padding: 3rem 0;
+        }
+
+        .page-title {
+            font-family: Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--earth);
+            display: inline-block;
+        }
+
+         
+        main h2 {
+            font-family: Georgia, serif;
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        main h3 {
+            font-family: Georgia, serif;
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+         
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1rem !important;
+        }
+
+        main p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1rem !important;
+        }
+
+        main ul,
+        main ol {
+            color: var(--text-muted);
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        main li {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        main code {
+            background-color: var(--dark-surface);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        main pre {
+            background-color: var(--dark-surface);
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            padding: 1.5rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        main pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        main blockquote {
+            border-left: 4px solid var(--earth);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 1rem;
+        }
+
+         
+
+         
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            main h2 {
+                font-size: 1.5rem;
+            }
+
+            main h3 {
+                font-size: 1.2rem;
+            }
+
+             
+            p {
+                font-size: 1.05rem !important;
+                line-height: 1.9 !important;
+            }
+
+            main p {
+                font-size: 1.05rem !important;
+                line-height: 1.9 !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.05rem !important;
+            }
+
+            main li {
+                font-size: 1.05rem !important;
+            }
+
+            main blockquote {
+                font-size: 1.05rem !important;
+                line-height: 1.9 !important;
+            }
+        }
+
+         
+        @media (max-width: 600px) {
+            .page-title {
+                font-size: 1.85rem;
+            }
+
+            main h2 {
+                font-size: 1.4rem;
+                margin-top: 1.5rem;
+            }
+
+            main h3 {
+                font-size: 1.15rem;
+            }
+
+             
+            p {
+                font-size: 1.08rem !important;
+                line-height: 1.95 !important;
+            }
+
+            main p {
+                font-size: 1.08rem !important;
+                line-height: 1.95 !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.08rem !important;
+            }
+
+            main li {
+                font-size: 1.08rem !important;
+                margin-bottom: 0.6rem;
+            }
+
+            main blockquote {
+                font-size: 1.08rem !important;
+                line-height: 1.95 !important;
+            }
+        }
+
+         
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .page-title {
+                font-size: 1.75rem;
+            }
+
+            main h2 {
+                font-size: 1.3rem;
+                margin-top: 1.4rem;
+            }
+
+            main h3 {
+                font-size: 1.1rem;
+                margin-top: 1.2rem;
+            }
+
+             
+            p {
+                font-size: 1.1rem !important;
+                line-height: 2 !important;
+                margin-bottom: 1.75rem !important;
+            }
+
+            main p {
+                font-size: 1.1rem !important;
+                line-height: 2 !important;
+                margin-bottom: 1.75rem !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.1rem !important;
+                margin-left: 1.5rem;
+            }
+
+            main li {
+                font-size: 1.1rem !important;
+                margin-bottom: 0.7rem;
+            }
+
+            main blockquote {
+                font-size: 1.1rem !important;
+                line-height: 2 !important;
+                padding-left: 1rem;
+            }
+
+            main code {
+                font-size: 0.95rem !important;
+            }
+
+            main pre {
+                padding: 1rem;
+            }
+        }
+
+         
+        @media (max-width: 374px) {
+            p {
+                font-size: 1.15rem !important;
+                line-height: 2.1 !important;
+                margin-bottom: 1.8rem !important;
+            }
+
+            main p {
+                font-size: 1.15rem !important;
+                line-height: 2.1 !important;
+                margin-bottom: 1.8rem !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.15rem !important;
+            }
+
+            main li {
+                font-size: 1.15rem !important;
+                margin-bottom: 0.8rem;
+            }
+
+            main blockquote {
+                font-size: 1.15rem !important;
+                line-height: 2.1 !important;
+            }
+
+            main h2 {
+                font-size: 1.25rem;
+            }
+
+            main h3 {
+                font-size: 1.05rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-brand">Sal</a>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu" id="navMenu">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/posts">Posts</a>
+                <a href="/publications">Work/Publications</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    
+    <main>
+        
+
+<article class="post-single">
+    <div class="container">
+        
+        <header class="post-header">
+            <h1 class="post-title">Data Security Best Practices</h1>
+            
+            <div class="post-meta">
+                
+                <span class="meta-item">
+                    <i class="ti ti-calendar"></i>
+                    June 8, 2026
+                </span>
+                
+                
+                
+                <span class="meta-item">
+                    <i class="ti ti-clock"></i>
+                    6 min read
+                </span>
+                
+                
+                
+            </div>
+
+            
+            <figure class="post-image">
+                <img src="/images/dataSec.jpeg" alt="Data Security Best Practices" loading="lazy">
+            </figure>
+            
+        </header>
+
+        
+        <div class="post-content">
+            <h2 id="introduction-the-strategic-imperative-of-data-security">Introduction: The Strategic Imperative of Data Security</h2>
+<p>In today&rsquo;s hyperconnected digital ecosystem, data has transcended beyond mere commodity status—it&rsquo;s become the operational lifeblood and competitive moat of modern enterprises. From personally identifiable information (PII) and healthcare records to intellectual property, trade secrets, and financial ledgers, data assets underpin organizational resilience and individual privacy alike. Yet this critical dependence on data infrastructure introduces a parallel complexity: the expanding attack surface and sophistication of threat actors. Cyber attacks, data exfiltration events, ransomware deployments, and identity theft schemes have evolved from theoretical risks into demonstrable existential threats. The stakes are real, the vulnerabilities are systemic, and frankly, reactive approaches no longer cut it. Prioritizing data security—both at the enterprise and personal level—isn&rsquo;t optional. It&rsquo;s the foundation of operational integrity.</p>
+<hr>
+<h2 id="the-corporate-imperative-enterprise-grade-data-protection">The Corporate Imperative: Enterprise-Grade Data Protection</h2>
+<h3 id="why-data-security-isnt-a-cost-centerits-risk-management">Why Data Security Isn&rsquo;t a Cost Center—It&rsquo;s Risk Management</h3>
+<p>For organizations, data security represents far more than a compliance checkbox or IT departmental responsibility. It&rsquo;s a fundamental business function. Companies operate with three categories of high-value data assets requiring fortress-level protection: <strong>intellectual property</strong> (algorithms, proprietary processes, R&amp;D roadmaps), <strong>customer data</strong> (transaction history, preferences, authentication credentials), and <strong>financial records</strong> (revenue streams, investment positions, banking relationships).</p>
+<p>Cybercriminals don&rsquo;t operate on good faith. They actively scan for exploitable vulnerabilities—unpatched systems, misconfigured cloud storage, weak authentication protocols, insider threats—to breach perimeters and extract value. The consequences of a material data breach are catastrophic and multifaceted:</p>
+<ul>
+<li><strong>Financial hemorrhaging</strong>: Direct costs (forensic investigation, breach notification, legal defense) plus indirect costs (operational downtime, lost revenue from service interruption)</li>
+<li><strong>Reputational toxicity</strong>: Customer trust erosion, brand damage, market share attrition</li>
+<li><strong>Regulatory exposure</strong>: GDPR fines (up to €20M or 4% of global revenue), CCPA penalties, HIPAA violations, SOX compliance failures—pick your jurisdiction</li>
+</ul>
+<h3 id="architecting-a-robust-cybersecurity-strategy">Architecting a Robust Cybersecurity Strategy</h3>
+<p>Building effective data security requires systematic, layered defense-in-depth architecture:</p>
+<p><strong>Threat Modeling and Vulnerability Assessment</strong></p>
+<p>Organizations must proactively map their threat landscape—not guess. This means conducting structured threat modeling exercises (identifying attack vectors, threat actors, potential exploits), performing comprehensive vulnerability scans across infrastructure, and maintaining an up-to-date asset inventory. Regular penetration testing and red-team exercises simulate adversarial tactics to expose blind spots before malicious actors do. This isn&rsquo;t paranoia; it&rsquo;s disciplined risk management.</p>
+<p><strong>Security Controls Implementation</strong></p>
+<p>Effective protection relies on a tripartite control framework:</p>
+<ul>
+<li><strong>Preventive controls</strong>: Firewalls, intrusion prevention systems (IPS), data loss prevention (DLP) tools, encryption at rest and in transit, network segmentation, and access controls (least-privilege principle)</li>
+<li><strong>Detective controls</strong>: Security information and event management (SIEM) systems, behavioral analytics, anomaly detection, log aggregation and analysis</li>
+<li><strong>Corrective controls</strong>: Incident response playbooks, business continuity and disaster recovery (BC/DR) plans, automated remediation workflows</li>
+</ul>
+<p><strong>Continuous Monitoring and Threat Intelligence</strong></p>
+<p>Static defenses fail. Organizations must implement 24/7 monitoring with real-time alerting for suspicious activities—unauthorized access attempts, unusual data exfiltration patterns, lateral movement indicators, privilege escalation events. This requires staffing security operations centers (SOCs) or leveraging managed security service providers (MSSPs) to operationalize threat detection at scale.</p>
+<p><strong>Security Culture and Employee Enablement</strong></p>
+<p>The strongest firewall means nothing if employees click malicious links or share credentials over unencrypted channels. Organizations must:</p>
+<ul>
+<li>Conduct mandatory, role-specific security awareness training (not the checkbox variety—substantive, scenario-based education)</li>
+<li>Implement phishing simulation programs to measure behavioral change</li>
+<li>Establish clear security policies with consequences for violations</li>
+<li>Foster psychological safety so employees report security incidents rather than concealing them</li>
+</ul>
+<p><strong>Third-Party Validation and Continuous Improvement</strong></p>
+<p>Engage qualified cybersecurity firms to conduct independent security audits, vulnerability assessments, and architecture reviews. Regulatory frameworks (SOC 2 compliance, ISO 27001 certification) provide structured benchmarks. The goal is not compliance theater—it&rsquo;s genuine hardening of your security posture.</p>
+<hr>
+<h2 id="the-personal-imperative-individual-data-protection-strategies">The Personal Imperative: Individual Data Protection Strategies</h2>
+<h3 id="understanding-your-personal-attack-surface">Understanding Your Personal Attack Surface</h3>
+<p>While enterprises command larger targets, individuals face equally serious threats. Your personal data—financial credentials, medical histories, social security numbers, authentication factors, online behavioral patterns—is systematically harvested, traded, and weaponized by criminal enterprises. The economics are straightforward: compromised identity credentials sell for $15–$50 on dark web marketplaces. Compromised banking access fetches multiples of that.</p>
+<h3 id="authentication-hardening-and-access-control">Authentication Hardening and Access Control</h3>
+<p><strong>Strong Authentication Mechanisms</strong></p>
+<p>The traditional username-password model has collapsed under its own fragility. Single-factor authentication (SFA) is indefensible. Instead, implement:</p>
+<ul>
+<li><strong>Multi-factor authentication (MFA)</strong>: Require 2-3 authentication factors from distinct categories: something you know (complex, unique passwords), something you have (hardware security keys like YubiKey, authenticator apps), something you are (biometric verification)</li>
+<li><strong>Passkeys and hardware security keys</strong>: Replace password managers and SMS 2FA with public-key cryptography backed by hardware devices. FIDO2/WebAuthn standards eliminate phishing vectors entirely</li>
+<li><strong>Unique, complex passwords</strong>: Generate 16+ character passwords with entropy; leverage reputable password managers (Bitwarden, 1Password, KeePass) to eliminate password reuse across services</li>
+</ul>
+<p>The friction is real. But so is the protection.</p>
+<p><strong>Strategic Data Minimization</strong></p>
+<p>Reduce your attack surface by minimizing what&rsquo;s exposed online. Resist the impulse to populate every optional data field in online forms. Scrutinize privacy policies before providing personal information. Use alternate email addresses and phone numbers for low-trust services. This simple discipline dramatically reduces your value to data brokers and scammers.</p>
+<h3 id="operational-security-vigilance-and-hygiene">Operational Security: Vigilance and Hygiene</h3>
+<p><strong>Threat Detection at Personal Scale</strong></p>
+<ul>
+<li>Verify URLs before clicking—hovering over links reveals the actual destination</li>
+<li>Scrutinize sender addresses and request context before trusting email communications</li>
+<li>Avoid suspicious downloads and peer-to-peer file sharing protocols</li>
+<li>Use browser plugins (uBlock Origin, HTTPS Everywhere) to add defensive layers</li>
+<li>Monitor credit reports quarterly via authorized services to detect fraudulent accounts early</li>
+</ul>
+<h3 id="patch-management-and-software-currency">Patch Management and Software Currency</h3>
+<p>One of the highest-leverage, lowest-friction protections available is keeping your devices current. Software vulnerabilities—zero-days and known CVEs alike—are primary entry points for malware and unauthorized access.</p>
+<ul>
+<li><strong>Operating systems</strong>: Enable automatic security updates on Windows, macOS, and Linux systems</li>
+<li><strong>Applications</strong>: Keep browsers, productivity software, and communication tools patched</li>
+<li><strong>Firmware</strong>: Many users ignore firmware updates for routers and IoT devices—a critical oversight</li>
+<li><strong>End-of-life software</strong>: Decommission obsolete systems that no longer receive security patches</li>
+</ul>
+<p>Delayed patching is essentially leaving your front door unlocked.</p>
+<hr>
+<h2 id="synthesis-data-security-as-foundational-practice">Synthesis: Data Security as Foundational Practice</h2>
+<p>Data security operates across a spectrum—from enterprise architectural decisions to individual digital hygiene. The common thread is this: security requires <strong>proactive commitment</strong>, not reactive scrambling.</p>
+<p>For organizations, this means architecting defense-in-depth systems, conducting regular risk assessments, training personnel, and maintaining security vigilance as an organizational competency. For individuals, it means adopting strong authentication, practicing operational security discipline, and staying current with system patches.</p>
+<p>The threat landscape will continue evolving. New vulnerabilities emerge, threat tactics sophisticate, and social engineering refines itself. But the fundamentals remain constant: identify threats, implement layered controls, monitor continuously, and respond decisively.</p>
+<p>Data security isn&rsquo;t bureaucratic overhead or compliance theater. It&rsquo;s the difference between thriving and suffering significant harm. Approach it with the seriousness it deserves.</p>
+
+        </div>
+
+        
+        
+        <footer class="post-footer">
+            <div class="post-tags">
+                
+                <a href="/tags/security/" class="tag">security</a>
+                
+                <a href="/tags/data/" class="tag">data</a>
+                
+                <a href="/tags/best-practices/" class="tag">best-practices</a>
+                
+            </div>
+        </footer>
+        
+    </div>
+</article>
+
+
+<nav class="post-nav">
+    <div class="container">
+        <div class="nav-links">
+            
+            <a href="https://salmancuso.com/posts/biai/" class="nav-prev">
+                <span class="nav-label">← Previous</span>
+                <span class="nav-title">Business Intelligence and AI</span>
+            </a>
+            
+            
+            
+        </div>
+    </div>
+</nav>
+
+
+
+
+<section class="related-posts">
+    <div class="container">
+        <h2>More Posts</h2>
+        <div class="posts-grid">
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/BI.png" alt="Business Intelligence and AI" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="https://salmancuso.com/posts/biai/">Business Intelligence and AI</a></h3>
+                    <p class="post-card-date">Apr 15, 2026</p>
+                    <p class="post-card-summary"><p>In the rapidly evolving landscape of digital transformation, a phenomenon of profound significance has taken center stage: the integration of Artificial Intelligence (AI) into the realm of Business Intelligence (BI). This integration has emerged as a formidable force that not only propels strategic innovation but also fundamentally reshapes the very fabric of how organizations operate, particularly in the face of mounting complexities stemming from data proliferation. As companies grapple with the challenges of extracting meaningful insights from vast, diverse, and often disorganized datasets, AI stands out as a transformative agent. It enhances BI&rsquo;s capabilities, fundamentally altering the ways in which organizations glean insights, make informed decisions, and strategically maintain competitive advantages in their respective markets. This document aims to provide an in-depth exploration of the profound impact that AI has on BI, drawing insights from a seasoned Silicon Valley perspective and highlighting noteworthy examples that underscore pivotal advancements along with their practical implications.</p></p>
+                    <a href="https://salmancuso.com/posts/biai/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/posts/gpsSettings/GPS.jpg" alt="GPS on MeshCore: Solving the Timestamp Problem" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="https://salmancuso.com/posts/gpssettings/">GPS on MeshCore: Solving the Timestamp Problem</a></h3>
+                    <p class="post-card-date">Mar 23, 2026</p>
+                    <p class="post-card-summary"><p>Here&rsquo;s something that doesn&rsquo;t get talked about nearly enough: your mesh repeater probably doesn&rsquo;t know what time it is.</p>
+<p>Think about that for a moment. You&rsquo;ve spent hours—maybe days—setting up this node. You&rsquo;ve installed it on a mountaintop or bolted it to a tower somewhere. You&rsquo;ve carefully tuned the antenna, verified the coverage, tested the mesh routing. Everything&rsquo;s working great. And meanwhile, internally, your repeater thinks it&rsquo;s January 1st, 1970. Unix Epoch. The dawn of time, as far as computer systems are concerned.</p></p>
+                    <a href="https://salmancuso.com/posts/gpssettings/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/posts/hash/hashbrowns.jpg" alt="Understanding Path Hash Configuration in MeshCore" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="https://salmancuso.com/posts/hash/">Understanding Path Hash Configuration in MeshCore</a></h3>
+                    <p class="post-card-date">Mar 20, 2026</p>
+                    <p class="post-card-summary"><p>There&rsquo;s a parameter in MeshCore called <code>path.hash.mode</code> that almost nobody understands. The firmware developers seem to have deliberately hidden it in the configuration docs with a note saying &ldquo;DO NOT USE&rdquo; and then no explanation whatsoever.</p>
+<p>Let me explain what it actually does, because it matters for how your network behaves.</p>
+<h2 id="what-is-path-hash">What Is Path Hash?</h2>
+<p>Every node in MeshCore periodically sends advertisement packets—basically saying &ldquo;Hey, I&rsquo;m here, I exist, talk to me.&rdquo;</p></p>
+                    <a href="https://salmancuso.com/posts/hash/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+        </div>
+    </div>
+</section>
+
+
+
+    </main>
+
+    
+    <footer>
+        <div class="container">
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/posts">Posts</a></li>
+                    <li><a href="/publications">Work/Publications</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Interests</h3>
+                <ul>
+                    <li><a href="https://makerworld.com/" target="_blank">Maker World</a></li>
+                    <li><a href="https://www.adafruit.com/" target="_blank">Adafruit</a></li>
+                    <li><a href="https://sanjosesimplex.groups.io/g/main" target="_blank">K6SJS San Jose Simplex</a></li>
+                    <li><a href="https://www.kennedymeadows.com/" target="_blank">Kennedy Meadows Packstation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="https://it-humsci.stanford.edu/people/sal-mancuso" target="_blank">Stanford</a></li>
+                    <li><a href="https://github.com/salmancuso" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/salmancuso/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://www.qrz.com/db/W6SAL" target="_blank">QRZ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sal Mancuso. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+    
+    
+    <script src="/js/topo-animator.js"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
+        
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('hamburger').classList.remove('active');
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

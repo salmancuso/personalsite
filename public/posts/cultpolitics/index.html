@@ -1,0 +1,820 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Building infrastructure. Living outside. Communicating worldwide.">
+    <meta name="author" content="Sal Mancuso">
+
+    <title>
+        
+        Culture and Politics | Sal Mancuso
+        
+    </title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/pages.css">
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/hero.css">
+    
+
+    
+    
+    <link rel="stylesheet" href="/css/featured-projects.css">
+    
+
+    
+    
+    <link rel="stylesheet" href="/css/sections.css">
+    
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-bg: #1a1a18;
+            --dark-surface: #242420;
+            --text-light: #E8D5C4;
+            --text-muted: #A39A8F;
+            --accent: #B8860B;
+            --earth: #8B9D5D;
+            --border-color: #4a4a48;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #d4af37;
+        }
+
+         
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+         
+        nav {
+            background-color: var(--dark-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--text-light) !important;
+            margin: 0 !important;
+            flex-shrink: 0;
+        }
+
+        .nav-brand:hover {
+            color: var(--accent) !important;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 0;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-light);
+            font-weight: 500;
+            margin: 0 1.5rem;
+            white-space: nowrap;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+         
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            background: none;
+            border: none;
+            padding: 0;
+            margin-left: 1rem;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-light);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+         
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav .container {
+                flex-wrap: wrap;
+            }
+
+            .nav-menu {
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                margin-top: 1rem;
+                padding-top: 1rem;
+                border-top: 1px solid var(--border-color);
+            }
+
+            .nav-menu.active {
+                max-height: 300px;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.75rem 0;
+                padding: 0.5rem 0;
+                font-size: 0.95rem;
+            }
+
+            nav a:hover {
+                padding-left: 0.5rem;
+            }
+
+            .nav-brand {
+                font-size: 1.15rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-brand {
+                font-size: 1rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            .hamburger span {
+                width: 22px;
+                height: 2.5px;
+            }
+        }
+
+         
+        footer {
+            background-color: #0f0f0d;
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        footer h3 {
+            font-family: Georgia, serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer ul li a {
+            color: var(--text-muted);
+        }
+
+        footer ul li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+         
+        main {
+            min-height: 50vh;
+        }
+
+        .page-content {
+            padding: 3rem 0;
+        }
+
+        .page-title {
+            font-family: Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--earth);
+            display: inline-block;
+        }
+
+         
+        main h2 {
+            font-family: Georgia, serif;
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        main h3 {
+            font-family: Georgia, serif;
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+         
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1rem !important;
+        }
+
+        main p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1rem !important;
+        }
+
+        main ul,
+        main ol {
+            color: var(--text-muted);
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        main li {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        main code {
+            background-color: var(--dark-surface);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        main pre {
+            background-color: var(--dark-surface);
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            padding: 1.5rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        main pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        main blockquote {
+            border-left: 4px solid var(--earth);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 1rem;
+        }
+
+         
+
+         
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            main h2 {
+                font-size: 1.5rem;
+            }
+
+            main h3 {
+                font-size: 1.2rem;
+            }
+
+             
+            p {
+                font-size: 1.05rem !important;
+                line-height: 1.9 !important;
+            }
+
+            main p {
+                font-size: 1.05rem !important;
+                line-height: 1.9 !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.05rem !important;
+            }
+
+            main li {
+                font-size: 1.05rem !important;
+            }
+
+            main blockquote {
+                font-size: 1.05rem !important;
+                line-height: 1.9 !important;
+            }
+        }
+
+         
+        @media (max-width: 600px) {
+            .page-title {
+                font-size: 1.85rem;
+            }
+
+            main h2 {
+                font-size: 1.4rem;
+                margin-top: 1.5rem;
+            }
+
+            main h3 {
+                font-size: 1.15rem;
+            }
+
+             
+            p {
+                font-size: 1.08rem !important;
+                line-height: 1.95 !important;
+            }
+
+            main p {
+                font-size: 1.08rem !important;
+                line-height: 1.95 !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.08rem !important;
+            }
+
+            main li {
+                font-size: 1.08rem !important;
+                margin-bottom: 0.6rem;
+            }
+
+            main blockquote {
+                font-size: 1.08rem !important;
+                line-height: 1.95 !important;
+            }
+        }
+
+         
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .page-title {
+                font-size: 1.75rem;
+            }
+
+            main h2 {
+                font-size: 1.3rem;
+                margin-top: 1.4rem;
+            }
+
+            main h3 {
+                font-size: 1.1rem;
+                margin-top: 1.2rem;
+            }
+
+             
+            p {
+                font-size: 1.1rem !important;
+                line-height: 2 !important;
+                margin-bottom: 1.75rem !important;
+            }
+
+            main p {
+                font-size: 1.1rem !important;
+                line-height: 2 !important;
+                margin-bottom: 1.75rem !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.1rem !important;
+                margin-left: 1.5rem;
+            }
+
+            main li {
+                font-size: 1.1rem !important;
+                margin-bottom: 0.7rem;
+            }
+
+            main blockquote {
+                font-size: 1.1rem !important;
+                line-height: 2 !important;
+                padding-left: 1rem;
+            }
+
+            main code {
+                font-size: 0.95rem !important;
+            }
+
+            main pre {
+                padding: 1rem;
+            }
+        }
+
+         
+        @media (max-width: 374px) {
+            p {
+                font-size: 1.15rem !important;
+                line-height: 2.1 !important;
+                margin-bottom: 1.8rem !important;
+            }
+
+            main p {
+                font-size: 1.15rem !important;
+                line-height: 2.1 !important;
+                margin-bottom: 1.8rem !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.15rem !important;
+            }
+
+            main li {
+                font-size: 1.15rem !important;
+                margin-bottom: 0.8rem;
+            }
+
+            main blockquote {
+                font-size: 1.15rem !important;
+                line-height: 2.1 !important;
+            }
+
+            main h2 {
+                font-size: 1.25rem;
+            }
+
+            main h3 {
+                font-size: 1.05rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-brand">Sal</a>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu" id="navMenu">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/posts">Posts</a>
+                <a href="/publications">Work/Publications</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    
+    <main>
+        
+
+<article class="post-single">
+    <div class="container">
+        
+        <header class="post-header">
+            <h1 class="post-title">Culture and Politics</h1>
+            
+            <div class="post-meta">
+                
+                <span class="meta-item">
+                    <i class="ti ti-calendar"></i>
+                    November 15, 2024
+                </span>
+                
+                
+                
+                <span class="meta-item">
+                    <i class="ti ti-clock"></i>
+                    5 min read
+                </span>
+                
+                
+                
+            </div>
+
+            
+            <figure class="post-image">
+                <img src="/images/politicsAnger.jpg" alt="Culture and Politics" loading="lazy">
+            </figure>
+            
+        </header>
+
+        
+        <div class="post-content">
+            <p>In recent years, my political observations have led me to a rather disheartening conclusion: the leaders we elect, regardless of their political affiliation, often appear to crave power above all else. This desire for dominance manifests in a refusal to collaborate across party lines, breeding a culture of division and distrust. This Posts post aims to explore the striking resemblance between blind political allegiance and cult-like behavior, as well as how this polarization has eroded our national discourse. Reflecting on historical periods of political division, we can also glean valuable lessons for healing and unity.</p>
+<h4 id="the-allure-of-power">The Allure of Power</h4>
+<p>Politicians, by the nature of their roles, hold significant sway over the direction and tone of our nation. Idealistically, they are public servants, chosen to represent our interests and foster progress. However, the reality is often far less noble. The drive to maintain their positions can overshadow the duty to serve, leading to power-seeking behavior that prioritizes reelection over real solutions.</p>
+<p>This phenomenon is not isolated to one party. Conservatives and liberals alike demonstrate a reluctance to engage in genuine bipartisan efforts. When winning becomes the primary objective, compromise is seen as weakness and collaboration as betrayal.</p>
+<h4 id="the-cult-like-devotion">The Cult-like Devotion</h4>
+<p>When we consider the characteristics of a cult, certain traits come to mind: unquestioning loyalty to a leader, rejection of dissenting viewpoints, and an &lsquo;us versus them&rsquo; mentality. Troublingly, these traits are increasingly mirrored in our political landscape.</p>
+<p>In a cult, followers often place immense trust in a singular authority figure, believing their leader can do no wrong. Similarly, political supporters now often exhibit blind allegiance, defending their chosen representatives regardless of misconduct or policy failures. This unwavering loyalty stifles critical thinking and discourages open dialogue.</p>
+<p>Moreover, political rhetoric has become a battleground of exclusion and vitriol. Disagreeing with party doctrine can result in ostracism, much like questioning a cult&rsquo;s beliefs. Opponents are not just seen as individuals with differing opinions but as existential threats. This dehumanization fosters an atmosphere where cooperation is not just difficult but seemingly impossible.</p>
+<h4 id="historical-political-polarization">Historical Political Polarization</h4>
+<p>America has faced political polarization before, and history offers both cautionary tales and hopeful resolutions.</p>
+<p>Consider the Civil War, perhaps the most extreme example of national division. The conflict was characterized by starkly opposed ideologies and regions, resulting in immense bloodshed and suffering. Yet, the post-war Reconstruction Era, while imperfect, included efforts to reunify the nation and extend rights and protections to formerly enslaved individuals. The lessons here underscore the difficulty of reconciliation but also the necessity of initiatives aimed at rebuilding trust and cooperation.</p>
+<p>During the Civil Rights Movement, the country was again deeply divided. African Americans and allies pressed for equality against entrenched segregationist attitudes. The movement faced fierce resistance, but ultimately, legislative and social changes advanced the cause of justice. Leaders like Martin Luther King Jr. emphasized love, non-violent protest, and the moral imperative of unity, offering a blueprint for overcoming division.</p>
+<p>More recently, the political climate of the late 20th century saw significant partisan conflict. Yet, figures like Ronald Reagan and Tip O&rsquo;Neill maintained a relationship that, despite ideological differences, highlighted the possibility of mutual respect and productivity. Their example demonstrates that spirited disagreement does not preclude cooperation.</p>
+<h4 id="the-path-forward">The Path Forward</h4>
+<p>So, how do we extract ourselves from the cult of politics and begin to repair our fractured society? Here are some proposed steps:</p>
+<ol>
+<li>
+<p><strong>Encourage Critical Thinking:</strong> Blind allegiance is the bedrock of cultism. To dismantle this, we must foster a culture of critical thinking. Citizens should be empowered to question leaders and hold them accountable, regardless of party affiliation.</p>
+</li>
+<li>
+<p><strong>Promote Bipartisan Initiatives:</strong> Legislative bodies must revive the spirit of bipartisanship. Initiatives that necessitate cross-party collaboration can pave the way for a more cooperative political atmosphere.</p>
+</li>
+<li>
+<p><strong>Civic Education:</strong> A well-informed electorate is less susceptible to manipulation. Comprehensive civic education can equip individuals with the knowledge to engage with issues thoughtfully and contextually.</p>
+</li>
+<li>
+<p><strong>Facilitate Dialogue:</strong> Platforms for respectful discourse must be cultivated. Community forums, town halls, and online spaces designed for civil dialogue can bridge divides and humanize individuals with differing views.</p>
+</li>
+<li>
+<p><strong>Focus on Common Goals:</strong> Emphasizing shared objectives, such as economic stability, national security, and public health, can unite disparate groups. By concentrating on these commonalities, we can see past ideological divides and work towards mutual benefits.</p>
+</li>
+<li>
+<p><strong>Leadership by Example:</strong> Politicians and public figures who prioritize unity and demonstrate a willingness to bridge gaps must be elevated. Celebrating leaders who embody collaboration reinforces its value.</p>
+</li>
+</ol>
+<p>By addressing these steps, we can take meaningful strides toward healing our divisions. It is imperative that we remember the power of the collective &lsquo;we&rsquo;—our shared identity as Americans rather than segregated partisans.</p>
+<hr>
+<p>Blind allegiance to political leaders, irrespective of party, undermines the principles of democracy and discourse. It is comparable to cult behavior, fostering division and suppressing critical thinking. Reflecting on our history reveals that, while polarization is not new, neither is our capacity for overcoming it. By renewing our commitment to dialogue, cooperation, and shared goals, we can rebuild trust and forge a more united future.</p>
+<p>The journey will not be easy, and the path forward requires dedication and sincere effort from each of us. But if we learn from our past and strive for a more collaborative political environment, we can overcome the division and truly lift each other up.</p>
+<p>Spy vs. Spy image credit to Mad Magazine, Dave Manak and Peter Kuper</p>
+
+        </div>
+
+        
+        
+        <footer class="post-footer">
+            <div class="post-tags">
+                
+                <a href="/tags/culture/" class="tag">culture</a>
+                
+                <a href="/tags/politics/" class="tag">politics</a>
+                
+            </div>
+        </footer>
+        
+    </div>
+</article>
+
+
+<nav class="post-nav">
+    <div class="container">
+        <div class="nav-links">
+            
+            <a href="https://salmancuso.com/posts/middle/" class="nav-prev">
+                <span class="nav-label">← Previous</span>
+                <span class="nav-title">Finding Middle Ground</span>
+            </a>
+            
+            
+            
+            <a href="https://salmancuso.com/posts/repeatervssimplex-converted/" class="nav-next">
+                <span class="nav-label">Next →</span>
+                <span class="nav-title">Repeaters vs. Simplex: Understanding Amateur Radio Communication Infrastructure</span>
+            </a>
+            
+        </div>
+    </div>
+</nav>
+
+
+
+
+<section class="related-posts">
+    <div class="container">
+        <h2>More Posts</h2>
+        <div class="posts-grid">
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/dataSec.jpeg" alt="Data Security Best Practices" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="https://salmancuso.com/posts/datasec/">Data Security Best Practices</a></h3>
+                    <p class="post-card-date">Jun 8, 2026</p>
+                    <p class="post-card-summary"><h2 id="introduction-the-strategic-imperative-of-data-security">Introduction: The Strategic Imperative of Data Security</h2>
+<p>In today&rsquo;s hyperconnected digital ecosystem, data has transcended beyond mere commodity status—it&rsquo;s become the operational lifeblood and competitive moat of modern enterprises. From personally identifiable information (PII) and healthcare records to intellectual property, trade secrets, and financial ledgers, data assets underpin organizational resilience and individual privacy alike. Yet this critical dependence on data infrastructure introduces a parallel complexity: the expanding attack surface and sophistication of threat actors. Cyber attacks, data exfiltration events, ransomware deployments, and identity theft schemes have evolved from theoretical risks into demonstrable existential threats. The stakes are real, the vulnerabilities are systemic, and frankly, reactive approaches no longer cut it. Prioritizing data security—both at the enterprise and personal level—isn&rsquo;t optional. It&rsquo;s the foundation of operational integrity.</p></p>
+                    <a href="https://salmancuso.com/posts/datasec/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/BI.png" alt="Business Intelligence and AI" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="https://salmancuso.com/posts/biai/">Business Intelligence and AI</a></h3>
+                    <p class="post-card-date">Apr 15, 2026</p>
+                    <p class="post-card-summary"><p>In the rapidly evolving landscape of digital transformation, a phenomenon of profound significance has taken center stage: the integration of Artificial Intelligence (AI) into the realm of Business Intelligence (BI). This integration has emerged as a formidable force that not only propels strategic innovation but also fundamentally reshapes the very fabric of how organizations operate, particularly in the face of mounting complexities stemming from data proliferation. As companies grapple with the challenges of extracting meaningful insights from vast, diverse, and often disorganized datasets, AI stands out as a transformative agent. It enhances BI&rsquo;s capabilities, fundamentally altering the ways in which organizations glean insights, make informed decisions, and strategically maintain competitive advantages in their respective markets. This document aims to provide an in-depth exploration of the profound impact that AI has on BI, drawing insights from a seasoned Silicon Valley perspective and highlighting noteworthy examples that underscore pivotal advancements along with their practical implications.</p></p>
+                    <a href="https://salmancuso.com/posts/biai/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/posts/gpsSettings/GPS.jpg" alt="GPS on MeshCore: Solving the Timestamp Problem" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="https://salmancuso.com/posts/gpssettings/">GPS on MeshCore: Solving the Timestamp Problem</a></h3>
+                    <p class="post-card-date">Mar 23, 2026</p>
+                    <p class="post-card-summary"><p>Here&rsquo;s something that doesn&rsquo;t get talked about nearly enough: your mesh repeater probably doesn&rsquo;t know what time it is.</p>
+<p>Think about that for a moment. You&rsquo;ve spent hours—maybe days—setting up this node. You&rsquo;ve installed it on a mountaintop or bolted it to a tower somewhere. You&rsquo;ve carefully tuned the antenna, verified the coverage, tested the mesh routing. Everything&rsquo;s working great. And meanwhile, internally, your repeater thinks it&rsquo;s January 1st, 1970. Unix Epoch. The dawn of time, as far as computer systems are concerned.</p></p>
+                    <a href="https://salmancuso.com/posts/gpssettings/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+        </div>
+    </div>
+</section>
+
+
+
+    </main>
+
+    
+    <footer>
+        <div class="container">
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/posts">Posts</a></li>
+                    <li><a href="/publications">Work/Publications</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Interests</h3>
+                <ul>
+                    <li><a href="https://makerworld.com/" target="_blank">Maker World</a></li>
+                    <li><a href="https://www.adafruit.com/" target="_blank">Adafruit</a></li>
+                    <li><a href="https://sanjosesimplex.groups.io/g/main" target="_blank">K6SJS San Jose Simplex</a></li>
+                    <li><a href="https://www.kennedymeadows.com/" target="_blank">Kennedy Meadows Packstation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="https://it-humsci.stanford.edu/people/sal-mancuso" target="_blank">Stanford</a></li>
+                    <li><a href="https://github.com/salmancuso" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/salmancuso/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://www.qrz.com/db/W6SAL" target="_blank">QRZ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sal Mancuso. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+    
+    
+    <script src="/js/topo-animator.js"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
+        
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('hamburger').classList.remove('active');
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

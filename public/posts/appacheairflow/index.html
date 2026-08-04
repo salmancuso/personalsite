@@ -1,0 +1,957 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Building infrastructure. Living outside. Communicating worldwide.">
+    <meta name="author" content="Sal Mancuso">
+
+    <title>
+        
+        Automating Data Workflows with Apache Airflow | Sal Mancuso
+        
+    </title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/pages.css">
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/hero.css">
+    
+
+    
+    
+    <link rel="stylesheet" href="/css/featured-projects.css">
+    
+
+    
+    
+    <link rel="stylesheet" href="/css/sections.css">
+    
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-bg: #1a1a18;
+            --dark-surface: #242420;
+            --text-light: #E8D5C4;
+            --text-muted: #A39A8F;
+            --accent: #B8860B;
+            --earth: #8B9D5D;
+            --border-color: #4a4a48;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #d4af37;
+        }
+
+         
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+         
+        nav {
+            background-color: var(--dark-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--text-light) !important;
+            margin: 0 !important;
+            flex-shrink: 0;
+        }
+
+        .nav-brand:hover {
+            color: var(--accent) !important;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 0;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-light);
+            font-weight: 500;
+            margin: 0 1.5rem;
+            white-space: nowrap;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+         
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            background: none;
+            border: none;
+            padding: 0;
+            margin-left: 1rem;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-light);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+         
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav .container {
+                flex-wrap: wrap;
+            }
+
+            .nav-menu {
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                margin-top: 1rem;
+                padding-top: 1rem;
+                border-top: 1px solid var(--border-color);
+            }
+
+            .nav-menu.active {
+                max-height: 300px;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.75rem 0;
+                padding: 0.5rem 0;
+                font-size: 0.95rem;
+            }
+
+            nav a:hover {
+                padding-left: 0.5rem;
+            }
+
+            .nav-brand {
+                font-size: 1.15rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-brand {
+                font-size: 1rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            .hamburger span {
+                width: 22px;
+                height: 2.5px;
+            }
+        }
+
+         
+        footer {
+            background-color: #0f0f0d;
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        footer h3 {
+            font-family: Georgia, serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer ul li a {
+            color: var(--text-muted);
+        }
+
+        footer ul li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+         
+        main {
+            min-height: 50vh;
+        }
+
+        .page-content {
+            padding: 3rem 0;
+        }
+
+        .page-title {
+            font-family: Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--earth);
+            display: inline-block;
+        }
+
+         
+        main h2 {
+            font-family: Georgia, serif;
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        main h3 {
+            font-family: Georgia, serif;
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+         
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1rem !important;
+        }
+
+        main p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1rem !important;
+        }
+
+        main ul,
+        main ol {
+            color: var(--text-muted);
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        main li {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        main code {
+            background-color: var(--dark-surface);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        main pre {
+            background-color: var(--dark-surface);
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            padding: 1.5rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        main pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        main blockquote {
+            border-left: 4px solid var(--earth);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 1rem;
+        }
+
+         
+
+         
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            main h2 {
+                font-size: 1.5rem;
+            }
+
+            main h3 {
+                font-size: 1.2rem;
+            }
+
+             
+            p {
+                font-size: 1.05rem !important;
+                line-height: 1.9 !important;
+            }
+
+            main p {
+                font-size: 1.05rem !important;
+                line-height: 1.9 !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.05rem !important;
+            }
+
+            main li {
+                font-size: 1.05rem !important;
+            }
+
+            main blockquote {
+                font-size: 1.05rem !important;
+                line-height: 1.9 !important;
+            }
+        }
+
+         
+        @media (max-width: 600px) {
+            .page-title {
+                font-size: 1.85rem;
+            }
+
+            main h2 {
+                font-size: 1.4rem;
+                margin-top: 1.5rem;
+            }
+
+            main h3 {
+                font-size: 1.15rem;
+            }
+
+             
+            p {
+                font-size: 1.08rem !important;
+                line-height: 1.95 !important;
+            }
+
+            main p {
+                font-size: 1.08rem !important;
+                line-height: 1.95 !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.08rem !important;
+            }
+
+            main li {
+                font-size: 1.08rem !important;
+                margin-bottom: 0.6rem;
+            }
+
+            main blockquote {
+                font-size: 1.08rem !important;
+                line-height: 1.95 !important;
+            }
+        }
+
+         
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .page-title {
+                font-size: 1.75rem;
+            }
+
+            main h2 {
+                font-size: 1.3rem;
+                margin-top: 1.4rem;
+            }
+
+            main h3 {
+                font-size: 1.1rem;
+                margin-top: 1.2rem;
+            }
+
+             
+            p {
+                font-size: 1.1rem !important;
+                line-height: 2 !important;
+                margin-bottom: 1.75rem !important;
+            }
+
+            main p {
+                font-size: 1.1rem !important;
+                line-height: 2 !important;
+                margin-bottom: 1.75rem !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.1rem !important;
+                margin-left: 1.5rem;
+            }
+
+            main li {
+                font-size: 1.1rem !important;
+                margin-bottom: 0.7rem;
+            }
+
+            main blockquote {
+                font-size: 1.1rem !important;
+                line-height: 2 !important;
+                padding-left: 1rem;
+            }
+
+            main code {
+                font-size: 0.95rem !important;
+            }
+
+            main pre {
+                padding: 1rem;
+            }
+        }
+
+         
+        @media (max-width: 374px) {
+            p {
+                font-size: 1.15rem !important;
+                line-height: 2.1 !important;
+                margin-bottom: 1.8rem !important;
+            }
+
+            main p {
+                font-size: 1.15rem !important;
+                line-height: 2.1 !important;
+                margin-bottom: 1.8rem !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.15rem !important;
+            }
+
+            main li {
+                font-size: 1.15rem !important;
+                margin-bottom: 0.8rem;
+            }
+
+            main blockquote {
+                font-size: 1.15rem !important;
+                line-height: 2.1 !important;
+            }
+
+            main h2 {
+                font-size: 1.25rem;
+            }
+
+            main h3 {
+                font-size: 1.05rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-brand">Sal</a>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu" id="navMenu">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/posts">Posts</a>
+                <a href="/publications">Work/Publications</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    
+    <main>
+        
+
+<article class="post-single">
+    <div class="container">
+        
+        <header class="post-header">
+            <h1 class="post-title">Automating Data Workflows with Apache Airflow</h1>
+            
+            <div class="post-meta">
+                
+                <span class="meta-item">
+                    <i class="ti ti-calendar"></i>
+                    March 10, 2025
+                </span>
+                
+                
+                
+                <span class="meta-item">
+                    <i class="ti ti-clock"></i>
+                    6 min read
+                </span>
+                
+                
+                
+            </div>
+
+            
+            <figure class="post-image">
+                <img src="/images/airTraffic.jpg" alt="Automating Data Workflows with Apache Airflow" loading="lazy">
+            </figure>
+            
+        </header>
+
+        
+        <div class="post-content">
+            <p>In the realm of data engineering, the ability to automate workflows is a game changer. Imagine waking up every morning with the assurance that your data pipelines have been seamlessly executed, data has flowed flawlessly from one system to another, and your business insights are ready for you to act on. No more late-night database updates or cross-eyed mornings debugging cron jobs. Enter Apache Airflow, the Swiss Army knife for automating and orchestrating complex workflows.</p>
+<p>Apache Airflow, an open-source platform to programmatically author, schedule, and monitor workflows, has become an indispensable tool in the modern data engineering toolkit. Originally developed by Airbnb, it swiftly gained traction for its ability to handle enterprise-level data pipeline automation with panache. In this verbose technical document, we&rsquo;re going to delve into the mechanics of Airflow, dissecting its components and presenting practical examples to show you how to wield this powerful tool.</p>
+<h2 id="architecture-overview">Architecture Overview</h2>
+<p>Let’s kick things off with some architecture. At the heart of Airflow is the concept of Directed Acyclic Graphs (DAGs). You can think of a DAG as an elaborate flowchart on steroids. Each DAG is made up of tasks that are interconnected by dependencies. When these tasks are completed, the DAG progresses to achieve a complete workflow.</p>
+<h3 id="core-components">Core Components</h3>
+<ol>
+<li><strong>Web Server</strong>: The Airflow web server provides a user interface where you can monitor and manage DAGs. It’s your mission control.</li>
+<li><strong>Scheduler</strong>: The scheduler is the unsung hero that triggers tasks based on the prescribed intervals. The scheduling can be as simple as a daily trigger or as complex as event-based scheduling.</li>
+<li><strong>Executor</strong>: The executor determines how and where tasks are executed. Airflow supports several types of executors, such as the LocalExecutor, CeleryExecutor, and KubernetesExecutor.</li>
+<li><strong>Metadata Database</strong>: All metadata related to DAGs, task instances, variables, connections, etc., are stored in a database. Airflow supports PostgreSQL and MySQL among others.</li>
+</ol>
+<h2 id="getting-started">Getting Started</h2>
+<p>Before we dive into the deep end, let&rsquo;s get you set up with Apache Airflow.</p>
+<h3 id="installation">Installation</h3>
+<p>You can install Airflow using pip, but a Docker-based approach offers a more isolated and reproducible environment.</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install apache-airflow
+</span></span></code></pre></div><p>For a more production-ready setup, you might want to spin up Airflow using Docker Compose.</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#7ee787">version</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">&#39;3&#39;</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">services</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">webserver</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">image</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">apache/airflow:2.1.2</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">environment</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">      </span>- <span style="color:#a5d6ff">AIRFLOW__CORE__EXECUTOR=LocalExecutor</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">      </span>- <span style="color:#a5d6ff">AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">      </span>- <span style="color:#a5d6ff">AIRFLOW__CORE__FERNET_KEY=${FERNET_KEY}</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">      </span>- <span style="color:#a5d6ff">AIRFLOW__CORE__LOAD_EXAMPLES=false</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">ports</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">      </span>- <span style="color:#a5d6ff">&#34;8080:8080&#34;</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">volumes</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">      </span>- <span style="color:#a5d6ff">./dags:/usr/local/airflow/dags</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">postgres</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">image</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">postgres:13</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">environment</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">      </span>- <span style="color:#a5d6ff">POSTGRES_USER=airflow</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">      </span>- <span style="color:#a5d6ff">POSTGRES_PASSWORD=airflow</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">      </span>- <span style="color:#a5d6ff">POSTGRES_DB=airflow</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">volumes</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">      </span>- <span style="color:#a5d6ff">./pg_data:/var/lib/postgresql/data</span><span style="color:#6e7681">
+</span></span></span></code></pre></div><p>Don&rsquo;t forget to set up the FERNET_KEY for encrypting/decrypting relevant connections and variables.</p>
+<h2 id="authoring-your-first-dag">Authoring Your First DAG</h2>
+<p>A quick way to become friends with Airflow is to author your first DAG. Here’s a simple DAG written in Python to give you a flavor:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">from</span> <span style="color:#ff7b72">airflow</span> <span style="color:#ff7b72">import</span> DAG
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">from</span> <span style="color:#ff7b72">airflow.operators.dummy_operator</span> <span style="color:#ff7b72">import</span> DummyOperator
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">from</span> <span style="color:#ff7b72">airflow.operators.python_operator</span> <span style="color:#ff7b72">import</span> PythonOperator
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">from</span> <span style="color:#ff7b72">datetime</span> <span style="color:#ff7b72">import</span> datetime, timedelta
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">print_hello</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#a5d6ff">&#39;Hello world!&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>default_args <span style="color:#ff7b72;font-weight:bold">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#39;owner&#39;</span>: <span style="color:#a5d6ff">&#39;airflow&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#39;depends_on_past&#39;</span>: <span style="color:#79c0ff">False</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#39;start_date&#39;</span>: datetime(<span style="color:#a5d6ff">2023</span>, <span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">1</span>),
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#39;email_on_failure&#39;</span>: <span style="color:#79c0ff">False</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#39;email_on_retry&#39;</span>: <span style="color:#79c0ff">False</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#39;retries&#39;</span>: <span style="color:#a5d6ff">1</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#39;retry_delay&#39;</span>: timedelta(minutes<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">5</span>),
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dag <span style="color:#ff7b72;font-weight:bold">=</span> DAG(
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#39;hello_world_dag&#39;</span>,
+</span></span><span style="display:flex;"><span>    default_args<span style="color:#ff7b72;font-weight:bold">=</span>default_args,
+</span></span><span style="display:flex;"><span>    description<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#39;A simple hello world DAG&#39;</span>,
+</span></span><span style="display:flex;"><span>    schedule_interval<span style="color:#ff7b72;font-weight:bold">=</span>timedelta(days<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">1</span>),
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>start <span style="color:#ff7b72;font-weight:bold">=</span> DummyOperator(task_id<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#39;start&#39;</span>, dag<span style="color:#ff7b72;font-weight:bold">=</span>dag)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>hello_task <span style="color:#ff7b72;font-weight:bold">=</span> PythonOperator(task_id<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#39;print_hello&#39;</span>, python_callable<span style="color:#ff7b72;font-weight:bold">=</span>print_hello, dag<span style="color:#ff7b72;font-weight:bold">=</span>dag)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>end <span style="color:#ff7b72;font-weight:bold">=</span> DummyOperator(task_id<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#39;end&#39;</span>, dag<span style="color:#ff7b72;font-weight:bold">=</span>dag)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>start <span style="color:#ff7b72;font-weight:bold">&gt;&gt;</span> hello_task <span style="color:#ff7b72;font-weight:bold">&gt;&gt;</span> end
+</span></span></code></pre></div><p>This DAG contains three tasks: a start dummy task, a Python task to print &ldquo;Hello world!&rdquo;, and an end dummy task. The tasks are linked into a simple linear workflow.</p>
+<h2 id="complex-workflows">Complex Workflows</h2>
+<p>Let&rsquo;s step up our game with a more complex, real-world example. Imagine we have a workflow that extracts data from an API, performs ETL (Extract, Transform, Load) operations, and loads the transformed data into a data warehouse for analysis.</p>
+<h3 id="requirements">Requirements</h3>
+<ol>
+<li><strong>APICallOperator</strong>: To extract data.</li>
+<li><strong>PythonOperator</strong>: For the transformation part.</li>
+<li><strong>PostgresOperator</strong>: To load data into PostgreSQL.</li>
+</ol>
+<h3 id="writing-the-dag">Writing the DAG</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">requests</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">pandas</span> <span style="color:#ff7b72">as</span> <span style="color:#ff7b72">pd</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">from</span> <span style="color:#ff7b72">airflow</span> <span style="color:#ff7b72">import</span> DAG
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">from</span> <span style="color:#ff7b72">airflow.operators.python_operator</span> <span style="color:#ff7b72">import</span> PythonOperator
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">from</span> <span style="color:#ff7b72">airflow.providers.postgres.operators.postgres</span> <span style="color:#ff7b72">import</span> PostgresOperator
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">from</span> <span style="color:#ff7b72">datetime</span> <span style="color:#ff7b72">import</span> datetime, timedelta
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>default_args <span style="color:#ff7b72;font-weight:bold">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#39;owner&#39;</span>: <span style="color:#a5d6ff">&#39;airflow&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#39;depends_on_past&#39;</span>: <span style="color:#79c0ff">False</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#39;start_date&#39;</span>: datetime(<span style="color:#a5d6ff">2023</span>, <span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">1</span>),
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#39;email_on_failure&#39;</span>: <span style="color:#79c0ff">False</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#39;email_on_retry&#39;</span>: <span style="color:#79c0ff">False</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#39;retries&#39;</span>: <span style="color:#a5d6ff">1</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#39;retry_delay&#39;</span>: timedelta(minutes<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">5</span>),
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dag <span style="color:#ff7b72;font-weight:bold">=</span> DAG(
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#39;etl_pipeline&#39;</span>,
+</span></span><span style="display:flex;"><span>    default_args<span style="color:#ff7b72;font-weight:bold">=</span>default_args,
+</span></span><span style="display:flex;"><span>    description<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#39;An ETL pipeline&#39;</span>,
+</span></span><span style="display:flex;"><span>    schedule_interval<span style="color:#ff7b72;font-weight:bold">=</span>timedelta(days<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">1</span>),
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">extract_data</span>():
+</span></span><span style="display:flex;"><span>    response <span style="color:#ff7b72;font-weight:bold">=</span> requests<span style="color:#ff7b72;font-weight:bold">.</span>get(<span style="color:#a5d6ff">&#39;https://api.example.com/data&#39;</span>)
+</span></span><span style="display:flex;"><span>    data <span style="color:#ff7b72;font-weight:bold">=</span> response<span style="color:#ff7b72;font-weight:bold">.</span>json()
+</span></span><span style="display:flex;"><span>    df <span style="color:#ff7b72;font-weight:bold">=</span> pd<span style="color:#ff7b72;font-weight:bold">.</span>DataFrame(data)
+</span></span><span style="display:flex;"><span>    df<span style="color:#ff7b72;font-weight:bold">.</span>to_csv(<span style="color:#a5d6ff">&#39;/tmp/data.csv&#39;</span>, index<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#79c0ff">False</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">transform_data</span>():
+</span></span><span style="display:flex;"><span>    df <span style="color:#ff7b72;font-weight:bold">=</span> pd<span style="color:#ff7b72;font-weight:bold">.</span>read_csv(<span style="color:#a5d6ff">&#39;/tmp/data.csv&#39;</span>)
+</span></span><span style="display:flex;"><span>    df[<span style="color:#a5d6ff">&#39;transformed_column&#39;</span>] <span style="color:#ff7b72;font-weight:bold">=</span> df[<span style="color:#a5d6ff">&#39;original_column&#39;</span>]<span style="color:#ff7b72;font-weight:bold">.</span>apply(<span style="color:#ff7b72">lambda</span> x: x <span style="color:#ff7b72;font-weight:bold">*</span> <span style="color:#a5d6ff">2</span>)
+</span></span><span style="display:flex;"><span>    df<span style="color:#ff7b72;font-weight:bold">.</span>to_csv(<span style="color:#a5d6ff">&#39;/tmp/transformed_data.csv&#39;</span>, index<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#79c0ff">False</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">load_data</span>():
+</span></span><span style="display:flex;"><span>    df <span style="color:#ff7b72;font-weight:bold">=</span> pd<span style="color:#ff7b72;font-weight:bold">.</span>read_csv(<span style="color:#a5d6ff">&#39;/tmp/transformed_data.csv&#39;</span>)
+</span></span><span style="display:flex;"><span>    df<span style="color:#ff7b72;font-weight:bold">.</span>to_sql(<span style="color:#a5d6ff">&#39;transformed_table&#39;</span>, con<span style="color:#ff7b72;font-weight:bold">=</span>engine, if_exists<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#39;replace&#39;</span>, index<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#79c0ff">False</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>extract_task <span style="color:#ff7b72;font-weight:bold">=</span> PythonOperator(
+</span></span><span style="display:flex;"><span>    task_id<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#39;extract_data&#39;</span>,
+</span></span><span style="display:flex;"><span>    python_callable<span style="color:#ff7b72;font-weight:bold">=</span>extract_data,
+</span></span><span style="display:flex;"><span>    dag<span style="color:#ff7b72;font-weight:bold">=</span>dag,
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>transform_task <span style="color:#ff7b72;font-weight:bold">=</span> PythonOperator(
+</span></span><span style="display:flex;"><span>    task_id<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#39;transform_data&#39;</span>,
+</span></span><span style="display:flex;"><span>    python_callable<span style="color:#ff7b72;font-weight:bold">=</span>transform_data,
+</span></span><span style="display:flex;"><span>    dag<span style="color:#ff7b72;font-weight:bold">=</span>dag,
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>load_task <span style="color:#ff7b72;font-weight:bold">=</span> PythonOperator(
+</span></span><span style="display:flex;"><span>    task_id<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#39;load_data&#39;</span>,
+</span></span><span style="display:flex;"><span>    python_callable<span style="color:#ff7b72;font-weight:bold">=</span>load_data,
+</span></span><span style="display:flex;"><span>    dag<span style="color:#ff7b72;font-weight:bold">=</span>dag,
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>extract_task <span style="color:#ff7b72;font-weight:bold">&gt;&gt;</span> transform_task <span style="color:#ff7b72;font-weight:bold">&gt;&gt;</span> load_task
+</span></span></code></pre></div><p>Here we define a more intricate pipeline:</p>
+<ol>
+<li><strong>Extract Task</strong>: Uses <code>requests</code> to fetch data from an API.</li>
+<li><strong>Transform Task</strong>: Utilizes <code>pandas</code> to manipulate the data.</li>
+<li><strong>Load Task</strong>: Responsible for loading the data into PostgreSQL.</li>
+</ol>
+<p>The beauty of Airflow is its flexibility. You&rsquo;re not confined to any particular technology stack; if you need to swap out PostgreSQL for BigQuery or want to switch Python for a Spark job, you can do that with minimal refactoring.</p>
+<h2 id="monitoring-and-maintenance">Monitoring and Maintenance</h2>
+<p>Now that we have our DAGs running, let’s talk about monitoring and maintenance. The Airflow UI is where all the magic happens. From the UI, you can inspect your DAG runs, retry failed tasks, and manually trigger DAGs when necessary.</p>
+<h3 id="dealing-with-failures">Dealing with Failures</h3>
+<p>Failures are part and parcel of any system, and handling them gracefully is crucial. You can set up email alerts, Slack notifications, or even custom alerting mechanisms to inform you when a DAG or task fails. Setting up retries and leveraging the <code>TriggerRule</code> parameter allows you to control the flow in failure scenarios.</p>
+<p>For example, you might use the <code>TriggerRule.ONE_FAILED</code> to proceed to the next task if any one task fails:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">from</span> <span style="color:#ff7b72">airflow.utils.trigger_rule</span> <span style="color:#ff7b72">import</span> TriggerRule
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>task1 <span style="color:#ff7b72;font-weight:bold">=</span> PythonOperator(
+</span></span><span style="display:flex;"><span>    task_id<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#39;task1&#39;</span>,
+</span></span><span style="display:flex;"><span>    python_callable<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#ff7b72">lambda</span>: print(<span style="color:#a5d6ff">&#34;Task 1&#34;</span>),
+</span></span><span style="display:flex;"><span>    dag<span style="color:#ff7b72;font-weight:bold">=</span>dag,
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>task2 <span style="color:#ff7b72;font-weight:bold">=</span> PythonOperator(
+</span></span><span style="display:flex;"><span>    task_id<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#39;task2&#39;</span>,
+</span></span><span style="display:flex;"><span>    python_callable<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#ff7b72">lambda</span>: print(<span style="color:#a5d6ff">&#34;Task 2&#34;</span>),
+</span></span><span style="display:flex;"><span>    dag<span style="color:#ff7b72;font-weight:bold">=</span>dag,
+</span></span><span style="display:flex;"><span>    trigger_rule<span style="color:#ff7b72;font-weight:bold">=</span>TriggerRule<span style="color:#ff7b72;font-weight:bold">.</span>ONE_FAILED
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="scalability-and-deployment">Scalability and Deployment</h2>
+<p>When it comes to scaling, Airflow gracefully adapts to both vertical and horizontal scaling strategies. The CeleryExecutor can distribute task execution across multiple workers, while the KubernetesExecutor dynamically scales to meet workload demands.</p>
+<p>In production environments, deploying Airflow can be fine-tuned with tools like Kubernetes, Helm, and managed services like Google Cloud Composer or Amazon Managed Workflows for Apache Airflow (MWAA).</p>
+<hr>
+<p>In a world where data drives decisions, and timely insights are the lifeblood of a business, automating data workflows is not just a convenience; it is a necessity. Apache Airflow brings a level of sophistication and control that allows you to build complex, dependable workflows without breaking a sweat—or at least, without breaking too many.</p>
+<p>With its robust scheduling capabilities, an extensive library of plugins, and a vibrant community that elevates it from an impressive tool to a magical wand for data engineers, Apache Airflow stands out as a transformative solution for automating data workflows.</p>
+<p>So grab your metaphorical surfboard, catch the data wave, and let Apache Airflow propel you to new heights—or at least to a stress-free morning coffee.</p>
+
+        </div>
+
+        
+        
+        <footer class="post-footer">
+            <div class="post-tags">
+                
+                <a href="/tags/data-engineering/" class="tag">data-engineering</a>
+                
+                <a href="/tags/airflow/" class="tag">airflow</a>
+                
+                <a href="/tags/automation/" class="tag">automation</a>
+                
+            </div>
+        </footer>
+        
+    </div>
+</article>
+
+
+<nav class="post-nav">
+    <div class="container">
+        <div class="nav-links">
+            
+            <a href="https://salmancuso.com/posts/aprs/" class="nav-prev">
+                <span class="nav-label">← Previous</span>
+                <span class="nav-title">The Complete Guide to APRS Messaging</span>
+            </a>
+            
+            
+            
+            <a href="https://salmancuso.com/posts/privategpt/" class="nav-next">
+                <span class="nav-label">Next →</span>
+                <span class="nav-title">Building Private GPT Systems</span>
+            </a>
+            
+        </div>
+    </div>
+</nav>
+
+
+
+
+<section class="related-posts">
+    <div class="container">
+        <h2>More Posts</h2>
+        <div class="posts-grid">
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/dataSec.jpeg" alt="Data Security Best Practices" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="https://salmancuso.com/posts/datasec/">Data Security Best Practices</a></h3>
+                    <p class="post-card-date">Jun 8, 2026</p>
+                    <p class="post-card-summary"><h2 id="introduction-the-strategic-imperative-of-data-security">Introduction: The Strategic Imperative of Data Security</h2>
+<p>In today&rsquo;s hyperconnected digital ecosystem, data has transcended beyond mere commodity status—it&rsquo;s become the operational lifeblood and competitive moat of modern enterprises. From personally identifiable information (PII) and healthcare records to intellectual property, trade secrets, and financial ledgers, data assets underpin organizational resilience and individual privacy alike. Yet this critical dependence on data infrastructure introduces a parallel complexity: the expanding attack surface and sophistication of threat actors. Cyber attacks, data exfiltration events, ransomware deployments, and identity theft schemes have evolved from theoretical risks into demonstrable existential threats. The stakes are real, the vulnerabilities are systemic, and frankly, reactive approaches no longer cut it. Prioritizing data security—both at the enterprise and personal level—isn&rsquo;t optional. It&rsquo;s the foundation of operational integrity.</p></p>
+                    <a href="https://salmancuso.com/posts/datasec/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/BI.png" alt="Business Intelligence and AI" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="https://salmancuso.com/posts/biai/">Business Intelligence and AI</a></h3>
+                    <p class="post-card-date">Apr 15, 2026</p>
+                    <p class="post-card-summary"><p>In the rapidly evolving landscape of digital transformation, a phenomenon of profound significance has taken center stage: the integration of Artificial Intelligence (AI) into the realm of Business Intelligence (BI). This integration has emerged as a formidable force that not only propels strategic innovation but also fundamentally reshapes the very fabric of how organizations operate, particularly in the face of mounting complexities stemming from data proliferation. As companies grapple with the challenges of extracting meaningful insights from vast, diverse, and often disorganized datasets, AI stands out as a transformative agent. It enhances BI&rsquo;s capabilities, fundamentally altering the ways in which organizations glean insights, make informed decisions, and strategically maintain competitive advantages in their respective markets. This document aims to provide an in-depth exploration of the profound impact that AI has on BI, drawing insights from a seasoned Silicon Valley perspective and highlighting noteworthy examples that underscore pivotal advancements along with their practical implications.</p></p>
+                    <a href="https://salmancuso.com/posts/biai/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/posts/gpsSettings/GPS.jpg" alt="GPS on MeshCore: Solving the Timestamp Problem" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="https://salmancuso.com/posts/gpssettings/">GPS on MeshCore: Solving the Timestamp Problem</a></h3>
+                    <p class="post-card-date">Mar 23, 2026</p>
+                    <p class="post-card-summary"><p>Here&rsquo;s something that doesn&rsquo;t get talked about nearly enough: your mesh repeater probably doesn&rsquo;t know what time it is.</p>
+<p>Think about that for a moment. You&rsquo;ve spent hours—maybe days—setting up this node. You&rsquo;ve installed it on a mountaintop or bolted it to a tower somewhere. You&rsquo;ve carefully tuned the antenna, verified the coverage, tested the mesh routing. Everything&rsquo;s working great. And meanwhile, internally, your repeater thinks it&rsquo;s January 1st, 1970. Unix Epoch. The dawn of time, as far as computer systems are concerned.</p></p>
+                    <a href="https://salmancuso.com/posts/gpssettings/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+        </div>
+    </div>
+</section>
+
+
+
+    </main>
+
+    
+    <footer>
+        <div class="container">
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/posts">Posts</a></li>
+                    <li><a href="/publications">Work/Publications</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Interests</h3>
+                <ul>
+                    <li><a href="https://makerworld.com/" target="_blank">Maker World</a></li>
+                    <li><a href="https://www.adafruit.com/" target="_blank">Adafruit</a></li>
+                    <li><a href="https://sanjosesimplex.groups.io/g/main" target="_blank">K6SJS San Jose Simplex</a></li>
+                    <li><a href="https://www.kennedymeadows.com/" target="_blank">Kennedy Meadows Packstation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="https://it-humsci.stanford.edu/people/sal-mancuso" target="_blank">Stanford</a></li>
+                    <li><a href="https://github.com/salmancuso" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/salmancuso/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://www.qrz.com/db/W6SAL" target="_blank">QRZ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sal Mancuso. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+    
+    
+    <script src="/js/topo-animator.js"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
+        
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('hamburger').classList.remove('active');
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

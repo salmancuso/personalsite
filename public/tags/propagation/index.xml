@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Propagation on Sal Mancuso</title>
+    <link>https://salmancuso.com/tags/propagation/</link>
+    <description>Recent content in Propagation on Sal Mancuso</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://salmancuso.com/tags/propagation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Repeaters vs. Simplex: Understanding Amateur Radio Communication Infrastructure</title>
+      <link>https://salmancuso.com/posts/repeatervssimplex-converted/</link>
+      <pubDate>Sun, 08 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://salmancuso.com/posts/repeatervssimplex-converted/</guid>
+      <description>&lt;p&gt;There&amp;rsquo;s something fascinating about amateur radio operators and how we think about communication infrastructure. We genuinely debate whether to bounce our signals off a repeater sitting on a mountaintop or just talk directly to each other. And there&amp;rsquo;s actually real substance to that debate—understanding the tradeoffs between these two approaches is the difference between reliable communication and standing there with an expensive radio wondering why nobody&amp;rsquo;s responding.&lt;/p&gt;&#xA;&lt;p&gt;Let me walk through both methods so you understand not just how they work, but when each one makes sense.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

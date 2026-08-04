@@ -1,0 +1,728 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Building infrastructure. Living outside. Communicating worldwide.">
+    <meta name="author" content="Sal Mancuso">
+
+    <title>
+        
+        About | Sal Mancuso
+        
+    </title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/pages.css">
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/hero.css">
+    
+
+    
+    
+    <link rel="stylesheet" href="/css/featured-projects.css">
+    
+
+    
+    
+    <link rel="stylesheet" href="/css/sections.css">
+    
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-bg: #1a1a18;
+            --dark-surface: #242420;
+            --text-light: #E8D5C4;
+            --text-muted: #A39A8F;
+            --accent: #B8860B;
+            --earth: #8B9D5D;
+            --border-color: #4a4a48;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #d4af37;
+        }
+
+         
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+         
+        nav {
+            background-color: var(--dark-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--text-light) !important;
+            margin: 0 !important;
+            flex-shrink: 0;
+        }
+
+        .nav-brand:hover {
+            color: var(--accent) !important;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 0;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-light);
+            font-weight: 500;
+            margin: 0 1.5rem;
+            white-space: nowrap;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+         
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            background: none;
+            border: none;
+            padding: 0;
+            margin-left: 1rem;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-light);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+         
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav .container {
+                flex-wrap: wrap;
+            }
+
+            .nav-menu {
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                margin-top: 1rem;
+                padding-top: 1rem;
+                border-top: 1px solid var(--border-color);
+            }
+
+            .nav-menu.active {
+                max-height: 300px;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.75rem 0;
+                padding: 0.5rem 0;
+                font-size: 0.95rem;
+            }
+
+            nav a:hover {
+                padding-left: 0.5rem;
+            }
+
+            .nav-brand {
+                font-size: 1.15rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-brand {
+                font-size: 1rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            .hamburger span {
+                width: 22px;
+                height: 2.5px;
+            }
+        }
+
+         
+        footer {
+            background-color: #0f0f0d;
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        footer h3 {
+            font-family: Georgia, serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer ul li a {
+            color: var(--text-muted);
+        }
+
+        footer ul li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+         
+        main {
+            min-height: 50vh;
+        }
+
+        .page-content {
+            padding: 3rem 0;
+        }
+
+        .page-title {
+            font-family: Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--earth);
+            display: inline-block;
+        }
+
+         
+        main h2 {
+            font-family: Georgia, serif;
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        main h3 {
+            font-family: Georgia, serif;
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+         
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1rem !important;
+        }
+
+        main p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1rem !important;
+        }
+
+        main ul,
+        main ol {
+            color: var(--text-muted);
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        main li {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        main code {
+            background-color: var(--dark-surface);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        main pre {
+            background-color: var(--dark-surface);
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            padding: 1.5rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        main pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        main blockquote {
+            border-left: 4px solid var(--earth);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 1rem;
+        }
+
+         
+
+         
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            main h2 {
+                font-size: 1.5rem;
+            }
+
+            main h3 {
+                font-size: 1.2rem;
+            }
+
+             
+            p {
+                font-size: 1.05rem !important;
+                line-height: 1.9 !important;
+            }
+
+            main p {
+                font-size: 1.05rem !important;
+                line-height: 1.9 !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.05rem !important;
+            }
+
+            main li {
+                font-size: 1.05rem !important;
+            }
+
+            main blockquote {
+                font-size: 1.05rem !important;
+                line-height: 1.9 !important;
+            }
+        }
+
+         
+        @media (max-width: 600px) {
+            .page-title {
+                font-size: 1.85rem;
+            }
+
+            main h2 {
+                font-size: 1.4rem;
+                margin-top: 1.5rem;
+            }
+
+            main h3 {
+                font-size: 1.15rem;
+            }
+
+             
+            p {
+                font-size: 1.08rem !important;
+                line-height: 1.95 !important;
+            }
+
+            main p {
+                font-size: 1.08rem !important;
+                line-height: 1.95 !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.08rem !important;
+            }
+
+            main li {
+                font-size: 1.08rem !important;
+                margin-bottom: 0.6rem;
+            }
+
+            main blockquote {
+                font-size: 1.08rem !important;
+                line-height: 1.95 !important;
+            }
+        }
+
+         
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .page-title {
+                font-size: 1.75rem;
+            }
+
+            main h2 {
+                font-size: 1.3rem;
+                margin-top: 1.4rem;
+            }
+
+            main h3 {
+                font-size: 1.1rem;
+                margin-top: 1.2rem;
+            }
+
+             
+            p {
+                font-size: 1.1rem !important;
+                line-height: 2 !important;
+                margin-bottom: 1.75rem !important;
+            }
+
+            main p {
+                font-size: 1.1rem !important;
+                line-height: 2 !important;
+                margin-bottom: 1.75rem !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.1rem !important;
+                margin-left: 1.5rem;
+            }
+
+            main li {
+                font-size: 1.1rem !important;
+                margin-bottom: 0.7rem;
+            }
+
+            main blockquote {
+                font-size: 1.1rem !important;
+                line-height: 2 !important;
+                padding-left: 1rem;
+            }
+
+            main code {
+                font-size: 0.95rem !important;
+            }
+
+            main pre {
+                padding: 1rem;
+            }
+        }
+
+         
+        @media (max-width: 374px) {
+            p {
+                font-size: 1.15rem !important;
+                line-height: 2.1 !important;
+                margin-bottom: 1.8rem !important;
+            }
+
+            main p {
+                font-size: 1.15rem !important;
+                line-height: 2.1 !important;
+                margin-bottom: 1.8rem !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.15rem !important;
+            }
+
+            main li {
+                font-size: 1.15rem !important;
+                margin-bottom: 0.8rem;
+            }
+
+            main blockquote {
+                font-size: 1.15rem !important;
+                line-height: 2.1 !important;
+            }
+
+            main h2 {
+                font-size: 1.25rem;
+            }
+
+            main h3 {
+                font-size: 1.05rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-brand">Sal</a>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu" id="navMenu">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/posts">Posts</a>
+                <a href="/publications">Work/Publications</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    
+    <main>
+        
+
+<article class="page-single">
+    <div class="container">
+        
+        <header class="page-header">
+            <h1 class="page-title">About</h1>
+            
+        </header>
+
+        
+        <div class="page-content">
+            <h1 id="i-turn-data-into-stories-and-mountains-into-memories">I turn data into stories and mountains into memories.</h1>
+<p><em>Senior Business Intelligence Engineer at Stanford University, amateur radio operator, backpacker, builder, and lifelong learner in the mountains and in the code.</em></p>
+<h2 id="the-data-journey">The Data Journey</h2>
+<p>By day, I&rsquo;m a Senior Business Intelligence Engineer at Stanford University&rsquo;s School of Humanities and Sciences, where I&rsquo;ve spent nearly fifteen years transforming complex datasets into insights that drive real decisions. By weekend, you might find me on a remote mountain trail with a ham radio, exploring an abandoned mine shaft, or casting a line in the Sierra Nevada backcountry.
+My path through Stanford has been anything but linear. I&rsquo;ve navigated the intricate world of university finance, led the data pillar for the Graduate School of Business DARC (Data, Analytics and Research Computing) team, and now bring it all together at the Humanities and Sciences Dean&rsquo;s office. Before Stanford, I cut my teeth at places like Apple, Sun Microsystems, and TiVo—learning early that the best technology solutions come from understanding both the business and the people behind the data.</p>
+<h3 id="building-data-systems-that-think">Building Data Systems That Think</h3>
+<p>I&rsquo;ve worked with datasets that would make your hard drive weep—we&rsquo;re talking hundreds of terabytes spanning multiple cloud environments. But scale is only half the story. The real craft is building intelligent data systems that don&rsquo;t just process information; they extract meaning from it.
+I&rsquo;ve wrestled with everything from HIPAA-compliant sensitive data to cloud infrastructure spanning AWS and GCP. I build systems that need to scale, visualizations that need to illuminate, and—increasingly—solutions that leverage machine learning and AI to turn raw data into actionable intelligence.
+That means designing ETL pipelines that intelligently parse unstructured data. Building recommendation engines that learn from patterns in millions of records. Developing natural language processing workflows that extract insights from institutional communications. Implementing retrieval-augmented generation (RAG) systems that let non-technical stakeholders ask questions of their data in plain English. I&rsquo;ve moved beyond traditional SQL dashboards into the realm of predictive analytics, anomaly detection, and AI-assisted decision support—where data engineers become architects of intelligence.
+I&rsquo;m fascinated by the intersection of classical data engineering and modern AI: how to build data foundations that feed machine learning models responsibly, how to ensure data quality at scale while preserving privacy, how to surface model insights in ways that domain experts can trust and act on. The best analytical systems I&rsquo;ve built aren&rsquo;t just fast—they&rsquo;re adaptive. They learn. They catch what humans would miss.</p>
+<h3 id="my-toolkit">My Toolkit</h3>
+<p><strong>AI &amp; Machine Learning</strong></p>
+<ul>
+<li>Large Language Models (LLM integration, prompt engineering)</li>
+<li>Retrieval-Augmented Generation (RAG systems)</li>
+<li>TensorFlow, PyTorch for deep learning pipelines</li>
+<li>Natural Language Processing (SpaCy, NLTK, transformers)</li>
+<li>Predictive modeling &amp; statistical analysis</li>
+<li>Anomaly detection &amp; pattern recognition</li>
+</ul>
+<p>⠀<strong>Data Engineering &amp; Infrastructure</strong></p>
+<ul>
+<li>ETL/ELT pipelines (Airflow, orchestration)</li>
+<li>Web scraping &amp; data extraction (Pandas, BeautifulSoup, Selenium)</li>
+<li>Cloud platforms (AWS, GCP, DigitalOcean)</li>
+<li>Databases (PostgreSQL, MySQL, MongoDB, BigQuery)</li>
+<li>Apache ecosystem &amp; distributed computing</li>
+<li>Data warehousing &amp; dimensional modeling</li>
+</ul>
+<p>⠀<strong>Analytics &amp; Visualization</strong></p>
+<ul>
+<li>Tableau (dashboarding, storytelling with data)</li>
+<li>D3.js for custom interactive visualizations</li>
+<li>BusinessObjects &amp; enterprise BI platforms</li>
+<li>Statistical analysis &amp; data exploration</li>
+<li>Translating complexity into clarity</li>
+</ul>
+<p>⠀<strong>Software &amp; DevOps</strong></p>
+<ul>
+<li>Python (primary language for everything)</li>
+<li>Flask, Apache, mod_wsgi (web application deployment)</li>
+<li>Git, CI/CD workflows, containerization</li>
+<li>SQL (the language that never goes out of style)</li>
+<li>Linux, bash scripting, system administration</li>
+</ul>
+<h2 id="when-the-computer-sleeps">When the Computer Sleeps</h2>
+<h3 id="on-two-wheels-or-none">On Two Wheels (Or None)</h3>
+<p>There&rsquo;s something about the open road that clears the mind. Whether it&rsquo;s a quick 20-mile spin on my road bike, where I&rsquo;m chasing intervals and watching the Santa Cruz Mountains unfold, or a longer journey on my 2005 Harley-Davidson Fat Boy through winding mountain passes, cycling and motorcycling keep me grounded and free. There&rsquo;s a meditative quality to both—the focus required to ride well, the feel of pavement and curves, the way a good ride leaves your head cleaner than you found it.</p>
+<h3 id="the-workshop">The Workshop</h3>
+<p>My garage smells like sawdust, hot plastics and possibility. I build things—charcuterie boards with float epoxy that look like liquid glass, custom wooden hammock stands sturdy enough to trust your afternoon nap (and your conscience) to, and elegant 3D-printed items that turn unused space into organized solutions. There&rsquo;s a satisfaction in creating something tangible that no software deployment can quite match. You finish a woodworking project, and there it is—solid, real, something you can run your hand across. I&rsquo;ve found that the precision required in woodworking, vintage tool refurbishing, and 3D printing stimulates creative problem-solving in a very different way than coding ever could.</p>
+<h3 id="amateur-radio-w6sal">Amateur Radio: W6SAL</h3>
+<p>I&rsquo;ve been a ham radio operator since 2003, inspired by watching emergency communications in action during the 1989 Loma Prieta earthquake as a kid—seeing how radio kept people connected when everything else failed. Today I hold a General Class license and operate across HF, VHF, and UHF bands as an active member of the San Jose Simplex Group, Almaden Radio Club, and West Valley Amateur Radio Association. Whether it&rsquo;s a casual ragchew on the local repeater (that&rsquo;s ham radio speak for a long, meandering conversation with whoever&rsquo;s listening), participating in emergency communications drills, or chasing distant stations during a Solar maximum, radio keeps me connected to a community that spans the globe—one frequency at a time. There&rsquo;s something beautifully low-tech about bouncing your voice off the ionosphere. Think it’s for nerds? <a href="https://arrl.informz.net/informzdataservice/onlineversion/ind/bWFpbGluZ2luc3RhbmNlaWQ9MzMxMDQ5OSZzdWJzY3JpYmVyaWQ9NTIwMzkwMjky#Bookmark_A9EDA1170">Read this article about how I helped save a downed cyclist using Amateur Radio.</a></p>
+<h3 id="into-the-wild">Into the Wild</h3>
+<p>The outdoors is where I recharge. Hiking and backpacking through the Santa Cruz Mountains and Sierra Nevada taught me lessons I carry into every project: preparation matters, adaptability wins, and the best views require the hardest climbs. My favorite fishing spot—Kennedy Meadows off Sonora Pass—is where the world gets quiet enough to hear yourself think, and where I&rsquo;ve learned more about patience from watching a trout rise than any book could teach. And yes, I&rsquo;m that person who gets genuinely excited about exploring abandoned mines and old train tunnels. There&rsquo;s history hidden in those forgotten places—evidence of how people lived and worked in landscapes that look untouched now. Every artifact tells a story.</p>
+<h3 id="the-home-team">The Home Team</h3>
+<p>Family comes first, always. My wife is a powerhouse in commercial real estate for a Fortune 200 company, and together we&rsquo;re raising three amazing humans: one navigating post-college life and figuring out who they want to become, one conquering the identity crisis that is high school, and one discovering that middle school is where the real chaos lives. I&rsquo;m the former flag football coach who might care a <em>little</em> too much about strategy, the soccer coach who&rsquo;s not afraid to look ridiculous, and the softball scorekeeper who genuinely believes every out matters. Our dinner table is loud, chaotic, and full of people who actually want to be there—which I think is the real win.</p>
+<h3 id="scouting">Scouting</h3>
+<p>I cut my teeth in Scouting as a kid myself, moving through Cub Scout Pack 204 and Troop 614 in Scotts Valley before football took over my high school years. There was something about learning to build a proper fire, navigate by stars, and solve problems with rope and ingenuity that stuck with me. Decades later, I came full circle—first as a Den Leader working with younger scouts, then as Scoutmaster, and now as Assistant Scoutmaster for Troop 2233. Teaching scouts to think critically, trust their instincts in the backcountry, and believe in themselves isn&rsquo;t just volunteer work; it&rsquo;s investing in the next generation of problem-solvers and leaders. Some of my best memories now are sitting around a campfire with a group of teenagers, knowing I had something to do with helping them realize they&rsquo;re more capable than they thought.</p>
+<h3 id="sports-allegiances">Sports Allegiances</h3>
+<p>Fair warning: I&rsquo;m insufferable during football season. The San Francisco 49ers are my religion (Steve Young and Jerry Rice will always own a corner of my heart), the San Francisco Giants are my meditation (there&rsquo;s something about the pace of baseball that lets your mind wander), and the Oregon Ducks are my chaos (because everyone needs a team that breaks their heart on a regular basis). Every touchdown, strikeout, and fourth-quarter comeback matters more than it probably should. My family has learned to accept this as a permanent feature of living in this house.</p>
+<h2 id="lets-connect">Let&rsquo;s Connect</h2>
+<p>Whether you want to talk about building scalable data pipelines that leverage AI and machine learning, compare notes on the best backpacking routes in the Sierras, debate whether the Giants have a shot this year, or compare ham radio setups, I&rsquo;m always up for a conversation. The best projects—and the best adventures—happen when passionate people collaborate.</p>
+
+        </div>
+    </div>
+</article>
+
+
+    </main>
+
+    
+    <footer>
+        <div class="container">
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/posts">Posts</a></li>
+                    <li><a href="/publications">Work/Publications</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Interests</h3>
+                <ul>
+                    <li><a href="https://makerworld.com/" target="_blank">Maker World</a></li>
+                    <li><a href="https://www.adafruit.com/" target="_blank">Adafruit</a></li>
+                    <li><a href="https://sanjosesimplex.groups.io/g/main" target="_blank">K6SJS San Jose Simplex</a></li>
+                    <li><a href="https://www.kennedymeadows.com/" target="_blank">Kennedy Meadows Packstation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="https://it-humsci.stanford.edu/people/sal-mancuso" target="_blank">Stanford</a></li>
+                    <li><a href="https://github.com/salmancuso" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/salmancuso/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://www.qrz.com/db/W6SAL" target="_blank">QRZ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sal Mancuso. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+    
+    
+    <script src="/js/topo-animator.js"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
+        
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('hamburger').classList.remove('active');
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
