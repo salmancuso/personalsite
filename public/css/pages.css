@@ -665,7 +665,7 @@ p {
     }
 
     .page-subtitle {
-        font-size: 1rem;
+        font-size: 1.25rem;
     }
 
     .posts-grid,
@@ -699,32 +699,28 @@ p {
     }
 
     .page-title {
-        /* font-size: 1.5rem; */
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .post-card-title {
-        /* font-size: 1.1rem; */
-        font-size: 2rem;
+        font-size: 1.1rem;
     }
 
     .post-title {
-        /* font-size: 1.75rem; */
-        font-size: 3rem;
+        font-size: 1.75rem;
     }
 
     .post-content {
-        font-size: 1.5rem;    /* ← INCREASED */
+        font-size: 1.3rem;    /* ← INCREASED */
     }
 
     .post-content h2 {
-        /* font-size: 1.4rem; */
-        font-size: 2rem;
+        font-size: 1.4rem;
     }
     
     /* Add this new rule */
     p {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         line-height: 1.9;
     }
 }
