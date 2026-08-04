@@ -711,7 +711,7 @@ p {
     }
 
     .post-content {
-        font-size: 1.05rem;    /* ← INCREASED */
+        font-size: 1.25rem;    /* ← INCREASED */
     }
 
     .post-content h2 {
@@ -720,7 +720,7 @@ p {
     
     /* Add this new rule */
     p {
-        font-size: 1.05rem;
+        font-size: 1.25rem;
         line-height: 1.9;
     }
 }
