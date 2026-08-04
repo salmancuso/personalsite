@@ -699,28 +699,32 @@ p {
     }
 
     .page-title {
-        font-size: 1.5rem;
+        /* font-size: 1.5rem; */
+        font-size: 2rem;
     }
 
     .post-card-title {
-        font-size: 1.1rem;
+        /* font-size: 1.1rem; */
+        font-size: 2rem;
     }
 
     .post-title {
-        font-size: 1.75rem;
+        /* font-size: 1.75rem; */
+        font-size: 3rem;
     }
 
     .post-content {
-        font-size: 1.25rem;    /* ← INCREASED */
+        font-size: 1.5rem;    /* ← INCREASED */
     }
 
     .post-content h2 {
-        font-size: 1.4rem;
+        /* font-size: 1.4rem; */
+        font-size: 2rem;
     }
     
     /* Add this new rule */
     p {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         line-height: 1.9;
     }
 }
