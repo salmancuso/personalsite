@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Time-Synchronization on Sal Mancuso</title>
-    <link>http://localhost:1313/tags/time-synchronization/</link>
+    <link>https://salmancuso.com/tags/time-synchronization/</link>
     <description>Recent content in Time-Synchronization on Sal Mancuso</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 23 Mar 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/time-synchronization/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://salmancuso.com/tags/time-synchronization/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GPS on MeshCore: Solving the Timestamp Problem</title>
-      <link>http://localhost:1313/posts/gpssettings/</link>
+      <link>https://salmancuso.com/posts/gpssettings/</link>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/gpssettings/</guid>
+      <guid>https://salmancuso.com/posts/gpssettings/</guid>
       <description>&lt;p&gt;Here&amp;rsquo;s something that doesn&amp;rsquo;t get talked about nearly enough: your mesh repeater probably doesn&amp;rsquo;t know what time it is.&lt;/p&gt;&#xA;&lt;p&gt;Think about that for a moment. You&amp;rsquo;ve spent hours—maybe days—setting up this node. You&amp;rsquo;ve installed it on a mountaintop or bolted it to a tower somewhere. You&amp;rsquo;ve carefully tuned the antenna, verified the coverage, tested the mesh routing. Everything&amp;rsquo;s working great. And meanwhile, internally, your repeater thinks it&amp;rsquo;s January 1st, 1970. Unix Epoch. The dawn of time, as far as computer systems are concerned.&lt;/p&gt;</description>
     </item>
   </channel>

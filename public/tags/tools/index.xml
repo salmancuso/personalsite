@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tools on Sal Mancuso</title>
-    <link>http://localhost:1313/tags/tools/</link>
+    <link>https://salmancuso.com/tags/tools/</link>
     <description>Recent content in Tools on Sal Mancuso</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 10 Jul 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://salmancuso.com/tags/tools/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Data Transfer Techniques and Tools</title>
-      <link>http://localhost:1313/posts/datatransfer/</link>
+      <link>https://salmancuso.com/posts/datatransfer/</link>
       <pubDate>Mon, 10 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/datatransfer/</guid>
+      <guid>https://salmancuso.com/posts/datatransfer/</guid>
       <description>&lt;p&gt;Are you aspiring to be a Data Engineer or Data Scientist? Welcome to an exclusive club where the real journey begins with acquiring deep domain knowledge, particularly about one of the most critical facets of data management: the transfer of substantial datasets. This guide aims to introduce you to advanced data transfer techniques, integral tools, and best practices that make up a data engineer&amp;rsquo;s arsenal.&lt;/p&gt;&#xA;&lt;p&gt;We have all heard the tales of engineers manipulating massive datasets in today&amp;rsquo;s rapidly evolving technological landscape. Data Engineers (DEs), the unsung heroes in the data science ecosystem, form the backbone of robust research, analytics, and data science operations. Without the diligence and expertise of DEs, the field of data science would be virtually nonexistent. Analogically, data engineers can be thought of as the bass guitarists in a rock band, providing the foundational rhythm and melodic complexity that propels the band forward. Alternatively, they are akin to Dwight Schrute supporting Michael Scott in &amp;ldquo;The Office&amp;rdquo;. While many may aspire to be the lead singer (data scientist), they often overlook the crucial support roles like that of a data engineer. People frequently ask, &amp;ldquo;What is the first step in becoming a data engineer?&amp;rdquo; My answer invariably focuses on mastering data transfer techniques. With an array of options available, I will expound upon the methodologies I utilize in my professional practice.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Git for Data Engineers</title>
-      <link>http://localhost:1313/posts/git/</link>
+      <link>https://salmancuso.com/posts/git/</link>
       <pubDate>Fri, 12 May 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/git/</guid>
+      <guid>https://salmancuso.com/posts/git/</guid>
       <description>&lt;p&gt;In recent years, the importance of repositories like GitHub has become increasingly apparent in the tech industry. Platforms such as GitHub, GitLab, and BitBucket are web-based hosting services that provide version control and collaboration features for software development projects. These platforms allow developers to store and manage their code, track changes, collaborate with others, and contribute to open-source projects. In this expanded article, we&amp;rsquo;ll deeply discuss the significance of repositories like GitHub and provide comprehensive instructions on how to use a repository effectively.&lt;/p&gt;</description>
     </item>
   </channel>
