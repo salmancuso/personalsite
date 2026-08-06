@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://salmancuso.com/tags/ai/</loc>
+    <lastmod>2026-06-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://salmancuso.com/posts/gptdataanalysis/</loc>
+    <lastmod>2026-06-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://salmancuso.com/tags/data-analysis/</loc>
+    <lastmod>2026-06-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://salmancuso.com/tags/gpt/</loc>
+    <lastmod>2026-06-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://salmancuso.com/posts/</loc>
+    <lastmod>2026-06-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://salmancuso.com/</loc>
+    <lastmod>2026-06-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://salmancuso.com/tags/</loc>
+    <lastmod>2026-06-30T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://salmancuso.com/tags/best-practices/</loc>
     <lastmod>2026-06-08T00:00:00+00:00</lastmod>
   </url><url>
@@ -11,20 +32,8 @@
     <loc>https://salmancuso.com/posts/datasec/</loc>
     <lastmod>2026-06-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://salmancuso.com/posts/</loc>
-    <lastmod>2026-06-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://salmancuso.com/</loc>
-    <lastmod>2026-06-08T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://salmancuso.com/tags/security/</loc>
     <lastmod>2026-06-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://salmancuso.com/tags/</loc>
-    <lastmod>2026-06-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://salmancuso.com/tags/ai/</loc>
-    <lastmod>2026-04-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://salmancuso.com/posts/biai/</loc>
     <lastmod>2026-04-15T00:00:00+00:00</lastmod>
@@ -151,15 +160,6 @@
   </url><url>
     <loc>https://salmancuso.com/tags/message-storage/</loc>
     <lastmod>2025-11-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://salmancuso.com/posts/gptdataanalysis/</loc>
-    <lastmod>2025-11-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://salmancuso.com/tags/data-analysis/</loc>
-    <lastmod>2025-11-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://salmancuso.com/tags/gpt/</loc>
-    <lastmod>2025-11-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://salmancuso.com/posts/mqttserver/</loc>
     <lastmod>2025-11-12T00:00:00+00:00</lastmod>

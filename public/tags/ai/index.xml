@@ -6,21 +6,21 @@
     <description>Recent content in Ai on Sal Mancuso</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://salmancuso.com/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Analysis with GPT Models</title>
+      <link>https://salmancuso.com/posts/gptdataanalysis/</link>
+      <pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://salmancuso.com/posts/gptdataanalysis/</guid>
+      <description>&lt;h2 id=&#34;the-aha-moment-that-started-this-journey&#34;&gt;The &amp;ldquo;Aha!&amp;rdquo; Moment That Started This Journey&lt;/h2&gt;&#xA;&lt;p&gt;You know, I&amp;rsquo;ve spent my career believing that technology should empower everyone, not just the experts. That&amp;rsquo;s why, when I started working with data analytics at Stanford, I kept thinking about my days at Apple Computer, trying to understand a bill of materials in an Excel spreadsheet. Margins up, expenses down—but what did it all &lt;em&gt;mean&lt;/em&gt;? What was the story those numbers were trying to tell?&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Business Intelligence and AI</title>
       <link>https://salmancuso.com/posts/biai/</link>
       <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
       <guid>https://salmancuso.com/posts/biai/</guid>
       <description>&lt;p&gt;In the rapidly evolving landscape of digital transformation, a phenomenon of profound significance has taken center stage: the integration of Artificial Intelligence (AI) into the realm of Business Intelligence (BI). This integration has emerged as a formidable force that not only propels strategic innovation but also fundamentally reshapes the very fabric of how organizations operate, particularly in the face of mounting complexities stemming from data proliferation. As companies grapple with the challenges of extracting meaningful insights from vast, diverse, and often disorganized datasets, AI stands out as a transformative agent. It enhances BI&amp;rsquo;s capabilities, fundamentally altering the ways in which organizations glean insights, make informed decisions, and strategically maintain competitive advantages in their respective markets. This document aims to provide an in-depth exploration of the profound impact that AI has on BI, drawing insights from a seasoned Silicon Valley perspective and highlighting noteworthy examples that underscore pivotal advancements along with their practical implications.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Data Analysis with GPT Models</title>
-      <link>https://salmancuso.com/posts/gptdataanalysis/</link>
-      <pubDate>Sun, 16 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/posts/gptdataanalysis/</guid>
-      <description>&lt;h2 id=&#34;the-aha-moment-that-started-this-journey&#34;&gt;The &amp;ldquo;Aha!&amp;rdquo; Moment That Started This Journey&lt;/h2&gt;&#xA;&lt;p&gt;You know, I&amp;rsquo;ve spent my career believing that technology should empower everyone, not just the experts. That&amp;rsquo;s why, when I started working with data analytics at Stanford, I kept thinking about my days at Apple Computer, trying to understand a bill of materials in an Excel spreadsheet. Margins up, expenses down—but what did it all &lt;em&gt;mean&lt;/em&gt;? What was the story those numbers were trying to tell?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building Private GPT Systems</title>
