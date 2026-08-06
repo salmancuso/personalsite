@@ -1,6 +1,6 @@
 ---
 title: "Data Analysis with GPT Models"
-date: 2026-06-30
+date: 2026-08-01
 description: "Leveraging large language models for data analysis tasks"
 image: "/images/gpt.jpg"
 tags: ["gpt", "data-analysis", "ai"]
