@@ -2,11 +2,11 @@
 title: "Privacy Policy"
 description: "Privacy policy for SkipWatch, JS8 Mobile, and other apps and tools by Sal Mancuso, W6SAL. No accounts, no ads, no analytics, no tracking, and nothing is sold."
 date: 2026-10-21
-draft: true
+draft: false
 baseURL: 'https://salmancuso.com'
 ---
 
-# I don't collect your data.
+# I don't collect your data. EVER!.
 *No accounts, no ads, no analytics, no tracking, and nothing is sold. My apps are free.*
 
 **Last updated: October 21, 2026**

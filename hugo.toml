@@ -47,7 +47,6 @@ name = "Privacy"
 url = "/privacy/"
 weight = 5
 
-
 # Parameters
 [params]
 description = "Building infrastructure. Living outside. Communicating worldwide."
