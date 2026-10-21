@@ -6,7 +6,7 @@ draft: false
 baseURL: 'https://salmancuso.com'
 ---
 
-# I don't collect your data. EVER!.
+# I don't collect your data. EVER!!.
 *No accounts, no ads, no analytics, no tracking, and nothing is sold. My apps are free.*
 
 **Last updated: October 21, 2026**
