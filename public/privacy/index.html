@@ -1,0 +1,707 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Building infrastructure. Living outside. Communicating worldwide.">
+    <meta name="author" content="Sal Mancuso">
+
+    <title>
+        
+        Privacy Policy | Sal Mancuso
+        
+    </title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/pages.css">
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/hero.css">
+    
+
+    
+    
+    <link rel="stylesheet" href="/css/featured-projects.css">
+    
+
+    
+    
+    <link rel="stylesheet" href="/css/sections.css">
+    
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-bg: #1a1a18;
+            --dark-surface: #242420;
+            --text-light: #E8D5C4;
+            --text-muted: #A39A8F;
+            --accent: #B8860B;
+            --earth: #8B9D5D;
+            --border-color: #4a4a48;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #d4af37;
+        }
+
+         
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+         
+        nav {
+            background-color: var(--dark-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--text-light) !important;
+            margin: 0 !important;
+            flex-shrink: 0;
+        }
+
+        .nav-brand:hover {
+            color: var(--accent) !important;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 0;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-light);
+            font-weight: 500;
+            margin: 0 1.5rem;
+            white-space: nowrap;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+         
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            background: none;
+            border: none;
+            padding: 0;
+            margin-left: 1rem;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-light);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+         
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav .container {
+                flex-wrap: wrap;
+            }
+
+            .nav-menu {
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                margin-top: 1rem;
+                padding-top: 1rem;
+                border-top: 1px solid var(--border-color);
+            }
+
+            .nav-menu.active {
+                max-height: 400px;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.75rem 0;
+                padding: 0.5rem 0;
+                font-size: 0.95rem;
+            }
+
+            nav a:hover {
+                padding-left: 0.5rem;
+            }
+
+            .nav-brand {
+                font-size: 1.15rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-brand {
+                font-size: 1rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            .hamburger span {
+                width: 22px;
+                height: 2.5px;
+            }
+        }
+
+         
+        footer {
+            background-color: #0f0f0d;
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        footer h3 {
+            font-family: Georgia, serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer ul li a {
+            color: var(--text-muted);
+        }
+
+        footer ul li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+         
+        main {
+            min-height: 50vh;
+        }
+
+        .page-content {
+            padding: 3rem 0;
+        }
+
+        .page-title {
+            font-family: Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--earth);
+            display: inline-block;
+        }
+
+         
+        main h2 {
+            font-family: Georgia, serif;
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        main h3 {
+            font-family: Georgia, serif;
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+         
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1rem !important;
+        }
+
+        main p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1rem !important;
+        }
+
+        main ul,
+        main ol {
+            color: var(--text-muted);
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        main li {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        main code {
+            background-color: var(--dark-surface);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        main pre {
+            background-color: var(--dark-surface);
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            padding: 1.5rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        main pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        main blockquote {
+            border-left: 4px solid var(--earth);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 1rem;
+        }
+
+         
+
+         
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            main h2 {
+                font-size: 1.5rem;
+            }
+
+            main h3 {
+                font-size: 1.2rem;
+            }
+
+             
+            p {
+                font-size: 1.05rem !important;
+                line-height: 1.9 !important;
+            }
+
+            main p {
+                font-size: 1.05rem !important;
+                line-height: 1.9 !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.05rem !important;
+            }
+
+            main li {
+                font-size: 1.05rem !important;
+            }
+
+            main blockquote {
+                font-size: 1.05rem !important;
+                line-height: 1.9 !important;
+            }
+        }
+
+         
+        @media (max-width: 600px) {
+            .page-title {
+                font-size: 1.85rem;
+            }
+
+            main h2 {
+                font-size: 1.4rem;
+                margin-top: 1.5rem;
+            }
+
+            main h3 {
+                font-size: 1.15rem;
+            }
+
+             
+            p {
+                font-size: 1.08rem !important;
+                line-height: 1.95 !important;
+            }
+
+            main p {
+                font-size: 1.08rem !important;
+                line-height: 1.95 !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.08rem !important;
+            }
+
+            main li {
+                font-size: 1.08rem !important;
+                margin-bottom: 0.6rem;
+            }
+
+            main blockquote {
+                font-size: 1.08rem !important;
+                line-height: 1.95 !important;
+            }
+        }
+
+         
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .page-title {
+                font-size: 1.75rem;
+            }
+
+            main h2 {
+                font-size: 1.3rem;
+                margin-top: 1.4rem;
+            }
+
+            main h3 {
+                font-size: 1.1rem;
+                margin-top: 1.2rem;
+            }
+
+             
+            p {
+                font-size: 1.1rem !important;
+                line-height: 2 !important;
+                margin-bottom: 1.75rem !important;
+            }
+
+            main p {
+                font-size: 1.1rem !important;
+                line-height: 2 !important;
+                margin-bottom: 1.75rem !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.1rem !important;
+                margin-left: 1.5rem;
+            }
+
+            main li {
+                font-size: 1.1rem !important;
+                margin-bottom: 0.7rem;
+            }
+
+            main blockquote {
+                font-size: 1.1rem !important;
+                line-height: 2 !important;
+                padding-left: 1rem;
+            }
+
+            main code {
+                font-size: 0.95rem !important;
+            }
+
+            main pre {
+                padding: 1rem;
+            }
+        }
+
+         
+        @media (max-width: 374px) {
+            p {
+                font-size: 1.15rem !important;
+                line-height: 2.1 !important;
+                margin-bottom: 1.8rem !important;
+            }
+
+            main p {
+                font-size: 1.15rem !important;
+                line-height: 2.1 !important;
+                margin-bottom: 1.8rem !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.15rem !important;
+            }
+
+            main li {
+                font-size: 1.15rem !important;
+                margin-bottom: 0.8rem;
+            }
+
+            main blockquote {
+                font-size: 1.15rem !important;
+                line-height: 2.1 !important;
+            }
+
+            main h2 {
+                font-size: 1.25rem;
+            }
+
+            main h3 {
+                font-size: 1.05rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-brand">Sal</a>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu" id="navMenu">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/posts">Posts</a>
+                <a href="/publications">Work/Publications</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    
+    <main>
+        
+
+<article class="page-single">
+    <div class="container">
+        
+        <header class="page-header">
+            <h1 class="page-title">Privacy Policy</h1>
+            
+        </header>
+
+        
+        <div class="page-content post-content">
+            <h1 id="i-dont-collect-your-data-ever">I don&rsquo;t collect your data. EVER!!.</h1>
+<p><em>No accounts, no ads, no analytics, no tracking, and nothing is sold. My apps are free.</em></p>
+<p><strong>Last updated: October 21, 2026</strong></p>
+<p>I build software for amateur radio operators and Scouts in my spare time: SkipWatch, JS8 Mobile, and future apps and tools listed on this site. This policy covers all of them.</p>
+<h2 id="what-stays-on-your-device">What stays on your device</h2>
+<p>Everything you set up stays on your phone or computer: settings, station setups, saved locations such as your Home QTH, recent searches, and similar preferences. I never receive a copy. Deleting the app deletes it.</p>
+<h2 id="what-leaves-your-device-and-why">What leaves your device, and why</h2>
+<p>Some features only work by asking a public service for information. When that happens, the app sends the least it can, directly from your device to that service. I don&rsquo;t run a server in between, so I never see these requests.</p>
+<h3 id="skipwatch">SkipWatch</h3>
+<ul>
+<li><strong>PSK Reporter</strong> (pskreporter.info), for band conditions: your <strong>grid square</strong> (for example CM97 or CM97bg), never your exact position. If you add your callsign and turn on My signal, SkipWatch also asks PSK Reporter for reports of your <strong>callsign</strong>. Callsigns are public by the nature of amateur radio.</li>
+<li><strong>National Weather Service</strong> (api.weather.gov), for weather warnings: your <strong>position</strong>, rounded to about 11 meters, and your saved Home QTH if you set one. NWS needs a position to match it against storm warning areas.</li>
+<li><strong>NOAA Space Weather Prediction Center</strong> (swpc.noaa.gov), for solar conditions: no location at all.</li>
+<li><strong>Apple Maps</strong>, when you search for a place by name: the text you type. Apple&rsquo;s privacy policy covers that search.</li>
+</ul>
+<h3 id="js8-mobile">JS8 Mobile</h3>
+<ul>
+<li><strong>Over the air:</strong> anything you transmit, such as your callsign, grid square (4 characters unless you turn on 6) and messages, is public by the nature of amateur radio and can be received by anyone.</li>
+<li><strong>PSK Reporter</strong> (pskreporter.info), optional and on by default: your callsign, your grid square, the app name, and the stations you decoded over the air with their signal reports and frequency, sent at most every 5 minutes. You can turn spotting off in Settings.</li>
+<li><strong>Apple&rsquo;s time server</strong> (time.apple.com), to keep JS8 timing accurate: a standard clock check, with nothing about you.</li>
+<li><strong>callook.info</strong>, for US callsign lookups: the callsign you look up.</li>
+<li><strong>HamQTH</strong> (hamqth.com), for other callsign lookups, only if you add your own free HamQTH login: the callsign you look up and your HamQTH login. Your login is stored in the iPhone&rsquo;s secure Keychain.</li>
+<li><strong>Apple&rsquo;s place lookup</strong>, to name the area around a grid square (for example &ldquo;near Buffalo, WY&rdquo;): the grid square.</li>
+<li><strong>Email:</strong> logbook exports go out through your own Mail app, only when you tap send.</li>
+<li><strong>Microphone:</strong> JS8 Mobile asks for microphone access to hear your radio&rsquo;s audio. The audio is decoded on your phone and is not sent anywhere. It keeps listening while the phone is locked in Live mode, shown by the orange dot.</li>
+<li><strong>Stored on your phone:</strong> your logbook, messages, saved lookups, settings and any recordings you add in the Files app.</li>
+</ul>
+<p>Like any internet request, these services can see your device&rsquo;s IP address. Their own privacy policies apply to what they receive.</p>
+<h2 id="location-permission">Location permission</h2>
+<p>Apps that use location ask for permission first, and only while the app is open. You can say no and type a grid square instead. Your location is used on your device to work out your grid square (in JS8 Mobile, through the &ldquo;Auto from GPS&rdquo; setting) and, in SkipWatch, to look up local weather warnings, as described above.</p>
+<h2 id="crash-reports">Crash reports</h2>
+<p>If you choose to share diagnostics with app developers in your iPhone&rsquo;s settings, Apple may pass along anonymous crash reports. They contain no personal information, and they help me fix bugs. You can turn this off at any time in Settings → Privacy &amp; Security → Analytics &amp; Improvements.</p>
+<h2 id="children">Children</h2>
+<p>My apps are made for licensed amateur radio operators and Scouts working under a licensed operator. They don&rsquo;t collect personal information from anyone, of any age.</p>
+<h2 id="changes">Changes</h2>
+<p>If an app ever needs to share something new, such as the push alerts planned for a future SkipWatch version, I&rsquo;ll update this page before that version ships and change the date at the top.</p>
+<h2 id="contact">Contact</h2>
+<p>Questions? Reach me through the <a href="https://salmancuso.com/contact">contact page</a> on this site, or on the air.</p>
+<p>Sal Mancuso, <a href="https://www.qrz.com/db/W6SAL">W6SAL</a></p>
+
+        </div>
+    </div>
+</article>
+
+
+    </main>
+
+    
+    <footer>
+        <div class="container">
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/posts">Posts</a></li>
+                    <li><a href="/publications">Work/Publications</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Interests</h3>
+                <ul>
+                    <li><a href="https://makerworld.com/" target="_blank">Maker World</a></li>
+                    <li><a href="https://www.adafruit.com/" target="_blank">Adafruit</a></li>
+                    <li><a href="https://sanjosesimplex.groups.io/g/main" target="_blank">K6SJS San Jose Simplex</a></li>
+                    <li><a href="https://www.kennedymeadows.com/" target="_blank">Kennedy Meadows Packstation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="https://it-humsci.stanford.edu/people/sal-mancuso" target="_blank">Stanford</a></li>
+                    <li><a href="https://github.com/salmancuso" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/salmancuso/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://www.qrz.com/db/W6SAL" target="_blank">QRZ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sal Mancuso. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+    
+    
+    <script src="/js/topo-animator.js"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
+        
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('hamburger').classList.remove('active');
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
