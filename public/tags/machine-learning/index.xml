@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine-Learning on Sal Mancuso</title>
+    <link>https://salmancuso.com/tags/machine-learning/</link>
+    <description>Recent content in Machine-Learning on Sal Mancuso</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://salmancuso.com/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Genetic and Survey Data Improves Performance of Machine Learning Model for Long COVID</title>
+      <link>https://salmancuso.com/publications/covidml/</link>
+      <pubDate>Tue, 19 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://salmancuso.com/publications/covidml/</guid>
+      <description>&lt;p&gt;This study tackled a major healthcare challenge: identifying the over 200 million people worldwide who suffer from long COVID, a condition where symptoms persist long after the initial infection. Currently, doctors rely mainly on hospital records to identify these patients, but this approach misses many cases. The research team improved an existing computer prediction system by feeding it additional information beyond just medical records—including genetic data, lifestyle surveys, and activity data from fitness trackers like Fitbits. By combining these different types of information, their enhanced system became significantly better at correctly identifying who has long COVID and who doesn&amp;rsquo;t, improving accuracy from about 72% to 86%. Most importantly, the improved system was much better at avoiding false alarms—correctly ruling out people who don&amp;rsquo;t have long COVID 87% of the time compared to 70% with the original system. This advancement could help doctors more accurately screen patients for long COVID, leading to earlier diagnosis and treatment for millions of people who might otherwise go unrecognized and untreated.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
