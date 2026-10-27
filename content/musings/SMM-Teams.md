@@ -1,6 +1,6 @@
 ---
 title: "Scoutmaster Minute: One Kick, 10,000 Times"
-date: 2026-10-27
+date: 2026-08-27
 description: "Bruce Lee, Kung Fu Panda, and why the best teams are built from people who know one thing really well."
 image: "/images/posts/smm/teams.jpg"
 tags: ["scoutmaster-minute", "scouting", "teamwork"]
