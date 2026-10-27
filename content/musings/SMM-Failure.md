@@ -7,7 +7,7 @@ tags: ["scoutmaster-minute", "scouting", "leadership"]
 series: "Scoutmaster Minutes"
 ---
 
-*A Scoutmaster Minute is a short talk the Scoutmaster gives at the end of a troop meeting: one idea, a story or two, and a challenge for the week ahead. This is one I gave to Troop 2233.*
+*A Scoutmaster Minute is a short talk the Scoutmaster gives at the end of a troop meeting: one idea, a story or two, and a challenge for the week ahead. This is one I gave to our troop.*
 
 ---
 
