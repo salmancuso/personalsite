@@ -1,0 +1,793 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Building infrastructure. Living outside. Communicating worldwide.">
+    <meta name="author" content="Sal Mancuso">
+
+    <title>
+        
+        Finding Middle Ground | Sal Mancuso
+        
+    </title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/pages.css">
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/hero.css">
+    
+
+    
+    
+    <link rel="stylesheet" href="/css/featured-projects.css">
+    
+
+    
+    
+    <link rel="stylesheet" href="/css/sections.css">
+    
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-bg: #1a1a18;
+            --dark-surface: #242420;
+            --text-light: #E8D5C4;
+            --text-muted: #A39A8F;
+            --accent: #B8860B;
+            --earth: #8B9D5D;
+            --border-color: #4a4a48;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #d4af37;
+        }
+
+         
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+         
+        nav {
+            background-color: var(--dark-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--text-light) !important;
+            margin: 0 !important;
+            flex-shrink: 0;
+        }
+
+        .nav-brand:hover {
+            color: var(--accent) !important;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 0;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-light);
+            font-weight: 500;
+            margin: 0 1.5rem;
+            white-space: nowrap;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+         
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            background: none;
+            border: none;
+            padding: 0;
+            margin-left: 1rem;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-light);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+         
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav .container {
+                flex-wrap: wrap;
+            }
+
+            .nav-menu {
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                margin-top: 1rem;
+                padding-top: 1rem;
+                border-top: 1px solid var(--border-color);
+            }
+
+            .nav-menu.active {
+                max-height: 400px;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.75rem 0;
+                padding: 0.5rem 0;
+                font-size: 0.95rem;
+            }
+
+            nav a:hover {
+                padding-left: 0.5rem;
+            }
+
+            .nav-brand {
+                font-size: 1.15rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-brand {
+                font-size: 1rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            .hamburger span {
+                width: 22px;
+                height: 2.5px;
+            }
+        }
+
+         
+        footer {
+            background-color: #0f0f0d;
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        footer h3 {
+            font-family: Georgia, serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer ul li a {
+            color: var(--text-muted);
+        }
+
+        footer ul li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+         
+        main {
+            min-height: 50vh;
+        }
+
+        .page-content {
+            padding: 3rem 0;
+        }
+
+        .page-title {
+            font-family: Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--earth);
+            display: inline-block;
+        }
+
+         
+        main h2 {
+            font-family: Georgia, serif;
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        main h3 {
+            font-family: Georgia, serif;
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+         
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1rem !important;
+        }
+
+        main p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1rem !important;
+        }
+
+        main ul,
+        main ol {
+            color: var(--text-muted);
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        main li {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        main code {
+            background-color: var(--dark-surface);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        main pre {
+            background-color: var(--dark-surface);
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            padding: 1.5rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        main pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        main blockquote {
+            border-left: 4px solid var(--earth);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 1rem;
+        }
+
+         
+
+         
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            main h2 {
+                font-size: 1.5rem;
+            }
+
+            main h3 {
+                font-size: 1.2rem;
+            }
+
+             
+            p {
+                font-size: 1.05rem !important;
+                line-height: 1.9 !important;
+            }
+
+            main p {
+                font-size: 1.05rem !important;
+                line-height: 1.9 !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.05rem !important;
+            }
+
+            main li {
+                font-size: 1.05rem !important;
+            }
+
+            main blockquote {
+                font-size: 1.05rem !important;
+                line-height: 1.9 !important;
+            }
+        }
+
+         
+        @media (max-width: 600px) {
+            .page-title {
+                font-size: 1.85rem;
+            }
+
+            main h2 {
+                font-size: 1.4rem;
+                margin-top: 1.5rem;
+            }
+
+            main h3 {
+                font-size: 1.15rem;
+            }
+
+             
+            p {
+                font-size: 1.08rem !important;
+                line-height: 1.95 !important;
+            }
+
+            main p {
+                font-size: 1.08rem !important;
+                line-height: 1.95 !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.08rem !important;
+            }
+
+            main li {
+                font-size: 1.08rem !important;
+                margin-bottom: 0.6rem;
+            }
+
+            main blockquote {
+                font-size: 1.08rem !important;
+                line-height: 1.95 !important;
+            }
+        }
+
+         
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .page-title {
+                font-size: 1.75rem;
+            }
+
+            main h2 {
+                font-size: 1.3rem;
+                margin-top: 1.4rem;
+            }
+
+            main h3 {
+                font-size: 1.1rem;
+                margin-top: 1.2rem;
+            }
+
+             
+            p {
+                font-size: 1.1rem !important;
+                line-height: 2 !important;
+                margin-bottom: 1.75rem !important;
+            }
+
+            main p {
+                font-size: 1.1rem !important;
+                line-height: 2 !important;
+                margin-bottom: 1.75rem !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.1rem !important;
+                margin-left: 1.5rem;
+            }
+
+            main li {
+                font-size: 1.1rem !important;
+                margin-bottom: 0.7rem;
+            }
+
+            main blockquote {
+                font-size: 1.1rem !important;
+                line-height: 2 !important;
+                padding-left: 1rem;
+            }
+
+            main code {
+                font-size: 0.95rem !important;
+            }
+
+            main pre {
+                padding: 1rem;
+            }
+        }
+
+         
+        @media (max-width: 374px) {
+            p {
+                font-size: 1.15rem !important;
+                line-height: 2.1 !important;
+                margin-bottom: 1.8rem !important;
+            }
+
+            main p {
+                font-size: 1.15rem !important;
+                line-height: 2.1 !important;
+                margin-bottom: 1.8rem !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.15rem !important;
+            }
+
+            main li {
+                font-size: 1.15rem !important;
+                margin-bottom: 0.8rem;
+            }
+
+            main blockquote {
+                font-size: 1.15rem !important;
+                line-height: 2.1 !important;
+            }
+
+            main h2 {
+                font-size: 1.25rem;
+            }
+
+            main h3 {
+                font-size: 1.05rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-brand">Sal</a>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu" id="navMenu">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/radio/">Radio</a>
+                <a href="/tools/">Tools &amp; Apps</a>
+                <a href="/musings/">Musings</a>
+                <a href="/publications">Work/Publications</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    
+    <main>
+        
+
+<article class="post-single">
+    <div class="container">
+        
+        <header class="post-header">
+            <h1 class="post-title">Finding Middle Ground</h1>
+            
+            <div class="post-meta">
+                
+                <span class="meta-item">
+                    <i class="ti ti-calendar"></i>
+                    October 20, 2024
+                </span>
+                
+                
+                
+                <span class="meta-item">
+                    <i class="ti ti-clock"></i>
+                    3 min read
+                </span>
+                
+                
+                
+            </div>
+
+            
+            <figure class="post-image">
+                <img src="/images/moderate.jpg" alt="Finding Middle Ground" loading="lazy">
+            </figure>
+            
+        </header>
+
+        
+        <div class="post-content">
+            <p>As a moderate, I prioritize balance and pragmatism in my political views, understanding that extreme positions on either end of the spectrum can lead to unintended consequences. While some may perceive my stance as indecisive, I believe that moderation is essential for achieving well-rounded governance that serves the diverse needs of our society.</p>
+<p>One of the fundamental reasons I identify as socially liberal and fiscally conservative is my appreciation for personal freedom and individual responsibility. I firmly believe in individuals having the autonomy to make personal life choices without undue interference from the government or other institutions. This includes supporting liberal social policies such as marriage equality, women’s rights, reproductive rights, and criminal justice reform.</p>
+<p>Simultaneously, I advocate for a limited governmental role in economic matters, supporting a free market with minimal regulation and taxation. This means endorsing conservative economic policies like free trade, low taxes, and restrained government spending. Balancing these social and economic views isn’t always straightforward; for instance, I might support the principle of universal healthcare while emphasizing the necessity of implementing such a program with fiscal responsibility. I also back immigration reform from a social perspective while prioritizing the protection of American jobs and wages.</p>
+<p>One area where I hold a clear and strong belief is in the importance of a robust military. A strong military is crucial for national defense and for maintaining our country&rsquo;s sovereignty and security in an increasingly complex global landscape.</p>
+<p>Regarding education, I advocate for state-run education systems that offer diverse pathways to success. I believe everyone in our country should have access to three primary paths: higher education, trades, and the arts. It’s vital that high schools expand their curricula to include more shop classes and home economics, rather than focusing exclusively on college preparatory programs. By doing so, we can better equip students for various career options and help them achieve their personal and professional goals.</p>
+<p>I am not a proponent of the welfare state, particularly when it comes to issues like homelessness. Rather than prolonged funding, I believe that education outreach, clear legal frameworks, and supportive yet firm policies can ultimately address and reduce homelessness more effectively.</p>
+<p>As a descendant of Italian immigrants, I inherently value the role of immigration in our country&rsquo;s foundation. Nonetheless, I do not support an open border policy where unrestricted access allows individuals to utilize taxpayer-funded health and education systems without contributing. I believe in creating work visas for migrant workers, particularly those in agriculture, and providing a legal path to citizenship for undocumented immigrants who are employed as laborers. These individuals should have the ability to stay and reside in the country on a long-term temporary basis without the fear of deportation, while also meeting the legal requirements set forth for citizenship.</p>
+<p>Being a moderate means I am open to listening to and considering alternative viewpoints to forge pragmatic solutions. Compromise and finding common ground are essential in politics, especially in a climate that is increasingly polarized and divisive. My moderation is aimed at creating a more just and equitable society. Although being a moderate can sometimes be challenging, I am proud to hold this position and remain committed to pursuing policies that result in beneficial outcomes for everyone. I will continue striving to balance social progress with economic stability to drive our country forward constructively and inclusively.</p>
+
+        </div>
+
+        
+        
+        <footer class="post-footer">
+            <div class="post-tags">
+                
+                <a href="/tags/perspective/" class="tag">perspective</a>
+                
+                <a href="/tags/balance/" class="tag">balance</a>
+                
+            </div>
+        </footer>
+        
+    </div>
+</article>
+
+
+<nav class="post-nav">
+    <div class="container">
+        <div class="nav-links">
+            
+            <a href="https://salmancuso.com/musings/cigars/" class="nav-prev">
+                <span class="nav-label">← Previous</span>
+                <span class="nav-title">The Art of Enjoying Cigars</span>
+            </a>
+            
+            
+            
+            <a href="https://salmancuso.com/musings/cultpolitics/" class="nav-next">
+                <span class="nav-label">Next →</span>
+                <span class="nav-title">Culture and Politics</span>
+            </a>
+            
+        </div>
+    </div>
+</nav>
+
+
+
+
+<section class="related-posts">
+    <div class="container">
+        <h2>More Posts</h2>
+        <div class="posts-grid">
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/politicsAnger.jpg" alt="Culture and Politics" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="https://salmancuso.com/musings/cultpolitics/">Culture and Politics</a></h3>
+                    <p class="post-card-date">Nov 15, 2024</p>
+                    <p class="post-card-summary"><p>In recent years, my political observations have led me to a rather disheartening conclusion: the leaders we elect, regardless of their political affiliation, often appear to crave power above all else. This desire for dominance manifests in a refusal to collaborate across party lines, breeding a culture of division and distrust. This Posts post aims to explore the striking resemblance between blind political allegiance and cult-like behavior, as well as how this polarization has eroded our national discourse. Reflecting on historical periods of political division, we can also glean valuable lessons for healing and unity.</p></p>
+                    <a href="https://salmancuso.com/musings/cultpolitics/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/cigars.jpg" alt="The Art of Enjoying Cigars" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="https://salmancuso.com/musings/cigars/">The Art of Enjoying Cigars</a></h3>
+                    <p class="post-card-date">Feb 10, 2024</p>
+                    <p class="post-card-summary"><p>Here I am, early 40&rsquo;s, and I&rsquo;ve transitioned from the uncultured beers of my 20&rsquo;s (ahem Mickeys and Budweiser) to drinking boutique craft IPAs and indulging with Scotchs that will hurt your wallet and make grown men wince from the aromatic earthiness. I&rsquo;ve evolved from jankie boxed wines to submitting to Silver Oak, D.R. Stephens, and my personal favorite, Ridge Vineyards. One day, perhaps five years ago, woke up, and some semblance of sophistication took over my life. I&rsquo;ve loved smoking pipes and cigars for the majority of my adult life, but it wasn&rsquo;t until five years ago that I had a truly magnificent cigar. The flavors were spice yet sweet, smooth and velvety; my first Cuban cigar was enjoyed over a campfire on a fishing trip in the Sierra Nevada Mountains, I haven&rsquo;t looked back since. But alas, buying Cuban cigars is difficult (still) and expensive; while helping a friend find decent cigars, I found myself curating a decent list of my goto smokes.</p></p>
+                    <a href="https://salmancuso.com/musings/cigars/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/covidBanner.jpg" alt="COVID-19&#39;s Impact on Family" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="https://salmancuso.com/musings/covidfamily/">COVID-19&#39;s Impact on Family</a></h3>
+                    <p class="post-card-date">Mar 20, 2021</p>
+                    <p class="post-card-summary"><p>I&rsquo;m a father of three exceptional children (ages 17, 10, and 7.5 years old) for those who don&rsquo;t know me. In the &ldquo;before times,&rdquo; we often found ourselves carting children from one event to another, from Cub Scouts to Soccer to Football to Softball to Track and Feild. Three kids who had an extraordinary post-school life that often resulted in a lack of family time. Frequently, my wife would be taking one child in one direction while I would be driving another to a different objective; talk about a family of ships passing in the night.</p></p>
+                    <a href="https://salmancuso.com/musings/covidfamily/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+        </div>
+    </div>
+</section>
+
+
+
+    </main>
+
+    
+    <footer>
+        <div class="container">
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/radio/">Radio</a></li>
+                    <li><a href="/tools/">Tools &amp; Apps</a></li>
+                    <li><a href="/musings/">Musings</a></li>
+                    <li><a href="/posts/">All Posts</a></li>
+                    <li><a href="/publications">Work/Publications</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Interests</h3>
+                <ul>
+                    <li><a href="https://makerworld.com/" target="_blank">Maker World</a></li>
+                    <li><a href="https://www.adafruit.com/" target="_blank">Adafruit</a></li>
+                    <li><a href="https://sanjosesimplex.groups.io/g/main" target="_blank">K6SJS San Jose Simplex</a></li>
+                    <li><a href="https://www.kennedymeadows.com/" target="_blank">Kennedy Meadows Packstation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="https://it-humsci.stanford.edu/people/sal-mancuso" target="_blank">Stanford</a></li>
+                    <li><a href="https://github.com/salmancuso" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/salmancuso/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://www.qrz.com/db/W6SAL" target="_blank">QRZ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sal Mancuso. All rights reserved. &middot; <a href="/privacy/" class="footer-privacy">Privacy</a></p>
+        </div>
+    </footer>
+
+    
+    
+    
+    <script src="/js/topo-animator.js"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
+        
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('hamburger').classList.remove('active');
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

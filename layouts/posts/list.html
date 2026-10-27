@@ -4,12 +4,16 @@
     <div class="container">
         <!-- Page Header -->
         <header class="page-header">
-            <h1 class="page-title">Posts</h1>
-            <p class="page-subtitle">Thoughts on data, infrastructure, radio, and the outdoors.</p>
+            <h1 class="page-title">{{ .Title | default "Posts" }}</h1>
+            <p class="page-subtitle">{{ .Description | default "Thoughts on data, infrastructure, radio, and the outdoors." }}</p>
         </header>
 
-        <!-- Posts Grid -->
-        {{ $paginator := .Paginate (where .Site.RegularPages "Section" "posts") 10 }}
+        <!-- Posts Grid: each theme section lists its own posts; /posts/ lists all three themes -->
+        {{ $pages := .RegularPages }}
+        {{ if eq .Section "posts" }}
+        {{ $pages = where .Site.RegularPages "Section" "in" (slice "radio" "tools" "musings") }}
+        {{ end }}
+        {{ $paginator := .Paginate $pages 10 }}
         
         {{ if $paginator.Pages }}
         <div class="posts-grid">

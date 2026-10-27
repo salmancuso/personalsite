@@ -76,7 +76,7 @@
 </nav>
 
 <!-- Related Posts -->
-{{ $related := (where .Site.RegularPages "Section" "posts") | complement (slice .) | first 3 }}
+{{ $related := (where .Site.RegularPages "Section" .Section) | complement (slice .) | first 3 }}
 {{ if $related }}
 <section class="related-posts">
     <div class="container">

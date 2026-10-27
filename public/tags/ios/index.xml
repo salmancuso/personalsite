@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ios on Sal Mancuso</title>
+    <link>https://salmancuso.com/tags/ios/</link>
+    <description>Recent content in Ios on Sal Mancuso</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 27 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://salmancuso.com/tags/ios/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SkipWatch: Should I Get on the Air Right Now?</title>
+      <link>https://salmancuso.com/tools/skipwatch/</link>
+      <pubDate>Tue, 27 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://salmancuso.com/tools/skipwatch/</guid>
+      <description>&lt;p&gt;Every ham knows the routine. You get home, string up the antenna, fire up the radio, and find out the bands are dead. SkipWatch answers one question before you go to all that trouble: &lt;strong&gt;should I get on the air right now, and on which band?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;It gives you a plain answer like &amp;ldquo;Yes, 20m · Open to Japan,&amp;rdquo; built from real reception reports for your grid square, current solar conditions and local weather warnings.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JS8 Mobile: JS8 on Your iPhone, No Laptop Required</title>
+      <link>https://salmancuso.com/tools/js8mobile/</link>
+      <pubDate>Mon, 26 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://salmancuso.com/tools/js8mobile/</guid>
+      <description>&lt;p&gt;JS8 is one of my favorite modes: weak-signal, keyboard-to-keyboard messaging that gets through when voice won&amp;rsquo;t. The catch has always been the laptop. For portable, SOTA and POTA work, that&amp;rsquo;s one more thing to pack, power and protect from the weather.&lt;/p&gt;&#xA;&lt;p&gt;JS8 Mobile runs JS8 natively on the iPhone. Plug your radio into your phone over USB-C and you&amp;rsquo;re on the air. NO laptop required (and one less thing for me to forget at home, right after my hat, which on this head is a real safety issue).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

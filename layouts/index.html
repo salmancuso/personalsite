@@ -18,7 +18,7 @@
     <div class="container">
         <h2 class="section-title">Featured Posts</h2>
         <div class="projects-grid">
-            {{ range first 2 (where .Site.RegularPages "Section" "posts") }}
+            {{ range first 2 (where .Site.RegularPages "Section" "in" (slice "radio" "tools" "musings")) }}
             <div class="project-card">
                 {{ if .Params.image }}
                 <div class="project-image">
