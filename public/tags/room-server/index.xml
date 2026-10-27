@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Room-Server on Sal Mancuso</title>
+    <link>https://salmancuso.com/tags/room-server/</link>
+    <description>Recent content in Room-Server on Sal Mancuso</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 29 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://salmancuso.com/tags/room-server/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Troubleshooting Room Server Configuration Issues</title>
+      <link>https://salmancuso.com/posts/brokenroomserverrooms/</link>
+      <pubDate>Mon, 29 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://salmancuso.com/posts/brokenroomserverrooms/</guid>
+      <description>&lt;p&gt;Room servers are elegant once they&amp;rsquo;re working. They&amp;rsquo;re headaches when they&amp;rsquo;re not.&lt;/p&gt;&#xA;&lt;p&gt;If your room server isn&amp;rsquo;t storing messages, delivering them properly, or appearing on your mesh network, here&amp;rsquo;s how to systematically work through the problem.&lt;/p&gt;&#xA;&lt;h2 id=&#34;verify-basic-connectivity&#34;&gt;Verify Basic Connectivity&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Is the device powered and online?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Check:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Power LED is illuminated&lt;/li&gt;&#xA;&lt;li&gt;Device is drawing current&lt;/li&gt;&#xA;&lt;li&gt;If WiFi is needed for configuration, is it connected?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Can you communicate with the device?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Try:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Room Servers for Emergency Communications: Building Resilient Infrastructure</title>
+      <link>https://salmancuso.com/posts/roomserversemergency/</link>
+      <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://salmancuso.com/posts/roomserversemergency/</guid>
+      <description>&lt;p&gt;When the cell towers go down—and they will, eventually—most people lose their ability to communicate. No 911. No texting family. No calling for help. Just silence.&lt;/p&gt;&#xA;&lt;p&gt;But if you&amp;rsquo;ve built mesh infrastructure with room servers, you have something that works regardless of cellular, internet, or power grid status. That&amp;rsquo;s not theoretical capability. That&amp;rsquo;s actual resilience.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-room-servers-matter-for-emergency-response&#34;&gt;Why Room Servers Matter for Emergency Response&lt;/h2&gt;&#xA;&lt;p&gt;In a disaster scenario:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Cellular infrastructure is first to fail.&lt;/strong&gt; Cell towers have backup power measured in hours. Data centers have days. Your mesh network with room server infrastructure has as much uptime as you engineered it to have.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MeshCore Room Servers: Store-and-Forward Messaging Infrastructure</title>
+      <link>https://salmancuso.com/posts/roomservers/</link>
+      <pubDate>Wed, 19 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://salmancuso.com/posts/roomservers/</guid>
+      <description>&lt;p&gt;Building communication systems is interesting because it&amp;rsquo;s not just about moving messages from point A to point B. The real challenge is ensuring messages actually arrive when people need them to receive them.&lt;/p&gt;&#xA;&lt;p&gt;That&amp;rsquo;s what MeshCore room servers solve.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-problem-they-address&#34;&gt;The Problem They Address&lt;/h2&gt;&#xA;&lt;p&gt;Traditional mesh networks (and many first-generation implementations) work great when everyone&amp;rsquo;s actively monitoring. Messages fly across the network in real-time. People respond immediately. It&amp;rsquo;s dynamic and responsive.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

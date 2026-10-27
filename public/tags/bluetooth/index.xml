@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bluetooth on Sal Mancuso</title>
+    <link>https://salmancuso.com/tags/bluetooth/</link>
+    <description>Recent content in Bluetooth on Sal Mancuso</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 22 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://salmancuso.com/tags/bluetooth/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MeshCore Bluetooth Connectivity: Troubleshooting Pairing Issues</title>
+      <link>https://salmancuso.com/posts/bluetooth/</link>
+      <pubDate>Thu, 22 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://salmancuso.com/posts/bluetooth/</guid>
+      <description>&lt;p&gt;If you&amp;rsquo;ve flashed firmware to your MeshCore node and suddenly the Bluetooth connection won&amp;rsquo;t work, you&amp;rsquo;re not alone. This is one of the more aggravating gotchas in the MeshCore ecosystem, and it happens often enough that it deserves a straightforward troubleshooting guide.&lt;/p&gt;&#xA;&lt;p&gt;Let me walk through what&amp;rsquo;s happening and how to fix it.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-problem&#34;&gt;The Problem&lt;/h2&gt;&#xA;&lt;p&gt;You&amp;rsquo;ve got a node running fine. You decide to repurpose it—maybe you&amp;rsquo;re converting it from a standard repeater to a room server, or you&amp;rsquo;re updating the firmware. So you flash new firmware, reprogram the device, and then you try to connect via Bluetooth with your phone or laptop.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
