@@ -1,0 +1,873 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Building infrastructure. Living outside. Communicating worldwide.">
+    <meta name="author" content="Sal Mancuso">
+
+    <title>
+        
+        Ninety Days on Our Own: Fortress America and the Field Day Mindset | Sal Mancuso
+        
+    </title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/pages.css">
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/hero.css">
+    
+
+    
+    
+    <link rel="stylesheet" href="/css/featured-projects.css">
+    
+
+    
+    
+    <link rel="stylesheet" href="/css/sections.css">
+    
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-bg: #1a1a18;
+            --dark-surface: #242420;
+            --text-light: #E8D5C4;
+            --text-muted: #A39A8F;
+            --accent: #B8860B;
+            --earth: #8B9D5D;
+            --border-color: #4a4a48;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #d4af37;
+        }
+
+         
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+         
+        nav {
+            background-color: var(--dark-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--text-light) !important;
+            margin: 0 !important;
+            flex-shrink: 0;
+        }
+
+        .nav-brand:hover {
+            color: var(--accent) !important;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 0;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-light);
+            font-weight: 500;
+            margin: 0 1.5rem;
+            white-space: nowrap;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+         
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            background: none;
+            border: none;
+            padding: 0;
+            margin-left: 1rem;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-light);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+         
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav .container {
+                flex-wrap: wrap;
+            }
+
+            .nav-menu {
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                margin-top: 1rem;
+                padding-top: 1rem;
+                border-top: 1px solid var(--border-color);
+            }
+
+            .nav-menu.active {
+                max-height: 400px;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.75rem 0;
+                padding: 0.5rem 0;
+                font-size: 0.95rem;
+            }
+
+            nav a:hover {
+                padding-left: 0.5rem;
+            }
+
+            .nav-brand {
+                font-size: 1.15rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-brand {
+                font-size: 1rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            .hamburger span {
+                width: 22px;
+                height: 2.5px;
+            }
+        }
+
+         
+        footer {
+            background-color: #0f0f0d;
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        footer h3 {
+            font-family: Georgia, serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer ul li a {
+            color: var(--text-muted);
+        }
+
+        footer ul li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+         
+        main {
+            min-height: 50vh;
+        }
+
+        .page-content {
+            padding: 3rem 0;
+        }
+
+        .page-title {
+            font-family: Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--earth);
+            display: inline-block;
+        }
+
+         
+        main h2 {
+            font-family: Georgia, serif;
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        main h3 {
+            font-family: Georgia, serif;
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+         
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1rem !important;
+        }
+
+        main p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1rem !important;
+        }
+
+        main ul,
+        main ol {
+            color: var(--text-muted);
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        main li {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        main code {
+            background-color: var(--dark-surface);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        main pre {
+            background-color: var(--dark-surface);
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            padding: 1.5rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        main pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        main blockquote {
+            border-left: 4px solid var(--earth);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 1rem;
+        }
+
+         
+
+         
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            main h2 {
+                font-size: 1.5rem;
+            }
+
+            main h3 {
+                font-size: 1.2rem;
+            }
+
+             
+            p {
+                font-size: 1.05rem !important;
+                line-height: 1.9 !important;
+            }
+
+            main p {
+                font-size: 1.05rem !important;
+                line-height: 1.9 !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.05rem !important;
+            }
+
+            main li {
+                font-size: 1.05rem !important;
+            }
+
+            main blockquote {
+                font-size: 1.05rem !important;
+                line-height: 1.9 !important;
+            }
+        }
+
+         
+        @media (max-width: 600px) {
+            .page-title {
+                font-size: 1.85rem;
+            }
+
+            main h2 {
+                font-size: 1.4rem;
+                margin-top: 1.5rem;
+            }
+
+            main h3 {
+                font-size: 1.15rem;
+            }
+
+             
+            p {
+                font-size: 1.08rem !important;
+                line-height: 1.95 !important;
+            }
+
+            main p {
+                font-size: 1.08rem !important;
+                line-height: 1.95 !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.08rem !important;
+            }
+
+            main li {
+                font-size: 1.08rem !important;
+                margin-bottom: 0.6rem;
+            }
+
+            main blockquote {
+                font-size: 1.08rem !important;
+                line-height: 1.95 !important;
+            }
+        }
+
+         
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .page-title {
+                font-size: 1.75rem;
+            }
+
+            main h2 {
+                font-size: 1.3rem;
+                margin-top: 1.4rem;
+            }
+
+            main h3 {
+                font-size: 1.1rem;
+                margin-top: 1.2rem;
+            }
+
+             
+            p {
+                font-size: 1.1rem !important;
+                line-height: 2 !important;
+                margin-bottom: 1.75rem !important;
+            }
+
+            main p {
+                font-size: 1.1rem !important;
+                line-height: 2 !important;
+                margin-bottom: 1.75rem !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.1rem !important;
+                margin-left: 1.5rem;
+            }
+
+            main li {
+                font-size: 1.1rem !important;
+                margin-bottom: 0.7rem;
+            }
+
+            main blockquote {
+                font-size: 1.1rem !important;
+                line-height: 2 !important;
+                padding-left: 1rem;
+            }
+
+            main code {
+                font-size: 0.95rem !important;
+            }
+
+            main pre {
+                padding: 1rem;
+            }
+        }
+
+         
+        @media (max-width: 374px) {
+            p {
+                font-size: 1.15rem !important;
+                line-height: 2.1 !important;
+                margin-bottom: 1.8rem !important;
+            }
+
+            main p {
+                font-size: 1.15rem !important;
+                line-height: 2.1 !important;
+                margin-bottom: 1.8rem !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.15rem !important;
+            }
+
+            main li {
+                font-size: 1.15rem !important;
+                margin-bottom: 0.8rem;
+            }
+
+            main blockquote {
+                font-size: 1.15rem !important;
+                line-height: 2.1 !important;
+            }
+
+            main h2 {
+                font-size: 1.25rem;
+            }
+
+            main h3 {
+                font-size: 1.05rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-brand">Sal</a>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu" id="navMenu">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/radio/">Radio</a>
+                <a href="/tools/">Tools &amp; Apps</a>
+                <a href="/musings/">Musings</a>
+                <a href="/publications">Work/Publications</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    
+    <main>
+        
+
+<article class="post-single">
+    <div class="container">
+        
+        <header class="post-header">
+            <h1 class="post-title">Ninety Days on Our Own: Fortress America and the Field Day Mindset</h1>
+            
+            <div class="post-meta">
+                
+                <span class="meta-item">
+                    <i class="ti ti-calendar"></i>
+                    October 29, 2026
+                </span>
+                
+                
+                
+                <span class="meta-item">
+                    <i class="ti ti-clock"></i>
+                    14 min read
+                </span>
+                
+                
+                
+            </div>
+
+            
+            <figure class="post-image">
+                <img src="/images/posts/musings/fortress.jpg" alt="Ninety Days on Our Own: Fortress America and the Field Day Mindset" loading="lazy">
+            </figure>
+            
+        </header>
+
+        
+        <div class="post-content">
+            <p>A few nights before our weekly ragchew, a good friend of mine sent me an email. He&rsquo;s an Army veteran who spent years around military aviation, so when he talks about the military, I listen. He&rsquo;d read a story about something the Pentagon is calling FORTRESS America, and he planned to bring it up on the net. He was blunt about his gut reaction: <em>this is not good.</em> Fifty years ago, he wrote, he was way down the chain of command, but even then he knew the military doesn&rsquo;t train for something just for the fun of it.</p>
+<p>Then he asked me what I thought. He said he&rsquo;d be putting on his tin foil hat for this one, so my first piece of advice was to make sure it&rsquo;s grounded. The last thing the net needs is my buddy re-radiating on 2 meters and throwing off everyone&rsquo;s SWR.</p>
+<p>I want to answer him properly, because a lot of people are reading the same headlines and feeling the same knot in their stomach. Here&rsquo;s my take. I&rsquo;m not worried. My reaction is closer to: <em>how on earth were we not already doing this?</em></p>
+<h2 id="what-fortress-actually-is">What FORTRESS actually is</h2>
+<p>In September, Defense Secretary Pete Hegseth stood in front of service members at Marine Corps Base Quantico and announced something he called Fortress America. &ldquo;FORTRESS&rdquo; is an acronym: Federal Operations for Resilience, Troop Resources, Energy Supply, and Survivability. He described it as &ldquo;a national insurance policy for the American homeland,&rdquo; and he didn&rsquo;t mince words about the goal: &ldquo;Every major military installation in America is going to generate its own power, independent of the civilian grid. If an adversary takes down the grid by cyber attack, by sabotage, or by any means, our bases stay lit, our aircraft keep flying, our command centers never go dark.&rdquo;</p>
+<p>Before I go any further, a word about the messenger. I am no fan of Pete Hegseth, and I&rsquo;ll say more about that below. But stay with me, because the idea deserves a fair hearing on its own merits.</p>
+<p>The plan reaches well beyond electricity, into supply chains, strategic reserves, physical and cyber defenses, and even space.</p>
+<p>The part that grabbed everyone&rsquo;s attention came on October 25. According to documents reviewed by Fox News Digital, major military installations in the continental United States would be expected to keep essential operations running on their own for at least <strong>90 days</strong> during a major conflict. That means power, water, fuel and communications, with no help from the outside world.</p>
+<p>The Pentagon&rsquo;s chief spokesman, Sean Parnell, put it about as plainly as anyone can:</p>
+<blockquote>
+<p>&ldquo;Power is combat now. Without electricity, you lose communications, water, logistics, assembly lines and just basic military command structures. We don&rsquo;t want to rely on standard civilian municipal infrastructure to run our national defense. We just simply can&rsquo;t. It&rsquo;s an intolerable risk.&rdquo;</p></blockquote>
+<p>That first sentence has stuck with me ever since.</p>
+<p>A few honest caveats belong right here, and Joseph Trevithick&rsquo;s excellent piece in The War Zone lays them out well. It&rsquo;s unclear whether Parnell explicitly confirmed the 90-day target; the number comes from Fox&rsquo;s reporting on documents. There&rsquo;s no published price tag or schedule. The plan doesn&rsquo;t yet say how bases would keep up 90 days of water, fuel, communications or even food. And as TWZ puts it, &ldquo;there is clearly still work to be done.&rdquo; So think of 90 days as a target, not a finish line.</p>
+<h2 id="the-thing-that-surprised-me-most">The thing that surprised me most</h2>
+<p>I always assumed our military bases were self-contained: their own power, water and fuel, able to hunker down for months. That&rsquo;s the picture you get from the movies.</p>
+<p>The reality is a lot more ordinary. Some bases do have their own power plants; Eielson Air Force Base in Alaska runs a coal plant fed by train. But as TWZ points out, that&rsquo;s far from universal. Many of our bases are plugged into the same civilian power grid as my garage in San Jose. When the local utility has a bad day, so does the base. Backup generators help, but generators need diesel, diesel needs trucks, and trucks need roads, fuel depots and drivers who aren&rsquo;t dealing with their own emergencies at home.</p>
+<p>Hegseth said it himself at Quantico: for decades we built the most powerful military in the world, then &ldquo;regrettably made it dependent on foreign mines for rare earths, on overseas factories for microchips, on foreign supply chains for weapons, and on a civilian power grid to keep the lights on at our bases.&rdquo;</p>
+<p>So when I read that the Pentagon wants every major base to stand on its own for three months, I didn&rsquo;t hear a war drum. I heard an engineer finally saying out loud what should have been obvious a long time ago.</p>
+<h2 id="why-now-look-at-the-map">Why now? Look at the map.</h2>
+<p>My friend is right that the military doesn&rsquo;t train for things just for fun. So what are they preparing for?</p>
+<p>I don&rsquo;t read this as preparation for an invasion or a civil war. I read it as a hedge, the smart, boring planning responsible organizations do when the world gets less predictable. And it is less predictable. Iran. Russia. China. North Korea. The list of countries that would like to see America stumble is not getting shorter.</p>
+<p>Here&rsquo;s the part that matters most. The easiest way to hobble a modern military isn&rsquo;t to fight it. It&rsquo;s to make sure it never gets out of the gate. You don&rsquo;t need to sink a carrier if you can turn off the lights at the base that supports it. And that isn&rsquo;t a theory. We&rsquo;ve already seen the preview.</p>
+<p><strong>Colonial Pipeline, May 2021.</strong> A ransomware gang got into the company&rsquo;s systems, and Colonial shut down the largest fuel pipeline on the East Coast for about six days. Gas lines stretched around the block in Georgia, Virginia and the Carolinas. Nobody fired a shot.</p>
+<p><strong>Metcalf, April 2013.</strong> This one hits close to home. Just south of San Jose, someone cut fiber-optic lines, then fired more than 100 rifle rounds into PG&amp;E&rsquo;s Metcalf substation, damaging 17 transformers. Repairs took 27 days. PG&amp;E rerouted power so no customers went dark, but the whole industry heard the wake-up call. No one has ever been arrested.</p>
+<p><strong>Moore County, December 2022.</strong> Gunfire disabled two substations in North Carolina and left roughly 45,000 customers without power for up to five days. One woman, who depended on medical equipment at home, died.</p>
+<p><strong>Volt Typhoon, today.</strong> This is the one that should get everyone&rsquo;s attention. In February 2024, CISA, the NSA and the FBI warned that Chinese government hackers had quietly gotten into U.S. communications, energy, transportation and water systems, including on Guam, home to major U.S. military installations. The key part: they weren&rsquo;t just snooping. They were <em>pre-positioning</em>, getting into place to disrupt those systems later, in a crisis. In some networks, they&rsquo;d been sitting quietly for at least five years.</p>
+<p><strong>Drones, tomorrow.</strong> TWZ has been warning about this one for years. Weaponized drones, including converted commercial ones, are cheap and easy to get, and swarming and AI-driven capabilities are only making them more dangerous. As the article puts it, &ldquo;a well-informed enemy could concentrate a small number of resources on highly critical points in the grid to have vastly outsized effects.&rdquo;</p>
+<p>Put those stories side by side and the logic of FORTRESS writes itself. If an adversary can take down a pipeline with ransomware, a substation with a rifle or a drone, and a water system with a keyboard, then a base that depends on all three is a base with a very long list of weak points it doesn&rsquo;t control.</p>
+<p>Parnell is right. Power is combat now.</p>
+<h2 id="why-small-reactors-make-sense">Why small reactors make sense</h2>
+<p>The headline-grabbing piece of this plan is nuclear power on bases, and I understand why that makes people nervous.</p>
+<p>The Army&rsquo;s Janus Program is the clearest example. In August, the Army and the Pentagon&rsquo;s Defense Innovation Unit cut deals with five companies to build and operate microreactors, starting with Fort Bragg, Fort Campbell, Fort Hood, Fort Benning and Fort Drum. The plan calls for more than 20 microreactors at bases, the first in 2028, and it isn&rsquo;t limited to Army installations.</p>
+<p>My view is simple. We have been running small reactors in incredibly demanding places for a very long time. The Navy put a reactor in the USS Nautilus in the 1950s, and today nuclear power drives every aircraft carrier and submarine we build. Those reactors run for years, in the middle of the ocean, with sailors sleeping a few dozen yards away.</p>
+<p>The Navy is even taking that idea one step further. In May, it announced plans to demonstrate the supercarrier USS Gerald R. Ford acting as a floating nuclear power plant, as part of its energy resilience plans. If a carrier tied up at the pier can help keep a base running, a purpose-built microreactor inside the fence certainly can.</p>
+<p>Even on land, this isn&rsquo;t new. The Army&rsquo;s SM-1 reactor at Fort Belvoir, Virginia, went critical in 1957, and a small plant powered the Navy&rsquo;s McMurdo Station in Antarctica through the 1960s.</p>
+<p>Honesty requires the rest of that story too. That early Army program had real problems, and the McMurdo plant had a rough record. TWZ notes that environmental, proliferation and other concerns about microreactors are still being raised. And the specialized fuel they need, called HALEU, is in short supply; the Army itself has said this effort could strain it.</p>
+<p>Those are fair concerns, and they deserve serious answers. But the technology of the 2020s is not the technology of the 1950s, and the alternative, leaving bases dependent on a grid that we <em>know</em> adversaries are probing, isn&rsquo;t really an alternative at all.</p>
+<h2 id="what-about-geothermal">What about geothermal?</h2>
+<p>With all the talk about reactors and batteries, I expected to hear more about geothermal. It turns out the military has been doing it for decades; it just doesn&rsquo;t make headlines. Naval Air Weapons Station China Lake, out in the California desert, has hosted the Coso geothermal field since 1987, producing well over 100 megawatts of steady power, day and night.</p>
+<p>But here&rsquo;s the catch, and it&rsquo;s a revealing one. Most of Coso&rsquo;s power is sold to Southern California Edison. Having a power plant <em>on</em> a base isn&rsquo;t the same thing as a base being able to <em>run on</em> that power plant when the outside grid goes dark. That&rsquo;s exactly the gap FORTRESS is trying to close. The answer is microgrids: local networks that can disconnect from the civilian grid and keep the lights on using whatever is on site, whether that&rsquo;s a reactor, geothermal, solar, batteries or all of the above.</p>
+<p>The Army actually set a goal back in 2022 of putting a microgrid on every one of its bases by 2035. In 2024, the Air Force set a target of new microgrids at 16 bases by 2030. FORTRESS isn&rsquo;t starting from zero. It&rsquo;s turning up the urgency on work that was already underway.</p>
+<h2 id="unplug-it-from-the-internet">Unplug it from the internet</h2>
+<p>If I could add one thing to this plan, it would be this: the systems that keep these bases alive should be completely cut off from the public internet.</p>
+<p>I work in data engineering and business intelligence. I spend my days moving data between systems, connecting things to other things. And the lesson I&rsquo;ve learned, over and over, is that every connection is a door. Some doors you need. Some you don&rsquo;t. And the ones you don&rsquo;t need are the ones that get you in trouble.</p>
+<p>In an age of ransomware gangs and foreign governments openly preparing to disrupt our infrastructure, the power plant, the water system and the fuel system on a military base have no business being reachable from the internet. Not through a vendor portal. Not through a remote monitoring dashboard. Not through anything.</p>
+<p>TWZ makes the same point about where this is heading. &ldquo;Increasingly open access to powerful artificial intelligence agents with the ability to overwhelm networks and software to find critical vulnerabilities faster than humans can react,&rdquo; the article says, &ldquo;is perhaps the most concerning layer of risk.&rdquo; When the attacker never sleeps, the safest connection is the one that doesn&rsquo;t exist.</p>
+<p>Is an air gap perfect? No. Stuxnet showed the world back in 2010 that a determined adversary can cross one, even with something as simple as a USB stick. But a locked door that someone <em>might</em> pick is still a whole lot better than a door left wide open. Physically separating critical systems from the internet raises the cost of an attack dramatically, and in security, raising the cost is most of the game.</p>
+<h2 id="this-isnt-a-red-or-blue-thing">This isn&rsquo;t a red or blue thing</h2>
+<p>I&rsquo;m a moderate. I lean a little right of center, and I believe in a strong military. So let me be clear about where I stand on the man who announced this plan.</p>
+<p>I don&rsquo;t care for Pete Hegseth. I don&rsquo;t care for his rhetoric. I think his tenure as Secretary of Defense has been an embarrassment to our military, I think the way he has treated our military leaders is disrespectful to people who have devoted their lives to service, and his policies don&rsquo;t line up with what I believe.</p>
+<p>However, a good idea doesn&rsquo;t stop being a good idea because of who happens to announce it. We need stronger, more resilient military bases here at home. That was true before he took office, and it will be true long after he&rsquo;s gone. This isn&rsquo;t a Republican idea or a Democratic idea. It isn&rsquo;t a conservative thing or a liberal thing. It isn&rsquo;t even a prepper thing versus a non-prepper thing.</p>
+<p>Making sure the people who defend this country can keep doing their jobs when the power goes out is just the right thing to do. Full stop.</p>
+<p>There are real debates worth having here. How much should it cost? Who pays for it? How do we handle nuclear fuel safely and responsibly? What do surrounding communities get out of it? That last one matters more than people think. Earthquakes, wildfires and hurricanes knock out grids too, and TWZ points out they can leave bases <em>and</em> their neighbors without water and supplies. A base that can stand on its own for 90 days can help the town next door instead of competing with it for generators. I hope we argue about all of it, vigorously and in good faith.</p>
+<p>But whether we <em>should</em> do it? To me, that&rsquo;s settled. Tyler Rogoway of The War Zone summed it up better than I can: &ldquo;Yes it&rsquo;s scary, but it&rsquo;s far scarier not doing this.&rdquo;</p>
+<h2 id="the-field-day-mindset">The Field Day mindset</h2>
+<p>Every June, amateur radio operators across the country take part in something called Field Day. For one weekend, we haul our radios, antennas and generators out to parks, fairgrounds and mountaintops. We set up from scratch, we cut ourselves off from commercial power, and we try to make as many contacts as we can.</p>
+<p>The whole point is simple: assume the grid is gone, and prove you can still communicate.</p>
+<p>Nobody thinks Field Day means hams are expecting the apocalypse. We do it because practice is how you find out what breaks: the generator that won&rsquo;t start, the coax with a bad connector. You&rsquo;d much rather find those on a sunny Saturday in June than in a real emergency.</p>
+<p>That&rsquo;s how I see FORTRESS. It&rsquo;s the Pentagon finally holding its own Field Day, and planning to keep it running for 90 days instead of 24 hours.</p>
+<p>My friend ends every email with a line I&rsquo;ve come to love: <em>&ldquo;Be ready the best you can, and then live your life just being aware.&rdquo;</em> I&rsquo;ve never read a better summary of good preparedness. It&rsquo;s not about fear or hiding in a bunker. It&rsquo;s about doing the responsible work up front, so you can get on with living.</p>
+<p>That&rsquo;s what I want for our military. Not a country bracing for war, but one that&rsquo;s ready, quietly and competently, for whatever comes. And then gets on with its life.</p>
+<p>And one last time, so there&rsquo;s no confusion: I can think Pete Hegseth is the wrong person for the job and still think this is the right idea. A good idea is a good idea, no matter who says it. Supporting it doesn&rsquo;t mean I have to like him, and I don&rsquo;t.</p>
+<p>To my friend: thanks for asking the hard question and for always keeping me honest. See you on the air.</p>
+<p>73,
+Sal, W6SAL</p>
+<hr>
+<h3 id="sources">Sources</h3>
+<ul>
+<li><a href="https://www.twz.com/nuclear/90-days-no-help-fortress-americas-goal-to-make-bases-resilient-bastions-in-a-crisis">The War Zone: 90 Days No Help: Fortress America&rsquo;s Goal To Make Bases Resilient Bastions In A Crisis</a></li>
+<li><a href="https://www.foxnews.com/politics/inside-pentagons-doomsday-plan-keep-america-fighting-global-war-erupts">Fox News: Pentagon&rsquo;s FORTRESS initiative preps US bases for 90-day survival</a></li>
+<li><a href="https://www.army.mil/article/294891/army_reaches_agreement_with_private_industry_for_nuclear_micro_reactors">U.S. Army: Army reaches agreement with private industry for nuclear microreactors</a></li>
+<li><a href="https://www.washingtontechnology.com/contracts/2026/08/army-selects-5-companies-build-nuclear-microreactors-bases-under-new-2-billion-deal/415685/">Washington Technology: Army selects 5 companies to build nuclear microreactors on bases</a></li>
+<li><a href="https://www.usace.army.mil/About/History/Exhibits/Nuclear-Power-Program/Fort-Belvoir/">U.S. Army Corps of Engineers: Nuclear Power at Fort Belvoir</a></li>
+<li><a href="https://theconversation.com/the-us-army-tried-portable-nuclear-power-at-remote-bases-60-years-ago-it-didnt-go-well-164138">The Conversation: The US Army tried portable nuclear power at remote bases 60 years ago</a></li>
+<li><a href="https://cosoenergy.com/who-we-are/">Coso Operating Company: Project Information</a></li>
+<li><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-038a">CISA Advisory AA24-038A: PRC State-Sponsored Actors Compromise U.S. Critical Infrastructure</a></li>
+<li><a href="https://www.npr.org/sections/thetwo-way/2014/02/05/272015606/sniper-attack-on-calif-power-station-raises-terrorism-fears">NPR: Sniper attack on California power station raises terrorism fears</a></li>
+<li><a href="https://www.npr.org/2022/12/05/1140775417/north-carolina-substation-attack-what-we-know">NPR: What we know about the attack on two Moore County, N.C. power substations</a></li>
+<li><a href="https://www.cisa.gov/news-events/news/attack-colonial-pipeline-what-weve-learned-what-weve-done-over-past-two-years">CISA: The Attack on Colonial Pipeline, two years later</a></li>
+</ul>
+
+        </div>
+
+        
+        
+        <footer class="post-footer">
+            <div class="post-tags">
+                
+                <a href="/tags/military/" class="tag">military</a>
+                
+                <a href="/tags/infrastructure/" class="tag">infrastructure</a>
+                
+                <a href="/tags/energy/" class="tag">energy</a>
+                
+                <a href="/tags/cybersecurity/" class="tag">cybersecurity</a>
+                
+                <a href="/tags/preparedness/" class="tag">preparedness</a>
+                
+            </div>
+        </footer>
+        
+    </div>
+</article>
+
+
+<nav class="post-nav">
+    <div class="container">
+        <div class="nav-links">
+            
+            <a href="https://salmancuso.com/musings/smm-failure/" class="nav-prev">
+                <span class="nav-label">← Previous</span>
+                <span class="nav-title">Scoutmaster Minute: Don&#39;t Be Afraid to Fail</span>
+            </a>
+            
+            
+            
+        </div>
+    </div>
+</nav>
+
+
+
+
+<section class="related-posts">
+    <div class="container">
+        <h2>More Posts</h2>
+        <div class="posts-grid">
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/posts/smm/failure.jpg" alt="Scoutmaster Minute: Don&#39;t Be Afraid to Fail" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="https://salmancuso.com/musings/smm-failure/">Scoutmaster Minute: Don&#39;t Be Afraid to Fail</a></h3>
+                    <p class="post-card-date">Oct 22, 2026</p>
+                    <p class="post-card-summary"><p><em>A Scoutmaster Minute is a short talk the Scoutmaster gives at the end of a troop meeting: one idea, a story or two, and a challenge for the week ahead. This is one I gave to our troop.</em></p>
+<hr>
+<p>Good evening, Scouts.</p>
+<p>What do Lady Gaga, Tom Brady, Thomas Edison and I, Mr. Sal, all have in common? We are not afraid to fail.</p>
+<p><strong>Lady Gaga.</strong> Before she was famous, she spent countless hours writing and recording, then writing and recording some more. A record label signed her and dropped her just three months later. She ended up writing songs for other artists just to get her name out there and pay the bills. Her first attempts as a singer were not successful. But through all those failures, she found the right path, and today she is one of the most famous musicians of our time.</p></p>
+                    <a href="https://salmancuso.com/musings/smm-failure/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/posts/smm/teams.jpg" alt="Scoutmaster Minute: One Kick, 10,000 Times" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="https://salmancuso.com/musings/smm-teams/">Scoutmaster Minute: One Kick, 10,000 Times</a></h3>
+                    <p class="post-card-date">Aug 27, 2026</p>
+                    <p class="post-card-summary"><p><em>A Scoutmaster Minute is a short talk the Scoutmaster gives at the end of a troop meeting: one idea, a story or two, and a challenge for the week ahead. This is one I gave to our troop.</em></p>
+<hr>
+<p>Good evening, Scouts.</p>
+<p>One of my favorite movies is <em>Kung Fu Panda</em>. It&rsquo;s the story of Po, who learns he&rsquo;s somebody truly special and becomes the Kung Fu Panda. What a lot of Scouts don&rsquo;t realize is that <em>Kung Fu Panda</em> was inspired by the real kung fu movies and TV shows I grew up with.</p></p>
+                    <a href="https://salmancuso.com/musings/smm-teams/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/politicsAnger.jpg" alt="Culture and Politics" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="https://salmancuso.com/musings/cultpolitics/">Culture and Politics</a></h3>
+                    <p class="post-card-date">Nov 15, 2024</p>
+                    <p class="post-card-summary"><p>In recent years, my political observations have led me to a rather disheartening conclusion: the leaders we elect, regardless of their political affiliation, often appear to crave power above all else. This desire for dominance manifests in a refusal to collaborate across party lines, breeding a culture of division and distrust. This Posts post aims to explore the striking resemblance between blind political allegiance and cult-like behavior, as well as how this polarization has eroded our national discourse. Reflecting on historical periods of political division, we can also glean valuable lessons for healing and unity.</p></p>
+                    <a href="https://salmancuso.com/musings/cultpolitics/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+        </div>
+    </div>
+</section>
+
+
+
+    </main>
+
+    
+    <footer>
+        <div class="container">
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/radio/">Radio</a></li>
+                    <li><a href="/tools/">Tools &amp; Apps</a></li>
+                    <li><a href="/musings/">Musings</a></li>
+                    <li><a href="/posts/">All Posts</a></li>
+                    <li><a href="/publications">Work/Publications</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Interests</h3>
+                <ul>
+                    <li><a href="https://makerworld.com/" target="_blank">Maker World</a></li>
+                    <li><a href="https://www.adafruit.com/" target="_blank">Adafruit</a></li>
+                    <li><a href="https://sanjosesimplex.groups.io/g/main" target="_blank">K6SJS San Jose Simplex</a></li>
+                    <li><a href="https://www.kennedymeadows.com/" target="_blank">Kennedy Meadows Packstation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="https://it-humsci.stanford.edu/people/sal-mancuso" target="_blank">Stanford</a></li>
+                    <li><a href="https://github.com/salmancuso" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/salmancuso/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://www.qrz.com/db/W6SAL" target="_blank">QRZ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sal Mancuso. All rights reserved. &middot; <a href="/privacy/" class="footer-privacy">Privacy</a></p>
+        </div>
+    </footer>
+
+    
+    
+    
+    <script src="/js/topo-animator.js"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
+        
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('hamburger').classList.remove('active');
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

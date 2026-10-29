@@ -1,0 +1,317 @@
+Receive Frequency,Transmit Frequency,Offset Direction,Operating Mode,AMS,Name,Tone Mode,CTCSS
+146.52,146.52,Simplex,FM,N,2m Simplex Calll,None,100
+446,446,Simplex,FM,N,70cm Calling,None,67
+156.8,156.8,Simplex,FM,N,Maritime Distres,None,67
+431.5,431.5,Simplex,DN,Y,Hotspot YSF,None,67
+144.39,144.39,Simplex,FM,N,APRS,None,67
+124,124,Simplex,AM,N,SJC Tower,None,67
+121.7,121.7,Simplex,AM,N,SJC Ground,None,67
+120.1,120.1,Simplex,AM,N,SJC Approach 01,None,67
+126.475,126.475,Simplex,AM,N,SJC Approach 02,None,67
+125.35,125.35,Simplex,AM,N,SJC Approach 03,None,67
+134.5,134.5,Simplex,AM,N,SJC Approach 04,None,67
+121.3,121.3,Simplex,AM,N,SJC Departure,None,67
+123.4,123.4,Simplex,AM,N,Air to Air 1,None,67
+123.45,123.45,Simplex,AM,N,Air to Air 2,None,67
+121.5,121.5,Simplex,AM,N,Air Emergency,None,67
+442.35,447.35,Plus,FM,Y,Allenton-N9GMT,,123
+440.45625,445.45625,Plus,DN,Y,Allenton-W9RCG,,
+442.1,447.1,Plus,FM,Y,Cedarburg-K9QLP,,127.3
+146.97,146.37,Minus,FM,Y,Cedarburg-W9CQO,,127.3
+444.975,449.975,Plus,FM,Y,Cedarburg-W9DHI,,127.3
+146.82,146.22,Minus,FM,Y,Delafield-W9TJK,,127.3
+444.125,449.125,Plus,FM,Y,Delafield-W9TJK,,127.3
+147.285,147.885,Plus,FM,Y,Germantown-W9CQ,,127.3
+442.875,447.875,Plus,FM,Y,Germantown-W9CQ,,127.3
+442.775,447.775,Plus,FM,Y,Mequon-N9FRG,,127.3
+444.625,449.625,Plus,FM,Y,Merton-W9JPE,,127.3
+443.95,448.95,Plus,FM,Y,Milwaukee-AA9JR,,127.3
+147,147.6,Plus,FM,Y,Milwaukee-K9MAR,,127.3
+442.05,447.05,Plus,FM,Y,Milwaukee-K9MAR,,127.3
+147.135,147.735,Plus,FM,Y,Milwaukee-N9FSE,,127.3
+443.8,448.8,Plus,FM,Y,Milwaukee-N9GMT,,123
+145.13,144.53,Minus,FM,Y,Milwaukee-N9LKH,,127.3
+443.55,448.55,Plus,FM,Y,Milwaukee-N9LKH,,127.3
+443.325,448.325,Plus,FM,Y,Milwaukee-N9PAY,,127.3
+442.425,447.425,Plus,FM,Y,Milwaukee-N9UUR,,127.3
+444.45,449.45,Plus,FM,Y,Milwaukee-W9EFJ,,114.8
+145.27,144.67,Minus,FM,Y,Milwaukee-W9HHX,,127.3
+443.025,448.025,Plus,FM,Y,Milwaukee-W9HHX,,127.3
+145.39,144.79,Minus,FM,Y,Milwaukee-W9RH,,127.3
+147.165,147.765,Plus,FM,Y,Milwaukee-W9WK,,127.3
+147.045,147.645,Plus,FM,Y,Milwaukee-WB0AFB,,127.3
+444.85,449.85,Plus,FM,Y,Milwaukee-WB9TRO,,127.3
+440.2,445.2,Plus,FM,Y,New Berlin-WQ9A,,127.3
+442.675,447.675,Plus,FM,Y,NewBerlin-WA9AOL,,127.3
+443.3,448.3,Plus,FM,Y,NewBerlin-WB9TRO,,127.3
+146.91,146.31,Minus,FM,Y,NewBerlin-WI9MRC,,127.3
+443.75,448.75,Plus,FM,Y,PrtWashton-W9CQO,,127.3
+147.33,147.93,Plus,FM,Y,PrtWashton-WI9OZ,,127.3
+443.525,448.525,Plus,FM,Y,PrtWashton-WI9OZ,,114.8
+444.35,449.35,Plus,FM,Y,Sheboygan-WE9R,,114.8
+147.21,147.81,Plus,FM,Y,Slinger-KC9PVD,,127.3
+442.65,447.65,Plus,FM,Y,Slinger-WB9BVB,,127.3
+146.73,146.13,Minus,FM,Y,StLawrenc-WB9BVB,,127.3
+444.15,449.15,Plus,FM,Y,Waukesha-KD9AMZ,,127.3
+145.47,144.87,Minus,FM,Y,Waukesha-WE9COM,,127.3
+444.2,449.2,Plus,FM,Y,Waukesha-WQ9A,,127.3
+444.425,449.425,Plus,FM,Y,West Allis-N9MKX,,127.3
+154.01,144,,FM,N,COUNTY_FD_TAC1,,
+158.835,144,,FM,N,COUNTY_FD_Dispatch,,
+155.595,144,,FM,N,Sheriff_Dispatch,,
+155.16,144,,FM,N,Allenton_FD_TAC1,,
+155.88,144,,FM,N,West_Bend_FD_Dispatch,,
+150.775,144,,FM,N,West_Bend_FD_TAC1,,
+155.49,144,,FM,N,West_Bend_PD_TAC1,,
+159.57,159.57,Simplex,FM,N,Channel 001,,
+159.81,159.81,Simplex,FM,N,Channel 002,,
+159.93,159.93,Simplex,FM,N,Channel 003,,
+160.05,160.05,Simplex,FM,N,Channel 004,,
+160.185,160.185,Simplex,FM,N,Channel 005,,
+160.2,160.2,Simplex,FM,N,Channel 006,,
+160.215,160.215,Simplex,FM,N,Channel 007,,
+160.23,160.23,Simplex,FM,N,Channel 008,,
+160.245,160.245,Simplex,FM,N,Channel 009,,
+160.26,160.26,Simplex,FM,N,Channel 010,,
+160.275,160.275,Simplex,FM,N,Channel 011,,
+160.29,160.29,Simplex,FM,N,Channel 012,,
+160.305,160.305,Simplex,FM,N,Channel 013,,
+160.32,160.32,Simplex,FM,N,Channel 014,,
+160.335,160.335,Simplex,FM,N,Channel 015,,
+160.35,160.35,Simplex,FM,N,Channel 016,,
+160.365,160.365,Simplex,FM,N,Channel 017,,
+160.38,160.38,Simplex,FM,N,Channel 018,,
+160.395,160.395,Simplex,FM,N,Channel 019,,
+160.41,160.41,Simplex,FM,N,Channel 020,,
+160.44,160.44,Simplex,FM,N,Channel 022,,
+160.455,160.455,Simplex,FM,N,Channel 023,,
+160.47,160.47,Simplex,FM,N,Channel 024,,
+160.485,160.485,Simplex,FM,N,Channel 025,,
+160.5,160.5,Simplex,FM,N,Channel 026,,
+160.515,160.515,Simplex,FM,N,Channel 027,,
+160.53,160.53,Simplex,FM,N,Channel 028,,
+160.545,160.545,Simplex,FM,N,Channel 029,,
+160.56,160.56,Simplex,FM,N,Channel 030,,
+160.575,160.575,Simplex,FM,N,Channel 031,,
+160.59,160.59,Simplex,FM,N,Channel 032,,
+160.605,160.605,Simplex,FM,N,Channel 033,,
+160.62,160.62,Simplex,FM,N,Channel 034,,
+160.635,160.635,Simplex,FM,N,Channel 035,,
+160.65,160.65,Simplex,FM,N,Channel 036,,
+160.665,160.665,Simplex,FM,N,Channel 037,,
+160.68,160.68,Simplex,FM,N,Channel 038,,
+160.695,160.695,Simplex,FM,N,Channel 039,,
+160.71,160.71,Simplex,FM,N,Channel 040,,
+160.725,160.725,Simplex,FM,N,Channel 041,,
+160.74,160.74,Simplex,FM,N,Channel 042,,
+160.755,160.755,Simplex,FM,N,Channel 043,,
+160.77,160.77,Simplex,FM,N,Channel 044,,
+160.785,160.785,Simplex,FM,N,Channel 045,,
+160.8,160.8,Simplex,FM,N,Channel 046,,
+160.815,160.815,Simplex,FM,N,Channel 047,,
+160.83,160.83,Simplex,FM,N,Channel 048,,
+160.845,160.845,Simplex,FM,N,Channel 049,,
+160.86,160.86,Simplex,FM,N,Channel 050,,
+160.875,160.875,Simplex,FM,N,Channel 051,,
+160.89,160.89,Simplex,FM,N,Channel 052,,
+160.905,160.905,Simplex,FM,N,Channel 053,,
+160.92,160.92,Simplex,FM,N,Channel 054,,
+160.935,160.935,Simplex,FM,N,Channel 055,,
+160.95,160.95,Simplex,FM,N,Channel 056,,
+160.965,160.965,Simplex,FM,N,Channel 057,,
+160.98,160.98,Simplex,FM,N,Channel 058,,
+160.995,160.995,Simplex,FM,N,Channel 059,,
+161.01,161.01,Simplex,FM,N,Channel 060,,
+161.04,161.04,Simplex,FM,N,Channel 062,,
+161.07,161.07,Simplex,FM,N,Channel 064,,
+161.085,161.085,Simplex,FM,N,Channel 065,,
+161.1,161.1,Simplex,FM,N,Channel 066,,
+161.115,161.115,Simplex,FM,N,Channel 067,,
+161.13,161.13,Simplex,FM,N,Channel 068,,
+161.145,161.145,Simplex,FM,N,Channel 069,,
+161.16,161.16,Simplex,FM,N,Channel 070,,
+161.175,161.175,Simplex,FM,N,Channel 071,,
+161.19,161.19,Simplex,FM,N,Channel 072,,
+161.205,161.205,Simplex,FM,N,Channel 073,,
+161.22,161.22,Simplex,FM,N,Channel 074,,
+161.235,161.235,Simplex,FM,N,Channel 075,,
+161.25,161.25,Simplex,FM,N,Channel 076,,
+161.265,161.265,Simplex,FM,N,Channel 077,,
+161.28,161.28,Simplex,FM,N,Channel 078,,
+161.295,161.295,Simplex,FM,N,Channel 079,,
+161.31,161.31,Simplex,FM,N,Channel 080,,
+161.325,161.325,Simplex,FM,N,Channel 081,,
+161.34,161.34,Simplex,FM,N,Channel 082,,
+161.355,161.355,Simplex,FM,N,Channel 083,,
+161.37,161.37,Simplex,FM,N,Channel 084,,
+161.385,161.385,Simplex,FM,N,Channel 085,,
+161.4,161.4,Simplex,FM,N,Channel 086,,
+161.415,161.415,Simplex,FM,N,Channel 087,,
+161.43,161.43,Simplex,FM,N,Channel 088,,
+161.445,161.445,Simplex,FM,N,Channel 089,,
+161.46,161.46,Simplex,FM,N,Channel 090,,
+161.475,161.475,Simplex,FM,N,Channel 091,,
+161.49,161.49,Simplex,FM,N,Channel 092,,
+161.505,161.505,Simplex,FM,N,Channel 093,,
+161.52,161.52,Simplex,FM,N,Channel 094,,
+161.535,161.535,Simplex,FM,N,Channel 095,,
+161.55,161.55,Simplex,FM,N,Channel 096,,
+161.5425,161.5425,Simplex,FM,N,Channel 195,,
+457.9375,457.9375,Simplex,FM,N,End of Train,,
+452.9375,452.9375,Simplex,FM,N,Head of Train,,
+452.925,452.925,Simplex,FM,N,Power Units 01,,
+452.95,452.95,Simplex,FM,N,Power Units 02,,
+457.925,457.925,Simplex,FM,N,Power Units 03,,
+457.95,457.95,Simplex,FM,N,Power Units 04,,
+156.05,156.05,Simplex,FM,N,01-Port Ops,,
+156.25,156.25,Simplex,FM,N,05-Port Ops,,
+156.3,156.3,Simplex,FM,N,06-Intership,,
+156.35,156.35,Simplex,FM,N,07-Commercial,,
+156.4,156.4,Simplex,FM,N,08-Commercial,,
+156.45,156.45,Simplex,FM,N,09-Boat Calling,,
+156.5,156.5,Simplex,FM,N,10-Commercial,,
+156.55,156.55,Simplex,FM,N,11-Commercial,,
+156.6,156.6,Simplex,FM,N,12-Port Ops,,
+156.65,156.65,Simplex,FM,N,13-Bridge2Bridge,,
+156.7,156.7,Simplex,FM,N,14-Port Ops,,
+156.75,156.75,Simplex,FM,N,15-Enviromental,,
+156.8,156.8,Simplex,FM,N,16-EMERGENCY,,
+156.85,156.85,Simplex,FM,N,17-Maritime Govt,,
+156.9,156.9,Simplex,FM,N,18-Commercial,,
+156.95,156.95,Simplex,FM,N,19-Commercial,,
+161.6,161.6,Simplex,FM,N,20-Port Ops,,
+157,157,Simplex,FM,N,20-Port Ops,,
+157.05,157.05,Simplex,FM,N,21-USCG ONLY,,
+157.1,157.1,Simplex,FM,N,22-USCG Saftey,,
+157.15,157.15,Simplex,FM,N,23-USCG ONLY,,
+161.8,161.8,Simplex,FM,N,24-Public Corres,,
+161.85,161.85,Simplex,FM,N,25-Public Corres,,
+161.9,161.9,Simplex,FM,N,26-Public Corres,,
+161.95,161.95,Simplex,FM,N,27-Public Corres,,
+162,162,Simplex,FM,N,28-Public Corres,,
+156.175,156.175,Simplex,FM,N,63-Port Ops,,
+156.275,156.275,Simplex,FM,N,65-Port Ops,,
+156.325,156.325,Simplex,FM,N,66-Port Ops,,
+156.375,156.375,Simplex,FM,N,67-Bridge2Bridge,,
+156.425,156.425,Simplex,FM,N,68-NonCommercial,,
+156.475,156.475,Simplex,FM,N,69-NonCommercial,,
+156.525,156.525,Simplex,FM,N,70-Digital Voice,,
+156.575,156.575,Simplex,FM,N,71-NonCommercial,,
+156.625,156.625,Simplex,FM,N,72-NonCommercial,,
+156.675,156.675,Simplex,FM,N,73-Port Ops,,
+156.725,156.725,Simplex,FM,N,74-Port Ops,,
+156.875,156.875,Simplex,FM,N,77-Port Ops,,
+156.925,156.925,Simplex,FM,N,78-NonCommercial,,
+156.975,156.975,Simplex,FM,N,79-Commercial,,
+157.025,157.025,Simplex,FM,N,80-Commercial,,
+157.075,157.075,Simplex,FM,N,81-U.S. Govt,,
+157.125,157.125,Simplex,FM,N,82-U.S. Govt,,
+157.175,157.175,Simplex,FM,N,83-USCG ONLY,,
+161.825,161.825,Simplex,FM,N,84-Public Corres,,
+161.875,161.875,Simplex,FM,N,85-Public Corres,,
+161.925,161.925,Simplex,FM,N,86-Public Corres,,
+157.375,157.375,Simplex,FM,N,87-Public Corres,,
+157.425,157.425,Simplex,FM,N,88-Commercial,,
+4.125,4.125,Simplex,AM,N,HF-Distress-01,,
+6.215,6.215,Simplex,AM,N,HF-Distress-02,,
+12.29,12.29,Simplex,AM,N,HF-Distress-04,,
+462.5625,462.5625,Simplex,FM,N,GMRS01,None,88.5
+462.5875,462.5875,Simplex,FM,N,GMRS02,None,88.5
+462.6125,462.6125,Simplex,FM,N,GMRS03,None,88.5
+462.6375,462.6375,Simplex,FM,N,GMRS04,None,88.5
+462.6625,462.6625,Simplex,FM,N,GMRS05,None,88.5
+462.6875,462.6875,Simplex,FM,N,GMRS06,None,88.5
+462.7125,462.7125,Simplex,FM,N,GMRS07,None,88.5
+467.5625,467.5625,Simplex,FM,N,GMRS08,None,88.5
+467.5875,467.5875,Simplex,FM,N,GMRS09,None,88.5
+467.6125,467.6125,Simplex,FM,N,GMRS10,None,88.5
+467.6375,467.6375,Simplex,FM,N,GMRS11,None,88.5
+467.6625,467.6625,Simplex,FM,N,GMRS12,None,88.5
+467.6875,467.6875,Simplex,FM,N,GMRS13,None,88.5
+467.7125,467.7125,Simplex,FM,N,GMRS14,None,88.5
+462.55,462.55,Simplex,FM,N,GMRS15,None,88.5
+462.575,462.575,Simplex,FM,N,GMRS16,None,88.5
+462.6,462.6,Simplex,FM,N,GMRS17,None,88.5
+462.625,462.625,Simplex,FM,N,GMRS18,None,88.5
+462.65,462.65,Simplex,FM,N,GMRS19,None,88.5
+462.675,462.675,Simplex,FM,N,GMRS20,None,88.5
+462.7,462.7,Simplex,FM,N,GMRS21,None,88.5
+462.725,462.725,Simplex,FM,N,GMRS22,None,88.5
+151.82,151.82,Simplex,FM,N,MURS 1,None,88.5
+151.88,151.88,Simplex,FM,N,MURS 2,None,88.5
+151.94,151.94,Simplex,FM,N,MURS 3,None,88.5
+154.57,154.57,Simplex,FM,N,MURS 4,None,88.5
+154.6,154.6,Simplex,FM,N,MURS 5,None,88.5
+151.82,151.82,Simplex,FM,N,MURS 1 TSql 100,T Sql,100
+154.6,154.6,Simplex,FM,N,MURS 3 TSql 67,T Sql,67
+154.57,154.57,Simplex,FM,N,MURS 4 TSql 123,T Sql,123
+462.5625,462.5625,Simplex,FM,N,GMRS 01 Ch 13,T Sql,103.5
+462.5875,462.5875,Simplex,FM,N,GMRS 02 Ch 14,T Sql,107.2
+462.6125,462.6125,Simplex,FM,N,GMRS 03 Ch 15,T Sql,110.9
+462.6375,462.6375,Simplex,FM,N,GMRS 04 Ch 16,T Sql,114.8
+462.6625,462.6625,Simplex,FM,N,GMRS 05 Ch 17,T Sql,118.8
+462.6875,462.6875,Simplex,FM,N,GMRS 06 Ch 18,T Sql,123
+462.7125,462.7125,Simplex,FM,N,GMRS 07 Ch 19,T Sql,127.3
+467.5625,467.5625,Simplex,FM,N,GMRS 08 Ch 20,T Sql,131.8
+467.5875,467.5875,Simplex,FM,N,GMRS 09 Ch 21,T Sql,136.5
+467.6125,467.6125,Simplex,FM,N,GMRS 10 Ch 22,T Sql,141.3
+467.6375,467.6375,Simplex,FM,N,GMRS 11 Ch 23,T Sql,146.2
+467.6625,467.6625,Simplex,FM,N,GMRS 12 Ch 24,T Sql,151.4
+467.6875,467.6875,Simplex,FM,N,GMRS 13 Ch 25,T Sql,156.7
+467.7125,467.7125,Simplex,FM,N,GMRS 14 Ch 26,T Sql,159.8
+462.55,462.55,Simplex,FM,N,GMRS 15 Ch 27,T Sql,162.2
+462.575,462.575,Simplex,FM,N,GMRS 16 Ch 28,T Sql,165.5
+162.55,162.55,Simplex,FM,N,WX Channel 01,None,67
+162.4,162.4,Simplex,FM,N,WX Channel 02,None,67
+162.475,162.475,Simplex,FM,N,WX Channel 03,None,67
+162.425,162.425,Simplex,FM,N,WX Channel 04,None,67
+162.45,162.45,Simplex,FM,N,WX Channel 05,None,67
+162.5,162.5,Simplex,FM,N,WX Channel 06,None,67
+162.525,162.525,Simplex,FM,N,WX Channel 07,None,67
+161.65,161.65,Simplex,FM,N,WX Channel 08,None,67
+161.775,161.775,Simplex,FM,N,WX Channel 09,None,67
+163.275,163.275,Simplex,FM,N,WX Channel 10,None,67
+123.4,123.4,Simplex,AM,N,Air to Air 1,None,67
+123.45,123.45,Simplex,AM,N,Air to Air 2,None,67
+121.5,121.5,Simplex,AM,N,Air Emergency,None,67
+119.3,,Simplex,AM,N,DEN_ApprDept_N1,,
+127.05,,Simplex,AM,N,DEN_ApprDept_N2,,
+120.35,,Simplex,AM,N,DEN_ApprDept_S,,
+128.25,,Simplex,AM,N,DEN_ApprEast,,
+134.85,,Simplex,AM,N,DEN_ApprNorth,,
+128.45,,Simplex,AM,N,DEN_ApprSouth,,
+126.1,,Simplex,AM,N,DEN_ApprWest,,
+125.6,,Simplex,AM,N,DEN_ATIS_Appr,,
+134.025,,Simplex,AM,N,DEN_ATIS_Dept,,
+118.75,,Simplex,AM,N,DEN_Clearance,,
+120.8,,Simplex,AM,N,DEN_Final,,
+121.85,,Simplex,AM,N,DEN_Ground_East1,,
+120.15,,Simplex,AM,N,DEN_Ground_East2,,
+127.5,,Simplex,AM,N,DEN_Ground_West,,
+132.35,,Simplex,AM,N,DEN_TWR_East_0,,
+124.3,,Simplex,AM,N,DEN_TWR_East_1,,
+133.3,,Simplex,AM,N,DEN_TWR_East_2,,
+128.75,,Simplex,AM,N,DEN_TWR_West_1,,
+135.3,,Simplex,AM,N,DEN_TWR_West_2,,
+119.4,,Simplex,AM,N,GRB_Approach,,
+126.55,,Simplex,AM,N,GRB_Departure,,
+121.9,,Simplex,AM,N,GRB_Ground,,
+118.7,,Simplex,AM,N,GRB_Tower,,
+118,,Simplex,AM,N,MKE_Appr_East,,
+126.5,,Simplex,AM,N,MKE_Appr_West,,
+126.4,,Simplex,AM,N,MKE_ATIS,,
+120.8,,Simplex,AM,N,MKE_Clearance_1,,
+127.85,,Simplex,AM,N,MKE_Clearance_2,,
+119.65,,Simplex,AM,N,MKE_Depart_East,,
+125.35,,Simplex,AM,N,MKE_Depart_West,,
+121.8,,Simplex,AM,N,MKE_Ground,,
+119.1,,Simplex,AM,N,MKE_Tower,,
+118.475,,Simplex,AM,N,MKE_Tower_Backup,,
+122.95,,Simplex,AM,N,MKE_Unicom,,
+120.1,,Simplex,AM,N,SJC_Approach,,
+126.95,,Simplex,AM,N,SJC_ATIS,,
+118,,Simplex,AM,N,SJC_Clearance,,
+124,,Simplex,AM,N,SJC_CTAF,,
+121.3,,Simplex,AM,N,SJC_Departure,,
+121.7,,Simplex,AM,N,SJC_Ground,,
+124,,Simplex,AM,N,SJC_Tower,,

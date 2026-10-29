@@ -1,0 +1,12 @@
+﻿Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Short Name,Long Name,,Show Name,Tone Mode,CTCSS,DCS,Tx Power,Skip,Step
+462.6375,462.6375,,Simplex,FM,T233-1,Troop 233 - 1,13,Y,DCS,67,031,High,Scan,5 kHz
+462.6875,462.6875,,Simplex,FM,T233-2,Troop 233 - 2,13,Y,DCS,67,047,High,Scan,5 kHz
+462.575,462.575,,Simplex,FM,T233-3,Troop 233 - 3,13,Y,DCS,67,143,High,Scan,5 kHz
+462.625,462.625,,Simplex,FM,T233-4,Troop 233 - 4,13,Y,DCS,67,156,High,Scan,5 kHz
+151.88,151.88,,Simplex,FM,T233-5,Troop 233 - 5,13,Y,DCS,67,032,High,Scan,5 kHz
+154.57,154.57,,Simplex,FM,T233-6,Troop 233 - 6,13,Y,DCS,67,032,High,Scan,5 kHz
+451.45,451.45,,Simplex,FM,SVMB1S,SVMB 1 Simplex,14,Y,DCS,67,261,High,Scan,5 kHz
+451.45,451.45,,Simplex,FM,SVMB1R,SVMB 1 Repeater,15,Y,DCS,67,261,High,Scan,5 kHz
+451.8,451.8,,Simplex,FM,SVMB2S,SVMB 2 Simplex,14,Y,DCS,67,723,High,Scan,5 kHz
+451.8,451.8,,Simplex,FM,SVMB2R,SVMB 2 Repeater,15,Y,DCS,67,723,High,Scan,5 kHz
+456.8,456.8,,Simplex,FM,SVMBES,SVMB Emergency,14,Y,DCS,67,723,High,Scan,5 kHz
