@@ -9,10 +9,31 @@
     <lastBuildDate>Thu, 29 Oct 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://salmancuso.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Amateur-Radio</title>
+      <link>https://salmancuso.com/tags/amateur-radio/</link>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://salmancuso.com/tags/amateur-radio/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ares</title>
+      <link>https://salmancuso.com/tags/ares/</link>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://salmancuso.com/tags/ares/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Cybersecurity</title>
       <link>https://salmancuso.com/tags/cybersecurity/</link>
       <pubDate>Thu, 29 Oct 2026 00:00:00 +0000</pubDate>
       <guid>https://salmancuso.com/tags/cybersecurity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Emergency-Communications</title>
+      <link>https://salmancuso.com/tags/emergency-communications/</link>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://salmancuso.com/tags/emergency-communications/</guid>
       <description></description>
     </item>
     <item>
@@ -44,10 +65,17 @@
       <description></description>
     </item>
     <item>
-      <title>Amateur-Radio</title>
-      <link>https://salmancuso.com/tags/amateur-radio/</link>
-      <pubDate>Tue, 27 Oct 2026 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/tags/amateur-radio/</guid>
+      <title>Radiobuilder</title>
+      <link>https://salmancuso.com/tags/radiobuilder/</link>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://salmancuso.com/tags/radiobuilder/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Repeater</title>
+      <link>https://salmancuso.com/tags/repeater/</link>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://salmancuso.com/tags/repeater/</guid>
       <description></description>
     </item>
     <item>
@@ -181,13 +209,6 @@
       <link>https://salmancuso.com/tags/meshcore/</link>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
       <guid>https://salmancuso.com/tags/meshcore/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Repeater</title>
-      <link>https://salmancuso.com/tags/repeater/</link>
-      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/tags/repeater/</guid>
       <description></description>
     </item>
     <item>
@@ -335,13 +356,6 @@
       <link>https://salmancuso.com/tags/frequencies/</link>
       <pubDate>Wed, 17 Dec 2025 00:00:00 +0000</pubDate>
       <guid>https://salmancuso.com/tags/frequencies/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Emergency-Communications</title>
-      <link>https://salmancuso.com/tags/emergency-communications/</link>
-      <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://salmancuso.com/tags/emergency-communications/</guid>
       <description></description>
     </item>
     <item>

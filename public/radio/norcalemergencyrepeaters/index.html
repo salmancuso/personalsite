@@ -1,0 +1,1099 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Building infrastructure. Living outside. Communicating worldwide.">
+    <meta name="author" content="Sal Mancuso">
+
+    <title>
+        
+        NorCal Emergency Repeaters: Which Machines Stay Up When Things Go Sideways | Sal Mancuso
+        
+    </title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/pages.css">
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/hero.css">
+    
+
+    
+    
+    <link rel="stylesheet" href="/css/featured-projects.css">
+    
+
+    
+    
+    <link rel="stylesheet" href="/css/sections.css">
+    
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-bg: #1a1a18;
+            --dark-surface: #242420;
+            --text-light: #E8D5C4;
+            --text-muted: #A39A8F;
+            --accent: #B8860B;
+            --earth: #8B9D5D;
+            --border-color: #4a4a48;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #d4af37;
+        }
+
+         
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+         
+        nav {
+            background-color: var(--dark-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--text-light) !important;
+            margin: 0 !important;
+            flex-shrink: 0;
+        }
+
+        .nav-brand:hover {
+            color: var(--accent) !important;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 0;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-light);
+            font-weight: 500;
+            margin: 0 1.5rem;
+            white-space: nowrap;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+         
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            background: none;
+            border: none;
+            padding: 0;
+            margin-left: 1rem;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-light);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+         
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav .container {
+                flex-wrap: wrap;
+            }
+
+            .nav-menu {
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                margin-top: 1rem;
+                padding-top: 1rem;
+                border-top: 1px solid var(--border-color);
+            }
+
+            .nav-menu.active {
+                max-height: 400px;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.75rem 0;
+                padding: 0.5rem 0;
+                font-size: 0.95rem;
+            }
+
+            nav a:hover {
+                padding-left: 0.5rem;
+            }
+
+            .nav-brand {
+                font-size: 1.15rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-brand {
+                font-size: 1rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            .hamburger span {
+                width: 22px;
+                height: 2.5px;
+            }
+        }
+
+         
+        footer {
+            background-color: #0f0f0d;
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        footer h3 {
+            font-family: Georgia, serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer ul li a {
+            color: var(--text-muted);
+        }
+
+        footer ul li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+         
+        main {
+            min-height: 50vh;
+        }
+
+        .page-content {
+            padding: 3rem 0;
+        }
+
+        .page-title {
+            font-family: Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--earth);
+            display: inline-block;
+        }
+
+         
+        main h2 {
+            font-family: Georgia, serif;
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        main h3 {
+            font-family: Georgia, serif;
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+         
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1rem !important;
+        }
+
+        main p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1rem !important;
+        }
+
+        main ul,
+        main ol {
+            color: var(--text-muted);
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        main li {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        main code {
+            background-color: var(--dark-surface);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        main pre {
+            background-color: var(--dark-surface);
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            padding: 1.5rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        main pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        main blockquote {
+            border-left: 4px solid var(--earth);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 1rem;
+        }
+
+         
+
+         
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            main h2 {
+                font-size: 1.5rem;
+            }
+
+            main h3 {
+                font-size: 1.2rem;
+            }
+
+             
+            p {
+                font-size: 1.05rem !important;
+                line-height: 1.9 !important;
+            }
+
+            main p {
+                font-size: 1.05rem !important;
+                line-height: 1.9 !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.05rem !important;
+            }
+
+            main li {
+                font-size: 1.05rem !important;
+            }
+
+            main blockquote {
+                font-size: 1.05rem !important;
+                line-height: 1.9 !important;
+            }
+        }
+
+         
+        @media (max-width: 600px) {
+            .page-title {
+                font-size: 1.85rem;
+            }
+
+            main h2 {
+                font-size: 1.4rem;
+                margin-top: 1.5rem;
+            }
+
+            main h3 {
+                font-size: 1.15rem;
+            }
+
+             
+            p {
+                font-size: 1.08rem !important;
+                line-height: 1.95 !important;
+            }
+
+            main p {
+                font-size: 1.08rem !important;
+                line-height: 1.95 !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.08rem !important;
+            }
+
+            main li {
+                font-size: 1.08rem !important;
+                margin-bottom: 0.6rem;
+            }
+
+            main blockquote {
+                font-size: 1.08rem !important;
+                line-height: 1.95 !important;
+            }
+        }
+
+         
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .page-title {
+                font-size: 1.75rem;
+            }
+
+            main h2 {
+                font-size: 1.3rem;
+                margin-top: 1.4rem;
+            }
+
+            main h3 {
+                font-size: 1.1rem;
+                margin-top: 1.2rem;
+            }
+
+             
+            p {
+                font-size: 1.1rem !important;
+                line-height: 2 !important;
+                margin-bottom: 1.75rem !important;
+            }
+
+            main p {
+                font-size: 1.1rem !important;
+                line-height: 2 !important;
+                margin-bottom: 1.75rem !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.1rem !important;
+                margin-left: 1.5rem;
+            }
+
+            main li {
+                font-size: 1.1rem !important;
+                margin-bottom: 0.7rem;
+            }
+
+            main blockquote {
+                font-size: 1.1rem !important;
+                line-height: 2 !important;
+                padding-left: 1rem;
+            }
+
+            main code {
+                font-size: 0.95rem !important;
+            }
+
+            main pre {
+                padding: 1rem;
+            }
+        }
+
+         
+        @media (max-width: 374px) {
+            p {
+                font-size: 1.15rem !important;
+                line-height: 2.1 !important;
+                margin-bottom: 1.8rem !important;
+            }
+
+            main p {
+                font-size: 1.15rem !important;
+                line-height: 2.1 !important;
+                margin-bottom: 1.8rem !important;
+            }
+
+            main ul,
+            main ol {
+                font-size: 1.15rem !important;
+            }
+
+            main li {
+                font-size: 1.15rem !important;
+                margin-bottom: 0.8rem;
+            }
+
+            main blockquote {
+                font-size: 1.15rem !important;
+                line-height: 2.1 !important;
+            }
+
+            main h2 {
+                font-size: 1.25rem;
+            }
+
+            main h3 {
+                font-size: 1.05rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-brand">Sal</a>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu" id="navMenu">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/radio/">Radio</a>
+                <a href="/tools/">Tools &amp; Apps</a>
+                <a href="/musings/">Musings</a>
+                <a href="/publications">Work/Publications</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    
+    <main>
+        
+
+<article class="post-single">
+    <div class="container">
+        
+        <header class="post-header">
+            <h1 class="post-title">NorCal Emergency Repeaters: Which Machines Stay Up When Things Go Sideways</h1>
+            
+            <div class="post-meta">
+                
+                <span class="meta-item">
+                    <i class="ti ti-calendar"></i>
+                    October 29, 2026
+                </span>
+                
+                
+                
+                <span class="meta-item">
+                    <i class="ti ti-clock"></i>
+                    4 min read
+                </span>
+                
+                
+                
+            </div>
+
+            
+            <figure class="post-image">
+                <img src="/images/posts/radio/norcal-repeaters.jpg" alt="NorCal Emergency Repeaters: Which Machines Stay Up When Things Go Sideways" loading="lazy">
+            </figure>
+            
+        </header>
+
+        
+        <div class="post-content">
+            <p>When the power goes out and the cell towers go quiet, every ham asks the same question: <em>which repeater do I reach for?</em></p>
+<p>Not the closest one. Not the one with the clever callsign. The one most likely to still be on the air. The one sitting on a mountaintop with batteries, run by a club that actually shows up, and written into the county&rsquo;s emergency plan.</p>
+<p>So I built a tool to find out. It&rsquo;s part of a project I call RadioBuilder, and this is its first public output. For each of 8 regions, from the Bay Area to the Eastern Sierra, it pulls repeater listings, checks FCC license records, looks up the true elevation of each site with the USGS, and layers in research on who runs the machine, when their nets meet, and whether a county ARES, RACES or CERT plan names it. Then it scores everything two ways:</p>
+<ul>
+<li><strong>Infrastructure:</strong> Will the machine survive? Site height, backup power, emergency affiliations, on-air status.</li>
+<li><strong>Community:</strong> Who&rsquo;s behind it? A club license, an active club, regular nets, a place in a county plan.</li>
+</ul>
+<p>Start with the top pick in each region, then tap a region to see every contender. Open &ldquo;Why this score&rdquo; on any card to see exactly how the points add up, and where the research came from.</p>
+<p>One honest caveat before you dig in. This is a starting point, not gospel. Backup power is what owners <em>report</em>, and as the Mt Oso note below shows, batteries don&rsquo;t always last. Before you count on a machine, key up, check in on its net, and get to know the folks who keep it running. That&rsquo;s how this hobby works best anyway.</p>
+<style>
+.nrr{
+  --bg:#1a1a18; --surface:#242420; --fg:#E8D5C4; --muted:#A39A8F; --line:#4a4a48;
+  --accent:#B8860B; --accent-hi:#D9A93F; --accent-soft:#3a3018; --teal:#8B9D5D; --teal-soft:#2c3322;
+  --warn:#D08A63; --warn-soft:#3b2a20; --bar:#33332e;
+  --f-display:Georgia,"Times New Roman",serif;
+  --f-body:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  --f-mono:ui-monospace,"SF Mono",Menlo,Consolas,"Courier New",monospace;
+  color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.5;
+  display:grid;gap:28px;margin:2rem 0;
+}
+.nrr *{box-sizing:border-box}
+.nrr p{font-size:inherit !important;line-height:inherit;color:inherit;margin:0}
+.nrr h2,.nrr h3{font-family:var(--f-display);color:var(--fg);text-wrap:balance;margin:0;padding:0;letter-spacing:.01em}
+.nrr h2{font-size:1.45rem;font-weight:600}
+.nrr h3{font-size:1.15rem;font-weight:600}
+.nrr .lede{color:var(--muted);max-width:68ch;margin:6px 0 0}
+.nrr .eyebrow{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-hi)}
+.nrr .mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.nrr a{color:var(--teal);border-bottom:0;text-decoration:underline;text-underline-offset:2px}
+.nrr a:hover{color:var(--accent-hi)}
+.nrr a:focus-visible,.nrr button:focus-visible,.nrr .sumrow:focus-visible{outline:2px solid var(--accent-hi);outline-offset:2px}
+
+ 
+.nrr .rsummary{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.nrr table{border-collapse:collapse;width:100%;min-width:640px;margin:0}
+.nrr th,.nrr td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--fg)}
+.nrr th{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:400}
+.nrr tr:last-child td{border-bottom:0}
+.nrr td.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.nrr .sumrow{cursor:pointer}
+.nrr .sumrow:hover td{background:var(--bg)}
+
+ 
+.nrr .tabs{display:flex;flex-wrap:wrap;gap:6px}
+.nrr .tab{font-family:var(--f-display);font-weight:600;font-size:.95rem;border:1px solid var(--line);background:var(--surface);color:var(--fg);padding:7px 13px;border-radius:999px;cursor:pointer}
+.nrr .tab:hover{border-color:var(--accent)}
+.nrr .tab[aria-selected="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.nrr .tab .n{font-family:var(--f-mono);font-size:.75rem;opacity:.7;margin-left:4px}
+.nrr .regionhead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px}
+
+ 
+.nrr .rlist{display:grid;gap:12px}
+.nrr .rcard{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px;display:grid;grid-template-columns:52px minmax(0,1fr) 210px;gap:16px}
+.nrr .rcard.rtop{border-color:var(--accent)}
+.nrr .rank{font-family:var(--f-display);font-size:1.9rem;font-weight:700;line-height:1;color:var(--muted)}
+.nrr .rcard.rtop .rank{color:var(--accent-hi)}
+.nrr .rank small{display:block;font-family:var(--f-mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;margin-top:6px;color:var(--teal);font-weight:400}
+.nrr .rmain{min-width:0;display:grid;gap:8px}
+.nrr .callline{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+.nrr .call{font-family:var(--f-display);font-size:1.45rem;font-weight:700;color:var(--fg)}
+.nrr .freq{font-family:var(--f-mono);font-size:1.02rem;font-weight:600;color:var(--accent-hi)}
+.nrr .freq span{font-weight:400;color:var(--muted)}
+.nrr .where{color:var(--muted);font-size:.92rem}
+.nrr .machines{display:grid;gap:2px;font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:.9rem;overflow-x:auto}
+.nrr .mrow{display:grid;grid-template-columns:3.6rem 5.6rem 3.6rem minmax(7rem,max-content) minmax(0,1fr);gap:10px;align-items:baseline;padding:3px 6px;border-radius:4px;white-space:nowrap;color:var(--fg)}
+.nrr .mrow.scored{background:var(--accent-soft)}
+.nrr .mrow .b{color:var(--muted);font-size:.74rem;letter-spacing:.06em}
+.nrr .mrow .f{font-weight:600;color:var(--accent-hi)}
+.nrr .mrow .off,.nrr .mrow .t{color:var(--muted)}
+.nrr .mrow .tags{display:flex;gap:6px;flex-wrap:wrap;font-size:.68rem}
+.nrr .mrow.dim .f,.nrr .mrow.dim .off,.nrr .mrow.dim .t{opacity:.55}
+.nrr .rtag{padding:0 6px;border-radius:3px;background:var(--bar);color:var(--fg);font-size:inherit;margin:0;border:0}
+.nrr .rtag.star{background:var(--accent);color:var(--bg)}
+.nrr .rtag.fav{background:var(--teal);color:var(--bg)}
+.nrr .rtag.bad{background:var(--warn-soft);color:var(--warn)}
+.nrr .chips{display:flex;flex-wrap:wrap;gap:6px}
+.nrr .chip{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.04em;padding:2px 8px;border-radius:4px;background:var(--bar);color:var(--fg);white-space:nowrap}
+.nrr .chip.good{background:var(--teal-soft);color:var(--teal)}
+.nrr .chip.power{background:var(--accent-soft);color:var(--accent-hi)}
+.nrr .chip.bad{background:var(--warn-soft);color:var(--warn)}
+.nrr .facts{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:4px 12px;font-size:.9rem;margin:0}
+.nrr .facts dt{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:3px;font-weight:400}
+.nrr .facts dd{margin:0;min-width:0;overflow-wrap:anywhere;color:#C0B8B0}
+.nrr details{font-size:.85rem;color:var(--muted)}
+.nrr summary{cursor:pointer;font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.nrr summary:hover{color:var(--accent-hi)}
+.nrr details p{margin:6px 0 0;overflow-wrap:anywhere}
+.nrr details b{color:var(--fg)}
+
+ 
+.nrr .scores{display:grid;gap:12px;align-content:start}
+.nrr .score label{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0}
+.nrr .score label b{font-size:.95rem;color:var(--fg);letter-spacing:0}
+.nrr .track{height:8px;background:var(--bar);border-radius:4px;overflow:hidden;margin-top:4px}
+.nrr .fill{height:100%;background:var(--accent);border-radius:4px}
+.nrr .fill.c{background:var(--teal)}
+.nrr .elev{display:grid;gap:4px}
+.nrr .elev .ft{font-family:var(--f-display);font-weight:600;font-size:1.15rem;color:var(--fg)}
+.nrr .elev .src{font-family:var(--f-mono);font-size:.66rem;color:var(--muted);letter-spacing:.04em}
+.nrr .ridge{height:26px;width:100%;display:block}
+
+ 
+.nrr .method{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.nrr .method section{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px;min-width:0}
+.nrr .method ul{margin:8px 0 0;padding-left:18px;display:grid;gap:4px;font-size:.9rem}
+.nrr .method li{margin:0;color:#C0B8B0}
+.nrr .pts{width:100%;min-width:0;font-size:.88rem;margin-top:8px}
+.nrr .pts td{padding:5px 0;border-bottom:1px dashed var(--line);color:#C0B8B0}
+.nrr .pts td:last-child{text-align:right;font-family:var(--f-mono);color:var(--fg)}
+.nrr .rfoot{color:var(--muted);font-size:.82rem}
+
+@media (max-width:720px){
+  .nrr .rcard{grid-template-columns:40px minmax(0,1fr)}
+  .nrr .scores{grid-column:1 / -1}
+}
+@media (prefers-reduced-motion:no-preference){.nrr .fill{transition:width .4s ease}}
+</style>
+
+<div class="nrr">
+  <header>
+    <div class="eyebrow">W6SAL · RadioBuilder · data as of Oct 29, 2026</div>
+    <p class="lede">The repeaters most likely to stay up and stay useful when things go sideways, ranked for 8 regions from the Bay Area to the Eastern Sierra. The infrastructure score covers site height, backup power, emergency use and status. The community score shows who is behind the machine: a club, regular nets, and a place in a county emergency plan.</p>
+  </header>
+  <section aria-labelledby="sumh" style="display:grid;gap:10px">
+    <h2 id="sumh">Top pick in each region</h2>
+    <div class="rsummary"><table id="sumtable"><thead><tr><th>Region</th><th>Call</th><th>Output</th><th>Site</th><th>Infra</th><th>Comm</th><th>Who runs it</th></tr></thead><tbody></tbody></table></div>
+  </section>
+  <section aria-labelledby="regh" style="display:grid;gap:14px;scroll-margin-top:90px" id="regsec">
+    <div class="regionhead"><h2 id="regh">Contenders by region</h2><span class="where" id="regmeta"></span></div>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div class="rlist" id="list"></div>
+  </section>
+  <section class="method" aria-label="How the scores work">
+    <section>
+      <h3>Infrastructure score</h3>
+      <table class="pts"><tbody>
+        <tr><td>Site 3,000+ / 2,000+ / 1,000+ / 500+ ft</td><td>30 / 24 / 16 / 8</td></tr>
+        <tr><td>No elevation, but a named peak or ridge</td><td>12</td></tr>
+        <tr><td>Emergency power (owner reported)</td><td>25</td></tr>
+        <tr><td>ARES 10, RACES 10, SKYWARN 3 (cap 20)</td><td>20</td></tr>
+        <tr><td>On air (status unknown 5)</td><td>15</td></tr>
+        <tr><td>Open to all (closed 0)</td><td>10</td></tr>
+        <tr><td>2m band</td><td>5</td></tr>
+        <tr><td>Hospital or EOC site</td><td>5</td></tr>
+        <tr><td>Record updated in 2 yrs (5 yrs: 2)</td><td>5</td></tr>
+      </tbody></table>
+    </section>
+    <section>
+      <h3>Community score</h3>
+      <table class="pts"><tbody>
+        <tr><td>Club license (FCC) or known club</td><td>15</td></tr>
+        <tr><td>Active club, recent activity</td><td>5</td></tr>
+        <tr><td>Regularly scheduled net</td><td>5</td></tr>
+        <tr><td>In a county ARES / RACES / ACS / CERT plan</td><td>5</td></tr>
+        <tr><td>Backup power documented by the owner</td><td>5</td></tr>
+      </tbody></table>
+      <p class="where" style="margin:10px 0 0">Linked networks are not scored. Each callsign appears once. Every machine it runs in the region is stacked on the card from 2m to 1.25m to 70cm, then other bands; the highlighted row is the one that earned the score. 1.25m and other bands are shown but not scored.</p>
+    </section>
+    <section>
+      <h3>Read these with care</h3>
+      <ul>
+        <li>Emergency power is what owners report to RepeaterBook. Mt Oso (WD6EJF) batteries ran down in a 2-day PG&amp;E shutoff in 2025.</li>
+        <li>Elevation is measured only where the location is exact, or borrowed from another repeater at the same named site within 40 km. City-center locations are left blank.</li>
+        <li>Club research came from web search results and RadioReference listings. Low-confidence rows deserve a check before you rely on them.</li>
+        <li>Only 2m and 70cm machines that are not off air and not private are ranked.</li>
+      </ul>
+    </section>
+  </section>
+  <div class="rfoot">Repeater data courtesy of <a href="https://www.repeaterbook.com/" target="_blank" rel="noopener">RepeaterBook.com</a>. Other sources: FCC license data via callook.info, USGS Elevation Point Query Service, RadioReference database, and club and county web pages listed on each card.</div>
+</div>
+
+<script>
+(function () {
+const DATA = [{"reg":"Central Valley","rank":1,"why":"top score","call":"WD6EJF","freq":"440.225","dir":"+","off":"5.0","tmode":"T Sql","tone":"136.5","band":"70cm","city":"Modesto","county":"Stanislaus","site":"Mt Oso","elev":3246,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":false,"nfm":false,"infra":90,"ir":"site 3,246 ft (USGS) +30; emergency power +25; ARES/RACES/SKYWARN +10; on air +15; open +10","comm":30,"cr":"club license (STANISLAUS AMATEUR RADIO ASSN) +15; research +15","club":"Stanislaus Amateur Radio Association (SARA)","web":"https://www.saraclub.net/repeaters/","nets":"none found on 440.225 (weekly Stanislaus ARES net is Wed 7:30 PM on 145.390)","plan":"Stanislaus County ARES Response Guide (Jan 2025): monitor 145.390 or 440.225 for local ARES emergency nets","power":"Club documents battery backup and a Mt Oso solar project; batteries did not last a 2-day PG&E shutoff in June 2025 and solar is being installed","conf":"high","notes":"Aug 2025 board minutes say 440.225 is working; supports Yaesu Fusion with automatic analog FM","src":["https://www.saraclub.net/wp-content/uploads/2025/01/READOUT_AUGUST_2025.pdf","https://www.stanares.org/wp-content/uploads/2025/01/StanARES-Field-Guide-Jan-2025-docx.pdf"],"others":"145.39000 2m (infra 70); 145.11000 2m (infra 40)","upd":"2021-08-09","m":[{"f":"145.110","b":"2m","d":"-","o":"0.6","pl":"136.5","tsq":"136.5","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Double Tree Hotel"},{"f":"145.390","b":"2m","d":"-","o":"0.6","pl":"136.5","tsq":"136.5","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Mt Oso"},{"f":"224.140","b":"1.25m","d":"-","o":"1.6","pl":"136.5","tsq":"136.5","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Mt Oso"},{"f":"440.225","b":"70cm","d":"+","o":"5","pl":"136.5","tsq":"136.5","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt Oso"},{"f":"51.800","b":"6m","d":"-","o":"0.5","pl":"136.5","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt Oso"}]},{"reg":"Central Valley","rank":2,"why":"top score","call":"KJ6ART","freq":"441.275","dir":"+","off":"5.0","tmode":"T Sql","tone":"77.0","band":"70cm","city":"Modesto","county":"Stanislaus","site":"Mt Oso","elev":3246,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":false,"races":false,"nfm":false,"infra":82,"ir":"site 3,246 ft (USGS) +30; emergency power +25; on air +15; open +10; updated < 5 yrs +2","comm":0,"cr":"","club":"none found (private; licensee Spencer R Boyd)","web":"none found","nets":"none found","plan":"none found","power":"none found","conf":"low","notes":"Callsign is disputed: other lists show 441.275 Mt Oso as K6RDJ or K6RDT","src":["https://www.repeaterbook.com/repeaters/details.php?state_id=06&ID=1898"],"others":"","upd":"2022-03-06","m":[{"f":"441.275","b":"70cm","d":"+","o":"5","pl":"77.0","tsq":"77.0","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt Oso"}]},{"reg":"Central Valley","rank":3,"why":"top score","call":"K6IS","freq":"145.190","dir":"-","off":"0.6","tmode":"Tone","tone":"162.2","band":"2m","city":"Sacramento","county":"Sacramento","site":"Folsom Lake","elev":824,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":false,"nfm":false,"infra":78,"ir":"site 824 ft (USGS) +8; emergency power +25; ARES/RACES/SKYWARN +13; on air +15; open +10; 2m +5; updated < 5 yrs +2","comm":30,"cr":"club license (NORTH HILLS RADIO CLUB INC) +15; research +15","club":"North Hills Radio Club","web":"https://www.k6is.org/","nets":"Club nets on most nights (Mon; Tue; Thu; Sat); Monday 7:00 PM Sacramento County ARES net (linked to N6ICW 147.195)","plan":"Sacramento County ARES communications plan (Monday weekly net)","power":"none found","conf":"high","notes":"Founded 1957; nets open to non-members","src":["https://sacramentoares.org/contacts/communications-plan/","https://www.k6is.org/nets-and-meetings/on-air-nets"],"others":"","upd":"2024-10-13","m":[{"f":"145.190","b":"2m","d":"-","o":"0.6","pl":"162.2","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Folsom Lake"},{"f":"224.400","b":"1.25m","d":"-","o":"1.6","pl":"162.2","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Folsom Lake"}]},{"reg":"Central Valley","rank":4,"why":"top score","call":"W6LLL","freq":"146.655","dir":"-","off":"0.6","tmode":"T Sql","tone":"100.0","band":"2m","city":"Tracy","county":"San Joaquin","site":"","elev":null,"esrc":"unknown","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":75,"ir":"emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; 2m +5","comm":15,"cr":"club license (LAWRENCE LIVERMORE NATNL LAB RAD CLB) +15","club":"Lawrence Livermore National Lab Radio Club (LLNL ARC)","web":"none found","nets":"none found","plan":"none found","power":"none found","conf":"low","notes":"Only license and directory listings found (146.655- PL 100 Tracy); no club website or recent activity found","src":["https://k6arc.org/documents/Area%20Repeaters.pdf"],"others":"","upd":"2019-02-17","m":[{"f":"146.655","b":"2m","d":"-","o":"0.6","pl":"100.0","tsq":"100.0","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Tracy"}]},{"reg":"Central Valley","rank":5,"why":"top score","call":"K6MAN","freq":"146.985","dir":"-","off":"0.6","tmode":"T Sql","tone":"100.0","band":"2m","city":"Manteca","county":"San Joaquin","site":"Water Tower","elev":38,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":false,"races":true,"nfm":false,"infra":70,"ir":"emergency power +25; ARES/RACES/SKYWARN +10; on air +15; open +10; 2m +5; updated < 2 yrs +5","comm":20,"cr":"club license (MANTECA AMATEUR RADIO CLUB) +15; research +5","club":"Manteca Amateur Radio Club","web":"https://k6man.org/","nets":"none found (talk-in for monthly meetings, 1st Wed 7 PM)","plan":"none found","power":"none found","conf":"medium","notes":"Active club (2025 ARRL Field Day results); Yaesu Fusion added; one site lists the license expiring 01/06/2026, so verify on FCC ULS","src":["https://k6man.org/"],"others":"","upd":"2025-11-02","m":[{"f":"146.985","b":"2m","d":"-","o":"0.6","pl":"100.0","tsq":"100.0","st":"On-air","use":"OPEN","ep":true,"modes":["FM","C4FM"],"site":"Water Tower"}]},{"reg":"Central Valley","rank":6,"why":"top score","call":"W6YDD","freq":"443.900","dir":"+","off":"5.0","tmode":"T Sql","tone":"136.5","band":"70cm","city":"Sacramento","county":"Sacramento","site":"","elev":null,"esrc":"unknown","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":70,"ir":"emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10","comm":15,"cr":"club license (YABBA - DABBA - DO 1 DOT 2) +15","club":"W6YDD Radio Club (Yabba Dabba Doo One Dot Two)","web":"https://w6ydd.org/","nets":"none found","plan":"none found (supports Western States 100, Tevis Cup and Sweep Riders; no county ARES role found)","power":"none found","conf":"low","notes":"Small club running a multi-site network; no 2024+ activity found","src":["https://w6ydd.org/"],"others":"","upd":"2021-08-07","m":[{"f":"443.900","b":"70cm","d":"+","o":"5","pl":"136.5","tsq":"136.5","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Sacramento"},{"f":"1283.750","b":"23cm","d":"-","o":"12","pl":"88.5","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Folsom"}]},{"reg":"Central Valley","rank":7,"why":"top score","call":"K6TJS","freq":"444.000","dir":"+","off":"5.0","tmode":"Tone","tone":"123.0","band":"70cm","city":"Modesto","county":"Stanislaus","site":"Mt Oso","elev":3246,"esrc":"USGS","use":"OPEN","status":"UNKNOWN","ep":true,"ares":false,"races":false,"nfm":false,"infra":70,"ir":"site 3,246 ft (USGS) +30; emergency power +25; status unknown +5; open +10","comm":0,"cr":"","club":"Todd J Springer","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"146.92500 2m (infra 55); 147.21000 2m (infra 30); 444.00000 70cm (infra 25)","upd":"2008-02-12","m":[{"f":"146.925","b":"2m","d":"-","o":"0.6","pl":"123.0","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Los Banos"},{"f":"147.210","b":"2m","d":"+","o":"0.6","pl":"123.0","tsq":"123.0","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Los Banos"},{"f":"444.000","b":"70cm","d":"+","o":"5","pl":"123.0","tsq":"","st":"Unknown","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt Oso"},{"f":"444.000","b":"70cm","d":"+","o":"5","pl":"123.0","tsq":"123.0","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Los Banos"}]},{"reg":"Central Valley","rank":8,"why":"top score","call":"W6AK","freq":"146.910","dir":"-","off":"0.6","tmode":"T Sql","tone":"162.2","band":"2m","city":"Sacramento","county":"Sacramento","site":"","elev":null,"esrc":"unknown","use":"OPEN","status":"ON_AIR","ep":true,"ares":false,"races":true,"nfm":false,"infra":67,"ir":"emergency power +25; ARES/RACES/SKYWARN +10; on air +15; open +10; 2m +5; updated < 5 yrs +2","comm":15,"cr":"club license (SACRAMENTO AMATEUR RADIO CLUB INC) +15","club":"Sacramento Amateur Radio Club Inc","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"442.80000 70cm (infra 35)","upd":"2023-09-13","m":[{"f":"146.910","b":"2m","d":"-","o":"0.6","pl":"162.2","tsq":"162.2","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Sacramento"},{"f":"224.100","b":"1.25m","d":"-","o":"1.6","pl":"100.0","tsq":"","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Rancho Cordova"},{"f":"442.800","b":"70cm","d":"+","o":"5","pl":"100.0","tsq":"","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Sacramento"}]},{"reg":"Central Valley","rank":9,"why":"top score","call":"W6PHS","freq":"444.325","dir":"+","off":"5.0","tmode":"Tone","tone":"94.8","band":"70cm","city":"French Camp","county":"San Joaquin","site":"San Joaquin Gen Hospital","elev":18,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":false,"nfm":false,"infra":67,"ir":"emergency power +25; ARES/RACES/SKYWARN +10; hospital/EOC site +5; on air +15; open +10; updated < 5 yrs +2","comm":15,"cr":"club license (SAN JOAQUIN PUBLIC HEALTH EMERGENCY COMMUNICATIONS SYSTEM) +15","club":"San Joaquin Public Health Emergency Communications System","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"","upd":"2024-07-08","m":[{"f":"444.325","b":"70cm","d":"+","o":"5","pl":"94.8","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM","P25"],"site":"San Joaquin Gen Hospital"}]},{"reg":"Central Valley","rank":10,"why":"top score","call":"W6PRN","freq":"444.425","dir":"+","off":"5.0","tmode":"T Sql","tone":"100.0","band":"70cm","city":"Sacramento","county":"Sacramento","site":"Pilot Hill","elev":null,"esrc":"unknown","use":"OPEN","status":"ON_AIR","ep":true,"ares":false,"races":false,"nfm":false,"infra":67,"ir":"high site name (Pilot Hill) +12; emergency power +25; on air +15; open +10; updated < 2 yrs +5","comm":0,"cr":"","club":"","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"","upd":"2025-03-27","m":[{"f":"444.425","b":"70cm","d":"+","o":"5","pl":"100.0","tsq":"100.0","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Pilot Hill"}]},{"reg":"East Bay","rank":1,"why":"top score","call":"W6CX","freq":"147.060","dir":"+","off":"0.6","tmode":"T Sql","tone":"100.0","band":"2m","city":"Concord","county":"Contra Costa","site":"Mt Diablo","elev":3615,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":110,"ir":"site 3,615 ft (USGS) +30; emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; 2m +5; updated < 2 yrs +5","comm":30,"cr":"club license (MT DIABLO AMATEUR RADIO CLUB INC) +15; research +15","club":"Mt Diablo Amateur Radio Club (MDARC)","web":"https://www.mdarc.org/","nets":"MDARC Club Net Thu 7:30 PM (147.060 linked to 224/440); Contra Costa Digital Practice Net 8:00 PM (Tuesday per Benicia ARC list); Delta ARC club net Wed 8:00 PM","plan":"Listed in SCCo ARES/RACES regional frequency list as San Mateo (Bay-side) primary repeater; on a CERT Communications Team channel sheet; MDARC has an Emergency Communications program page","power":"none found","conf":"high","notes":"Wide area repeater on Mt Diablo South Peak; EchoLink W6CX-R and IRLP 3057; RepeaterBook updated 2026","src":["https://www.mdarc.org/activities/nets-on-mdarc-systems","https://www.scc-ares-races.org/operations/voice/freqs/regional"],"others":"441.32500 70cm (infra 100); 145.00000 2m (infra 62)","upd":"2026-09-03","m":[{"f":"144.925","b":"2m","d":"+","o":"2.5","pl":"","tsq":"","st":"On-air","use":"OPEN","ep":false,"modes":["DMR"],"site":"Mt Diablo"},{"f":"145.000","b":"2m","d":"+","o":"2.5","pl":"","tsq":"","st":"On-air","use":"OPEN","ep":false,"modes":["C4FM","DMR","D-STAR"],"site":"Mt Diablo"},{"f":"147.060","b":"2m","d":"+","o":"0.6","pl":"100.0","tsq":"100.0","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt Diablo"},{"f":"224.780","b":"1.25m","d":"-","o":"1.6","pl":"77.0","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt Diablo"},{"f":"441.325","b":"70cm","d":"+","o":"5","pl":"100.0","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt Diablo"}]},{"reg":"East Bay","rank":2,"why":"top score","call":"W6SRR","freq":"147.045","dir":"+","off":"0.6","tmode":"T Sql","tone":"94.8","band":"2m","city":"Pleasanton","county":"Alameda","site":"","elev":2139,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":true,"infra":104,"ir":"site 2,139 ft (USGS) +24; emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; 2m +5; updated < 2 yrs +5","comm":15,"cr":"club license (SUNOL RIDGE RADIO GROUP) +15","club":"Sunol Ridge Radio Group (Sunol Ridge Repeater Group)","web":"https://sites.google.com/site/sunolridgerepeatergroup/","nets":"none found (site says it is used for various public service and emergency nets but names none)","plan":"none found (Repeater World directory tags ARES/RACES affiliation; no plan found)","power":"none found (only a directory emergency power tag)","conf":"low","notes":"Multi-band system (29/144/440/900/1200 plus DMR); group site looks old; also has Facebook and groups.io; no 2024+ club activity confirmed","src":["https://sites.google.com/site/sunolridgerepeatergroup/"],"others":"442.62500 70cm (infra 69)","upd":"2026-10-06","m":[{"f":"147.045","b":"2m","d":"+","o":"0.6","pl":"94.8","tsq":"94.8","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Pleasanton"},{"f":"442.625","b":"70cm","d":"+","o":"5","pl":"94.8","tsq":"94.8","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Pleasanton"},{"f":"443.5125","b":"70cm","d":"+","o":"5","pl":"","tsq":"","st":"Off-air","use":"OPEN","ep":false,"modes":["DMR"],"site":"Sunol Ridge"},{"f":"443.5125","b":"70cm","d":"+","o":"5","pl":"","tsq":"","st":"On-air","use":"OPEN","ep":false,"modes":["DMR"],"site":"Sunol"}]},{"reg":"East Bay","rank":3,"why":"top score","call":"WA6HAM","freq":"145.410","dir":"-","off":"0.6","tmode":"T Sql","tone":"107.2","band":"2m","city":"San Ramon","county":"Contra Costa","site":"Highland Peak","elev":2564,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":99,"ir":"site 2,564 ft (USGS) +24; emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; 2m +5","comm":25,"cr":"club (Contra Costa Repeater Association (CCRA)) +15; research +10","club":"Contra Costa Repeater Association (CCRA); a breakaway group, Three Peaks Radio (N6TPR), also claims the linked WA6HAM sites","web":"http://ccra.us/","nets":"Contra Costa County-Wide EMCOMM Net 7:20 PM and CCRA net 7:35 PM on linked WA6HAM system (145.490/147.735/145.410; day unclear, possibly Wed); UC Berkeley W6BB emergency net 1st Wed noon","plan":"Contra Costa County-Wide EMCOMM Net runs on the linked system (no ARES/ACS plan document found)","power":"none found","conf":"medium","notes":"Linked with Bald Peak and Kregor Peak; club governance dispute (CCRA vs Three Peaks Radio); newest CCRA site page found is from 2021","src":["https://www.mdarc.org/activities/nets-on-other-systems","https://www.arrl.org/Groups/view/contra-costa-repeater-association/type:club"],"others":"145.49000 2m (infra 93); 147.73500 2m (infra 91); 440.42500 70cm (infra 60); 440.87500 70cm (infra 50); 440.62500 70cm (infra 42)","upd":"2021-08-10","m":[{"f":"145.410","b":"2m","d":"-","o":"0.6","pl":"107.2","tsq":"107.2","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Highland Peak"},{"f":"145.490","b":"2m","d":"-","o":"0.6","pl":"107.2","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Bald Peak"},{"f":"147.735","b":"2m","d":"-","o":"0.6","pl":"107.2","tsq":"107.2","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Kregor Peak"},{"f":"440.425","b":"70cm","d":"+","o":"5","pl":"79.7","tsq":"","st":"On-air","use":"CLOSED","ep":true,"modes":["FM"],"site":"San Ramon"},{"f":"440.625","b":"70cm","d":"+","o":"5","pl":"","tsq":"","st":"On-air","use":"CLOSED","ep":true,"modes":["FM"],"site":"Orinda"},{"f":"440.875","b":"70cm","d":"+","o":"5","pl":"","tsq":"","st":"On-air","use":"CLOSED","ep":true,"modes":["FM"],"site":"Concord"}]},{"reg":"East Bay","rank":4,"why":"top score","call":"WB6NDJ","freq":"146.880","dir":"-","off":"0.6","tmode":"Tone","tone":"77.0","band":"2m","city":"Oakland","county":"Alameda","site":"","elev":1482,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":96,"ir":"site 1,482 ft (USGS) +16; emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; 2m +5; updated < 2 yrs +5","comm":30,"cr":"club license (OAKLAND RADIO COMMUNICATION ASSOCIATION) +15; research +15","club":"Oakland Radio Communication Association (ORCA); repeater owned by VHF Repeaters Inc","web":"https://www.ww6or.org/","nets":"Thursday Night Net; Tuesday Noon Net 12:00; First Wednesday Siren Net at noon (city siren test); Storm Net as needed","plan":"Oakland ARES/RACES: ORCA is the city RACES group and the repeater is a primary resource for Oakland ARES/RACES; city of Oakland page lists ORCA","power":"none found from owner (Bay Area Mesh wiki notes battery backup devices in the site rack, possibly for the mesh gear only)","conf":"high","notes":"David F. Otey Memorial Repeater, PL 77.0; open, no dues needed for normal use","src":["https://www.ww6or.org/nets","https://www.oaklandca.gov/Public-Safety-Streets/Emergency-Preparedness-Services/Ready-Oakland-CORE/Oakland-Radio-Communications-Association-ORCA"],"others":"442.40000 70cm (infra 91)","upd":"2026-05-25","m":[{"f":"146.880","b":"2m","d":"-","o":"0.6","pl":"77.0","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Oakland"},{"f":"442.400","b":"70cm","d":"+","o":"5","pl":"77.0","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Oakland"}]},{"reg":"East Bay","rank":5,"why":"top score","call":"N6HWI","freq":"443.725","dir":"+","off":"5.0","tmode":"Tone","tone":"127.3","band":"70cm","city":"Fremont","county":"Alameda","site":"Mt Allison","elev":2639,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":96,"ir":"site 2,639 ft (USGS) +24; emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; updated < 5 yrs +2","comm":0,"cr":"","club":"WB6PHE Repeater Group","web":"https://www.qsl.net/wb6phe/techinfo.html","nets":"none found","plan":"none found","power":"none found","conf":"low","notes":"Tech page lists a GE MVP radio with 200 W amp at Mt Allison; RepeaterBook last updated 2021; current status not confirmed","src":["https://www.qsl.net/wb6phe/techinfo.html"],"others":"","upd":"2021-12-01","m":[{"f":"443.725","b":"70cm","d":"+","o":"5","pl":"127.3","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt Allison"}]},{"reg":"East Bay","rank":6,"why":"top score","call":"K6POU","freq":"145.330","dir":"-","off":"0.6","tmode":"T Sql","tone":"100.0","band":"2m","city":"Concord","county":"Contra Costa","site":"Mt Diablo","elev":3732,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":false,"races":false,"nfm":false,"infra":85,"ir":"site 3,732 ft (USGS) +30; emergency power +25; on air +15; open +10; 2m +5","comm":5,"cr":"research +5","club":"K6POU Repeater Group (individual licensee Wendell D Peterson)","web":"https://www.facebook.com/groups/533Repeater/","nets":"none found","plan":"none found","power":"none found (Hearham directory tags emergency power only)","conf":"low","notes":"Very busy ragchew machine with wide coverage, live on Broadcastify; known for contentious on-air behavior; points given for 2023-2024 recordings credited to the group","src":["https://www.broadcastify.com/listen/feed/37939"],"others":"443.80000 70cm (infra 85)","upd":"2021-09-03","m":[{"f":"145.330","b":"2m","d":"-","o":"0.6","pl":"100.0","tsq":"100.0","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt Diablo"},{"f":"443.800","b":"70cm","d":"+","o":"5","pl":"100.0","tsq":"100.0","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt Diablo"}]},{"reg":"East Bay","rank":7,"why":"top score","call":"WA6ODP","freq":"145.350","dir":"-","off":"0.6","tmode":"T Sql","tone":"100.0","band":"2m","city":"Livermore","county":"Alameda","site":"","elev":2581,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":false,"races":false,"nfm":false,"infra":81,"ir":"site 2,581 ft (USGS) +24; emergency power +25; on air +15; open +10; 2m +5; updated < 5 yrs +2","comm":15,"cr":"club license (LIVERMORE AMATEUR RADIO KLUB) +15","club":"Livermore Amateur Radio Klub","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"","upd":"2022-08-01","m":[{"f":"145.350","b":"2m","d":"-","o":"0.6","pl":"100.0","tsq":"100.0","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Livermore"}]},{"reg":"East Bay","rank":8,"why":"top score","call":"KM6EF","freq":"146.610","dir":"-","off":"0.6","tmode":"Tone","tone":"123.0","band":"2m","city":"Union City","county":"Alameda","site":"","elev":null,"esrc":"unknown","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":80,"ir":"emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; 2m +5; updated < 2 yrs +5","comm":0,"cr":"","club":"Ananias G Gasacao","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"440.35000 70cm (infra 60)","upd":"2025-11-02","m":[{"f":"146.610","b":"2m","d":"-","o":"0.6","pl":"123.0","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM","C4FM"],"site":"Union City"},{"f":"440.350","b":"70cm","d":"+","o":"5","pl":"123.0","tsq":"","st":"Unknown","use":"OPEN","ep":true,"modes":["FM"],"site":"Oakland"}]},{"reg":"East Bay","rank":9,"why":"top score","call":"WB6ECE","freq":"441.300","dir":"+","off":"5.0","tmode":"Tone","tone":"110.9","band":"70cm","city":"Fremont","county":"Alameda","site":"Mt Allison","elev":2639,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":false,"races":false,"nfm":false,"infra":79,"ir":"site 2,639 ft (USGS) +24; emergency power +25; on air +15; open +10; updated < 2 yrs +5","comm":0,"cr":"","club":"Marc T Kaufman","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"","upd":"2026-10-06","m":[{"f":"441.300","b":"70cm","d":"+","o":"5","pl":"110.9","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt Allison"}]},{"reg":"East Bay","rank":10,"why":"top score","call":"W6LLL","freq":"146.775","dir":"-","off":"0.6","tmode":"T Sql","tone":"100.0","band":"2m","city":"Livermore","county":"Alameda","site":"","elev":null,"esrc":"unknown","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":77,"ir":"emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; 2m +5; updated < 5 yrs +2","comm":15,"cr":"club license (LAWRENCE LIVERMORE NATNL LAB RAD CLB) +15","club":"Lawrence Livermore National Lab Radio Club (LLNL ARC)","web":"none found","nets":"none found","plan":"none found","power":"none found","conf":"low","notes":"Only license and directory listings found (146.655- PL 100 Tracy); no club website or recent activity found","src":["https://k6arc.org/documents/Area%20Repeaters.pdf"],"others":"","upd":"2022-10-06","m":[{"f":"146.775","b":"2m","d":"-","o":"0.6","pl":"100.0","tsq":"100.0","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Livermore"}]},{"reg":"Eastern Sierra","rank":1,"why":"top score","call":"NW6C","freq":"146.730","dir":"-","off":"0.6","tmode":"Tone","tone":"100.0","band":"2m","city":"Mammoth Lakes","county":"Mono","site":"Mammoth Mtn","elev":10901,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":false,"races":true,"nfm":false,"infra":95,"ir":"site 10,901 ft (USGS) +30; emergency power +25; ARES/RACES/SKYWARN +10; on air +15; open +10; 2m +5","comm":15,"cr":"club (Bishop Amateur Radio Club) +15","club":"Bishop Amateur Radio Club (per RadioReference)","web":"none found","nets":"none found","plan":"none found","power":"none found","conf":"medium","notes":"RadioReference Mono County lists 146.730 PL 100 Mammoth Mtn as Bishop ARC, linked to Silver Peak (Inyo Co.); web search found no tie, RadioReference settles it","src":["RadioReference DB: Mono County / Amateur Radio (rrPull 2026-10-29)","https://www.repeaterbook.com/repeaters/details.php?state_id=06&ID=267"],"others":"","upd":"2020-08-20","m":[{"f":"146.730","b":"2m","d":"-","o":"0.6","pl":"100.0","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mammoth Mtn"}]},{"reg":"Eastern Sierra","rank":2,"why":"top score","call":"KB7DWO","freq":"146.655","dir":"-","off":"0.6","tmode":"Tone","tone":"131.8","band":"2m","city":"Loop","county":"Alpine","site":"Leviathan Peak","elev":null,"esrc":"unknown","use":"OPEN","status":"UNKNOWN","ep":true,"ares":false,"races":false,"nfm":false,"infra":59,"ir":"high site name (Leviathan Peak) +12; emergency power +25; status unknown +5; open +10; 2m +5; updated < 5 yrs +2","comm":20,"cr":"club (Mono County Sheriff ham network) +15; research +5","club":"Mono County Sheriff ham repeater network (per RadioReference)","web":"none found","nets":"none found","plan":"RadioReference Mono County lists Leviathan Peak 146.655 as Mono SO, linked to Conway","power":"none found","conf":"medium","notes":"RadioReference ties it to Mono County Sheriff, linked to Conway Summit 146.880; RepeaterBook status Unknown (2024)","src":["RadioReference DB: Mono County / Amateur Radio (rrPull 2026-10-29)"],"others":"","upd":"2024-03-24","m":[{"f":"146.655","b":"2m","d":"-","o":"0.6","pl":"131.8","tsq":"","st":"Unknown","use":"OPEN","ep":true,"modes":["FM"],"site":"Leviathan Peak"}]},{"reg":"Eastern Sierra","rank":3,"why":"top score","call":"KB6DWO","freq":"146.880","dir":"-","off":"0.6","tmode":"Tone","tone":"131.8","band":"2m","city":"Mammoth","county":"Mono","site":"Conway Summit","elev":null,"esrc":"unknown","use":"OPEN","status":"ON_AIR","ep":false,"ares":false,"races":false,"nfm":false,"infra":42,"ir":"high site name (Conway Summit) +12; on air +15; open +10; 2m +5","comm":20,"cr":"club (Mono County Sheriff ham network) +15; research +5","club":"Mono County Sheriff ham repeater network (per RadioReference)","web":"none found","nets":"none found","plan":"RadioReference Mono County lists Conway Summit 146.880 as Mono SO, linked to Leviathan and Antelope","power":"none found","conf":"medium","notes":"RadioReference ties it to Mono County Sheriff, linked to Leviathan 146.655 and Antelope; RepeaterBook last updated 2018","src":["RadioReference DB: Mono County / Amateur Radio (rrPull 2026-10-29)"],"others":"","upd":"2018-08-24","m":[{"f":"146.880","b":"2m","d":"-","o":"0.6","pl":"131.8","tsq":"","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Conway Summit"}]},{"reg":"Gold Country","rank":1,"why":"top score","call":"K6TUO","freq":"147.945","dir":"-","off":"0.6","tmode":"Tone","tone":"100.0","band":"2m","city":"Tuolumne","county":"Tuolumne","site":"Duckwall Mtn","elev":5831,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":false,"nfm":false,"infra":100,"ir":"site 5,831 ft (USGS) +30; emergency power +25; ARES/RACES/SKYWARN +10; on air +15; open +10; 2m +5; updated < 2 yrs +5","comm":35,"cr":"club license (TCARES INC) +15; research +20","club":"TCARES Inc (Tuolumne County ARES; 501c3)","web":"https://tcares.net/","nets":"Tuolumne County Emergency Net on linked repeaters (Duckwall 147.945 is the main hub); day/time not confirmed","plan":"Tuolumne County ARES (TCARES is the county ARES group)","power":"TCARES linked-repeater notes mention a battery at the Hetch Hetchy Duckwall site; no generator or solar detail found","conf":"medium","notes":"RepeaterBook credits 147.945 Duckwall to W6FEJ; Moccasin 145.290 and Pinecrest 147.975 linked","src":["https://tcares.net/linked-repeaters/"],"others":"145.29000 2m (infra 99); 440.97500 70cm (infra 92); 147.97500 2m (infra 80); 146.11500 2m (infra 76)","upd":"2026-02-14","m":[{"f":"145.290","b":"2m","d":"-","o":"0.6","pl":"100.0","tsq":"100.0","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Moccasin Peak"},{"f":"146.115","b":"2m","d":"+","o":"0.6","pl":"100.0","tsq":"100.0","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Columbia College"},{"f":"147.945","b":"2m","d":"-","o":"0.6","pl":"100.0","tsq":"107.2","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Duckwall Mtn"},{"f":"147.975","b":"2m","d":"-","o":"0.6","pl":"100.0","tsq":"100.0","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Pinecrest"},{"f":"440.975","b":"70cm","d":"+","o":"5","pl":"103.5","tsq":"","st":"On-air","use":"CLOSED","ep":true,"modes":["FM"],"site":"Duckwall Mtn"}]},{"reg":"Gold Country","rank":2,"why":"top score","call":"W6BXN","freq":"147.000","dir":"+","off":"0.6","tmode":"Tone","tone":"100.0","band":"2m","city":"Yosemite","county":"Mariposa","site":"Turtle Back Dome","elev":5272,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":false,"nfm":false,"infra":100,"ir":"site 5,272 ft (USGS) +30; emergency power +25; ARES/RACES/SKYWARN +10; on air +15; open +10; 2m +5; updated < 2 yrs +5","comm":30,"cr":"club license (TURLOCK AMATEUR RADIO CLUB INC) +15; research +15","club":"Turlock Amateur Radio Club (TARC)","web":"https://w6bxn.org/repeaters/","nets":"Linked via the 420 hub to TARC nets (weekday 6:30 AM commuter net; Tue 7 PM 2m net; 2018 handout); Merced ARES net Mon 7 PM on TARC repeaters (2025)","plan":"Merced County ARES uses the TARC repeaters for its weekly net (2025)","power":"none found","conf":"medium","notes":"Linked system reaching Yosemite Valley from Turtleback Dome; moved into an NPS building and cut to 50 W (2013 report); club active Jan 2025","src":["https://w6bxn.org/repeaters/"],"others":"444.70000 70cm (infra 92); 147.03000 2m (infra 89)","upd":"2026-04-12","m":[{"f":"144.9375","b":"2m","d":"+","o":"2.5","pl":"","tsq":"","st":"On-air","use":"OPEN","ep":false,"modes":["DMR"],"site":"Mt Bullion"},{"f":"147.000","b":"2m","d":"+","o":"0.6","pl":"100.0","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Turtle Back Dome"},{"f":"147.030","b":"2m","d":"+","o":"0.6","pl":"100.0","tsq":"100.0","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt Bullion"},{"f":"444.700","b":"70cm","d":"+","o":"5","pl":"94.8","tsq":"94.8","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt Bullion"},{"f":"444.7875","b":"70cm","d":"+","o":"5","pl":"","tsq":"","st":"Unknown","use":"OPEN","ep":false,"modes":["DMR"],"site":"Mt Bullion"},{"f":"1284.300","b":"23cm","d":"-","o":"12","pl":"88.5","tsq":"","st":"Unknown","use":"OPEN","ep":false,"modes":["FM"],"site":"Mariposa"}]},{"reg":"Gold Country","rank":3,"why":"top score","call":"AG6AU","freq":"147.825","dir":"-","off":"0.6","tmode":"Tone","tone":"82.5","band":"2m","city":"Camino","county":"El Dorado","site":"Mt Danaher","elev":3394,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":false,"nfm":false,"infra":95,"ir":"site 3,394 ft (USGS) +30; emergency power +25; ARES/RACES/SKYWARN +10; on air +15; open +10; 2m +5","comm":30,"cr":"club license (EL DORADO COUNTY AMATEUR RADIO CLUB) +15; research +15","club":"El Dorado County Amateur Radio Club (EDCARC); network maintained with Community Emergency Radio Association (CERA)","web":"https://edcarc.net/","nets":"Mon 7:30 PM ARES Net; Tue 7:30 PM Club Net; Fri 8:00 PM Youth Net (July 2026)","plan":"El Dorado County ARES runs its Monday net on this repeater","power":"none found","conf":"high","notes":"Transmitter on Mt Danaher with voting receivers around the county; 70cm Lotus machine linked; EchoLink 668182; IRLP 7195","src":["https://edcarc.net/","https://www.cerafund.org/radio-repeater-network"],"others":"441.72500 70cm (infra 37)","upd":"2021-08-10","m":[{"f":"147.825","b":"2m","d":"-","o":"0.6","pl":"82.5","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt Danaher"},{"f":"224.060","b":"1.25m","d":"-","o":"1.6","pl":"127.3","tsq":"127.3","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Rescue"},{"f":"441.725","b":"70cm","d":"+","o":"5","pl":"82.5","tsq":"","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Bakers Mtn"},{"f":"52.780","b":"6m","d":"-","o":"0.5","pl":"107.2","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Bald Mtn"},{"f":"927.2375","b":"33cm","d":"-","o":"25","pl":"127.3","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Pine Hill"},{"f":"927.275","b":"33cm","d":"-","o":"25","pl":"127.3","tsq":"","st":"Unknown","use":"OPEN","ep":false,"modes":["FM"],"site":"Quintette"}]},{"reg":"Gold Country","rank":4,"why":"top score","call":"W6PPM","freq":"146.745","dir":"-","off":"0.6","tmode":"Tone","tone":"146.2","band":"2m","city":"Mariposa","county":"Mariposa","site":"Mt Bullion","elev":4183,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":false,"nfm":false,"infra":95,"ir":"site 4,183 ft (USGS) +30; emergency power +25; ARES/RACES/SKYWARN +10; on air +15; open +10; 2m +5","comm":5,"cr":"research +5","club":"Probably Mariposa Area Amateur Radio Organization (MAARO, club call W6MPA); not confirmed","web":"http://www.maaro.net/repeater/","nets":"none found (MAARO daily 9 AM net is HF 7183 kHz)","plan":"MAARO repeater page lists W6PPM Mt Bullion 146.745 as Net Control next to the Mariposa ARES EC; undated","power":"none found","conf":"low","notes":"Same-frequency relay at Deadwood; conflicting tones (146.2 vs 123); license shows INVALID so current owner and status unknown","src":["http://www.maaro.net/repeater/"],"others":"","upd":"2016-08-15","m":[{"f":"146.745","b":"2m","d":"-","o":"0.6","pl":"146.2","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt Bullion"}]},{"reg":"Gold Country","rank":5,"why":"top score","call":"W6WPT","freq":"440.100","dir":"+","off":"5.0","tmode":"T Sql","tone":"100.0","band":"70cm","city":"West Point","county":"Calaveras","site":"Fire Sta 1","elev":2720,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":94,"ir":"site 2,720 ft (USGS) +24; emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10","comm":25,"cr":"club license (WEST POINT CERT) +15; research +10","club":"West Point Fire CERT (FCC license to 05/31/2027); listed by Calaveras Amateur Radio Society","web":"http://calaverasars.org/Web/?p=2574","nets":"none found","plan":"Listed on the Calaveras ARES/RACES page; backup to the CARS N6FRG repeater","power":"CARS post: battery backup until a generator takes over (1 to 2 minutes)","conf":"medium","notes":"WIRES-X node 33432; latest sources 2020 to 2023","src":["http://calaverasars.org/Web/?p=2574"],"others":"","upd":"2018-05-29","m":[{"f":"440.100","b":"70cm","d":"+","o":"5","pl":"100.0","tsq":"100.0","st":"On-air","use":"OPEN","ep":true,"modes":["FM","C4FM"],"site":"Fire Sta 1"}]},{"reg":"Gold Country","rank":6,"why":"top score","call":"W6SAR","freq":"146.640","dir":"-","off":"0.6","tmode":"T Sql","tone":"131.8","band":"2m","city":"Truckee","county":"Nevada","site":"Donner Peak","elev":7813,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":false,"races":false,"nfm":false,"infra":90,"ir":"site 7,813 ft (USGS) +30; emergency power +25; on air +15; open +10; 2m +5; updated < 2 yrs +5","comm":25,"cr":"club license (PLACER COUNTY SEARCH & RESCUE COMM UNIT) +15; research +10","club":"Placer County Search and Rescue Communications Unit","web":"https://www.n6nmz.net/R146_640a.htm","nets":"none found","plan":"Used as the Truckee Placer County SAR repeater (sheriff SAR); not in a county ARES/RACES plan","power":"Owner page: two deep-cycle batteries kept charged by a LaMarche charging system","conf":"medium","notes":"Open to all hams; PL 131.8; covers I-80 from Baxter to Reno plus part of Tahoe","src":["https://www.n6nmz.net/R146_640a.htm"],"others":"440.70000 70cm (infra 85); 146.64000 2m (infra 65); 146.74500 2m (infra 32); 145.27000 2m (infra 30)","upd":"2026-07-19","m":[{"f":"145.270","b":"2m","d":"-","o":"0.6","pl":"156.7","tsq":"156.7","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Auburn"},{"f":"146.640","b":"2m","d":"-","o":"0.6","pl":"131.8","tsq":"131.8","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Donner Peak"},{"f":"146.640","b":"2m","d":"-","o":"0.6","pl":"156.7","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Roseville"},{"f":"146.745","b":"2m","d":"-","o":"0.6","pl":"156.7","tsq":"156.7","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Foresthill"},{"f":"223.760","b":"1.25m","d":"-","o":"1.6","pl":"100.0","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Foresthill"},{"f":"223.820","b":"1.25m","d":"-","o":"1.6","pl":"100.0","tsq":"","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Donner Peak"},{"f":"440.700","b":"70cm","d":"+","o":"5","pl":"131.8","tsq":"131.8","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Donner Peak"}]},{"reg":"Gold Country","rank":7,"why":"top score","call":"K6IXA","freq":"443.075","dir":"+","off":"5.0","tmode":"Tone","tone":"107.2","band":"70cm","city":"Mariposa","county":"Mariposa","site":"Mt Bullion","elev":4183,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":false,"nfm":false,"infra":90,"ir":"site 4,183 ft (USGS) +30; emergency power +25; ARES/RACES/SKYWARN +10; on air +15; open +10","comm":0,"cr":"","club":"Grady L Williams","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"","upd":"2014-11-15","m":[{"f":"443.075","b":"70cm","d":"+","o":"5","pl":"107.2","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt Bullion"}]},{"reg":"Gold Country","rank":8,"why":"top score","call":"K6ARC","freq":"146.835","dir":"-","off":"0.6","tmode":"T Sql","tone":"100.0","band":"2m","city":"Pine Grove","county":"Amador","site":"Mt Zion","elev":2853,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":false,"nfm":false,"infra":89,"ir":"site 2,853 ft (USGS) +24; emergency power +25; ARES/RACES/SKYWARN +10; on air +15; open +10; 2m +5","comm":15,"cr":"club license (AMADOR COUNTY AMATEUR RADIO CLUB) +15","club":"Amador County Amateur Radio Club","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"441.52500 70cm (infra 89)","upd":"2021-08-12","m":[{"f":"146.835","b":"2m","d":"-","o":"0.6","pl":"100.0","tsq":"100.0","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt Zion"},{"f":"441.525","b":"70cm","d":"+","o":"5","pl":"100.0","tsq":"100.0","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt Zion"}]},{"reg":"Gold Country","rank":9,"why":"top score","call":"NR7A","freq":"147.240","dir":"+","off":"0.6","tmode":"Tone","tone":"123.0","band":"2m","city":"South Lake Tahoe","county":"El Dorado","site":"East Peak","elev":9539,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":false,"races":false,"nfm":false,"infra":85,"ir":"site 9,539 ft (USGS) +30; emergency power +25; on air +15; open +10; 2m +5","comm":0,"cr":"","club":"Robert J Vogelpohl","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"","upd":"2020-02-02","m":[{"f":"147.240","b":"2m","d":"+","o":"0.6","pl":"123.0","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"East Peak"},{"f":"224.020","b":"1.25m","d":"-","o":"1.6","pl":"","tsq":"","st":"Unknown","use":"OPEN","ep":true,"modes":["FM"],"site":"South Lake Tahoe"}]},{"reg":"Gold Country","rank":10,"why":"top score","call":"N6FRG","freq":"145.170","dir":"-","off":"0.6","tmode":"Tone","tone":"100.0","band":"2m","city":"Angels Camp","county":"Calaveras","site":"Fowler LO","elev":2825,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":false,"races":false,"nfm":false,"infra":84,"ir":"site 2,825 ft (USGS) +24; emergency power +25; on air +15; open +10; 2m +5; updated < 2 yrs +5","comm":15,"cr":"club license (CALAVERAS AMATEUR RADIO SOCIETY) +15","club":"Calaveras Amateur Radio Society","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"","upd":"2025-09-12","m":[{"f":"145.170","b":"2m","d":"-","o":"0.6","pl":"100.0","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Fowler LO"}]},{"reg":"Monterey Bay","rank":1,"why":"top score","call":"KR6JE","freq":"145.470","dir":"-","off":"0.6","tmode":"T Sql","tone":"94.8","band":"2m","city":"Salinas","county":"Monterey","site":"Fremont Peak","elev":3032,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":110,"ir":"site 3,032 ft (USGS) +30; emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; 2m +5; updated < 2 yrs +5","comm":30,"cr":"club license (FREMONT PEAK REPEATER ASSOCIATION) +15; research +15","club":"Fremont Peak Amateur Radio Association (FCC: Fremont Peak Repeater Association)","web":"https://kr6je.org/","nets":"FPRA net Mon 8:00 PM; Monterey County ARES weekly net Wed 7:30 PM (primary on 145.470)","plan":"Monterey County ARES: primary repeater for its weekly net","power":"none found","conf":"high","notes":"Open repeater with free non-voting membership; covers Monterey, Santa Cruz, Santa Clara and San Benito counties","src":["https://kr6je.org/","https://montereyares.org/net-control-schedule"],"others":"441.45000 70cm (infra 85); 443.80000 70cm (infra 64)","upd":"2026-02-17","m":[{"f":"145.470","b":"2m","d":"-","o":"0.6","pl":"94.8","tsq":"94.8","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Fremont Peak"},{"f":"441.450","b":"70cm","d":"+","o":"5","pl":"123.0","tsq":"123.0","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Fremont Peak"},{"f":"443.800","b":"70cm","d":"+","o":"5","pl":"127.3","tsq":"","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Williams Hill"}]},{"reg":"Monterey Bay","rank":2,"why":"top score","call":"AE6KE","freq":"146.835","dir":"-","off":"0.6","tmode":"Tone","tone":"94.8","band":"2m","city":"Santa Cruz","county":"Santa Cruz","site":"Loma Prieta","elev":3786,"esrc":"same site in South Bay (22 km)","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":105,"ir":"site 3,786 ft (same site in South Bay (22 km)) +30; emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; 2m +5","comm":25,"cr":"club (Santa Cruz County ARES) +15; research +10","club":"Santa Cruz County ARES (LPARC calls it an ARES-run repeater; licensee George L Smith)","web":"https://xczcomm.com/","nets":"none found","plan":"Santa Cruz County ARES frequency list (2024 rev 2; 2020 list calls it the Loma primary repeater)","power":"none found","conf":"medium","notes":"Exact site differs by source (Adams Rd / west of Loma Prieta); LPARC links page mentions a repair project, date unknown","src":["https://xczcomm.com/wp-content/uploads/2024/10/XCZ-ARES-Freq-List-rev.2-pdf.pdf","https://www.lparc.org/"],"others":"","upd":"2019-03-02","m":[{"f":"146.835","b":"2m","d":"-","o":"0.6","pl":"94.8","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Loma Prieta"}]},{"reg":"Monterey Bay","rank":3,"why":"top score","call":"W6JWS","freq":"146.745","dir":"-","off":"0.6","tmode":"Tone","tone":"94.8","band":"2m","city":"Santa Cruz","county":"Santa Cruz","site":"Empire Grade","elev":2627,"esrc":"same site","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":99,"ir":"site 2,627 ft (same site) +24; emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; 2m +5","comm":5,"cr":"research +5","club":"none found (directory calls it a Santa Cruz County ARES repeater for San Lorenzo Valley; licensee Jerry W Summers)","web":"none found","nets":"none found (the SLV ARES net uses WR6AOK 147.120, not this repeater)","plan":"Santa Cruz County ARES frequency list (2024 rev 2 and 2017)","power":"none found","conf":"medium","notes":"Empire Grade site near Felton; current on-air status not confirmed","src":["https://xczcomm.com/wp-content/uploads/2024/10/XCZ-ARES-Freq-List-rev.2-pdf.pdf"],"others":"","upd":"2015-12-19","m":[{"f":"146.745","b":"2m","d":"-","o":"0.6","pl":"94.8","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Empire Grade"}]},{"reg":"Monterey Bay","rank":4,"why":"top score","call":"N6SPD","freq":"145.430","dir":"-","off":"0.6","tmode":"Tone","tone":"94.8","band":"2m","city":"Salinas","county":"Monterey","site":"Mt Toro","elev":3386,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":false,"nfm":false,"infra":97,"ir":"site 3,386 ft (USGS) +30; emergency power +25; ARES/RACES/SKYWARN +10; on air +15; open +10; 2m +5; updated < 5 yrs +2","comm":5,"cr":"research +5","club":"Monterey County Amateur Radio Group (MCARG)","web":"http://www.n6spd.com/","nets":"none found (site has a nets page but no net on 145.430 was confirmed)","plan":"Listed in Santa Cruz County ARES frequency list (2020); MCARG says it gives emergency comms support in Monterey County","power":"none found","conf":"low","notes":"Part of the N6SPD multi-band system and WALA linking; site looks old; no 2024+ activity confirmed","src":["http://www.n6spd.com/"],"others":"441.65000 70cm (infra 82); 145.37000 2m (infra 79); 444.27500 70cm (infra 72); 441.65000 70cm (infra 49); 443.90000 70cm (infra 27)","upd":"2024-08-17","m":[{"f":"145.370","b":"2m","d":"-","o":"0.6","pl":"100.0","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Williams Hill"},{"f":"145.430","b":"2m","d":"-","o":"0.6","pl":"94.8","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt Toro"},{"f":"224.240","b":"1.25m","d":"-","o":"1.6","pl":"123.0","tsq":"123.0","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt Toro"},{"f":"441.650","b":"70cm","d":"+","o":"5","pl":"123.0","tsq":"123.0","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Monterey"},{"f":"441.650","b":"70cm","d":"+","o":"5","pl":"156.7","tsq":"156.7","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Williams Hill"},{"f":"443.900","b":"70cm","d":"+","o":"5","pl":"123.0","tsq":"123.0","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Salinas"},{"f":"444.275","b":"70cm","d":"+","o":"5","pl":"123.0","tsq":"123.0","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Fishermans Wharf"}]},{"reg":"Monterey Bay","rank":5,"why":"top score","call":"W6TUW","freq":"145.290","dir":"-","off":"0.6","tmode":"Tone","tone":"94.8","band":"2m","city":"Bonny Doon","county":"Santa Cruz","site":"","elev":1717,"esrc":"USGS","use":"OPEN","status":"UNKNOWN","ep":true,"ares":true,"races":true,"nfm":false,"infra":83,"ir":"site 1,717 ft (USGS) +16; emergency power +25; ARES/RACES/SKYWARN +20; status unknown +5; open +10; 2m +5; updated < 5 yrs +2","comm":20,"cr":"club license (SANTA CRUZ ACS CLUB) +15; research +5","club":"Santa Cruz ACS Club (licensee); used by Bonny Doon Neighborhood Communications","web":"https://www.bonnydoonradio.org/radio-chanels-frequencies","nets":"none found","plan":"Bonny Doon Neighborhood Communications emergency repeater; Santa Cruz County ARES frequency list (2024) as Bonny Doon event portable","power":"none found","conf":"medium","notes":"Portable/event repeater that helped a Bonny Doon search and rescue; RepeaterBook updated Jan 2024; current status not confirmed","src":["https://www.bonnydoonradio.org/radio-chanels-frequencies"],"others":"","upd":"2024-01-20","m":[{"f":"145.290","b":"2m","d":"-","o":"0.6","pl":"94.8","tsq":"","st":"Unknown","use":"OPEN","ep":true,"modes":["FM"],"site":"Bonny Doon"}]},{"reg":"Monterey Bay","rank":6,"why":"top score","call":"K6LY","freq":"146.970","dir":"-","off":"0.6","tmode":"Tone","tone":"94.8","band":"2m","city":"Pebble Beach","county":"Monterey","site":"Huckleberry Hill","elev":914,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":83,"ir":"site 914 ft (USGS) +8; emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; 2m +5","comm":15,"cr":"club license (NAVAL POSTGRADUATE SCHOOL ARC) +15","club":"Naval Postgraduate School Amateur Radio Club","web":"http://www.k6ly.org/","nets":"none found","plan":"none found (on a 2019 West Coast ARES 2m repeater list, not a county plan)","power":"none found","conf":"low","notes":"Club meets 2nd Thursday 7 PM and is open to non-military; sources are old (2000 to 2013); older page puts site on Hidden Hills near Laguna Seca","src":["https://www.arrl.org/Groups/view/naval-postgraduate-school-arc/type:club"],"others":"","upd":"2020-10-13","m":[{"f":"146.970","b":"2m","d":"-","o":"0.6","pl":"94.8","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Huckleberry Hill"},{"f":"444.700","b":"70cm","d":"+","o":"5","pl":"123.0","tsq":"","st":"Off-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Huckleberry Hill"},{"f":"1286.700","b":"23cm","d":"-","o":"12","pl":"162.2","tsq":"","st":"Unknown","use":"OPEN","ep":true,"modes":["FM"],"site":"Huckleberry Hill"}]},{"reg":"Monterey Bay","rank":7,"why":"top score","call":"N6SBC","freq":"146.985","dir":"-","off":"0.6","tmode":"T Sql","tone":"118.8","band":"2m","city":"Paicines","county":"San Benito","site":"Hernandez Valley","elev":null,"esrc":"unknown","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":80,"ir":"emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; 2m +5; updated < 2 yrs +5","comm":15,"cr":"club license (SAN BENITO COUNTY AMATEUR RADIO ASSOCIATION) +15","club":"San Benito County Amateur Radio Association","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"145.41000 2m (infra 75); 146.62500 2m (infra 75); 147.31500 2m (infra 50)","upd":"2026-02-17","m":[{"f":"145.410","b":"2m","d":"-","o":"0.6","pl":"118.8","tsq":"118.8","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Paicines"},{"f":"146.625","b":"2m","d":"-","o":"0.6","pl":"94.8","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Paicines"},{"f":"146.985","b":"2m","d":"-","o":"0.6","pl":"118.8","tsq":"118.8","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Hernandez Valley"},{"f":"147.315","b":"2m","d":"+","o":"0.6","pl":"94.8","tsq":"","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Hollister"}]},{"reg":"Monterey Bay","rank":8,"why":"top score","call":"K6RMW","freq":"147.000","dir":"+","off":"0.6","tmode":"T Sql","tone":"94.8","band":"2m","city":"Watsonville","county":"Santa Cruz","site":"Hospital","elev":124,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":80,"ir":"emergency power +25; ARES/RACES/SKYWARN +20; hospital/EOC site +5; on air +15; open +10; 2m +5","comm":0,"cr":"","club":"Bob M Wiser","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"443.05000 70cm (infra 65); 147.94500 2m (infra 62)","upd":"2016-02-17","m":[{"f":"147.000","b":"2m","d":"+","o":"0.6","pl":"94.8","tsq":"94.8","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Hospital"},{"f":"147.945","b":"2m","d":"-","o":"0.6","pl":"94.8","tsq":"94.8","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Hospital"},{"f":"443.050","b":"70cm","d":"+","o":"5","pl":"94.8","tsq":"94.8","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Hospital"}]},{"reg":"Monterey Bay","rank":9,"why":"top score","call":"K6BJ","freq":"440.925","dir":"+","off":"5.0","tmode":"Tone","tone":"123.0","band":"70cm","city":"Santa Cruz","county":"Santa Cruz","site":"","elev":null,"esrc":"unknown","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":75,"ir":"emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; updated < 2 yrs +5","comm":15,"cr":"club license (SANTA CRUZ COUNTY ARC INC) +15","club":"Santa Cruz County Arc Inc","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"146.79000 2m (infra 70)","upd":"2025-11-22","m":[{"f":"146.790","b":"2m","d":"-","o":"0.6","pl":"94.8","tsq":"94.8","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Santa Cruz"},{"f":"440.925","b":"70cm","d":"+","o":"5","pl":"123.0","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM","C4FM"],"site":"Santa Cruz"}]},{"reg":"Monterey Bay","rank":10,"why":"top score","call":"W6JSO","freq":"444.525","dir":"+","off":"5.0","tmode":"","tone":"","band":"70cm","city":"Monterey","county":"Monterey","site":"","elev":null,"esrc":"unknown","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":75,"ir":"emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; updated < 2 yrs +5","comm":0,"cr":"","club":"Jeffrey S Olinger","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"","upd":"2026-04-03","m":[{"f":"444.525","b":"70cm","d":"+","o":"5","pl":"","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM","DMR"],"site":"Monterey"},{"f":"927.2825","b":"33cm","d":"-","o":"25.245","pl":"D423","tsq":"","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Laguna Seca"},{"f":"927.2875","b":"33cm","d":"-","o":"25","pl":"D423","tsq":"D423","st":"On-air","use":"OPEN","ep":true,"modes":["FM","P25"],"site":"Monterey"}]},{"reg":"North Bay","rank":1,"why":"top score","call":"W6CO","freq":"147.180","dir":"+","off":"0.6","tmode":"Tone","tone":"151.4","band":"2m","city":"Napa","county":"Napa","site":"Mt St Helena","elev":4273,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":110,"ir":"site 4,273 ft (USGS) +30; emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; 2m +5; updated < 2 yrs +5","comm":20,"cr":"club license (SILVERADO AMATEUR RADIO SOCIETY) +15; research +5","club":"Silverado Amateur Radio Society (Napa SARS)","web":"https://www.napasars.org/repeaters","nets":"none found (napasars.net mentions Monday and Wednesday night nets on the linked W6CO system but gives no times)","plan":"none found (club says the system's primary purpose is emergency communications; no county plan found)","power":"none found","conf":"medium","notes":"Active club (ARRL annual report Feb 2026); sources disagree on 147.180 site and PL (Mt St Helena PL 151.4 vs older Mt Veeder PL 91.5); EchoLink node offline","src":["https://www.napasars.org/repeaters"],"others":"441.90000 70cm (infra 105)","upd":"2025-10-13","m":[{"f":"147.180","b":"2m","d":"+","o":"0.6","pl":"151.4","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt St Helena"},{"f":"440.050","b":"70cm","d":"+","o":"5","pl":"127.3","tsq":"","st":"Off-air","use":"OPEN","ep":true,"modes":["D-STAR"],"site":"Mt St Helena"},{"f":"441.900","b":"70cm","d":"+","o":"5","pl":"151.4","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt St Helena"}]},{"reg":"North Bay","rank":2,"why":"top score","call":"W6VVR","freq":"145.470","dir":"-","off":"0.6","tmode":"T Sql","tone":"127.3","band":"2m","city":"Vacaville","county":"Napa","site":"Mt Vaca","elev":2788,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":99,"ir":"site 2,788 ft (USGS) +24; emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; 2m +5","comm":25,"cr":"club license (VACA VALLEY RADIO CLUB) +15; research +10","club":"Vaca Valley Radio Club","web":"https://w6vvr.net/","nets":"Tuesday 8:00 PM club net; Thursday 10:30 AM rag chew","plan":"none found","power":"none found","conf":"high","notes":"Active club (ARRL annual report Sep 2025; about 100 members; 2025 Field Day); EchoLink node up but Allstar node listed as down","src":["https://w6vvr.net/","https://w6vvr.net/repeaters-vvrc.php"],"others":"","upd":"2021-08-12","m":[{"f":"145.470","b":"2m","d":"-","o":"0.6","pl":"127.3","tsq":"127.3","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt Vaca"}]},{"reg":"North Bay","rank":3,"why":"top score","call":"N6ICW","freq":"147.195","dir":"+","off":"0.6","tmode":"Tone","tone":"123.0","band":"2m","city":"Vacaville","county":"Napa","site":"Mt Vaca","elev":2788,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":99,"ir":"site 2,788 ft (USGS) +24; emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; 2m +5","comm":15,"cr":"research +15","club":"N6ICW Repeater System (private system run by Christopher Huber; no club found)","web":"https://www.n6icw.org/","nets":"Monday 7:00 PM Sacramento County ARES weekly net; Northern California Swap Net (weekly; day not confirmed)","plan":"Sacramento County ARES communications plan (Monday net); older Sacramento ARES/RACES band plan lists it as the main Resource Net repeater","power":"none found for this site (owner says Mt Vaca is the only site with no generator or battery)","conf":"medium","notes":"147.195 is a multi-site simulcast/voting system with its hub in North Sacramento and its transmitter on Mt Vaca; the Mt Vaca transmitter site lacks backup power","src":["https://sacramentoares.org/contacts/communications-plan/","https://n6icw.org/equip1.htm"],"others":"","upd":"2021-08-26","m":[{"f":"147.195","b":"2m","d":"+","o":"0.6","pl":"123.0","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt Vaca"},{"f":"441.775","b":"70cm","d":"+","o":"5","pl":"","tsq":"","st":"Off-air","use":"CLOSED","ep":true,"modes":["FM"],"site":"Mt Vaca"},{"f":"927.050","b":"33cm","d":"-","o":"25","pl":"77.0","tsq":"77.0","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Vacaville"},{"f":"927.975","b":"33cm","d":"-","o":"25","pl":"","tsq":"","st":"Unknown","use":"CLOSED","ep":true,"modes":["FM"],"site":"Vacaville"}]},{"reg":"North Bay","rank":4,"why":"top score","call":"N1PPP","freq":"146.775","dir":"-","off":"0.6","tmode":"Tone","tone":"103.5","band":"2m","city":"Kelseyville","county":"Lake","site":"Mt Konocti","elev":4295,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":false,"nfm":false,"infra":95,"ir":"site 4,295 ft (USGS) +30; emergency power +25; ARES/RACES/SKYWARN +10; on air +15; open +10; 2m +5","comm":25,"cr":"club (Lake County Amateur Radio Society (LCARS)) +15; research +10","club":"Lake County Amateur Radio Society (LCARS); repeater owned by Dave N1PPP (LCARS president) and Cody K0DYS","web":"https://sites.google.com/site/lcarsca/local-repeaters-and-nets","nets":"Monday 7:00 PM Lake County Monday Night Net; Wednesday emergency net","plan":"none found (the Wednesday emergency net is run by the club; no county ARES/RACES plan found)","power":"none found","conf":"medium","notes":"LCARS is active (Field Day June 2026); a Flickr caption puts the site on Buckingham Peak rather than Konocti","src":["https://sites.google.com/site/lcarsca/local-repeaters-and-nets"],"others":"147.67500 2m (infra 81)","upd":"2020-03-13","m":[{"f":"146.775","b":"2m","d":"-","o":"0.6","pl":"103.5","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt Konocti"},{"f":"147.675","b":"2m","d":"-","o":"0.6","pl":"179.9","tsq":"179.9","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Hunter Pt"}]},{"reg":"North Bay","rank":5,"why":"top score","call":"WV6F","freq":"440.025","dir":"+","off":"5.0","tmode":"T Sql","tone":"127.3","band":"70cm","city":"Vacaville","county":"Napa","site":"Mt Vaca","elev":2695,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":94,"ir":"site 2,695 ft (USGS) +24; emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10","comm":0,"cr":"","club":"none found (private repeater; licensee Steven May, Elmira)","web":"none found","nets":"none found","plan":"none found","power":"none found","conf":"low","notes":"Only directory listings found (440.025+ PL 127.3 Mt Vaca); one comment says it is interlinked with W6VVR, not confirmed","src":["https://www.repeaterbook.com/repeaters/details.php?state_id=06&ID=1779"],"others":"","upd":"2021-08-12","m":[{"f":"224.200","b":"1.25m","d":"-","o":"1.6","pl":"127.3","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Vacaville"},{"f":"440.025","b":"70cm","d":"+","o":"5","pl":"127.3","tsq":"127.3","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt Vaca"},{"f":"927.0875","b":"33cm","d":"-","o":"25","pl":"127.3","tsq":"127.3","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Vacaville"},{"f":"1291.900","b":"23cm","d":"-","o":"12","pl":"","tsq":"","st":"Unknown","use":"OPEN","ep":true,"modes":["FM"],"site":"Vacaville"}]},{"reg":"North Bay","rank":6,"why":"top score","call":"W6MMM","freq":"145.130","dir":"-","off":"0.6","tmode":"T Sql","tone":"103.5","band":"2m","city":"Willits","county":"Mendocino","site":"Laughlin Ridge","elev":1644,"esrc":"same site","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":91,"ir":"site 1,644 ft (same site) +16; emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; 2m +5","comm":20,"cr":"club license (WILLITS AMATEUR RADIO SOCIETY) +15; research +5","club":"Willits Amateur Radio Society","web":"https://w6mmm.club/","nets":"none found (145.130 is talk-in for Friday 8 AM breakfast; county-wide Wednesday 7:30 PM net is on 147.390)","plan":"none found","power":"none found","conf":"medium","notes":"Active club (2025 W6MMM ARRL event); club site lists Laughlin Ridge as 147.390, which conflicts with RepeaterBook","src":["https://w6mmm.club/joinus_m.html"],"others":"","upd":"2021-02-04","m":[{"f":"145.130","b":"2m","d":"-","o":"0.6","pl":"103.5","tsq":"103.5","st":"On-air","use":"OPEN","ep":true,"modes":["FM","C4FM"],"site":"Laughlin Ridge"}]},{"reg":"North Bay","rank":7,"why":"top score","call":"W6SON","freq":"441.375","dir":"+","off":"5.0","tmode":"Tone","tone":"88.5","band":"70cm","city":"Santa Rosa","county":"Sonoma","site":"Castle Rock","elev":1911,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":91,"ir":"site 1,911 ft (USGS) +16; emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; updated < 2 yrs +5","comm":15,"cr":"club license (SONOMA COUNTY RADIO AMATEURS, INC.) +15","club":"Sonoma County Radio Amateurs, Inc.","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"147.31500 2m (infra 78)","upd":"2025-04-07","m":[{"f":"147.315","b":"2m","d":"+","o":"0.6","pl":"88.5","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"English Hill"},{"f":"224.480","b":"1.25m","d":"-","o":"1.6","pl":"88.5","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"English Hill"},{"f":"441.375","b":"70cm","d":"+","o":"5","pl":"88.5","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM","C4FM"],"site":"Castle Rock"},{"f":"443.100","b":"70cm","d":"+","o":"5","pl":"","tsq":"","st":"On-air","use":"OPEN","ep":false,"modes":["DMR"],"site":"English Hill"}]},{"reg":"North Bay","rank":8,"why":"top score","call":"WA6RQX","freq":"147.120","dir":"+","off":"0.6","tmode":"Tone","tone":"103.5","band":"2m","city":"Willits","county":"Mendocino","site":"Laughlin Ridge","elev":1644,"esrc":"same site","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":91,"ir":"site 1,644 ft (same site) +16; emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; 2m +5","comm":0,"cr":"","club":"Greg M Glavich","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"444.92500 70cm (infra 86); 147.39000 2m (infra 81); 145.43000 2m (infra 65); 440.02500 70cm (infra 62); 147.27000 2m (infra 55); 440.07500 70cm (infra 40); 444.80000 70cm (infra 40); 444.75000 70cm (infra 32)","upd":"2021-10-24","m":[{"f":"145.430","b":"2m","d":"-","o":"0.6","pl":"103.5","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Laytonville"},{"f":"147.120","b":"2m","d":"+","o":"0.6","pl":"103.5","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Laughlin Ridge"},{"f":"147.270","b":"2m","d":"+","o":"0.6","pl":"114.8","tsq":"","st":"Unknown","use":"OPEN","ep":true,"modes":["FM"],"site":"Anchor Bay"},{"f":"147.390","b":"2m","d":"+","o":"0.6","pl":"103.5","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Laughlin Ridge"},{"f":"440.025","b":"70cm","d":"+","o":"5","pl":"141.3","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Ukiah"},{"f":"440.075","b":"70cm","d":"+","o":"5","pl":"","tsq":"","st":"Unknown","use":"CLOSED","ep":true,"modes":["FM"],"site":"Willits"},{"f":"444.750","b":"70cm","d":"+","o":"5","pl":"123.0","tsq":"","st":"Unknown","use":"OPEN","ep":false,"modes":["FM"],"site":"Sanel Mtn"},{"f":"444.800","b":"70cm","d":"+","o":"5","pl":"","tsq":"","st":"Unknown","use":"CLOSED","ep":true,"modes":["FM"],"site":"Laytonville"},{"f":"444.925","b":"70cm","d":"+","o":"5","pl":"100.0","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Laughlin Ridge"}]},{"reg":"North Bay","rank":9,"why":"top score","call":"WB6TCS","freq":"147.210","dir":"+","off":"0.6","tmode":"Tone","tone":"103.5","band":"2m","city":"Covelo","county":"Mendocino","site":"Anthony Peak","elev":6832,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":false,"races":false,"nfm":false,"infra":85,"ir":"site 6,832 ft (USGS) +30; emergency power +25; on air +15; open +10; 2m +5","comm":0,"cr":"","club":"Denis L Moore","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"","upd":"2021-01-11","m":[{"f":"147.210","b":"2m","d":"+","o":"0.6","pl":"103.5","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Anthony Peak"}]},{"reg":"North Bay","rank":10,"why":"top score","call":"K6GWE","freq":"443.250","dir":"+","off":"5.0","tmode":"Tone","tone":"179.9","band":"70cm","city":"Mill Valley","county":"Marin","site":"Mt Tamalpais","elev":2339,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":false,"races":true,"nfm":false,"infra":84,"ir":"site 2,339 ft (USGS) +24; emergency power +25; ARES/RACES/SKYWARN +10; on air +15; open +10","comm":15,"cr":"club license (AMATEUR COMMUNICATIONS SOCIETY INC) +15","club":"Amateur Communications Society Inc","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"146.70000 2m (infra 59); 146.70000 2m (infra 56); 146.70000 2m (infra 47); 146.70000 2m (infra 47); 147.33000 2m (infra 45)","upd":"2020-10-29","m":[{"f":"146.700","b":"2m","d":"-","o":"0.6","pl":"192.8","tsq":"","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Mt Tam (West Peak)"},{"f":"146.700","b":"2m","d":"-","o":"0.6","pl":"203.5","tsq":"","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Bahia"},{"f":"146.700","b":"2m","d":"-","o":"0.6","pl":"167.9","tsq":"","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Barnabe Mtn"},{"f":"146.700","b":"2m","d":"-","o":"0.6","pl":"179.9","tsq":"","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Mt Tam (Middle Peak)"},{"f":"147.330","b":"2m","d":"+","o":"0.6","pl":"192.8","tsq":"192.8","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Mill Valley"},{"f":"443.250","b":"70cm","d":"+","o":"5","pl":"179.9","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt Tamalpais"}]},{"reg":"Peninsula","rank":1,"why":"top score","call":"WA6TOW","freq":"146.925","dir":"-","off":"0.6","tmode":"Tone","tone":"114.8","band":"2m","city":"Pacifica","county":"San Mateo","site":"North Peak","elev":1730,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":91,"ir":"site 1,730 ft (USGS) +16; emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; 2m +5","comm":30,"cr":"club license (COASTSIDE AMATEUR RADIO CLUB) +15; research +15","club":"Coastside Amateur Radio Club (CARC)","web":"https://coastsidearc.org/","nets":"Club net Wednesday 8:00 PM (except meeting nights); Pacifica CERT net Tuesday 7:30 PM; SMC ACS net; Knights of the Megahertz Sunday 7:00 AM; QCWA Saturday 10:00 AM","plan":"Used for the San Mateo County Sheriff ACS net and the Pacifica CERT net","power":"none found","conf":"high","notes":"Very active, with a September 2026 newsletter and a new Sinclair antenna; sources disagree on the ACS net day (newsletter says Wednesday, SMSO SCU says Tuesday)","src":["https://coastsidearc.org/","https://www.smso-scu.org/acs-weekley-net.html"],"others":"441.07500 70cm (infra 86)","upd":"2021-01-05","m":[{"f":"146.925","b":"2m","d":"-","o":"0.6","pl":"114.8","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"North Peak"},{"f":"441.075","b":"70cm","d":"+","o":"5","pl":"114.8","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Montara Mtn"}]},{"reg":"Peninsula","rank":2,"why":"top score","call":"W6PW","freq":"145.150","dir":"-","off":"0.6","tmode":"DCS","tone":"664","band":"2m","city":"San Francisco","county":"San Francisco","site":"Sutro Tower","elev":836,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":88,"ir":"site 836 ft (USGS) +8; emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; 2m +5; updated < 2 yrs +5","comm":25,"cr":"club license (SAN FRANCISCO RADIO CLUB) +15; research +10","club":"San Francisco Radio Club (SFRC)","web":"https://www.sfarc.org/","nets":"Monday 8:00 PM net on 145.150 DCS 664","plan":"none found (SF ACS uses WA6GG 442.050 instead)","power":"none found","conf":"medium","notes":"Yaesu System Fusion replacement repeater; club page says Twin Peaks while RepeaterBook says Sutro Tower; access is DCS 664, not PL","src":["https://www.sfarc.org/home/w6pw-145150-replacement-repeater-ready-for-use","https://aprs.fi/info/a/W6PW-10"],"others":"","upd":"2026-04-17","m":[{"f":"145.150","b":"2m","d":"-","o":"0.6","pl":"D664","tsq":"D664","st":"On-air","use":"OPEN","ep":true,"modes":["FM","C4FM"],"site":"Sutro Tower"},{"f":"444.225","b":"70cm","d":"+","o":"5","pl":"D664","tsq":"D664","st":"On-air","use":"OPEN","ep":false,"modes":["DMR"],"site":"Sutro Tower"}]},{"reg":"Peninsula","rank":3,"why":"top score","call":"WB6JKV","freq":"440.725","dir":"+","off":"5.0","tmode":"Tone","tone":"114.8","band":"70cm","city":"Pacifica","county":"San Mateo","site":"Montara Mtn","elev":1933,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":86,"ir":"site 1,933 ft (USGS) +16; emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10","comm":30,"cr":"club (CARLA System 32 / Half Moon Bay ARC) +15; research +15","club":"CARLA System 32 (taken over by Mike WB6JKV and rebuilt by CARLA); used by Half Moon Bay ARC","web":"https://www.carlaradio.net/thesystem/systemdetail.php?sysid=32","nets":"HMBARC weekly net Wednesday 8:00 PM on 440.725 (PL 114.8)","plan":"none found (named CMD11 in the Coastside band plan, but no explicit ARES/CERT plan seen)","power":"CARLA documents about 400Ah of battery backup at the site","conf":"medium","notes":"Linked to the statewide CARLA network; local PL 114.8, link PL 167.9; co-located with WA6TOW on Montara Mtn","src":["https://www.carlaradio.net/thesystem/systemdetail.php?sysid=32","https://www.hmbarc.org/about-us/repeaters-and-nets"],"others":"","upd":"2021-09-20","m":[{"f":"440.725","b":"70cm","d":"+","o":"5","pl":"114.8","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Montara Mtn"}]},{"reg":"Peninsula","rank":4,"why":"top score","call":"KC6ULT","freq":"146.865","dir":"-","off":"0.6","tmode":"Tone","tone":"114.8","band":"2m","city":"Redwood City","county":"San Mateo","site":"","elev":null,"esrc":"unknown","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":75,"ir":"emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; 2m +5","comm":30,"cr":"club license (SAN MATEO COUNTY RACES CLUB) +15; research +15","club":"San Mateo County Sheriff's Office Communications Unit (ACS/RACES)","web":"https://www.smso-scu.org/","nets":"Tuesday 8:00 PM SMSO SCU/ACS weekly net (also on WA6TOW); Daly City net 8:00 PM","plan":"It is the Sheriff's ACS/RACES system; Hillsborough city emergency page lists it for the net","power":"Knights of the Megahertz describes it as emergency-power capable, but nothing from the owner found","conf":"high","notes":"Used as a backup by the Knights net; La Honda link on 146.805 per the 2019 SMSO list","src":["https://www.smso-scu.org/acs-weekley-net.html","https://www.hillsborough.net/310/Communications-and-Ham-Radio-Network"],"others":"146.80500 2m (infra 32); 146.80500 2m (infra 30); 440.97500 70cm (infra 25)","upd":"2021-01-05","m":[{"f":"146.805","b":"2m","d":"-","o":"0.6","pl":"114.8","tsq":"","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"La Honda"},{"f":"146.805","b":"2m","d":"-","o":"0.6","pl":"192.8","tsq":"192.8","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Burlingame"},{"f":"146.865","b":"2m","d":"-","o":"0.6","pl":"114.8","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Redwood City"},{"f":"440.975","b":"70cm","d":"+","o":"5","pl":"114.8","tsq":"","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Portola Valley"}]},{"reg":"Peninsula","rank":5,"why":"top score","call":"WB6CKT","freq":"147.090","dir":"+","off":"0.6","tmode":"Tone","tone":"100.0","band":"2m","city":"Belmont","county":"San Mateo","site":"City Hall","elev":68,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":false,"nfm":false,"infra":72,"ir":"emergency power +25; ARES/RACES/SKYWARN +10; hospital/EOC site +5; on air +15; open +10; 2m +5; updated < 5 yrs +2","comm":20,"cr":"club (Belmont CERT) +15; research +5","club":"Belmont CERT (repeater under agreement with owner Noland Lewis)","web":"none found","nets":"none found","plan":"Listed as Belmont VHF Repeater for Belmont CERT on the San Mateo County SMSO ham frequency list (2019, reviewed July 2017)","power":"none found","conf":"medium","notes":"No current club web activity found (Belmont CERT blog last seen 2023); PL 100; FCC license renewed 2020","src":["https://k6mpn.org/training/resources/SMSOHam2019FINAL-byLocation.pdf"],"others":"","upd":"2023-05-29","m":[{"f":"147.090","b":"2m","d":"+","o":"0.6","pl":"100.0","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"City Hall"}]},{"reg":"Peninsula","rank":6,"why":"top score","call":"NO1PC","freq":"441.025","dir":"+","off":"5.0","tmode":"T Sql","tone":"110.9","band":"70cm","city":"San Francisco","county":"San Francisco","site":"","elev":null,"esrc":"unknown","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":72,"ir":"emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; updated < 5 yrs +2","comm":0,"cr":"","club":"none found (privately owned by Jim Aspinwall NO1PC)","web":"https://www.no1pc.org/","nets":"none found","plan":"none found (listed on the SF Bay Area SKYWARN repeater list for spotters)","power":"none found","conf":"medium","notes":"Personal system described as an iconic SF site; owner also runs CalNet 443.750 and Campbell 442.175; PL 110.9; exact site unknown","src":["https://www.repeaterbook.com/repeaters/details.php?state_id=06&ID=1932"],"others":"","upd":"2023-07-13","m":[{"f":"441.025","b":"70cm","d":"+","o":"5","pl":"110.9","tsq":"110.9","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"San Francisco"}]},{"reg":"Peninsula","rank":7,"why":"top score","call":"N6ZX","freq":"145.370","dir":"-","off":"0.6","tmode":"T Sql","tone":"107.2","band":"2m","city":"Woodside","county":"San Mateo","site":"","elev":null,"esrc":"unknown","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":false,"nfm":false,"infra":70,"ir":"emergency power +25; ARES/RACES/SKYWARN +10; on air +15; open +10; 2m +5; updated < 2 yrs +5","comm":15,"cr":"club license (KINGS MOUNTAIN AMATEUR RADIO CLUB) +15","club":"Kings Mountain Amateur Radio Club","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"440.45000 70cm (infra 50)","upd":"2026-10-09","m":[{"f":"145.370","b":"2m","d":"-","o":"0.6","pl":"107.2","tsq":"107.2","st":"On-air","use":"OPEN","ep":true,"modes":["FM","C4FM"],"site":"Woodside"},{"f":"224.560","b":"1.25m","d":"-","o":"1.6","pl":"100.0","tsq":"","st":"Unknown","use":"OPEN","ep":false,"modes":["FM"],"site":"Woodside"},{"f":"440.450","b":"70cm","d":"+","o":"5","pl":"107.2","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM","C4FM"],"site":"Woodside"},{"f":"53.640","b":"6m","d":"-","o":"0.5","pl":"114.8","tsq":"","st":"On-air","use":"CLOSED","ep":true,"modes":["FM"],"site":"Woodside"}]},{"reg":"Peninsula","rank":8,"why":"top score","call":"K7CBL","freq":"440.050","dir":"+","off":"5.0","tmode":"T Sql","tone":"100.0","band":"70cm","city":"San Mateo","county":"San Mateo","site":"College of San Mateo","elev":602,"esrc":"same site","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":false,"nfm":false,"infra":70,"ir":"site 602 ft (same site) +8; emergency power +25; ARES/RACES/SKYWARN +10; on air +15; open +10; updated < 5 yrs +2","comm":0,"cr":"","club":"C Lovell","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"","upd":"2022-10-05","m":[{"f":"440.050","b":"70cm","d":"+","o":"5","pl":"100.0","tsq":"100.0","st":"On-air","use":"OPEN","ep":true,"modes":["FM","P25"],"site":"College of San Mateo"}]},{"reg":"Peninsula","rank":9,"why":"top score","call":"K6DNA","freq":"441.250","dir":"+","off":"5.0","tmode":"Tone","tone":"141.3","band":"70cm","city":"South San Francisco","county":"San Mateo","site":"","elev":null,"esrc":"unknown","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":false,"nfm":false,"infra":65,"ir":"emergency power +25; ARES/RACES/SKYWARN +10; on air +15; open +10; updated < 2 yrs +5","comm":15,"cr":"club license (GENENTECH AMATEUR RADIO CLUB) +15","club":"Genentech Amateur Radio Club","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"","upd":"2026-06-19","m":[{"f":"441.250","b":"70cm","d":"+","o":"5","pl":"141.3","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"South San Francisco"}]},{"reg":"Peninsula","rank":10,"why":"top score","call":"W6SCF","freq":"146.730","dir":"-","off":"0.6","tmode":"Tone","tone":"114.8","band":"2m","city":"La Honda","county":"San Mateo","site":"","elev":null,"esrc":"unknown","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":false,"nfm":false,"infra":65,"ir":"emergency power +25; ARES/RACES/SKYWARN +10; on air +15; open +10; 2m +5","comm":15,"cr":"club license (SC4ARC) +15","club":"Sc4Arc","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"440.10000 70cm (infra 62)","upd":"2015-12-19","m":[{"f":"146.730","b":"2m","d":"-","o":"0.6","pl":"114.8","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"La Honda"},{"f":"440.100","b":"70cm","d":"+","o":"5","pl":"114.8","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"La Honda"}]},{"reg":"South Bay","rank":1,"why":"top score","call":"K6FB","freq":"145.450","dir":"-","off":"0.6","tmode":"Tone","tone":"100.0","band":"2m","city":"Los Gatos","county":"Santa Clara","site":"Castle Rock","elev":3165,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":105,"ir":"site 3,165 ft (USGS) +30; emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; 2m +5","comm":30,"cr":"club license (LAS CUMBRES AMATEUR RADIO CLUB) +15; research +15","club":"Las Cumbres Amateur Radio Club (LCARC)","web":"https://k6fb.com/","nets":"Monday 7:30 PM LCARC net on K6FB 2m/440 (club net script; undated, not confirmed current)","plan":"Listed as Message Net Alt (145.450) in Mountain View ARES emergency plan (2019)","power":"Old club page says Castle Rock shack once had a large 12V battery backup; current status not stated","conf":"medium","notes":"2m, 220 and 440 machines are linked full time; open to all, PL 100; most club pages are older archived pages","src":["https://k6fb.com/unmigrated/monscr00.html","https://k6mtv.org/emergency_plan_11-24-19.pdf"],"others":"442.57500 70cm (infra 94)","upd":"2017-11-13","m":[{"f":"145.450","b":"2m","d":"-","o":"0.6","pl":"100.0","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Castle Rock"},{"f":"223.880","b":"1.25m","d":"-","o":"1.6","pl":"100.0","tsq":"","st":"Unknown","use":"OPEN","ep":true,"modes":["FM"],"site":"Castle Rock"},{"f":"442.575","b":"70cm","d":"+","o":"5","pl":"100.0","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Black Mtn"}]},{"reg":"South Bay","rank":2,"why":"top score","call":"W6GGF","freq":"442.500","dir":"+","off":"5.0","tmode":"Tone","tone":"100.0","band":"70cm","city":"Los Gatos","county":"Santa Clara","site":"Crystal Peak","elev":3599,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":100,"ir":"site 3,599 ft (USGS) +30; emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10","comm":35,"cr":"club license (GARLIC VALLEY AMATEUR RADIO CLUB) +15; research +20","club":"Garlic Valley Amateur Radio Club (GVARC), Gilroy","web":"https://www.gvarc.net/","nets":"Tuesday 7:30 PM weekly net on W6GGF VHF 147.825","plan":"442.500 listed as Santa Clara County Command frequency by SCCo ARES/RACES; club describes itself as the local ARES/RACES club for south county","power":"Club post on the VHF upgrade documents a new 150Ah LiFePO4 backup battery at the site","conf":"high","notes":"VHF system upgraded to Kenwood NXR-710 with RC-210 controller; club also runs a GMRS repeater for South County CERT","src":["https://www.gvarc.net/welcome-to-w6ggf-2-0-and-guest/","https://www.scc-ares-races.org/operations/voice/freqs"],"others":"147.82500 2m (infra 75)","upd":"2020-08-09","m":[{"f":"147.825","b":"2m","d":"-","o":"0.6","pl":"100.0","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Morgan Hill"},{"f":"442.500","b":"70cm","d":"+","o":"5","pl":"100.0","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Crystal Peak"}]},{"reg":"South Bay","rank":3,"why":"top score","call":"WR6ABD","freq":"146.640","dir":"-","off":"0.6","tmode":"Tone","tone":"162.2","band":"2m","city":"San Jose","county":"Santa Clara","site":"Loma Prieta","elev":3786,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":false,"races":false,"nfm":false,"infra":90,"ir":"site 3,786 ft (USGS) +30; emergency power +25; on air +15; open +10; 2m +5; updated < 2 yrs +5","comm":30,"cr":"club license (LOMA PIONEER REPEATER CLUB) +15; research +15","club":"Loma Pioneer Repeater Club (LPRC)","web":"https://lprc.net/","nets":"Tuesday 8:00 PM LPRC club net on 146.640 (PL 162.2)","plan":"Listed on SCCo ARES/RACES county voice frequency list (noted as used in the past for NTS traffic)","power":"none found","conf":"high","notes":"Club states a public service and emergency communications mission; UHF 442.900 sister repeater is on the WIN System","src":["https://lprc.net/weekly-nets/","https://www.scc-ares-races.org/operations/voice/freqs"],"others":"","upd":"2026-07-03","m":[{"f":"146.640","b":"2m","d":"-","o":"0.6","pl":"162.2","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Loma Prieta"}]},{"reg":"South Bay","rank":4,"why":"top score","call":"W6TI","freq":"147.360","dir":"+","off":"0.6","tmode":"Tone","tone":"110.9","band":"2m","city":"Palo Alto","county":"Santa Clara","site":"Black Mtn","elev":2808,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":false,"nfm":false,"infra":89,"ir":"site 2,808 ft (USGS) +24; emergency power +25; ARES/RACES/SKYWARN +10; on air +15; open +10; 2m +5","comm":30,"cr":"club license (NORTHERN CALIFORNIA DX CLUB) +15; research +15","club":"Northern California DX Club (NCDXC)","web":"https://ncdxc.org/w6ti-repeater-info/","nets":"Monthly on-the-air club nets (day/time not published; an older deck said Thursday 8 PM)","plan":"Listed as a message net repeater in Mountain View ARES emergency plan (2019)","power":"none found","conf":"medium","notes":"DX-focused club with about 200 members; EchoLink via N6NKT-L; club plans to link it to DMR","src":["https://ncdxc.org/w6ti-repeater-info/","https://k6mtv.org/emergency_plan_11-24-19.pdf"],"others":"","upd":"2016-03-03","m":[{"f":"147.360","b":"2m","d":"+","o":"0.6","pl":"110.9","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Black Mtn"}]},{"reg":"South Bay","rank":5,"why":"top score","call":"K6LNK","freq":"443.475","dir":"+","off":"5.0","tmode":"Tone","tone":"123.0","band":"70cm","city":"San Jose","county":"Santa Clara","site":"Mt Umunhum","elev":3387,"esrc":"same site","use":"OPEN","status":"ON_AIR","ep":true,"ares":false,"races":false,"nfm":false,"infra":85,"ir":"site 3,387 ft (same site) +30; emergency power +25; on air +15; open +10; updated < 2 yrs +5","comm":25,"cr":"club license (CALIFORNIA AMATEUR RADIO LINKING ASSOCIATION) +15; research +10","club":"California Amateur Radio Linking Association (CARLA), System 10","web":"https://www.carlaradio.net/thesystem/systemdetail.php?sysid=10","nets":"none found","plan":"Listed as CARLA 10, Mt Umunhum, on Santa Cruz County ARES/ACS frequency list (2017)","power":"none found for System 10","conf":"medium","notes":"Part of the statewide CARLA linked network; use local PL 123.0, not link PL 173.8; CARLA says no part of the network is reserved for emcomm; current Umunhum site status not confirmed","src":["http://www.ares.santa-cruz.ca.us/aresfreq.pdf","https://www.carlaradio.net/thesystem/systemdetail.php?sysid=10"],"others":"","upd":"2026-05-25","m":[{"f":"443.475","b":"70cm","d":"+","o":"5","pl":"123.0","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Mt Umunhum"}]},{"reg":"South Bay","rank":6,"why":"top score","call":"WB6OQS","freq":"146.760","dir":"-","off":"0.6","tmode":"Tone","tone":"151.4","band":"2m","city":"San Jose","county":"Santa Clara","site":"Loma Prieta","elev":3786,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":false,"races":false,"nfm":false,"infra":85,"ir":"site 3,786 ft (USGS) +30; emergency power +25; on air +15; open +10; 2m +5","comm":25,"cr":"club license (SANTA CLARA VALLEY REPEATER SOCIETY) +15; research +10","club":"Santa Clara Valley Repeater Society (SCVRS)","web":"http://www.scvrs.org/","nets":"Monday 9:00 PM SCVRS net (club pages are old, about 1997 to 2002)","plan":"Listed as Red Cross SVC on a Santa Clara County RACES/EmComm frequency list (entry dated Feb-11)","power":"none found","conf":"low","notes":"No 2024 or later activity found; 2m is normally linked to 224.26 (and 444.600 per one list); club historically met at the San Jose Red Cross","src":["http://www.scvrs.org/misc/body_netscrp.html","https://k6mpn.org/training/resources/SantaClaraRACESfreq-EmComm.pdf"],"others":"","upd":"2015-08-19","m":[{"f":"146.760","b":"2m","d":"-","o":"0.6","pl":"151.4","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Loma Prieta"},{"f":"224.260","b":"1.25m","d":"-","o":"1.6","pl":"123.0","tsq":"","st":"Unknown","use":"OPEN","ep":true,"modes":["FM"],"site":"Loma Prieta"}]},{"reg":"South Bay","rank":7,"why":"top score","call":"K6GOD","freq":"440.475","dir":"+","off":"5.0","tmode":"T Sql","tone":"Restricted","band":"70cm","city":"Morgan Hill","county":"Santa Clara","site":"Crystal Peak","elev":3599,"esrc":"USGS","use":"CLOSED","status":"ON_AIR","ep":true,"ares":true,"races":false,"nfm":false,"infra":85,"ir":"site 3,599 ft (USGS) +30; emergency power +25; ARES/RACES/SKYWARN +10; on air +15; updated < 2 yrs +5","comm":0,"cr":"","club":"Allen A Towles","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"441.10000 70cm (infra 84); 442.35000 70cm (infra 50); 442.35000 70cm (infra 40); 444.72500 70cm (infra 33)","upd":"2025-10-13","m":[{"f":"223.860","b":"1.25m","d":"-","o":"1.6","pl":"107.2","tsq":"","st":"On-air","use":"CLOSED","ep":true,"modes":["FM"],"site":"San Jose"},{"f":"440.475","b":"70cm","d":"+","o":"5","pl":"Restricted","tsq":"Restricted","st":"On-air","use":"CLOSED","ep":true,"modes":["FM"],"site":"Crystal Peak"},{"f":"441.100","b":"70cm","d":"+","o":"5","pl":"203.5","tsq":"CSQ","st":"On-air","use":"CLOSED","ep":true,"modes":["FM"],"site":"Black Mtn"},{"f":"442.350","b":"70cm","d":"+","o":"5","pl":"","tsq":"","st":"On-air","use":"CLOSED","ep":true,"modes":["FM"],"site":"Cupertino"},{"f":"442.350","b":"70cm","d":"+","o":"5","pl":"100.0","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Milpitas"},{"f":"444.725","b":"70cm","d":"+","o":"5","pl":"162.2","tsq":"162.2","st":"On-air","use":"CLOSED","ep":false,"modes":["FM"],"site":"Mission Peak"}]},{"reg":"South Bay","rank":8,"why":"top score","call":"K6JSI","freq":"442.900","dir":"+","off":"5.0","tmode":"Tone","tone":"162.2","band":"70cm","city":"San Jose","county":"Santa Clara","site":"Loma Prieta","elev":3786,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":false,"races":false,"nfm":false,"infra":85,"ir":"site 3,786 ft (USGS) +30; emergency power +25; on air +15; open +10; updated < 2 yrs +5","comm":0,"cr":"","club":"Jeff A Stouffer","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"","upd":"2026-07-14","m":[{"f":"442.900","b":"70cm","d":"+","o":"5","pl":"162.2","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Loma Prieta"}]},{"reg":"South Bay","rank":9,"why":"top score","call":"K6SNY","freq":"145.170","dir":"-","off":"0.6","tmode":"Tone","tone":"94.8","band":"2m","city":"Sunnyvale","county":"Santa Clara","site":"","elev":null,"esrc":"unknown","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":80,"ir":"emergency power +25; ARES/RACES/SKYWARN +20; on air +15; open +10; 2m +5; updated < 2 yrs +5","comm":15,"cr":"club license (SUNNYVALE AMATEUR RADIO EMERGENCY SERVICE - REPEATER GROUP) +15","club":"Sunnyvale Amateur Radio Emergency Service - Repeater Group","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"","upd":"2026-10-10","m":[{"f":"145.170","b":"2m","d":"-","o":"0.6","pl":"94.8","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Sunnyvale"}]},{"reg":"South Bay","rank":10,"why":"top score","call":"W6ASH","freq":"145.270","dir":"-","off":"0.6","tmode":"Tone","tone":"100.0","band":"2m","city":"Mountain View","county":"Santa Clara","site":"El Camino Hospital","elev":147,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":true,"nfm":false,"infra":80,"ir":"emergency power +25; ARES/RACES/SKYWARN +20; hospital/EOC site +5; on air +15; open +10; 2m +5","comm":15,"cr":"club license (SPECSRA) +15","club":"Specsra","web":"","nets":"","plan":"","power":"","conf":"","notes":"","src":[],"others":"440.80000 70cm (infra 75)","upd":"2015-12-14","m":[{"f":"145.270","b":"2m","d":"-","o":"0.6","pl":"100.0","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"El Camino Hospital"},{"f":"224.140","b":"1.25m","d":"-","o":"1.6","pl":"88.5","tsq":"","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"El Camino Hospital"},{"f":"440.800","b":"70cm","d":"+","o":"5","pl":"100.0","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"El Camino Hospital"}]},{"reg":"South Bay","rank":17,"why":"known club","call":"W6PIY","freq":"147.390","dir":"+","off":"0.6","tmode":"Tone","tone":"151.4","band":"2m","city":"San Jose","county":"Santa Clara","site":"Good Sam Hospital","elev":286,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":true,"ares":true,"races":false,"nfm":false,"infra":75,"ir":"emergency power +25; ARES/RACES/SKYWARN +10; hospital/EOC site +5; on air +15; open +10; 2m +5; updated < 2 yrs +5","comm":30,"cr":"club (West Valley Amateur Radio Association (WVARA)) +15; research +15","club":"West Valley Amateur Radio Association (WVARA)","web":"https://wvara.org/wordpress/repeaters/","nets":"Tuesday 8:30 PM WVARA net (all W6PIY repeaters cross-linked); Los Gatos/Monte Sereno net Tuesday 7:30 PM","plan":"Listed as the Los Gatos/Monte Sereno Resource Net repeater on the SCCo ARES/RACES frequency list","power":"none found","conf":"high","notes":"Five repeaters on Good Samaritan Hospital with autopatch; sources disagree on the LG/MS net time","src":["https://wvara.org/wordpress/nets/","https://scc-ares-races.org/operations/voice/freqs/byfreq"],"others":"","upd":"2026-03-10","m":[{"f":"147.390","b":"2m","d":"+","o":"0.6","pl":"151.4","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Good Sam Hospital"},{"f":"223.960","b":"1.25m","d":"-","o":"1.6","pl":"156.7","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Good Samaritan Hosp"},{"f":"52.580","b":"6m","d":"-","o":"0.5","pl":"151.4","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Good Sam Hospital"},{"f":"1286.200","b":"23cm","d":"-","o":"12","pl":"100.0","tsq":"","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"San Jose"}]},{"reg":"South Bay","rank":26,"why":"known club","call":"WA2IBM","freq":"145.190","dir":"-","off":"0.6","tmode":"T Sql","tone":"151.4","band":"2m","city":"San Jose","county":"Santa Clara","site":"Santa Teresa Foothills","elev":1024,"esrc":"USGS","use":"OPEN","status":"ON_AIR","ep":false,"ares":false,"races":false,"nfm":false,"infra":51,"ir":"site 1,024 ft (USGS) +16; on air +15; open +10; 2m +5; updated < 2 yrs +5. Ranked on 2m per W6SAL (the machine people use); the 70cm 441.150 scores 68 because only it reports backup power to RepeaterBook","comm":30,"cr":"club (Almaden Radio Club) +15; research +15","club":"Almaden Radio Club (ARC)","web":"https://almadenradio.groups.io/","nets":"Monthly SJ CERT net 1st Monday 6:30 PM on WA2IBM repeaters; ARC voice check-in 1st Monday 7:00 PM on 145.190","plan":"Used by San Jose CERT for its monthly net (2024 schedule)","power":"none found","conf":"medium","notes":"Three linkable repeaters in the Santa Teresa foothills, recently re-equipped; 441.150 pairing seen only on the SJ CERT net sheet","src":["https://sjncert.org/wp-content/uploads/2025/03/2024-Monthly-CERT-Net-WA2IBM-121723.pdf","https://almadenradio.groups.io/"],"others":"145.19000 2m (infra 51)","upd":"2023-06-09","m":[{"f":"145.190","b":"2m","d":"-","o":"0.6","pl":"151.4","tsq":"151.4","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Santa Teresa Foothills"},{"f":"224.100","b":"1.25m","d":"-","o":"1.6","pl":"156.7","tsq":"","st":"On-air","use":"OPEN","ep":false,"modes":["FM"],"site":"Santa Teresa Foothills"},{"f":"441.150","b":"70cm","d":"+","o":"5","pl":"100.0","tsq":"100.0","st":"On-air","use":"OPEN","ep":true,"modes":["FM"],"site":"Santa Teresa Foothills"}]}];
+const REGIONS = ["South Bay","Peninsula","East Bay","North Bay","Monterey Bay","Central Valley","Gold Country","Eastern Sierra"];
+const slug = r => r.toLowerCase().replace(/\s+/g,"-");
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const MAXI = 115, MAXC = 35;
+
+const MOST_USED = {"WA2IBM": "145.190"};
+
+function toneText(m){
+  const pl = m.pl, tsq = m.tsq;
+  if (!pl && !tsq) return "no tone";
+  if (/restricted/i.test(pl)) return "PL restricted";
+  if (pl && tsq && pl === tsq) return `TSQL ${pl}`;
+  if (pl && tsq) return `PL ${pl} / TSQ ${tsq}`;
+  return `PL ${pl || tsq}`;
+}
+function machineRows(d){
+  if (!d.m || !d.m.length) return "";
+  return `<div class="machines" role="table" aria-label="Frequencies for ${esc(d.call)}">${d.m.map(m => {
+    const scored = m.f === d.freq;
+    const tags = [];
+    if (scored) tags.push(`<span class="rtag star">ranked</span>`);
+    if (MOST_USED[d.call] === m.f) tags.push(`<span class="rtag fav">most used</span>`);
+    if (m.st && m.st !== "On-air") tags.push(`<span class="rtag bad">${esc(m.st.toLowerCase())}</span>`);
+    if (m.use && m.use !== "OPEN") tags.push(`<span class="rtag bad">${esc(m.use.toLowerCase())}</span>`);
+    if (m.ep) tags.push(`<span class="rtag">backup power</span>`);
+    const digital = m.modes.filter(x => x !== "FM");
+    if (digital.length) tags.push(`<span class="rtag">${esc(digital.join(" "))}</span>`);
+    if (!m.modes.includes("FM")) tags.push(`<span class="rtag bad">no analog</span>`);
+    if (m.site && m.site !== d.site) tags.push(`<span class="rtag">${esc(m.site)}</span>`);
+    const dim = m.st === "Off-air" || !m.modes.includes("FM");
+    return `<div class="mrow${scored ? " scored" : ""}${dim ? " dim" : ""}" role="row">
+      <span class="b">${esc(m.b)}</span><span class="f">${esc(m.f)}</span>
+      <span class="off">${m.o ? esc(m.d + m.o) : "simplex"}</span><span class="t">${esc(toneText(m))}</span>
+      <span class="tags">${tags.join("")}</span></div>`;
+  }).join("")}</div>`;
+}
+
+function freqLine(d){
+  const off = d.off && d.off !== "0.0" ? `${d.dir}${d.off}` : "simplex";
+  const tone = d.tone ? `${d.tmode === "T Sql" ? "TSQL" : "PL"} ${d.tone}` : "no tone";
+  return `${esc(d.freq)} <span>${esc(off)} · ${esc(tone)}</span>`;
+}
+function chips(d){
+  const c = [];
+  if (d.ep) c.push(`<span class="chip power">backup power</span>`);
+  if (d.ares) c.push(`<span class="chip good">ARES</span>`);
+  if (d.races) c.push(`<span class="chip good">RACES</span>`);
+  if (d.use === "CLOSED") c.push(`<span class="chip bad">closed</span>`);
+  if (d.status === "UNKNOWN") c.push(`<span class="chip bad">status unknown</span>`);
+  if (d.nfm) c.push(`<span class="chip bad">narrow FM</span>`);
+  if (d.conf) c.push(`<span class="chip${d.conf === "low" ? " bad" : ""}">research: ${esc(d.conf)}</span>`);
+  if (d.why === "known club") c.push(`<span class="chip good">known club</span>`);
+  return c.join("");
+}
+function ridge(ft){
+  const h = Math.max(0.08, Math.min(1, (ft || 0) / 6000));
+  const y = 24 - h * 22;
+  return `<svg class="ridge" viewBox="0 0 120 26" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 26 L28 ${(24 - h*9).toFixed(1)} L52 ${(24 - h*15).toFixed(1)} L72 ${y.toFixed(1)} L92 ${(24 - h*12).toFixed(1)} L120 26 Z" fill="var(--teal-soft)"/>
+    <path d="M0 26 L28 ${(24 - h*9).toFixed(1)} L52 ${(24 - h*15).toFixed(1)} L72 ${y.toFixed(1)} L92 ${(24 - h*12).toFixed(1)} L120 26" fill="none" stroke="var(--teal)" stroke-width="1.5"/>
+  </svg>`;
+}
+function srcLinks(list){
+  return list.map(s => /^https?:\/\//.test(s) ? `<a href="${esc(s)}" target="_blank" rel="noopener">${esc(s.replace(/^https?:\/\/(www\.)?/,"").slice(0,60))}</a>` : esc(s)).join("<br>");
+}
+function card(d){
+  const facts = [];
+  if (d.club) facts.push(["Runs it", d.web && /^https?:/.test(d.web) ? `${esc(d.club)} · <a href="${esc(d.web)}" target="_blank" rel="noopener">site</a>` : esc(d.club)]);
+  if (d.nets) facts.push(["Nets", esc(d.nets)]);
+  if (d.plan) facts.push(["Emergency plan", esc(d.plan)]);
+  if (d.power) facts.push(["Power", esc(d.power)]);
+  if (d.notes) facts.push(["Notes", esc(d.notes)]);
+  const elevText = d.elev ? `${d.elev.toLocaleString()} ft` : "Elevation unknown";
+  return `<article class="rcard${d.rank <= 3 ? " rtop" : ""}" id="${esc(d.call)}">
+    <div class="rank">${d.rank}${d.why === "known club" ? "<small>added</small>" : ""}</div>
+    <div class="rmain">
+      <div class="callline"><span class="call">${esc(d.call)}</span></div>
+      ${machineRows(d) || `<div class="freq">${freqLine(d)}</div>`}
+      <div class="where">${esc([d.site, d.city, d.county ? d.county + " County" : ""].filter(Boolean).join(" · "))}</div>
+      <div class="chips">${chips(d)}</div>
+      ${facts.length ? `<dl class="facts">${facts.map(([k,v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("")}</dl>` : `<p class="where" style="margin:0">Not in the research set (ranked below the top 6). Scores come from RepeaterBook, FCC and USGS data.</p>`}
+      <details><summary>Why this score</summary>
+        <p><b>Infra:</b> ${esc(d.ir)}</p>
+        <p><b>Community:</b> ${esc(d.cr || "none")}</p>
+        ${d.src.length ? `<p><b>Sources:</b><br>${srcLinks(d.src)}</p>` : ""}
+        <p>RepeaterBook record updated ${esc(d.upd && !d.upd.startsWith("0001") ? d.upd : "unknown")}.</p>
+      </details>
+    </div>
+    <div class="scores">
+      <div class="score"><label>Infra <b>${d.infra}</b></label><div class="track"><div class="fill" style="width:${Math.min(100, d.infra / MAXI * 100)}%"></div></div></div>
+      <div class="score"><label>Community <b>${d.comm}</b></label><div class="track"><div class="fill c" style="width:${Math.min(100, d.comm / MAXC * 100)}%"></div></div></div>
+      <div class="elev">${ridge(d.elev)}<span class="ft">${elevText}</span><span class="src">${esc(d.elev ? d.esrc : "city-center location")}</span></div>
+    </div>
+  </article>`;
+}
+
+const byRegion = Object.fromEntries(REGIONS.map(r => [r, DATA.filter(d => d.reg === r).sort((a,b) => a.rank - b.rank)]));
+
+function renderSummary(){
+  const tb = document.querySelector("#sumtable tbody");
+  tb.innerHTML = REGIONS.map(r => {
+    const d = byRegion[r][0]; if (!d) return "";
+    return `<tr class="sumrow" data-r="${slug(r)}" tabindex="0"><td>${esc(r)}</td><td><b>${esc(d.call)}</b></td><td class="num">${esc(d.freq)}</td><td>${esc(d.site || d.city)}${d.elev ? ` <span class="mono" style="color:var(--muted)">${d.elev.toLocaleString()} ft</span>` : ""}</td><td class="num">${d.infra}</td><td class="num">${d.comm}</td><td>${esc((d.club || "").split(" (")[0].split(";")[0])}</td></tr>`;
+  }).join("");
+  tb.querySelectorAll(".sumrow").forEach(tr => {
+    const go = () => { select(tr.dataset.r); document.getElementById("regsec").scrollIntoView({behavior:"smooth", block:"start"}); };
+    tr.addEventListener("click", go);
+    tr.addEventListener("keydown", e => { if (e.key === "Enter") go(); });
+  });
+}
+function renderTabs(){
+  document.getElementById("tabs").innerHTML = REGIONS.map(r =>
+    `<button class="tab" role="tab" id="tab-${slug(r)}" data-r="${slug(r)}" aria-selected="false">${esc(r)}<span class="n">${byRegion[r].length}</span></button>`).join("");
+  document.querySelectorAll(".nrr .tab").forEach(b => b.addEventListener("click", () => select(b.dataset.r)));
+}
+function select(s){
+  const r = REGIONS.find(x => slug(x) === s) || REGIONS[0];
+  document.querySelectorAll(".nrr .tab").forEach(b => b.setAttribute("aria-selected", b.dataset.r === slug(r) ? "true" : "false"));
+  const items = byRegion[r];
+  document.getElementById("list").innerHTML = items.map(card).join("");
+  const counties = [...new Set(items.map(d => d.county).filter(Boolean))];
+  document.getElementById("regmeta").textContent = `${items.length} repeaters · ${counties.join(", ")}`;
+  try { history.replaceState(null, "", "#" + slug(r)); } catch (e) {}
+}
+renderSummary(); renderTabs();
+select((location.hash || "").slice(1) || slug(REGIONS[0]));
+})();
+</script>
+
+<p><em>Spot something wrong or out of date? <a href="/contact/">Let me know</a>. The whole point is to keep this accurate for the next time we need it.</em></p>
+<p>73,
+Sal, W6SAL</p>
+
+        </div>
+
+        
+        
+        <footer class="post-footer">
+            <div class="post-tags">
+                
+                <a href="/tags/amateur-radio/" class="tag">amateur-radio</a>
+                
+                <a href="/tags/repeater/" class="tag">repeater</a>
+                
+                <a href="/tags/emergency-communications/" class="tag">emergency-communications</a>
+                
+                <a href="/tags/ares/" class="tag">ares</a>
+                
+                <a href="/tags/radiobuilder/" class="tag">radiobuilder</a>
+                
+            </div>
+        </footer>
+        
+    </div>
+</article>
+
+
+<nav class="post-nav">
+    <div class="container">
+        <div class="nav-links">
+            
+            <a href="https://salmancuso.com/radio/gpssettings/" class="nav-prev">
+                <span class="nav-label">← Previous</span>
+                <span class="nav-title">GPS on MeshCore: Solving the Timestamp Problem</span>
+            </a>
+            
+            
+            
+        </div>
+    </div>
+</nav>
+
+
+
+
+<section class="related-posts">
+    <div class="container">
+        <h2>More Posts</h2>
+        <div class="posts-grid">
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/posts/gpsSettings/GPS.jpg" alt="GPS on MeshCore: Solving the Timestamp Problem" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="https://salmancuso.com/radio/gpssettings/">GPS on MeshCore: Solving the Timestamp Problem</a></h3>
+                    <p class="post-card-date">Mar 23, 2026</p>
+                    <p class="post-card-summary"><p>Here&rsquo;s something that doesn&rsquo;t get talked about nearly enough: your mesh repeater probably doesn&rsquo;t know what time it is.</p>
+<p>Think about that for a moment. You&rsquo;ve spent hours—maybe days—setting up this node. You&rsquo;ve installed it on a mountaintop or bolted it to a tower somewhere. You&rsquo;ve carefully tuned the antenna, verified the coverage, tested the mesh routing. Everything&rsquo;s working great. And meanwhile, internally, your repeater thinks it&rsquo;s January 1st, 1970. Unix Epoch. The dawn of time, as far as computer systems are concerned.</p></p>
+                    <a href="https://salmancuso.com/radio/gpssettings/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/posts/hash/hashbrowns.jpg" alt="Understanding Path Hash Configuration in MeshCore" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="https://salmancuso.com/radio/hash/">Understanding Path Hash Configuration in MeshCore</a></h3>
+                    <p class="post-card-date">Mar 20, 2026</p>
+                    <p class="post-card-summary"><p>There&rsquo;s a parameter in MeshCore called <code>path.hash.mode</code> that almost nobody understands. The firmware developers seem to have deliberately hidden it in the configuration docs with a note saying &ldquo;DO NOT USE&rdquo; and then no explanation whatsoever.</p>
+<p>Let me explain what it actually does, because it matters for how your network behaves.</p>
+<h2 id="what-is-path-hash">What Is Path Hash?</h2>
+<p>Every node in MeshCore periodically sends advertisement packets—basically saying &ldquo;Hey, I&rsquo;m here, I exist, talk to me.&rdquo;</p></p>
+                    <a href="https://salmancuso.com/radio/hash/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                
+                <div class="post-card-image">
+                    <img src="/images/posts/radioReview/nodes.jpg" alt="LoRa Radios and Antennas for MeshCore: A Practical Review" loading="lazy">
+                </div>
+                
+                <div class="post-card-content">
+                    <h3><a href="https://salmancuso.com/radio/radioreview/">LoRa Radios and Antennas for MeshCore: A Practical Review</a></h3>
+                    <p class="post-card-date">Feb 23, 2026</p>
+                    <p class="post-card-summary"><p>Let&rsquo;s talk about something that actually matters: the hardware you use for MeshCore deployments. Not the flashy stuff. The practical stuff that determines whether your mesh network functions reliably or becomes an expensive paperweight.</p>
+<h2 id="antennas-first">Antennas First</h2>
+<p>Your antenna matters more than your radio. I&rsquo;m not exaggerating. A mediocre radio with an excellent antenna will consistently outperform an excellent radio with a mediocre antenna.</p>
+<p>For LoRa (915 MHz in the US), you want antennas designed for that frequency range. Generic quarter-wave monopoles work, but they&rsquo;re not optimal. Purpose-built LoRa antennas are worth the investment.</p></p>
+                    <a href="https://salmancuso.com/radio/radioreview/" class="read-more">Read more →</a>
+                </div>
+            </article>
+            
+        </div>
+    </div>
+</section>
+
+
+
+    </main>
+
+    
+    <footer>
+        <div class="container">
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/radio/">Radio</a></li>
+                    <li><a href="/tools/">Tools &amp; Apps</a></li>
+                    <li><a href="/musings/">Musings</a></li>
+                    <li><a href="/posts/">All Posts</a></li>
+                    <li><a href="/publications">Work/Publications</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Interests</h3>
+                <ul>
+                    <li><a href="https://makerworld.com/" target="_blank">Maker World</a></li>
+                    <li><a href="https://www.adafruit.com/" target="_blank">Adafruit</a></li>
+                    <li><a href="https://sanjosesimplex.groups.io/g/main" target="_blank">K6SJS San Jose Simplex</a></li>
+                    <li><a href="https://www.kennedymeadows.com/" target="_blank">Kennedy Meadows Packstation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="https://it-humsci.stanford.edu/people/sal-mancuso" target="_blank">Stanford</a></li>
+                    <li><a href="https://github.com/salmancuso" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/salmancuso/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://www.qrz.com/db/W6SAL" target="_blank">QRZ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sal Mancuso. All rights reserved. &middot; <a href="/privacy/" class="footer-privacy">Privacy</a></p>
+        </div>
+    </footer>
+
+    
+    
+    
+    <script src="/js/topo-animator.js"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
+        
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('hamburger').classList.remove('active');
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

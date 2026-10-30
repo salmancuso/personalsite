@@ -6,8 +6,15 @@
     <description>Recent content in Radio on Sal Mancuso</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://salmancuso.com/radio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NorCal Emergency Repeaters: Which Machines Stay Up When Things Go Sideways</title>
+      <link>https://salmancuso.com/radio/norcalemergencyrepeaters/</link>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://salmancuso.com/radio/norcalemergencyrepeaters/</guid>
+      <description>&lt;p&gt;When the power goes out and the cell towers go quiet, every ham asks the same question: &lt;em&gt;which repeater do I reach for?&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Not the closest one. Not the one with the clever callsign. The one most likely to still be on the air. The one sitting on a mountaintop with batteries, run by a club that actually shows up, and written into the county&amp;rsquo;s emergency plan.&lt;/p&gt;&#xA;&lt;p&gt;So I built a tool to find out. It&amp;rsquo;s part of a project I call RadioBuilder, and this is its first public output. For each of 8 regions, from the Bay Area to the Eastern Sierra, it pulls repeater listings, checks FCC license records, looks up the true elevation of each site with the USGS, and layers in research on who runs the machine, when their nets meet, and whether a county ARES, RACES or CERT plan names it. Then it scores everything two ways:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>GPS on MeshCore: Solving the Timestamp Problem</title>
       <link>https://salmancuso.com/radio/gpssettings/</link>

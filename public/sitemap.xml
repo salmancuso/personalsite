@@ -2,7 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://salmancuso.com/tags/amateur-radio/</loc>
+    <lastmod>2026-10-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://salmancuso.com/tags/ares/</loc>
+    <lastmod>2026-10-29T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://salmancuso.com/tags/cybersecurity/</loc>
+    <lastmod>2026-10-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://salmancuso.com/tags/emergency-communications/</loc>
     <lastmod>2026-10-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://salmancuso.com/tags/energy/</loc>
@@ -20,7 +29,19 @@
     <loc>https://salmancuso.com/musings/fortressamerica/</loc>
     <lastmod>2026-10-29T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://salmancuso.com/radio/norcalemergencyrepeaters/</loc>
+    <lastmod>2026-10-29T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://salmancuso.com/tags/preparedness/</loc>
+    <lastmod>2026-10-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://salmancuso.com/radio/</loc>
+    <lastmod>2026-10-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://salmancuso.com/tags/radiobuilder/</loc>
+    <lastmod>2026-10-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://salmancuso.com/tags/repeater/</loc>
     <lastmod>2026-10-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://salmancuso.com/</loc>
@@ -28,9 +49,6 @@
   </url><url>
     <loc>https://salmancuso.com/tags/</loc>
     <lastmod>2026-10-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://salmancuso.com/tags/amateur-radio/</loc>
-    <lastmod>2026-10-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://salmancuso.com/tags/app/</loc>
     <lastmod>2026-10-27T00:00:00+00:00</lastmod>
@@ -119,12 +137,6 @@
     <loc>https://salmancuso.com/tags/meshcore/</loc>
     <lastmod>2026-03-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://salmancuso.com/radio/</loc>
-    <lastmod>2026-03-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://salmancuso.com/tags/repeater/</loc>
-    <lastmod>2026-03-23T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://salmancuso.com/tags/time-synchronization/</loc>
     <lastmod>2026-03-23T00:00:00+00:00</lastmod>
   </url><url>
@@ -211,9 +223,6 @@
   </url><url>
     <loc>https://salmancuso.com/tags/frequencies/</loc>
     <lastmod>2025-12-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://salmancuso.com/tags/emergency-communications/</loc>
-    <lastmod>2025-12-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://salmancuso.com/tags/resilience/</loc>
     <lastmod>2025-12-08T00:00:00+00:00</lastmod>

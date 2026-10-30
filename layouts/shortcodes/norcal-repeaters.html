@@ -1,0 +1,300 @@
+{{- /*
+  NorCal Emergency Repeaters (W6SAL RadioBuilder)
+  Interactive field reference: a summary of each region's top pick, then region tabs with ranked cards.
+  Data lives in assets/data/norcal-repeaters.json; refresh that file to update the page.
+  Everything is scoped under .nrr so it can't collide with the site theme or Bootstrap.
+*/ -}}
+{{- $data := resources.Get "data/norcal-repeaters.json" -}}
+<style>
+.nrr{
+  --bg:#1a1a18; --surface:#242420; --fg:#E8D5C4; --muted:#A39A8F; --line:#4a4a48;
+  --accent:#B8860B; --accent-hi:#D9A93F; --accent-soft:#3a3018; --teal:#8B9D5D; --teal-soft:#2c3322;
+  --warn:#D08A63; --warn-soft:#3b2a20; --bar:#33332e;
+  --f-display:Georgia,"Times New Roman",serif;
+  --f-body:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  --f-mono:ui-monospace,"SF Mono",Menlo,Consolas,"Courier New",monospace;
+  color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.5;
+  display:grid;gap:28px;margin:2rem 0;
+}
+.nrr *{box-sizing:border-box}
+.nrr p{font-size:inherit !important;line-height:inherit;color:inherit;margin:0}
+.nrr h2,.nrr h3{font-family:var(--f-display);color:var(--fg);text-wrap:balance;margin:0;padding:0;letter-spacing:.01em}
+.nrr h2{font-size:1.45rem;font-weight:600}
+.nrr h3{font-size:1.15rem;font-weight:600}
+.nrr .lede{color:var(--muted);max-width:68ch;margin:6px 0 0}
+.nrr .eyebrow{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-hi)}
+.nrr .mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.nrr a{color:var(--teal);border-bottom:0;text-decoration:underline;text-underline-offset:2px}
+.nrr a:hover{color:var(--accent-hi)}
+.nrr a:focus-visible,.nrr button:focus-visible,.nrr .sumrow:focus-visible{outline:2px solid var(--accent-hi);outline-offset:2px}
+
+/* summary */
+.nrr .rsummary{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.nrr table{border-collapse:collapse;width:100%;min-width:640px;margin:0}
+.nrr th,.nrr td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--fg)}
+.nrr th{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:400}
+.nrr tr:last-child td{border-bottom:0}
+.nrr td.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.nrr .sumrow{cursor:pointer}
+.nrr .sumrow:hover td{background:var(--bg)}
+
+/* tabs */
+.nrr .tabs{display:flex;flex-wrap:wrap;gap:6px}
+.nrr .tab{font-family:var(--f-display);font-weight:600;font-size:.95rem;border:1px solid var(--line);background:var(--surface);color:var(--fg);padding:7px 13px;border-radius:999px;cursor:pointer}
+.nrr .tab:hover{border-color:var(--accent)}
+.nrr .tab[aria-selected="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.nrr .tab .n{font-family:var(--f-mono);font-size:.75rem;opacity:.7;margin-left:4px}
+.nrr .regionhead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px}
+
+/* cards */
+.nrr .rlist{display:grid;gap:12px}
+.nrr .rcard{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px;display:grid;grid-template-columns:52px minmax(0,1fr) 210px;gap:16px}
+.nrr .rcard.rtop{border-color:var(--accent)}
+.nrr .rank{font-family:var(--f-display);font-size:1.9rem;font-weight:700;line-height:1;color:var(--muted)}
+.nrr .rcard.rtop .rank{color:var(--accent-hi)}
+.nrr .rank small{display:block;font-family:var(--f-mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;margin-top:6px;color:var(--teal);font-weight:400}
+.nrr .rmain{min-width:0;display:grid;gap:8px}
+.nrr .callline{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+.nrr .call{font-family:var(--f-display);font-size:1.45rem;font-weight:700;color:var(--fg)}
+.nrr .freq{font-family:var(--f-mono);font-size:1.02rem;font-weight:600;color:var(--accent-hi)}
+.nrr .freq span{font-weight:400;color:var(--muted)}
+.nrr .where{color:var(--muted);font-size:.92rem}
+.nrr .machines{display:grid;gap:2px;font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:.9rem;overflow-x:auto}
+.nrr .mrow{display:grid;grid-template-columns:3.6rem 5.6rem 3.6rem minmax(7rem,max-content) minmax(0,1fr);gap:10px;align-items:baseline;padding:3px 6px;border-radius:4px;white-space:nowrap;color:var(--fg)}
+.nrr .mrow.scored{background:var(--accent-soft)}
+.nrr .mrow .b{color:var(--muted);font-size:.74rem;letter-spacing:.06em}
+.nrr .mrow .f{font-weight:600;color:var(--accent-hi)}
+.nrr .mrow .off,.nrr .mrow .t{color:var(--muted)}
+.nrr .mrow .tags{display:flex;gap:6px;flex-wrap:wrap;font-size:.68rem}
+.nrr .mrow.dim .f,.nrr .mrow.dim .off,.nrr .mrow.dim .t{opacity:.55}
+.nrr .rtag{padding:0 6px;border-radius:3px;background:var(--bar);color:var(--fg);font-size:inherit;margin:0;border:0}
+.nrr .rtag.star{background:var(--accent);color:var(--bg)}
+.nrr .rtag.fav{background:var(--teal);color:var(--bg)}
+.nrr .rtag.bad{background:var(--warn-soft);color:var(--warn)}
+.nrr .chips{display:flex;flex-wrap:wrap;gap:6px}
+.nrr .chip{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.04em;padding:2px 8px;border-radius:4px;background:var(--bar);color:var(--fg);white-space:nowrap}
+.nrr .chip.good{background:var(--teal-soft);color:var(--teal)}
+.nrr .chip.power{background:var(--accent-soft);color:var(--accent-hi)}
+.nrr .chip.bad{background:var(--warn-soft);color:var(--warn)}
+.nrr .facts{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:4px 12px;font-size:.9rem;margin:0}
+.nrr .facts dt{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:3px;font-weight:400}
+.nrr .facts dd{margin:0;min-width:0;overflow-wrap:anywhere;color:#C0B8B0}
+.nrr details{font-size:.85rem;color:var(--muted)}
+.nrr summary{cursor:pointer;font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.nrr summary:hover{color:var(--accent-hi)}
+.nrr details p{margin:6px 0 0;overflow-wrap:anywhere}
+.nrr details b{color:var(--fg)}
+
+/* scores */
+.nrr .scores{display:grid;gap:12px;align-content:start}
+.nrr .score label{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0}
+.nrr .score label b{font-size:.95rem;color:var(--fg);letter-spacing:0}
+.nrr .track{height:8px;background:var(--bar);border-radius:4px;overflow:hidden;margin-top:4px}
+.nrr .fill{height:100%;background:var(--accent);border-radius:4px}
+.nrr .fill.c{background:var(--teal)}
+.nrr .elev{display:grid;gap:4px}
+.nrr .elev .ft{font-family:var(--f-display);font-weight:600;font-size:1.15rem;color:var(--fg)}
+.nrr .elev .src{font-family:var(--f-mono);font-size:.66rem;color:var(--muted);letter-spacing:.04em}
+.nrr .ridge{height:26px;width:100%;display:block}
+
+/* method */
+.nrr .method{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.nrr .method section{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px;min-width:0}
+.nrr .method ul{margin:8px 0 0;padding-left:18px;display:grid;gap:4px;font-size:.9rem}
+.nrr .method li{margin:0;color:#C0B8B0}
+.nrr .pts{width:100%;min-width:0;font-size:.88rem;margin-top:8px}
+.nrr .pts td{padding:5px 0;border-bottom:1px dashed var(--line);color:#C0B8B0}
+.nrr .pts td:last-child{text-align:right;font-family:var(--f-mono);color:var(--fg)}
+.nrr .rfoot{color:var(--muted);font-size:.82rem}
+
+@media (max-width:720px){
+  .nrr .rcard{grid-template-columns:40px minmax(0,1fr)}
+  .nrr .scores{grid-column:1 / -1}
+}
+@media (prefers-reduced-motion:no-preference){.nrr .fill{transition:width .4s ease}}
+</style>
+
+<div class="nrr">
+  <header>
+    <div class="eyebrow">W6SAL · RadioBuilder · data as of Oct 29, 2026</div>
+    <p class="lede">The repeaters most likely to stay up and stay useful when things go sideways, ranked for 8 regions from the Bay Area to the Eastern Sierra. The infrastructure score covers site height, backup power, emergency use and status. The community score shows who is behind the machine: a club, regular nets, and a place in a county emergency plan.</p>
+  </header>
+  <section aria-labelledby="sumh" style="display:grid;gap:10px">
+    <h2 id="sumh">Top pick in each region</h2>
+    <div class="rsummary"><table id="sumtable"><thead><tr><th>Region</th><th>Call</th><th>Output</th><th>Site</th><th>Infra</th><th>Comm</th><th>Who runs it</th></tr></thead><tbody></tbody></table></div>
+  </section>
+  <section aria-labelledby="regh" style="display:grid;gap:14px;scroll-margin-top:90px" id="regsec">
+    <div class="regionhead"><h2 id="regh">Contenders by region</h2><span class="where" id="regmeta"></span></div>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div class="rlist" id="list"></div>
+  </section>
+  <section class="method" aria-label="How the scores work">
+    <section>
+      <h3>Infrastructure score</h3>
+      <table class="pts"><tbody>
+        <tr><td>Site 3,000+ / 2,000+ / 1,000+ / 500+ ft</td><td>30 / 24 / 16 / 8</td></tr>
+        <tr><td>No elevation, but a named peak or ridge</td><td>12</td></tr>
+        <tr><td>Emergency power (owner reported)</td><td>25</td></tr>
+        <tr><td>ARES 10, RACES 10, SKYWARN 3 (cap 20)</td><td>20</td></tr>
+        <tr><td>On air (status unknown 5)</td><td>15</td></tr>
+        <tr><td>Open to all (closed 0)</td><td>10</td></tr>
+        <tr><td>2m band</td><td>5</td></tr>
+        <tr><td>Hospital or EOC site</td><td>5</td></tr>
+        <tr><td>Record updated in 2 yrs (5 yrs: 2)</td><td>5</td></tr>
+      </tbody></table>
+    </section>
+    <section>
+      <h3>Community score</h3>
+      <table class="pts"><tbody>
+        <tr><td>Club license (FCC) or known club</td><td>15</td></tr>
+        <tr><td>Active club, recent activity</td><td>5</td></tr>
+        <tr><td>Regularly scheduled net</td><td>5</td></tr>
+        <tr><td>In a county ARES / RACES / ACS / CERT plan</td><td>5</td></tr>
+        <tr><td>Backup power documented by the owner</td><td>5</td></tr>
+      </tbody></table>
+      <p class="where" style="margin:10px 0 0">Linked networks are not scored. Each callsign appears once. Every machine it runs in the region is stacked on the card from 2m to 1.25m to 70cm, then other bands; the highlighted row is the one that earned the score. 1.25m and other bands are shown but not scored.</p>
+    </section>
+    <section>
+      <h3>Read these with care</h3>
+      <ul>
+        <li>Emergency power is what owners report to RepeaterBook. Mt Oso (WD6EJF) batteries ran down in a 2-day PG&amp;E shutoff in 2025.</li>
+        <li>Elevation is measured only where the location is exact, or borrowed from another repeater at the same named site within 40 km. City-center locations are left blank.</li>
+        <li>Club research came from web search results and RadioReference listings. Low-confidence rows deserve a check before you rely on them.</li>
+        <li>Only 2m and 70cm machines that are not off air and not private are ranked.</li>
+      </ul>
+    </section>
+  </section>
+  <div class="rfoot">Repeater data courtesy of <a href="https://www.repeaterbook.com/" target="_blank" rel="noopener">RepeaterBook.com</a>. Other sources: FCC license data via callook.info, USGS Elevation Point Query Service, RadioReference database, and club and county web pages listed on each card.</div>
+</div>
+
+<script>
+(function () {
+const DATA = {{ $data.Content | safeJS }};
+const REGIONS = ["South Bay","Peninsula","East Bay","North Bay","Monterey Bay","Central Valley","Gold Country","Eastern Sierra"];
+const slug = r => r.toLowerCase().replace(/\s+/g,"-");
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const MAXI = 115, MAXC = 35;
+// Local knowledge from W6SAL: the machine people actually use, when it is not the top-scored one.
+const MOST_USED = {"WA2IBM": "145.190"};
+
+function toneText(m){
+  const pl = m.pl, tsq = m.tsq;
+  if (!pl && !tsq) return "no tone";
+  if (/restricted/i.test(pl)) return "PL restricted";
+  if (pl && tsq && pl === tsq) return `TSQL ${pl}`;
+  if (pl && tsq) return `PL ${pl} / TSQ ${tsq}`;
+  return `PL ${pl || tsq}`;
+}
+function machineRows(d){
+  if (!d.m || !d.m.length) return "";
+  return `<div class="machines" role="table" aria-label="Frequencies for ${esc(d.call)}">${d.m.map(m => {
+    const scored = m.f === d.freq;
+    const tags = [];
+    if (scored) tags.push(`<span class="rtag star">ranked</span>`);
+    if (MOST_USED[d.call] === m.f) tags.push(`<span class="rtag fav">most used</span>`);
+    if (m.st && m.st !== "On-air") tags.push(`<span class="rtag bad">${esc(m.st.toLowerCase())}</span>`);
+    if (m.use && m.use !== "OPEN") tags.push(`<span class="rtag bad">${esc(m.use.toLowerCase())}</span>`);
+    if (m.ep) tags.push(`<span class="rtag">backup power</span>`);
+    const digital = m.modes.filter(x => x !== "FM");
+    if (digital.length) tags.push(`<span class="rtag">${esc(digital.join(" "))}</span>`);
+    if (!m.modes.includes("FM")) tags.push(`<span class="rtag bad">no analog</span>`);
+    if (m.site && m.site !== d.site) tags.push(`<span class="rtag">${esc(m.site)}</span>`);
+    const dim = m.st === "Off-air" || !m.modes.includes("FM");
+    return `<div class="mrow${scored ? " scored" : ""}${dim ? " dim" : ""}" role="row">
+      <span class="b">${esc(m.b)}</span><span class="f">${esc(m.f)}</span>
+      <span class="off">${m.o ? esc(m.d + m.o) : "simplex"}</span><span class="t">${esc(toneText(m))}</span>
+      <span class="tags">${tags.join("")}</span></div>`;
+  }).join("")}</div>`;
+}
+
+function freqLine(d){
+  const off = d.off && d.off !== "0.0" ? `${d.dir}${d.off}` : "simplex";
+  const tone = d.tone ? `${d.tmode === "T Sql" ? "TSQL" : "PL"} ${d.tone}` : "no tone";
+  return `${esc(d.freq)} <span>${esc(off)} · ${esc(tone)}</span>`;
+}
+function chips(d){
+  const c = [];
+  if (d.ep) c.push(`<span class="chip power">backup power</span>`);
+  if (d.ares) c.push(`<span class="chip good">ARES</span>`);
+  if (d.races) c.push(`<span class="chip good">RACES</span>`);
+  if (d.use === "CLOSED") c.push(`<span class="chip bad">closed</span>`);
+  if (d.status === "UNKNOWN") c.push(`<span class="chip bad">status unknown</span>`);
+  if (d.nfm) c.push(`<span class="chip bad">narrow FM</span>`);
+  if (d.conf) c.push(`<span class="chip${d.conf === "low" ? " bad" : ""}">research: ${esc(d.conf)}</span>`);
+  if (d.why === "known club") c.push(`<span class="chip good">known club</span>`);
+  return c.join("");
+}
+function ridge(ft){
+  const h = Math.max(0.08, Math.min(1, (ft || 0) / 6000));
+  const y = 24 - h * 22;
+  return `<svg class="ridge" viewBox="0 0 120 26" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 26 L28 ${(24 - h*9).toFixed(1)} L52 ${(24 - h*15).toFixed(1)} L72 ${y.toFixed(1)} L92 ${(24 - h*12).toFixed(1)} L120 26 Z" fill="var(--teal-soft)"/>
+    <path d="M0 26 L28 ${(24 - h*9).toFixed(1)} L52 ${(24 - h*15).toFixed(1)} L72 ${y.toFixed(1)} L92 ${(24 - h*12).toFixed(1)} L120 26" fill="none" stroke="var(--teal)" stroke-width="1.5"/>
+  </svg>`;
+}
+function srcLinks(list){
+  return list.map(s => /^https?:\/\//.test(s) ? `<a href="${esc(s)}" target="_blank" rel="noopener">${esc(s.replace(/^https?:\/\/(www\.)?/,"").slice(0,60))}</a>` : esc(s)).join("<br>");
+}
+function card(d){
+  const facts = [];
+  if (d.club) facts.push(["Runs it", d.web && /^https?:/.test(d.web) ? `${esc(d.club)} · <a href="${esc(d.web)}" target="_blank" rel="noopener">site</a>` : esc(d.club)]);
+  if (d.nets) facts.push(["Nets", esc(d.nets)]);
+  if (d.plan) facts.push(["Emergency plan", esc(d.plan)]);
+  if (d.power) facts.push(["Power", esc(d.power)]);
+  if (d.notes) facts.push(["Notes", esc(d.notes)]);
+  const elevText = d.elev ? `${d.elev.toLocaleString()} ft` : "Elevation unknown";
+  return `<article class="rcard${d.rank <= 3 ? " rtop" : ""}" id="${esc(d.call)}">
+    <div class="rank">${d.rank}${d.why === "known club" ? "<small>added</small>" : ""}</div>
+    <div class="rmain">
+      <div class="callline"><span class="call">${esc(d.call)}</span></div>
+      ${machineRows(d) || `<div class="freq">${freqLine(d)}</div>`}
+      <div class="where">${esc([d.site, d.city, d.county ? d.county + " County" : ""].filter(Boolean).join(" · "))}</div>
+      <div class="chips">${chips(d)}</div>
+      ${facts.length ? `<dl class="facts">${facts.map(([k,v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("")}</dl>` : `<p class="where" style="margin:0">Not in the research set (ranked below the top 6). Scores come from RepeaterBook, FCC and USGS data.</p>`}
+      <details><summary>Why this score</summary>
+        <p><b>Infra:</b> ${esc(d.ir)}</p>
+        <p><b>Community:</b> ${esc(d.cr || "none")}</p>
+        ${d.src.length ? `<p><b>Sources:</b><br>${srcLinks(d.src)}</p>` : ""}
+        <p>RepeaterBook record updated ${esc(d.upd && !d.upd.startsWith("0001") ? d.upd : "unknown")}.</p>
+      </details>
+    </div>
+    <div class="scores">
+      <div class="score"><label>Infra <b>${d.infra}</b></label><div class="track"><div class="fill" style="width:${Math.min(100, d.infra / MAXI * 100)}%"></div></div></div>
+      <div class="score"><label>Community <b>${d.comm}</b></label><div class="track"><div class="fill c" style="width:${Math.min(100, d.comm / MAXC * 100)}%"></div></div></div>
+      <div class="elev">${ridge(d.elev)}<span class="ft">${elevText}</span><span class="src">${esc(d.elev ? d.esrc : "city-center location")}</span></div>
+    </div>
+  </article>`;
+}
+
+const byRegion = Object.fromEntries(REGIONS.map(r => [r, DATA.filter(d => d.reg === r).sort((a,b) => a.rank - b.rank)]));
+
+function renderSummary(){
+  const tb = document.querySelector("#sumtable tbody");
+  tb.innerHTML = REGIONS.map(r => {
+    const d = byRegion[r][0]; if (!d) return "";
+    return `<tr class="sumrow" data-r="${slug(r)}" tabindex="0"><td>${esc(r)}</td><td><b>${esc(d.call)}</b></td><td class="num">${esc(d.freq)}</td><td>${esc(d.site || d.city)}${d.elev ? ` <span class="mono" style="color:var(--muted)">${d.elev.toLocaleString()} ft</span>` : ""}</td><td class="num">${d.infra}</td><td class="num">${d.comm}</td><td>${esc((d.club || "").split(" (")[0].split(";")[0])}</td></tr>`;
+  }).join("");
+  tb.querySelectorAll(".sumrow").forEach(tr => {
+    const go = () => { select(tr.dataset.r); document.getElementById("regsec").scrollIntoView({behavior:"smooth", block:"start"}); };
+    tr.addEventListener("click", go);
+    tr.addEventListener("keydown", e => { if (e.key === "Enter") go(); });
+  });
+}
+function renderTabs(){
+  document.getElementById("tabs").innerHTML = REGIONS.map(r =>
+    `<button class="tab" role="tab" id="tab-${slug(r)}" data-r="${slug(r)}" aria-selected="false">${esc(r)}<span class="n">${byRegion[r].length}</span></button>`).join("");
+  document.querySelectorAll(".nrr .tab").forEach(b => b.addEventListener("click", () => select(b.dataset.r)));
+}
+function select(s){
+  const r = REGIONS.find(x => slug(x) === s) || REGIONS[0];
+  document.querySelectorAll(".nrr .tab").forEach(b => b.setAttribute("aria-selected", b.dataset.r === slug(r) ? "true" : "false"));
+  const items = byRegion[r];
+  document.getElementById("list").innerHTML = items.map(card).join("");
+  const counties = [...new Set(items.map(d => d.county).filter(Boolean))];
+  document.getElementById("regmeta").textContent = `${items.length} repeaters · ${counties.join(", ")}`;
+  try { history.replaceState(null, "", "#" + slug(r)); } catch (e) {}
+}
+renderSummary(); renderTabs();
+select((location.hash || "").slice(1) || slug(REGIONS[0]));
+})();
+</script>
