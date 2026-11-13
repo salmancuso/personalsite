@@ -1,5 +1,5 @@
 ---
-title: "JS8 Mobile: JS8 on Your iPhone, No Laptop Required"
+title: "SkipJS8: JS8 on Your iPhone, No Laptop Required"
 date: 2026-10-26
 description: "A native iPhone app that runs JS8 keyboard-to-keyboard messaging right on your phone. Plug your radio in over USB-C and you're on the air."
 image: "/images/posts/apps/js8mobile.jpg"
@@ -8,9 +8,9 @@ tags: ["app", "ios", "amateur-radio", "js8", "digital-modes"]
 
 JS8 is one of my favorite modes: weak-signal, keyboard-to-keyboard messaging that gets through when voice won't. The catch has always been the laptop. For portable, SOTA and POTA work, that's one more thing to pack, power and protect from the weather.
 
-JS8 Mobile runs JS8 natively on the iPhone. Plug your radio into your phone over USB-C and you're on the air. NO laptop required (and one less thing for me to forget at home, right after my hat, which on this head is a real safety issue).
+SkipJS8 runs JS8 natively on the iPhone. Plug your radio into your phone over USB-C and you're on the air. NO laptop required (and one less thing for me to forget at home, right after my hat, which on this head is a real safety issue).
 
-**Status:** JS8 Mobile is in beta through Apple's TestFlight. It goes to the App Store once the licensing work below is finished.
+**Status:** SkipJS8 is in beta through Apple's TestFlight. It goes to the App Store once the licensing work below is finished.
 
 ## What it does
 
@@ -33,13 +33,13 @@ So far I've tested it on my Yaesu FT-891 with a DigiRig and on a QRP Labs rig, b
 
 ## Working with the JS8Call developers
 
-JS8 Mobile builds on the JS8Call-improved engine, and I asked the JS8Call developers for their blessing before going any further. They gave it, and we're working together on licensing that fits Apple's App Store rules. That's the last step before release.
+SkipJS8 builds on the JS8Call-improved engine, and I asked the JS8Call developers for their blessing before going any further. They gave it, and we're working together on licensing that fits Apple's App Store rules. That's the last step before release.
 
 ## Free, always
 
-Like all my ham radio software, JS8 Mobile will be 100% free. No accounts, no ads, no tracking. Your radio audio is decoded on your phone and never sent anywhere. This started as a fun challenge, and I want it in as many hands as possible.
+Like all my ham radio software, SkipJS8 will be 100% free. No accounts, no ads, no tracking. Your radio audio is decoded on your phone and never sent anywhere. This started as a fun challenge, and I want it in as many hands as possible.
 
-Want to help test? [Get in touch](/contact/). The [privacy policy](/privacy/) explains exactly what JS8 Mobile sends and why.
+Want to help test? [Get in touch](/contact/). The [privacy policy](/privacy/) explains exactly what SkipJS8 sends and why.
 
 73,
 Sal, W6SAL
